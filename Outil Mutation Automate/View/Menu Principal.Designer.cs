@@ -45,8 +45,11 @@ namespace Outil_Mutation_Automate
             cerp = new PictureBox();
             groupBox1 = new GroupBox();
             groupBox2 = new GroupBox();
+            ligne4 = new Label();
+            ligne3 = new Label();
+            ligne2 = new Label();
+            ligne1 = new Label();
             label5 = new Label();
-            ResultatsTxt = new Label();
             ((System.ComponentModel.ISupportInitialize)cerp).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -182,12 +185,51 @@ namespace Outil_Mutation_Automate
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(ResultatsTxt);
+            groupBox2.Controls.Add(ligne4);
+            groupBox2.Controls.Add(ligne3);
+            groupBox2.Controls.Add(ligne2);
+            groupBox2.Controls.Add(ligne1);
             groupBox2.Location = new Point(45, 275);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(789, 181);
             groupBox2.TabIndex = 14;
             groupBox2.TabStop = false;
+            // 
+            // ligne4
+            // 
+            ligne4.AutoSize = true;
+            ligne4.ForeColor = Color.Black;
+            ligne4.Location = new Point(19, 132);
+            ligne4.Name = "ligne4";
+            ligne4.Size = new Size(0, 25);
+            ligne4.TabIndex = 3;
+            // 
+            // ligne3
+            // 
+            ligne3.AutoSize = true;
+            ligne3.ForeColor = Color.Black;
+            ligne3.Location = new Point(19, 98);
+            ligne3.Name = "ligne3";
+            ligne3.Size = new Size(0, 25);
+            ligne3.TabIndex = 2;
+            // 
+            // ligne2
+            // 
+            ligne2.AutoSize = true;
+            ligne2.ForeColor = Color.Black;
+            ligne2.Location = new Point(19, 65);
+            ligne2.Name = "ligne2";
+            ligne2.Size = new Size(0, 25);
+            ligne2.TabIndex = 1;
+            // 
+            // ligne1
+            // 
+            ligne1.AutoSize = true;
+            ligne1.ForeColor = Color.Black;
+            ligne1.Location = new Point(19, 31);
+            ligne1.Name = "ligne1";
+            ligne1.Size = new Size(0, 25);
+            ligne1.TabIndex = 0;
             // 
             // label5
             // 
@@ -197,14 +239,6 @@ namespace Outil_Mutation_Automate
             label5.Size = new Size(96, 25);
             label5.TabIndex = 15;
             label5.Text = "Résultats : ";
-            // 
-            // ResultatsTxt
-            // 
-            ResultatsTxt.AutoSize = true;
-            ResultatsTxt.Location = new Point(19, 36);
-            ResultatsTxt.Name = "ResultatsTxt";
-            ResultatsTxt.Size = new Size(0, 25);
-            ResultatsTxt.TabIndex = 0;
             // 
             // MenuPrincipal
             // 
@@ -256,6 +290,9 @@ namespace Outil_Mutation_Automate
         private GroupBox groupBox1;
         private GroupBox groupBox2;
         private Label label5;
-        private Label ResultatsTxt;
+        private Label ligne1;
+        private Label ligne2;
+        private Label ligne3;
+        private Label ligne4;
     }
 }
