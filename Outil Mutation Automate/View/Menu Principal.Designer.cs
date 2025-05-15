@@ -1,4 +1,5 @@
-﻿namespace Outil_Mutation_Automate
+﻿
+namespace Outil_Mutation_Automate
 {
     partial class MenuPrincipal
     {
@@ -32,10 +33,10 @@
             HauteurProduitLabel = new Label();
             hauteur = new TextBox();
             label1 = new Label();
-            calculer = new Button();
+            BtnCalculer = new Button();
             moyenne = new TextBox();
             FreqLabel = new Label();
-            textBox1 = new TextBox();
+            frequence = new TextBox();
             label2 = new Label();
             hauteurG = new TextBox();
             bienvenue = new Label();
@@ -45,8 +46,10 @@
             groupBox1 = new GroupBox();
             groupBox2 = new GroupBox();
             label5 = new Label();
+            ResultatsTxt = new Label();
             ((System.ComponentModel.ISupportInitialize)cerp).BeginInit();
             groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // HauteurProduitLabel
@@ -74,14 +77,15 @@
             label1.TabIndex = 2;
             label1.Text = "Moyenne des ventes (par mois)";
             // 
-            // calculer
+            // BtnCalculer
             // 
-            calculer.Location = new Point(722, 670);
-            calculer.Name = "calculer";
-            calculer.Size = new Size(112, 43);
-            calculer.TabIndex = 3;
-            calculer.Text = "Calculer";
-            calculer.UseVisualStyleBackColor = true;
+            BtnCalculer.Location = new Point(722, 670);
+            BtnCalculer.Name = "BtnCalculer";
+            BtnCalculer.Size = new Size(112, 43);
+            BtnCalculer.TabIndex = 3;
+            BtnCalculer.Text = "Calculer";
+            BtnCalculer.UseVisualStyleBackColor = true;
+            BtnCalculer.Click += BtnCalculer_Click;
             // 
             // moyenne
             // 
@@ -99,12 +103,12 @@
             FreqLabel.TabIndex = 5;
             FreqLabel.Text = "Fréquence picking mensuel (M-1)";
             // 
-            // textBox1
+            // frequence
             // 
-            textBox1.Location = new Point(484, 63);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(274, 31);
-            textBox1.TabIndex = 6;
+            frequence.Location = new Point(484, 63);
+            frequence.Name = "frequence";
+            frequence.Size = new Size(274, 31);
+            frequence.TabIndex = 6;
             // 
             // label2
             // 
@@ -164,7 +168,7 @@
             // 
             groupBox1.Controls.Add(hauteurG);
             groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(frequence);
             groupBox1.Controls.Add(FreqLabel);
             groupBox1.Controls.Add(moyenne);
             groupBox1.Controls.Add(label1);
@@ -178,6 +182,7 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(ResultatsTxt);
             groupBox2.Location = new Point(45, 275);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(789, 181);
@@ -193,6 +198,14 @@
             label5.TabIndex = 15;
             label5.Text = "Résultats : ";
             // 
+            // ResultatsTxt
+            // 
+            ResultatsTxt.AutoSize = true;
+            ResultatsTxt.Location = new Point(19, 36);
+            ResultatsTxt.Name = "ResultatsTxt";
+            ResultatsTxt.Size = new Size(0, 25);
+            ResultatsTxt.TabIndex = 0;
+            // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -206,7 +219,7 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(bienvenue);
-            Controls.Add(calculer);
+            Controls.Add(BtnCalculer);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MenuPrincipal";
             Text = "Outil Mutation Automate";
@@ -214,8 +227,15 @@
             ((System.ComponentModel.ISupportInitialize)cerp).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
 
         #endregion
@@ -223,10 +243,10 @@
         private Label HauteurProduitLabel;
         private TextBox hauteur;
         private Label label1;
-        private Button calculer;
+        private Button BtnCalculer;
         private TextBox moyenne;
         private Label FreqLabel;
-        private TextBox textBox1;
+        private TextBox frequence;
         private Label label2;
         private TextBox hauteurG;
         private Label bienvenue;
@@ -236,5 +256,6 @@
         private GroupBox groupBox1;
         private GroupBox groupBox2;
         private Label label5;
+        private Label ResultatsTxt;
     }
 }
