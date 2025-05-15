@@ -37,7 +37,7 @@ namespace Outil_Mutation_Automate
                     // Afficher le résultat sous forme de texte
                     ligne1.Text = "• Nombre de boîtes vendues (par jour) :  " + NBV.ToString();
                     ligne2.Text = "• Hauteur totale nécessaire (par jour) : " + HT.ToString() + "mm";
-                    ligne3.Text = "• Nombre de canaux de " + hauteurCanalDesire + "mm" + " nécessaire par jour : " + NbGoulotte;
+                    ligne3.Text = "• Nombre de canaux de " + hauteurCanalDesire + "mm" + " nécessaire par jour : " + Math.Round(NbGoulotte, 1);
                     ligne4.Text = "• Nombre de boîte par commande (en moyenne) : " + Math.Round(NBC, 1);
                 }
                 else
