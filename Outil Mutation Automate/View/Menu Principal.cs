@@ -1,4 +1,5 @@
 using System.Drawing.Text;
+using System.Media;
 using System.Security.Cryptography.X509Certificates;
 
 namespace Outil_Mutation_Automate
@@ -44,13 +45,15 @@ namespace Outil_Mutation_Automate
                 // Si une ou plusieurs conversions ont échoué (l'utilisateur n'a pas entré de nombres valides),
                 // afficher un message d'erreur 
                 {
-                    MessageBox.Show("Erreur : Veuillez saisir une valeur correcte.");
+                    SystemSounds.Hand.Play();
+                    MessageBox.Show("Erreur : Veuillez saisir une valeur correcte.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
             else
             {   // Si l'un des champs est vide, afficher un message d'erreur.
-                MessageBox.Show("Erreur : Veuillez remplir tous les champs.");
+                SystemSounds.Hand.Play();
+                MessageBox.Show("Erreur : Veuillez remplir tous les champs.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
