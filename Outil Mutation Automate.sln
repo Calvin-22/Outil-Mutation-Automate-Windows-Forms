@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Outil Mutation Automate", "Outil Mutation Automate\Outil Mutation Automate.csproj", "{9FA67056-4D2B-4427-956E-FE2B6905A87A}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup Outil Mutation Automate", "Setup Outil Mutation Automate\Setup Outil Mutation Automate.vdproj", "{D509F15A-1713-32F8-2AEA-D0B708C289BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,8 @@ Global
 		{9FA67056-4D2B-4427-956E-FE2B6905A87A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FA67056-4D2B-4427-956E-FE2B6905A87A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FA67056-4D2B-4427-956E-FE2B6905A87A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D509F15A-1713-32F8-2AEA-D0B708C289BF}.Debug|Any CPU.ActiveCfg = Debug
+		{D509F15A-1713-32F8-2AEA-D0B708C289BF}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
