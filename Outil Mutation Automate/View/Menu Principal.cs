@@ -9,6 +9,7 @@ namespace Outil_Mutation_Automate
         public MenuPrincipal()
         {
             InitializeComponent();
+
         }
 
         private void BtnCalculer_Click(object sender, EventArgs e)
@@ -47,7 +48,7 @@ namespace Outil_Mutation_Automate
                         // Réponse et détermination du type de canaux (taille)
                         if (NbGoulotte > 1)
                         {
-                            ligne5.Text = "Dans cette configuration, il serait souhaitable d'opter pour une hauteur de canaux plus grande.";
+                            ligne5.Text = "Dans cette configuration, il serait souhaitable d'opter pour une hauteur de canal plus grande.";
                             ligne6.Text = $"Sinon, il faudrait mettre en place {Math.Round(NbGoulotte, 1)} canaux de {hauteurG.Text} mm.";
                             ligne7.Text = ""; // On efface potentiellement le contenu de ligne7
                             ligne8.Text = ""; // On efface potentiellement le contenu de ligne8
