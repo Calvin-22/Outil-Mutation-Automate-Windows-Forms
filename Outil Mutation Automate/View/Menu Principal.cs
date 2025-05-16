@@ -40,6 +40,38 @@ namespace Outil_Mutation_Automate
                     ligne2.Text = "• Hauteur totale nécessaire (par jour) : " + HT.ToString() + "mm";
                     ligne3.Text = "• Nombre de canaux de " + hauteurCanalDesire + "mm" + " nécessaire par jour : " + Math.Round(NbGoulotte, 1);
                     ligne4.Text = "• Nombre de boîte par commande (en moyenne) : " + Math.Round(NBC, 1);
+
+
+                    if (NBC < 5 && NbGoulotte < 3.2 && Zone(frequencePicking, (int)NBC, NbGoulotte))
+                    {
+                        // Réponse et détermination du type de canaux (taille)
+                        if (NbGoulotte > 1)
+                        {
+                            ligne5.Text = "Dans cette configuration, il serait souhaitable d'opter pour une hauteur de canaux plus grande.";
+                            ligne6.Text = $"Sinon, il faudrait mettre en place {Math.Round(NbGoulotte, 1)} canaux de {hauteurG.Text} mm.";
+                            ligne7.Text = ""; // On efface potentiellement le contenu de ligne7
+                            ligne8.Text = ""; // On efface potentiellement le contenu de ligne8
+                        }
+                        else
+                        {
+                            double pourcentage = NbGoulotte * 100;
+                            ligne5.Text = "Parfait pour cette configuration en terme de hauteur de canal.";
+                            ligne6.Text = $"Ce produit nécessitera précisément {Math.Round(pourcentage, 1)} % d'un canal de {hauteurG.Text} mm."; 
+                            ligne7.Text = ""; // On efface potentiellement le contenu de ligne7
+                            ligne8.Text = ""; // On efface potentiellement le contenu de ligne8
+                        }
+                    }
+
+                    // Définition de la zone
+                    if (Zone(frequencePicking, (int)NBC, NbGoulotte))
+                    {
+                        ligne8.Text = "Ce produit peut aller à l'automate.";
+                    }
+                    else
+                    {
+                        ligne8.Text = "Ce produit doit aller au magasin. Il n'est pas compatible avec les exigences de l'automate.";
+                    }
+
                 }
                 else
                 // Si une ou plusieurs conversions ont échoué (l'utilisateur n'a pas entré de nombres valides),

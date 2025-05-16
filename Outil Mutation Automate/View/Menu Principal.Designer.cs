@@ -50,9 +50,16 @@ namespace Outil_Mutation_Automate
             ligne2 = new Label();
             ligne1 = new Label();
             label5 = new Label();
+            Conclusionlabel = new Label();
+            groupBox3 = new GroupBox();
+            ligne8 = new Label();
+            ligne7 = new Label();
+            ligne6 = new Label();
+            ligne5 = new Label();
             ((System.ComponentModel.ISupportInitialize)cerp).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
+            groupBox3.SuspendLayout();
             SuspendLayout();
             // 
             // HauteurProduitLabel
@@ -240,12 +247,71 @@ namespace Outil_Mutation_Automate
             label5.TabIndex = 15;
             label5.Text = "Résultats : ";
             // 
+            // Conclusionlabel
+            // 
+            Conclusionlabel.AutoSize = true;
+            Conclusionlabel.Location = new Point(45, 701);
+            Conclusionlabel.Name = "Conclusionlabel";
+            Conclusionlabel.Size = new Size(121, 25);
+            Conclusionlabel.TabIndex = 17;
+            Conclusionlabel.Text = "Conclusions : ";
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(ligne8);
+            groupBox3.Controls.Add(ligne7);
+            groupBox3.Controls.Add(ligne6);
+            groupBox3.Controls.Add(ligne5);
+            groupBox3.Location = new Point(45, 718);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(789, 181);
+            groupBox3.TabIndex = 16;
+            groupBox3.TabStop = false;
+            // 
+            // ligne8
+            // 
+            ligne8.AutoSize = true;
+            ligne8.ForeColor = Color.Black;
+            ligne8.Location = new Point(14, 134);
+            ligne8.Name = "ligne8";
+            ligne8.Size = new Size(0, 25);
+            ligne8.TabIndex = 3;
+            // 
+            // ligne7
+            // 
+            ligne7.AutoSize = true;
+            ligne7.ForeColor = Color.Black;
+            ligne7.Location = new Point(14, 100);
+            ligne7.Name = "ligne7";
+            ligne7.Size = new Size(0, 25);
+            ligne7.TabIndex = 2;
+            // 
+            // ligne6
+            // 
+            ligne6.AutoSize = true;
+            ligne6.ForeColor = Color.Black;
+            ligne6.Location = new Point(14, 67);
+            ligne6.Name = "ligne6";
+            ligne6.Size = new Size(0, 25);
+            ligne6.TabIndex = 1;
+            // 
+            // ligne5
+            // 
+            ligne5.AutoSize = true;
+            ligne5.ForeColor = Color.Black;
+            ligne5.Location = new Point(14, 33);
+            ligne5.Name = "ligne5";
+            ligne5.Size = new Size(0, 25);
+            ligne5.TabIndex = 0;
+            // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(885, 730);
+            ClientSize = new Size(885, 949);
+            Controls.Add(Conclusionlabel);
+            Controls.Add(groupBox3);
             Controls.Add(label5);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
@@ -263,6 +329,8 @@ namespace Outil_Mutation_Automate
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -294,5 +362,11 @@ namespace Outil_Mutation_Automate
         private Label ligne2;
         private Label ligne3;
         private Label ligne4;
+        private Label Conclusionlabel;
+        private GroupBox groupBox3;
+        private Label ligne8;
+        private Label ligne7;
+        private Label ligne6;
+        private Label ligne5;
     }
 }
