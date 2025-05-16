@@ -306,6 +306,7 @@ namespace Outil_Mutation_Automate
             // 
             // MenuPrincipal
             // 
+            AcceptButton = BtnCalculer;
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
