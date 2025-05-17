@@ -31,7 +31,7 @@ namespace Outil_Mutation_Automate
                     double.TryParse(moyenneVentesTexte, out double moyenneVentes) &&
                     double.TryParse(hauteurCanalDesireTexte, out double hauteurCanalDesire))
                 {
-                    // Logique de calcul en exemple à remplacer
+                    // Logique de calcul
                     double NBV = moyenneVentes / 25;
                     double HT = hauteurProduit * NBV;
                     double NbGoulotte = HT / hauteurCanalDesire;
@@ -43,7 +43,7 @@ namespace Outil_Mutation_Automate
                     ligne3.Text = "• Nombre de canaux de " + hauteurCanalDesire + "mm" + " nécessaire par jour : " + Math.Round(NbGoulotte, 1);
                     ligne4.Text = "• Nombre de boîte par commande (en moyenne) : " + Math.Round(NBC, 1);
 
-
+                    // Partie interprétation des résultats (conclusions)
                     if (NBC < 5 && NbGoulotte < 3.2 && Zone(frequencePicking, (int)NBC, NbGoulotte))
                     {
                         // Réponse et détermination du type de canaux (taille)
@@ -51,16 +51,16 @@ namespace Outil_Mutation_Automate
                         {
                             ligne5.Text = "Dans cette configuration, il serait souhaitable d'opter pour une hauteur de canal plus grande.";
                             ligne6.Text = $"Sinon, il faudrait mettre en place {Math.Round(NbGoulotte, 1)} canaux de {hauteurG.Text} mm.";
-                            ligne7.Text = ""; // On efface potentiellement le contenu de ligne7
-                            ligne8.Text = ""; // On efface potentiellement le contenu de ligne8
+                            ligne7.Text = ""; // On efface le contenu de ligne7
+                            ligne8.Text = ""; // On efface le contenu de ligne8
                         }
                         else
                         {
                             double pourcentage = NbGoulotte * 100;
                             ligne5.Text = "Parfait pour cette configuration en terme de hauteur de canal.";
                             ligne6.Text = $"Ce produit nécessitera précisément {Math.Round(pourcentage, 1)} % d'un canal de {hauteurG.Text} mm.";
-                            ligne7.Text = ""; // On efface potentiellement le contenu de ligne7
-                            ligne8.Text = ""; // On efface potentiellement le contenu de ligne8
+                            ligne7.Text = ""; // On efface le contenu de ligne7
+                            ligne8.Text = ""; // On efface le contenu de ligne8
                         }
                     }
 
