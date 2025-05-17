@@ -1,6 +1,7 @@
 using System.Drawing.Text;
 using System.Media;
 using System.Security.Cryptography.X509Certificates;
+using Outil_Mutation_Automate.View;
 
 namespace Outil_Mutation_Automate
 {
@@ -57,7 +58,7 @@ namespace Outil_Mutation_Automate
                         {
                             double pourcentage = NbGoulotte * 100;
                             ligne5.Text = "Parfait pour cette configuration en terme de hauteur de canal.";
-                            ligne6.Text = $"Ce produit nécessitera précisément {Math.Round(pourcentage, 1)} % d'un canal de {hauteurG.Text} mm."; 
+                            ligne6.Text = $"Ce produit nécessitera précisément {Math.Round(pourcentage, 1)} % d'un canal de {hauteurG.Text} mm.";
                             ligne7.Text = ""; // On efface potentiellement le contenu de ligne7
                             ligne8.Text = ""; // On efface potentiellement le contenu de ligne8
                         }
@@ -103,6 +104,13 @@ namespace Outil_Mutation_Automate
                 return false;
             }
 
+        }
+
+        // Fenêtre d'information du logiciel
+        private void infobutton_Click(object sender, EventArgs e)
+        {
+            Information frm = new Information();
+            frm.Show(); // Affiche la fenêtre non modalement
         }
     }
 }

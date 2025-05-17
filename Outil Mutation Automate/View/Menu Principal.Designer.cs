@@ -56,6 +56,8 @@ namespace Outil_Mutation_Automate
             ligne7 = new Label();
             ligne6 = new Label();
             ligne5 = new Label();
+            process1 = new System.Diagnostics.Process();
+            infobutton = new Button();
             ((System.ComponentModel.ISupportInitialize)cerp).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -150,9 +152,9 @@ namespace Outil_Mutation_Automate
             label3.AutoSize = true;
             label3.Location = new Point(45, 135);
             label3.Name = "label3";
-            label3.Size = new Size(135, 25);
+            label3.Size = new Size(201, 25);
             label3.TabIndex = 10;
-            label3.Text = "Créé par Calvin ";
+            label3.Text = "Créé par Calvin N'Diaye ";
             // 
             // label4
             // 
@@ -162,7 +164,7 @@ namespace Outil_Mutation_Automate
             label4.Name = "label4";
             label4.Size = new Size(49, 25);
             label4.TabIndex = 11;
-            label4.Text = "v.1.0";
+            label4.Text = "v.1.1";
             // 
             // cerp
             // 
@@ -304,6 +306,29 @@ namespace Outil_Mutation_Automate
             ligne5.Size = new Size(0, 25);
             ligne5.TabIndex = 0;
             // 
+            // process1
+            // 
+            process1.StartInfo.Domain = "";
+            process1.StartInfo.LoadUserProfile = false;
+            process1.StartInfo.Password = null;
+            process1.StartInfo.StandardErrorEncoding = null;
+            process1.StartInfo.StandardInputEncoding = null;
+            process1.StartInfo.StandardOutputEncoding = null;
+            process1.StartInfo.UseCredentialsForNetworkingOnly = false;
+            process1.StartInfo.UserName = "";
+            process1.SynchronizingObject = this;
+            // 
+            // infobutton
+            // 
+            infobutton.BackgroundImage = (Image)resources.GetObject("infobutton.BackgroundImage");
+            infobutton.BackgroundImageLayout = ImageLayout.Stretch;
+            infobutton.Location = new Point(3, 3);
+            infobutton.Name = "infobutton";
+            infobutton.Size = new Size(45, 44);
+            infobutton.TabIndex = 18;
+            infobutton.UseVisualStyleBackColor = true;
+            infobutton.Click += infobutton_Click;
+            // 
             // MenuPrincipal
             // 
             AcceptButton = BtnCalculer;
@@ -311,6 +336,7 @@ namespace Outil_Mutation_Automate
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(885, 949);
+            Controls.Add(infobutton);
             Controls.Add(Conclusionlabel);
             Controls.Add(groupBox3);
             Controls.Add(label5);
@@ -369,5 +395,7 @@ namespace Outil_Mutation_Automate
         private Label ligne7;
         private Label ligne6;
         private Label ligne5;
+        private System.Diagnostics.Process process1;
+        private Button infobutton;
     }
 }
