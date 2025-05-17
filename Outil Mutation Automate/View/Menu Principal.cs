@@ -109,8 +109,8 @@ namespace Outil_Mutation_Automate
         // Fenêtre d'information du logiciel
         private void infobutton_Click(object sender, EventArgs e)
         {
-            Information frm = new Information();
-            frm.Show(); // Affiche la fenêtre non modalement
+            Information frm = new Information(); // génère la fenêtre d'information
+            frm.Show(); // Affiche la fenêtre 
         }
     }
 }
