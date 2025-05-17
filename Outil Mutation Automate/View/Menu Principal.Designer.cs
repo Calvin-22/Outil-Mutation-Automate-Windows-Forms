@@ -347,6 +347,7 @@ namespace Outil_Mutation_Automate
             Controls.Add(label3);
             Controls.Add(bienvenue);
             Controls.Add(BtnCalculer);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MenuPrincipal";
             Text = "Outil Mutation Automate";
