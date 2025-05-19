@@ -41,7 +41,12 @@ namespace Outil_Mutation_Automate
                     ligne1.Text = "• Nombre de boîtes vendues (par jour) :  " + NBV.ToString();
                     ligne2.Text = "• Hauteur totale nécessaire (par jour) : " + HT.ToString() + "mm";
                     ligne3.Text = "• Nombre de canaux de " + hauteurCanalDesire + "mm" + " nécessaire par jour : " + Math.Round(NbGoulotte, 1);
-                    ligne4.Text = "• Nombre de boîte par commande (en moyenne) : " + Math.Round(NBC, 1);
+                    ligne4.Text = "• Nombre de boîtes par commande (en moyenne) : " + Math.Round(NBC, 1);
+
+                    ligne5.Text = ""; // On efface le contenu de ligne5
+                    ligne6.Text = ""; // On efface le contenu de ligne6
+                    ligne7.Text = ""; // On efface le contenu de ligne7
+                    ligne8.Text = ""; // On efface le contenu de ligne8
 
                     // Partie interprétation des résultats (conclusions)
                     if (NBC < 5 && NbGoulotte < 3.2 && Zone(frequencePicking, (int)NBC, NbGoulotte))
@@ -114,5 +119,4 @@ namespace Outil_Mutation_Automate
         }
     }
 }
-
 
