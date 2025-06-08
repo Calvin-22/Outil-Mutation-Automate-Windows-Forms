@@ -67,15 +67,17 @@ namespace Outil_Mutation_Automate
             // HauteurProduitLabel
             // 
             HauteurProduitLabel.AutoSize = true;
-            HauteurProduitLabel.Location = new Point(31, 25);
+            HauteurProduitLabel.Location = new Point(31, 24);
             HauteurProduitLabel.Name = "HauteurProduitLabel";
-            HauteurProduitLabel.Size = new Size(186, 25);
+            HauteurProduitLabel.Size = new Size(182, 24);
             HauteurProduitLabel.TabIndex = 0;
             HauteurProduitLabel.Text = "Hauteur produit (mm)";
             // 
             // hauteur
             // 
-            hauteur.Location = new Point(31, 63);
+            hauteur.Cursor = Cursors.IBeam;
+            hauteur.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            hauteur.Location = new Point(31, 60);
             hauteur.Name = "hauteur";
             hauteur.Size = new Size(274, 31);
             hauteur.TabIndex = 1;
@@ -83,17 +85,18 @@ namespace Outil_Mutation_Automate
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(31, 117);
+            label1.Location = new Point(31, 112);
             label1.Name = "label1";
-            label1.Size = new Size(260, 25);
+            label1.Size = new Size(254, 24);
             label1.TabIndex = 2;
             label1.Text = "Moyenne des ventes (par mois)";
             // 
             // BtnCalculer
             // 
-            BtnCalculer.Location = new Point(722, 670);
+            BtnCalculer.FlatAppearance.BorderColor = SystemColors.Control;
+            BtnCalculer.Location = new Point(722, 648);
             BtnCalculer.Name = "BtnCalculer";
-            BtnCalculer.Size = new Size(112, 43);
+            BtnCalculer.Size = new Size(112, 41);
             BtnCalculer.TabIndex = 3;
             BtnCalculer.Text = "Calculer";
             BtnCalculer.UseVisualStyleBackColor = true;
@@ -101,7 +104,8 @@ namespace Outil_Mutation_Automate
             // 
             // moyenne
             // 
-            moyenne.Location = new Point(31, 158);
+            moyenne.Cursor = Cursors.IBeam;
+            moyenne.Location = new Point(31, 152);
             moyenne.Name = "moyenne";
             moyenne.Size = new Size(274, 31);
             moyenne.TabIndex = 4;
@@ -109,15 +113,16 @@ namespace Outil_Mutation_Automate
             // FreqLabel
             // 
             FreqLabel.AutoSize = true;
-            FreqLabel.Location = new Point(484, 25);
+            FreqLabel.Location = new Point(484, 24);
             FreqLabel.Name = "FreqLabel";
-            FreqLabel.Size = new Size(274, 25);
+            FreqLabel.Size = new Size(268, 24);
             FreqLabel.TabIndex = 5;
             FreqLabel.Text = "Fréquence picking mensuel (M-1)";
             // 
             // frequence
             // 
-            frequence.Location = new Point(484, 63);
+            frequence.Cursor = Cursors.IBeam;
+            frequence.Location = new Point(484, 60);
             frequence.Name = "frequence";
             frequence.Size = new Size(274, 31);
             frequence.TabIndex = 6;
@@ -125,15 +130,16 @@ namespace Outil_Mutation_Automate
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(484, 117);
+            label2.Location = new Point(484, 112);
             label2.Name = "label2";
-            label2.Size = new Size(245, 25);
+            label2.Size = new Size(240, 24);
             label2.TabIndex = 7;
             label2.Text = "Hauteur du canal désiré (mm)";
             // 
             // hauteurG
             // 
-            hauteurG.Location = new Point(484, 158);
+            hauteurG.Cursor = Cursors.IBeam;
+            hauteurG.Location = new Point(484, 152);
             hauteurG.Name = "hauteurG";
             hauteurG.Size = new Size(274, 31);
             hauteurG.TabIndex = 8;
@@ -141,37 +147,40 @@ namespace Outil_Mutation_Automate
             // bienvenue
             // 
             bienvenue.AutoSize = true;
-            bienvenue.Location = new Point(45, 109);
+            bienvenue.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            bienvenue.Location = new Point(45, 105);
             bienvenue.Name = "bienvenue";
-            bienvenue.Size = new Size(412, 25);
+            bienvenue.Size = new Size(402, 24);
             bienvenue.TabIndex = 9;
             bienvenue.Text = "Bienvenue sur l'outil d'aide à la mutation automate";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(45, 135);
+            label3.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(45, 130);
             label3.Name = "label3";
-            label3.Size = new Size(201, 25);
+            label3.Size = new Size(200, 24);
             label3.TabIndex = 10;
             label3.Text = "Créé par Calvin N'Diaye ";
             // 
             // label4
             // 
             label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.ButtonShadow;
-            label4.Location = new Point(45, 165);
+            label4.Location = new Point(45, 158);
             label4.Name = "label4";
-            label4.Size = new Size(49, 25);
+            label4.Size = new Size(44, 24);
             label4.TabIndex = 11;
-            label4.Text = "v.1.2";
+            label4.Text = "v.1.5";
             // 
             // cerp
             // 
             cerp.Image = (Image)resources.GetObject("cerp.Image");
-            cerp.Location = new Point(614, 42);
+            cerp.Location = new Point(614, 40);
             cerp.Name = "cerp";
-            cerp.Size = new Size(220, 208);
+            cerp.Size = new Size(220, 200);
             cerp.SizeMode = PictureBoxSizeMode.Zoom;
             cerp.TabIndex = 12;
             cerp.TabStop = false;
@@ -186,21 +195,22 @@ namespace Outil_Mutation_Automate
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(hauteur);
             groupBox1.Controls.Add(HauteurProduitLabel);
-            groupBox1.Location = new Point(45, 453);
+            groupBox1.Location = new Point(45, 435);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(789, 199);
+            groupBox1.Size = new Size(789, 202);
             groupBox1.TabIndex = 13;
             groupBox1.TabStop = false;
             // 
             // groupBox2
             // 
+            groupBox2.BackColor = Color.Transparent;
             groupBox2.Controls.Add(ligne4);
             groupBox2.Controls.Add(ligne3);
             groupBox2.Controls.Add(ligne2);
             groupBox2.Controls.Add(ligne1);
-            groupBox2.Location = new Point(45, 275);
+            groupBox2.Location = new Point(45, 264);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(789, 181);
+            groupBox2.Size = new Size(789, 174);
             groupBox2.TabIndex = 14;
             groupBox2.TabStop = false;
             // 
@@ -208,53 +218,57 @@ namespace Outil_Mutation_Automate
             // 
             ligne4.AutoSize = true;
             ligne4.ForeColor = Color.Black;
-            ligne4.Location = new Point(19, 132);
+            ligne4.Location = new Point(19, 127);
             ligne4.Name = "ligne4";
-            ligne4.Size = new Size(0, 25);
+            ligne4.Size = new Size(0, 24);
             ligne4.TabIndex = 3;
             // 
             // ligne3
             // 
             ligne3.AutoSize = true;
             ligne3.ForeColor = Color.Black;
-            ligne3.Location = new Point(19, 98);
+            ligne3.Location = new Point(19, 94);
             ligne3.Name = "ligne3";
-            ligne3.Size = new Size(0, 25);
+            ligne3.Size = new Size(0, 24);
             ligne3.TabIndex = 2;
             // 
             // ligne2
             // 
             ligne2.AutoSize = true;
             ligne2.ForeColor = Color.Black;
-            ligne2.Location = new Point(19, 65);
+            ligne2.Location = new Point(19, 62);
             ligne2.Name = "ligne2";
-            ligne2.Size = new Size(0, 25);
+            ligne2.Size = new Size(0, 24);
             ligne2.TabIndex = 1;
             // 
             // ligne1
             // 
             ligne1.AutoSize = true;
             ligne1.ForeColor = Color.Black;
-            ligne1.Location = new Point(19, 31);
+            ligne1.Location = new Point(19, 30);
             ligne1.Name = "ligne1";
-            ligne1.Size = new Size(0, 25);
+            ligne1.Size = new Size(0, 24);
             ligne1.TabIndex = 0;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(45, 258);
+            label5.Font = new Font("Segoe UI Variable Small Semibol", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.Green;
+            label5.Location = new Point(45, 248);
             label5.Name = "label5";
-            label5.Size = new Size(96, 25);
+            label5.Size = new Size(101, 24);
             label5.TabIndex = 15;
             label5.Text = "Résultats : ";
             // 
             // Conclusionlabel
             // 
             Conclusionlabel.AutoSize = true;
-            Conclusionlabel.Location = new Point(45, 701);
+            Conclusionlabel.Font = new Font("Segoe UI Variable Small Semibol", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Conclusionlabel.ForeColor = Color.MidnightBlue;
+            Conclusionlabel.Location = new Point(45, 673);
             Conclusionlabel.Name = "Conclusionlabel";
-            Conclusionlabel.Size = new Size(121, 25);
+            Conclusionlabel.Size = new Size(126, 24);
             Conclusionlabel.TabIndex = 17;
             Conclusionlabel.Text = "Conclusions : ";
             // 
@@ -264,9 +278,9 @@ namespace Outil_Mutation_Automate
             groupBox3.Controls.Add(ligne7);
             groupBox3.Controls.Add(ligne6);
             groupBox3.Controls.Add(ligne5);
-            groupBox3.Location = new Point(45, 718);
+            groupBox3.Location = new Point(45, 689);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(789, 181);
+            groupBox3.Size = new Size(789, 174);
             groupBox3.TabIndex = 16;
             groupBox3.TabStop = false;
             // 
@@ -274,36 +288,36 @@ namespace Outil_Mutation_Automate
             // 
             ligne8.AutoSize = true;
             ligne8.ForeColor = Color.Black;
-            ligne8.Location = new Point(14, 134);
+            ligne8.Location = new Point(14, 129);
             ligne8.Name = "ligne8";
-            ligne8.Size = new Size(0, 25);
+            ligne8.Size = new Size(0, 24);
             ligne8.TabIndex = 3;
             // 
             // ligne7
             // 
             ligne7.AutoSize = true;
             ligne7.ForeColor = Color.Black;
-            ligne7.Location = new Point(14, 100);
+            ligne7.Location = new Point(14, 96);
             ligne7.Name = "ligne7";
-            ligne7.Size = new Size(0, 25);
+            ligne7.Size = new Size(0, 24);
             ligne7.TabIndex = 2;
             // 
             // ligne6
             // 
             ligne6.AutoSize = true;
             ligne6.ForeColor = Color.Black;
-            ligne6.Location = new Point(14, 67);
+            ligne6.Location = new Point(14, 64);
             ligne6.Name = "ligne6";
-            ligne6.Size = new Size(0, 25);
+            ligne6.Size = new Size(0, 24);
             ligne6.TabIndex = 1;
             // 
             // ligne5
             // 
             ligne5.AutoSize = true;
             ligne5.ForeColor = Color.Black;
-            ligne5.Location = new Point(14, 33);
+            ligne5.Location = new Point(14, 32);
             ligne5.Name = "ligne5";
-            ligne5.Size = new Size(0, 25);
+            ligne5.Size = new Size(0, 24);
             ligne5.TabIndex = 0;
             // 
             // process1
@@ -332,10 +346,10 @@ namespace Outil_Mutation_Automate
             // MenuPrincipal
             // 
             AcceptButton = BtnCalculer;
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(10F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(885, 949);
+            ClientSize = new Size(880, 911);
             Controls.Add(infobutton);
             Controls.Add(Conclusionlabel);
             Controls.Add(groupBox3);
@@ -347,6 +361,7 @@ namespace Outil_Mutation_Automate
             Controls.Add(label3);
             Controls.Add(bienvenue);
             Controls.Add(BtnCalculer);
+            Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MenuPrincipal";

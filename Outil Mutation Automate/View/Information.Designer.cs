@@ -49,6 +49,7 @@
             // ligne1
             // 
             resources.ApplyResources(ligne1, "ligne1");
+            ligne1.ForeColor = Color.Green;
             ligne1.Name = "ligne1";
             // 
             // ligne2
