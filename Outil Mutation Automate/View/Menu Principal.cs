@@ -86,6 +86,7 @@ namespace Outil_Mutation_Automate
                         // Si la fréquence de picking est supérieure à la moyenne des ventes, afficher un message d'erreur.
                         SystemSounds.Hand.Play();
                         MessageBox.Show("Erreur : La fréquence de picking ne peut pas être supérieure à la moyenne des ventes.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        
                         return;
                     }
 

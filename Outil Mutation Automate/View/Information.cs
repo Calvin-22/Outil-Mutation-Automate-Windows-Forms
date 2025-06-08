@@ -16,6 +16,5 @@ namespace Outil_Mutation_Automate.View
         {
             InitializeComponent();
         }
-
     }
 }
