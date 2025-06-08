@@ -295,7 +295,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Setup Outil Mutation Automate"
         "ProductCode" = "8:{B4F7F56C-7043-4AB9-8F17-12384BB2134D}"
-        "PackageCode" = "8:{6255BFA4-D932-4BBE-AA6F-1787B470318B}"
+        "PackageCode" = "8:{31BA587E-E38C-4523-B62D-50891F5A36DD}"
         "UpgradeCode" = "8:{BF535947-7F9C-44A8-93BC-2A09CF87C799}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"

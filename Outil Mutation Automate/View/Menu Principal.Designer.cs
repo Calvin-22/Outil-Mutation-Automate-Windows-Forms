@@ -103,7 +103,7 @@ namespace Outil_Mutation_Automate
             // 
             moyenne.Location = new Point(31, 158);
             moyenne.Name = "moyenne";
-            moyenne.Size = new Size(260, 31);
+            moyenne.Size = new Size(274, 31);
             moyenne.TabIndex = 4;
             // 
             // FreqLabel

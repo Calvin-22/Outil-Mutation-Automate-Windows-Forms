@@ -31,52 +31,62 @@ namespace Outil_Mutation_Automate
                     double.TryParse(moyenneVentesTexte, out double moyenneVentes) &&
                     double.TryParse(hauteurCanalDesireTexte, out double hauteurCanalDesire))
                 {
-                    // Logique de calcul
-                    double NBV = moyenneVentes / 25;
-                    double HT = hauteurProduit * NBV;
-                    double NbGoulotte = HT / hauteurCanalDesire;
-                    double NBC = moyenneVentes / frequencePicking;
-
-                    // Afficher le résultat sous forme de texte
-                    ligne1.Text = "• Nombre de boîtes vendues (par jour) :  " + NBV.ToString();
-                    ligne2.Text = "• Hauteur totale nécessaire (par jour) : " + HT.ToString() + "mm";
-                    ligne3.Text = "• Nombre de canaux de " + hauteurCanalDesire + "mm" + " nécessaire par jour : " + Math.Round(NbGoulotte, 1);
-                    ligne4.Text = "• Nombre de boîtes par commande (en moyenne) : " + Math.Round(NBC, 1);
-
-                    ligne5.Text = ""; // On efface le contenu de ligne5
-                    ligne6.Text = ""; // On efface le contenu de ligne6
-                    ligne7.Text = ""; // On efface le contenu de ligne7
-                    ligne8.Text = ""; // On efface le contenu de ligne8
-
-                    // Partie interprétation des résultats (conclusions)
-                    if (NBC < 5 && NbGoulotte < 3.2 && Zone(frequencePicking, (int)NBC, NbGoulotte))
+                    if (frequencePicking <= moyenneVentes)
                     {
-                        // Réponse et détermination du type de canaux (taille)
-                        if (NbGoulotte > 1)
+                        // Logique de calcul
+                        double NBV = moyenneVentes / 25;
+                        double HT = hauteurProduit * NBV;
+                        double NbGoulotte = HT / hauteurCanalDesire;
+                        double NBC = moyenneVentes / frequencePicking;
+
+                        // Afficher le résultat sous forme de texte
+                        ligne1.Text = "• Nombre de boîtes vendues (par jour) :  " + NBV.ToString();
+                        ligne2.Text = "• Hauteur totale nécessaire (par jour) : " + HT.ToString() + "mm";
+                        ligne3.Text = "• Nombre de canaux de " + hauteurCanalDesire + "mm" + " nécessaire par jour : " + Math.Round(NbGoulotte, 1);
+                        ligne4.Text = "• Nombre de boîtes par commande (en moyenne) : " + Math.Round(NBC, 1);
+
+                        ligne5.Text = ""; // On efface le contenu de ligne5
+                        ligne6.Text = ""; // On efface le contenu de ligne6
+                        ligne7.Text = ""; // On efface le contenu de ligne7
+                        ligne8.Text = ""; // On efface le contenu de ligne8
+
+                        // Partie interprétation des résultats (conclusions)
+                        if (NBC < 5 && NbGoulotte < 3.1 && Zone(frequencePicking, (int)NBC, NbGoulotte))
                         {
-                            ligne5.Text = "Dans cette configuration, il serait souhaitable d'opter pour une hauteur de canal plus grande.";
-                            ligne6.Text = $"Sinon, il faudrait mettre en place {Math.Round(NbGoulotte, 1)} canaux de {hauteurG.Text} mm.";
-                            ligne7.Text = ""; // On efface le contenu de ligne7
-                            ligne8.Text = ""; // On efface le contenu de ligne8
+                            // Réponse et détermination du type de canaux (taille)
+                            if (NbGoulotte > 1)
+                            {
+                                ligne5.Text = "Dans cette configuration, il serait souhaitable d'opter pour une hauteur de canal plus grande.";
+                                ligne6.Text = $"Sinon, il faudrait mettre en place {Math.Round(NbGoulotte, 1)} canaux de {hauteurG.Text} mm.";
+                                ligne7.Text = ""; // On efface le contenu de ligne7
+                                ligne8.Text = ""; // On efface le contenu de ligne8
+                            }
+                            else
+                            {
+                                double pourcentage = NbGoulotte * 100;
+                                ligne5.Text = "Parfait pour cette configuration en terme de hauteur de canal.";
+                                ligne6.Text = $"Ce produit nécessitera précisément {Math.Round(pourcentage, 1)} % d'un canal de {hauteurG.Text} mm.";
+                                ligne7.Text = ""; // On efface le contenu de ligne7
+                                ligne8.Text = ""; // On efface le contenu de ligne8
+                            }
+                        }
+
+                        // Définition de la zone
+                        if (Zone(frequencePicking, (int)NBC, NbGoulotte))
+                        {
+                            ligne8.Text = "Ce produit peut aller à l'automate.";
                         }
                         else
                         {
-                            double pourcentage = NbGoulotte * 100;
-                            ligne5.Text = "Parfait pour cette configuration en terme de hauteur de canal.";
-                            ligne6.Text = $"Ce produit nécessitera précisément {Math.Round(pourcentage, 1)} % d'un canal de {hauteurG.Text} mm.";
-                            ligne7.Text = ""; // On efface le contenu de ligne7
-                            ligne8.Text = ""; // On efface le contenu de ligne8
+                            ligne8.Text = "Ce produit doit aller au magasin. Il n'est pas compatible avec les exigences de l'automate.";
                         }
-                    }
-
-                    // Définition de la zone
-                    if (Zone(frequencePicking, (int)NBC, NbGoulotte))
-                    {
-                        ligne8.Text = "Ce produit peut aller à l'automate.";
                     }
                     else
                     {
-                        ligne8.Text = "Ce produit doit aller au magasin. Il n'est pas compatible avec les exigences de l'automate.";
+                        // Si la fréquence de picking est supérieure à la moyenne des ventes, afficher un message d'erreur.
+                        SystemSounds.Hand.Play();
+                        MessageBox.Show("Erreur : La fréquence de picking ne peut pas être supérieure à la moyenne des ventes.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
                     }
 
                 }
@@ -110,7 +120,6 @@ namespace Outil_Mutation_Automate
             }
 
         }
-
         // Fenêtre d'information du logiciel
         private void infobutton_Click(object sender, EventArgs e)
         {
