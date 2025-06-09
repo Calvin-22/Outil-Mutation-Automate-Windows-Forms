@@ -7,6 +7,12 @@ namespace Outil_Mutation_Automate
 {
     public partial class MenuPrincipal : Form
     {
+        private double _nbv; 
+        private double _nbc; // Nombre de boîtes par commande
+        private double _hauteurCanalDesire; // Hauteur du canal désirée
+        private double _NbGoulotte; // Nombre de canaux nécessaires
+        private string _zone; // Zone du produit
+
         public MenuPrincipal()
         {
             InitializeComponent();
@@ -29,21 +35,21 @@ namespace Outil_Mutation_Automate
                 if (double.TryParse(hauteurProduitTexte, out double hauteurProduit) &&
                     int.TryParse(frequencePickingTexte, out int frequencePicking) &&
                     double.TryParse(moyenneVentesTexte, out double moyenneVentes) &&
-                    double.TryParse(hauteurCanalDesireTexte, out double hauteurCanalDesire))
+                    double.TryParse(hauteurCanalDesireTexte, out double _hauteurCanalDesire))
                 {
                     if (frequencePicking <= moyenneVentes)
                     {
                         // Logique de calcul
-                        double NBV = moyenneVentes / 25;
-                        double HT = hauteurProduit * NBV;
-                        double NbGoulotte = HT / hauteurCanalDesire;
-                        double NBC = moyenneVentes / frequencePicking;
+                        double _NBV = moyenneVentes / 25;
+                        double HT = hauteurProduit * _NBV;
+                        double _NbGoulotte = HT / _hauteurCanalDesire;
+                        double _NBC = moyenneVentes / frequencePicking;
 
                         // Afficher le résultat sous forme de texte
-                        ligne1.Text = "• Nombre de boîtes vendues (par jour) :  " + NBV.ToString();
+                        ligne1.Text = "• Nombre de boîtes vendues (par jour) :  " + _NBV.ToString();
                         ligne2.Text = "• Hauteur totale nécessaire (par jour) : " + HT.ToString() + "mm";
-                        ligne3.Text = "• Nombre de canaux de " + hauteurCanalDesire + "mm" + " nécessaire par jour : " + Math.Round(NbGoulotte, 1);
-                        ligne4.Text = "• Nombre de boîtes par commande (en moyenne) : " + Math.Round(NBC, 1);
+                        ligne3.Text = "• Nombre de canaux de " + _hauteurCanalDesire + "mm" + " nécessaire par jour : " + Math.Round(_NbGoulotte, 1);
+                        ligne4.Text = "• Nombre de boîtes par commande (en moyenne) : " + Math.Round(_NBC, 1);
 
                         ligne5.Text = ""; // On efface le contenu de ligne5
                         ligne6.Text = ""; // On efface le contenu de ligne6
@@ -51,19 +57,19 @@ namespace Outil_Mutation_Automate
                         ligne8.Text = ""; // On efface le contenu de ligne8
 
                         // Partie interprétation des résultats (conclusions)
-                        if (NBC < 5 && NbGoulotte < 3.1 && Zone(frequencePicking, (int)NBC, NbGoulotte))
+                        if (_NBC < 5 && _NbGoulotte < 3.1 && Zone(frequencePicking, (int)_NBC, _NbGoulotte))
                         {
                             // Réponse et détermination du type de canaux (taille)
-                            if (NbGoulotte > 1)
+                            if (_NbGoulotte > 1)
                             {
                                 ligne5.Text = "Dans cette configuration, il serait souhaitable d'opter pour une hauteur de canal plus grande.";
-                                ligne6.Text = $"Sinon, il faudrait mettre en place {Math.Round(NbGoulotte, 1)} canaux de {hauteurG.Text} mm.";
+                                ligne6.Text = $"Sinon, il faudrait mettre en place {Math.Round(_NbGoulotte, 1)} canaux de {hauteurG.Text} mm.";
                                 ligne7.Text = ""; // On efface le contenu de ligne7
                                 ligne8.Text = ""; // On efface le contenu de ligne8
                             }
                             else
                             {
-                                double pourcentage = NbGoulotte * 100;
+                                double pourcentage = _NbGoulotte * 100;
                                 ligne5.Text = "Parfait pour cette configuration en terme de hauteur de canal.";
                                 ligne6.Text = $"Ce produit nécessitera précisément {Math.Round(pourcentage, 1)} % d'un canal de {hauteurG.Text} mm.";
                                 ligne7.Text = ""; // On efface le contenu de ligne7
@@ -72,13 +78,16 @@ namespace Outil_Mutation_Automate
                         }
 
                         // Définition de la zone
-                        if (Zone(frequencePicking, (int)NBC, NbGoulotte))
+                        if (Zone(frequencePicking, (int)_NBC, _NbGoulotte))
                         {
                             ligne8.Text = "Ce produit peut aller à l'automate.";
+                            _zone = "Automate"; // Zone définie comme "Automate"
+
                         }
                         else
                         {
                             ligne8.Text = "Ce produit doit aller au magasin. Il n'est pas compatible avec les exigences de l'automate.";
+                            _zone = "Magasin"; // Zone définie comme "Magasin"
                         }
                     }
                     else
@@ -86,7 +95,7 @@ namespace Outil_Mutation_Automate
                         // Si la fréquence de picking est supérieure à la moyenne des ventes, afficher un message d'erreur.
                         SystemSounds.Hand.Play();
                         MessageBox.Show("Erreur : La fréquence de picking ne peut pas être supérieure à la moyenne des ventes.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        
+
                         return;
                     }
 
@@ -125,6 +134,19 @@ namespace Outil_Mutation_Automate
         private void infobutton_Click(object sender, EventArgs e)
         {
             Information frm = new Information(); // génère la fenêtre d'information
+            frm.Show(); // Affiche la fenêtre 
+        }
+
+        // Fenêtre d'enregistrement du logiciel
+        private void enregistrement_Click(object sender, EventArgs e)
+        {
+            double nbcValue = _nbc;
+            double nbvValue = _nbv; // Récupération des valeurs de nbc et nbv
+            double hauteurCanalDesireValue = _hauteurCanalDesire;
+            double nombreCanauxNecessairesValue = _NbGoulotte;
+            string zoneValue = _zone; // Récupération de la zone
+
+            Enregistrement frm = new Enregistrement(nbcValue, nbvValue, hauteurCanalDesireValue, nombreCanauxNecessairesValue, zoneValue); // génère la fenêtre
             frm.Show(); // Affiche la fenêtre 
         }
     }

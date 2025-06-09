@@ -74,6 +74,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -295,7 +303,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Setup Outil Mutation Automate"
         "ProductCode" = "8:{B4F7F56C-7043-4AB9-8F17-12384BB2134D}"
-        "PackageCode" = "8:{31BA587E-E38C-4523-B62D-50891F5A36DD}"
+        "PackageCode" = "8:{9E50D9BB-86A5-4057-A0EF-71511B24285A}"
         "UpgradeCode" = "8:{BF535947-7F9C-44A8-93BC-2A09CF87C799}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"

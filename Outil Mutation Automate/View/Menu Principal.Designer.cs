@@ -58,6 +58,7 @@ namespace Outil_Mutation_Automate
             ligne5 = new Label();
             process1 = new System.Diagnostics.Process();
             infobutton = new Button();
+            btnEnregistrer = new Button();
             ((System.ComponentModel.ISupportInitialize)cerp).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -343,6 +344,17 @@ namespace Outil_Mutation_Automate
             infobutton.UseVisualStyleBackColor = true;
             infobutton.Click += infobutton_Click;
             // 
+            // btnEnregistrer
+            // 
+            btnEnregistrer.FlatAppearance.BorderColor = SystemColors.Control;
+            btnEnregistrer.Location = new Point(588, 648);
+            btnEnregistrer.Name = "btnEnregistrer";
+            btnEnregistrer.Size = new Size(112, 41);
+            btnEnregistrer.TabIndex = 19;
+            btnEnregistrer.Text = "Enregistrer";
+            btnEnregistrer.UseVisualStyleBackColor = true;
+            btnEnregistrer.Click += enregistrement_Click;
+            // 
             // MenuPrincipal
             // 
             AcceptButton = BtnCalculer;
@@ -350,6 +362,7 @@ namespace Outil_Mutation_Automate
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(880, 911);
+            Controls.Add(btnEnregistrer);
             Controls.Add(infobutton);
             Controls.Add(Conclusionlabel);
             Controls.Add(groupBox3);
@@ -413,5 +426,6 @@ namespace Outil_Mutation_Automate
         private Label ligne5;
         private System.Diagnostics.Process process1;
         private Button infobutton;
+        private Button btnEnregistrer;
     }
 }
