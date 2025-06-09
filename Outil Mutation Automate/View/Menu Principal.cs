@@ -141,8 +141,8 @@ namespace Outil_Mutation_Automate
         private void enregistrement_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(ligne1.Text) || string.IsNullOrEmpty(ligne2.Text) || string.IsNullOrEmpty(ligne3.Text) ||
-                string.IsNullOrEmpty(ligne4.Text) || string.IsNullOrEmpty(ligne5.Text) || string.IsNullOrEmpty(ligne6.Text) ||
-                string.IsNullOrEmpty(ligne7.Text) || string.IsNullOrEmpty(ligne8.Text))
+                string.IsNullOrEmpty(ligne4.Text) || string.IsNullOrEmpty(ligne5.Text))
+
             {
                 SystemSounds.Hand.Play();
                 MessageBox.Show("Erreur : Veuillez d'abord effectuer un calcul avant d'enregistrer.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);

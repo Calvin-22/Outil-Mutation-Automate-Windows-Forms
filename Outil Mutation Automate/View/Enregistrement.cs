@@ -73,7 +73,7 @@ namespace Outil_Mutation_Automate.View
 
         private void btnConfirmer_Click(object sender, EventArgs e)
         {
-            if (!txtCIP.Text.Equals("") && !txtDesignation.Text.Equals("")) 
+            if (!txtCIP.Text.Equals("") && !txtDesignation.Text.Equals(""))
             {
                 double cip = double.Parse(txtCIP.Text);
                 string designation = txtDesignation.Text;
@@ -96,6 +96,15 @@ namespace Outil_Mutation_Automate.View
             else
             {
                 MessageBox.Show("Tous les champs doivent être remplis.", "Information");
+            }
+        }
+
+        private void btnAnnuler_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Voulez-vous vraiment annuler ?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.Hide();
+                this.Close();
             }
         }
     }

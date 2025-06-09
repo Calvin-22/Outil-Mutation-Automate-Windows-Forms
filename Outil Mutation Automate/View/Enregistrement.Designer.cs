@@ -107,6 +107,7 @@
             btnAnnuler.TabIndex = 5;
             btnAnnuler.Text = "Annuler";
             btnAnnuler.UseVisualStyleBackColor = true;
+            btnAnnuler.Click += btnAnnuler_Click;
             // 
             // btnConfirmer
             // 
