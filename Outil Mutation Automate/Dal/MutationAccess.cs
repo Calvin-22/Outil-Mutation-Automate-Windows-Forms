@@ -70,8 +70,8 @@ namespace Outil_Mutation_Automate.Dal
             {
                 // Construit la requête SQL d'insertion.
                 // Les noms des colonnes dans la table 'mutation' sont supposés être les mêmes que les noms de propriétés.
-                string req = "INSERT INTO mutation (CIP, Désignation, Zone, NBC, NBV, HauteurCanalDesire, NombreCanauxNecessaires) ";
-                req += "VALUES (@CIP, @Désignation, @Zone, @NBC, @NBV, @HauteurCanalDesire, @NombreCanauxNecessaires);";
+                string req = "INSERT INTO mutation (CIP, Désignation, Zone, NBC, NBV, `Hauteur Canal`, `Nombre de Canal`) ";
+                req += "VALUES (@CIP, @Désignation, @Zone, @NBC, @NBV, @HauteurCanal, @NombreCanauxNecessaires);";
 
                 // Crée un dictionnaire de paramètres pour la requête SQL.
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
@@ -80,7 +80,7 @@ namespace Outil_Mutation_Automate.Dal
                 parameters.Add("@Zone", mutation.Zone);
                 parameters.Add("@NBC", mutation.NBC);
                 parameters.Add("@NBV", mutation.NBV);
-                parameters.Add("@HauteurCanalDesire", mutation.HauteurCanal);
+                parameters.Add("@HauteurCanal", mutation.HauteurCanal);
                 parameters.Add("@NombreCanauxNecessaires", mutation.NombreCanauxNecessaires);
 
                 try

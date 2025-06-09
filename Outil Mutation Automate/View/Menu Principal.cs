@@ -7,8 +7,8 @@ namespace Outil_Mutation_Automate
 {
     public partial class MenuPrincipal : Form
     {
-        private double _nbv; 
-        private double _nbc; // Nombre de boîtes par commande
+        private double _NBV; 
+        private double _NBC; // Nombre de boîtes par commande
         private double _hauteurCanalDesire; // Hauteur du canal désirée
         private double _NbGoulotte; // Nombre de canaux nécessaires
         private string _zone; // Zone du produit
@@ -35,15 +35,15 @@ namespace Outil_Mutation_Automate
                 if (double.TryParse(hauteurProduitTexte, out double hauteurProduit) &&
                     int.TryParse(frequencePickingTexte, out int frequencePicking) &&
                     double.TryParse(moyenneVentesTexte, out double moyenneVentes) &&
-                    double.TryParse(hauteurCanalDesireTexte, out double _hauteurCanalDesire))
+                    double.TryParse(hauteurCanalDesireTexte, out _hauteurCanalDesire))
                 {
                     if (frequencePicking <= moyenneVentes)
                     {
                         // Logique de calcul
-                        double _NBV = moyenneVentes / 25;
+                        _NBV = moyenneVentes / 25;
                         double HT = hauteurProduit * _NBV;
-                        double _NbGoulotte = HT / _hauteurCanalDesire;
-                        double _NBC = moyenneVentes / frequencePicking;
+                        _NbGoulotte = HT / _hauteurCanalDesire;
+                        _NBC = moyenneVentes / frequencePicking;
 
                         // Afficher le résultat sous forme de texte
                         ligne1.Text = "• Nombre de boîtes vendues (par jour) :  " + _NBV.ToString();
@@ -140,10 +140,10 @@ namespace Outil_Mutation_Automate
         // Fenêtre d'enregistrement du logiciel
         private void enregistrement_Click(object sender, EventArgs e)
         {
-            double nbcValue = _nbc;
-            double nbvValue = _nbv; // Récupération des valeurs de nbc et nbv
+            double nbcValue = _NBC;
+            double nbvValue = _NBV; // Récupération des valeurs de nbc et nbv
             double hauteurCanalDesireValue = _hauteurCanalDesire;
-            double nombreCanauxNecessairesValue = _NbGoulotte;
+            double nombreCanauxNecessairesValue = Math.Round(_NbGoulotte,1);
             string zoneValue = _zone; // Récupération de la zone
 
             Enregistrement frm = new Enregistrement(nbcValue, nbvValue, hauteurCanalDesireValue, nombreCanauxNecessairesValue, zoneValue); // génère la fenêtre
