@@ -172,9 +172,9 @@ namespace Outil_Mutation_Automate
             label4.ForeColor = SystemColors.ButtonShadow;
             label4.Location = new Point(45, 158);
             label4.Name = "label4";
-            label4.Size = new Size(44, 24);
+            label4.Size = new Size(47, 24);
             label4.TabIndex = 11;
-            label4.Text = "v.1.5";
+            label4.Text = "v.2.0";
             // 
             // cerp
             // 
