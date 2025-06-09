@@ -89,6 +89,9 @@ namespace Outil_Mutation_Automate.View
                 controller.addMutation(mutation);
 
                 RemplirListeMutation();
+                MessageBox.Show("Mutation enregistrée avec succès !", "Information");
+                txtCIP.Clear(); // Nettoyage des champs de saisie
+                txtDesignation.Clear(); // Nettoyage des champs de saisie
             }
             else
             {
