@@ -105,6 +105,27 @@ namespace Outil_Mutation_Automate.Dal
             }
         }
 
+        /// <summary>
+        /// Demande de suppression d'une absence
+        /// </summary>
+        /// <param name="mutation">objet personnel à supprimer</param>
+        public void delMutation(mutation mutation)
+        {
+            if (access.Manager != null)
+            {
+                string req = "delete from mutation where Désignation = @Désignation;";
+                Dictionary<string, object> parameters = new Dictionary<string, object>();
+                parameters.Add("@Désignation", mutation.Désignation);
+                try
+                {
+                    access.Manager.ReqUpdate(req, parameters);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
+        }
 
 
     }

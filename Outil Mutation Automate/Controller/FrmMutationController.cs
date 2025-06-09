@@ -41,5 +41,14 @@ namespace Outil_Mutation_Automate.Controller
         {
             access.addMutation(mutation); 
         }
+
+        /// <summary>
+        /// Demande de suppression d'une ligne mutation
+        /// </summary>
+        /// <param name="absence">objet absence à supprimer</param>
+        public void delMutation(mutation mutation)
+        {
+            access.delMutation(mutation);
+        }
     }
 }

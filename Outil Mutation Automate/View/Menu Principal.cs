@@ -141,7 +141,7 @@ namespace Outil_Mutation_Automate
         private void enregistrement_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(ligne1.Text) || string.IsNullOrEmpty(ligne2.Text) || string.IsNullOrEmpty(ligne3.Text) ||
-                string.IsNullOrEmpty(ligne4.Text) || string.IsNullOrEmpty(ligne5.Text))
+                string.IsNullOrEmpty(ligne4.Text))
 
             {
                 SystemSounds.Hand.Play();

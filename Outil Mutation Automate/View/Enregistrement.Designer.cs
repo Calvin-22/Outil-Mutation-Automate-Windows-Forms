@@ -41,7 +41,6 @@
             label2 = new Label();
             label1 = new Label();
             cerp = new PictureBox();
-            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvMutation).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)cerp).BeginInit();
@@ -74,6 +73,7 @@
             btnSupprimer.TabIndex = 2;
             btnSupprimer.Text = "Supprimer";
             btnSupprimer.UseVisualStyleBackColor = true;
+            btnSupprimer.Click += btnSupprimer_Click;
             // 
             // Groupbox
             // 
@@ -161,23 +161,12 @@
             cerp.TabIndex = 13;
             cerp.TabStop = false;
             // 
-            // button1
-            // 
-            button1.Location = new Point(895, 317);
-            button1.Name = "button1";
-            button1.Size = new Size(166, 39);
-            button1.TabIndex = 14;
-            button1.Text = "Menu Principal";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
             // Enregistrement
             // 
             AutoScaleDimensions = new SizeF(10F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1150, 588);
-            Controls.Add(button1);
             Controls.Add(cerp);
             Controls.Add(groupBox1);
             Controls.Add(btnSupprimer);
@@ -210,6 +199,5 @@
         private Label label1;
         private PictureBox cerp;
         private Button btnMenuPrincipal;
-        private Button button1;
     }
 }

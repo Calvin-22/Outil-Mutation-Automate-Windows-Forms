@@ -107,5 +107,22 @@ namespace Outil_Mutation_Automate.View
                 this.Close();
             }
         }
+
+        private void btnSupprimer_Click(object sender, EventArgs e)
+        {
+            if (dgvMutation.SelectedRows.Count > 0)
+            {
+                mutation mutation = (mutation)bdgmutation.List[bdgmutation.Position];
+                if (MessageBox.Show("Voulez-vous vraiment supprimer " + mutation.Désignation + " " + "?", "Confirmation de suppression", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    controller.delMutation(mutation);
+                    RemplirListeMutation();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
+            }
+        }
     }
 }
