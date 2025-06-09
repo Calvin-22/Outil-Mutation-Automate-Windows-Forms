@@ -51,15 +51,15 @@
             // 
             dgvMutation.BackgroundColor = SystemColors.ButtonHighlight;
             dgvMutation.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMutation.Location = new Point(58, 55);
+            dgvMutation.Location = new Point(54, 55);
             dgvMutation.Name = "dgvMutation";
             dgvMutation.RowHeadersWidth = 62;
-            dgvMutation.Size = new Size(713, 209);
+            dgvMutation.Size = new Size(793, 239);
             dgvMutation.TabIndex = 0;
             // 
             // btnModifier
             // 
-            btnModifier.Location = new Point(58, 306);
+            btnModifier.Location = new Point(58, 317);
             btnModifier.Name = "btnModifier";
             btnModifier.Size = new Size(112, 39);
             btnModifier.TabIndex = 1;
@@ -68,7 +68,7 @@
             // 
             // btnSupprimer
             // 
-            btnSupprimer.Location = new Point(187, 306);
+            btnSupprimer.Location = new Point(187, 317);
             btnSupprimer.Name = "btnSupprimer";
             btnSupprimer.Size = new Size(112, 39);
             btnSupprimer.TabIndex = 2;
@@ -79,7 +79,7 @@
             // 
             Groupbox.Location = new Point(48, 26);
             Groupbox.Name = "Groupbox";
-            Groupbox.Size = new Size(743, 257);
+            Groupbox.Size = new Size(805, 274);
             Groupbox.TabIndex = 3;
             Groupbox.TabStop = false;
             Groupbox.Text = "Lignes Enregistrées";
@@ -162,7 +162,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(898, 306);
+            button1.Location = new Point(895, 317);
             button1.Name = "button1";
             button1.Size = new Size(166, 39);
             button1.TabIndex = 14;

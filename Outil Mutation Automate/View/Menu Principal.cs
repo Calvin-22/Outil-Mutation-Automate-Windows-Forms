@@ -140,14 +140,27 @@ namespace Outil_Mutation_Automate
         // Fenêtre d'enregistrement du logiciel
         private void enregistrement_Click(object sender, EventArgs e)
         {
-            double nbcValue = _NBC;
-            double nbvValue = _NBV; // Récupération des valeurs de nbc et nbv
-            double hauteurCanalDesireValue = _hauteurCanalDesire;
-            double nombreCanauxNecessairesValue = Math.Round(_NbGoulotte,1);
-            string zoneValue = _zone; // Récupération de la zone
+            if (string.IsNullOrEmpty(ligne1.Text) || string.IsNullOrEmpty(ligne2.Text) || string.IsNullOrEmpty(ligne3.Text) ||
+                string.IsNullOrEmpty(ligne4.Text) || string.IsNullOrEmpty(ligne5.Text) || string.IsNullOrEmpty(ligne6.Text) ||
+                string.IsNullOrEmpty(ligne7.Text) || string.IsNullOrEmpty(ligne8.Text))
+            {
+                SystemSounds.Hand.Play();
+                MessageBox.Show("Erreur : Veuillez d'abord effectuer un calcul avant d'enregistrer.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                double nbcValue = _NBC;
+                double nbvValue = _NBV; // Récupération des valeurs de nbc et nbv
+                double hauteurCanalDesireValue = _hauteurCanalDesire;
+                double nombreCanauxNecessairesValue = Math.Round(_NbGoulotte, 1);
+                string zoneValue = _zone; // Récupération de la zone
 
-            Enregistrement frm = new Enregistrement(nbcValue, nbvValue, hauteurCanalDesireValue, nombreCanauxNecessairesValue, zoneValue); // génère la fenêtre
-            frm.Show(); // Affiche la fenêtre 
+                Enregistrement frm = new Enregistrement(nbcValue, nbvValue, hauteurCanalDesireValue, nombreCanauxNecessairesValue, zoneValue); // génère la fenêtre
+                frm.Show(); // Affiche la fenêtre 
+
+            }
+                
         }
     }
 }
