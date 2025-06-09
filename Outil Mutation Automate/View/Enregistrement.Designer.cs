@@ -28,18 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Enregistrement));
             dgvMutation = new DataGridView();
-            btnModifier = new Button();
             btnSupprimer = new Button();
             Groupbox = new GroupBox();
             groupBox1 = new GroupBox();
-            btnAnnuler = new Button();
+            label4 = new Label();
+            label3 = new Label();
             btnConfirmer = new Button();
             txtDesignation = new TextBox();
             txtCIP = new TextBox();
             label2 = new Label();
             label1 = new Label();
+            btnAnnuler = new Button();
             cerp = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvMutation).BeginInit();
             groupBox1.SuspendLayout();
@@ -48,26 +51,41 @@
             // 
             // dgvMutation
             // 
+            dgvMutation.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvMutation.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvMutation.BackgroundColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.Green;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.Padding = new Padding(1);
+            dataGridViewCellStyle1.SelectionBackColor = Color.Green;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvMutation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvMutation.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new Padding(1);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvMutation.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvMutation.EnableHeadersVisualStyles = false;
             dgvMutation.Location = new Point(54, 55);
+            dgvMutation.MultiSelect = false;
             dgvMutation.Name = "dgvMutation";
+            dgvMutation.RowHeadersVisible = false;
             dgvMutation.RowHeadersWidth = 62;
+            dgvMutation.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvMutation.Size = new Size(793, 239);
             dgvMutation.TabIndex = 0;
             // 
-            // btnModifier
-            // 
-            btnModifier.Location = new Point(58, 317);
-            btnModifier.Name = "btnModifier";
-            btnModifier.Size = new Size(112, 39);
-            btnModifier.TabIndex = 1;
-            btnModifier.Text = "Modifier";
-            btnModifier.UseVisualStyleBackColor = true;
-            // 
             // btnSupprimer
             // 
-            btnSupprimer.Location = new Point(187, 317);
+            btnSupprimer.Location = new Point(69, 317);
             btnSupprimer.Name = "btnSupprimer";
             btnSupprimer.Size = new Size(112, 39);
             btnSupprimer.TabIndex = 2;
@@ -86,7 +104,8 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(btnAnnuler);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(btnConfirmer);
             groupBox1.Controls.Add(txtDesignation);
             groupBox1.Controls.Add(txtCIP);
@@ -99,23 +118,33 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Enregistrer une ligne";
             // 
-            // btnAnnuler
+            // label4
             // 
-            btnAnnuler.Location = new Point(139, 140);
-            btnAnnuler.Name = "btnAnnuler";
-            btnAnnuler.Size = new Size(112, 39);
-            btnAnnuler.TabIndex = 5;
-            btnAnnuler.Text = "Annuler";
-            btnAnnuler.UseVisualStyleBackColor = true;
-            btnAnnuler.Click += btnAnnuler_Click;
+            label4.AutoSize = true;
+            label4.ForeColor = SystemColors.ControlDarkDark;
+            label4.Location = new Point(637, 93);
+            label4.Name = "label4";
+            label4.Size = new Size(345, 24);
+            label4.TabIndex = 6;
+            label4.Text = "*NBV : Nombre de boîte vendues par mois.";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.ForeColor = SystemColors.ControlDarkDark;
+            label3.Location = new Point(636, 69);
+            label3.Name = "label3";
+            label3.Size = new Size(328, 24);
+            label3.TabIndex = 5;
+            label3.Text = "*NBC : Nombre de boîte par commande.";
             // 
             // btnConfirmer
             // 
-            btnConfirmer.Location = new Point(10, 140);
+            btnConfirmer.Location = new Point(21, 138);
             btnConfirmer.Name = "btnConfirmer";
             btnConfirmer.Size = new Size(112, 39);
             btnConfirmer.TabIndex = 4;
-            btnConfirmer.Text = "Confirmer";
+            btnConfirmer.Text = "Ajouter";
             btnConfirmer.UseVisualStyleBackColor = true;
             btnConfirmer.Click += btnConfirmer_Click;
             // 
@@ -151,6 +180,16 @@
             label1.TabIndex = 0;
             label1.Text = "CIP : ";
             // 
+            // btnAnnuler
+            // 
+            btnAnnuler.Location = new Point(902, 317);
+            btnAnnuler.Name = "btnAnnuler";
+            btnAnnuler.Size = new Size(159, 39);
+            btnAnnuler.TabIndex = 5;
+            btnAnnuler.Text = "Menu Principal";
+            btnAnnuler.UseVisualStyleBackColor = true;
+            btnAnnuler.Click += btnAnnuler_Click;
+            // 
             // cerp
             // 
             cerp.Image = (Image)resources.GetObject("cerp.Image");
@@ -167,10 +206,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1150, 588);
+            Controls.Add(btnAnnuler);
             Controls.Add(cerp);
             Controls.Add(groupBox1);
             Controls.Add(btnSupprimer);
-            Controls.Add(btnModifier);
             Controls.Add(dgvMutation);
             Controls.Add(Groupbox);
             Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -187,7 +226,6 @@
         #endregion
 
         private DataGridView dgvMutation;
-        private Button btnModifier;
         private Button btnSupprimer;
         private GroupBox Groupbox;
         private GroupBox groupBox1;
@@ -199,5 +237,7 @@
         private Label label1;
         private PictureBox cerp;
         private Button btnMenuPrincipal;
+        private Label label4;
+        private Label label3;
     }
 }

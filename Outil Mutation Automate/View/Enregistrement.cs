@@ -124,5 +124,6 @@ namespace Outil_Mutation_Automate.View
                 MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
             }
         }
+
     }
 }

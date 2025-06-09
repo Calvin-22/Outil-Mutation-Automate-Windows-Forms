@@ -16,8 +16,8 @@ namespace Outil_Mutation_Automate.Model
         public string Zone { get; set; } 
         public double NBC { get; set; }
         public double NBV { get; set; }
-        public double HauteurCanal { get; set; }
-        public double NombreCanauxNecessaires { get; set; }
+        public double Hauteur_Canal { get; set; }
+        public double Nombre_Canaux_Nécessaires { get; set; }
 
         /// <summary>
         /// Valorise les propriétés
@@ -35,8 +35,8 @@ namespace Outil_Mutation_Automate.Model
             Zone = zone;
             NBC = nombreBoitesParCommande;
             NBV = nombreBoitesVendues;
-            HauteurCanal = hauteurCanalDesire;
-            NombreCanauxNecessaires = nombreCanauxNecessaires;
+            Hauteur_Canal = hauteurCanalDesire;
+            Nombre_Canaux_Nécessaires = nombreCanauxNecessaires;
         }
     }
 }

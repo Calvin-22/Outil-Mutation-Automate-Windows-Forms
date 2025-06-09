@@ -150,9 +150,9 @@ namespace Outil_Mutation_Automate
             }
             else
             {
-                double nbcValue = _NBC;
-                double nbvValue = _NBV; // Récupération des valeurs de nbc et nbv
-                double hauteurCanalDesireValue = _hauteurCanalDesire;
+                double nbcValue = Math.Round(_NBC,1);
+                double nbvValue = Math.Round(_NBV,1); // Récupération des valeurs de nbc et nbv
+                double hauteurCanalDesireValue = Math.Round(_hauteurCanalDesire,1);
                 double nombreCanauxNecessairesValue = Math.Round(_NbGoulotte, 1);
                 string zoneValue = _zone; // Récupération de la zone
 
