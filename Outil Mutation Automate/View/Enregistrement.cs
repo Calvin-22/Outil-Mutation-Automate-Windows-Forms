@@ -75,23 +75,33 @@ namespace Outil_Mutation_Automate.View
         {
             if (!txtCIP.Text.Equals("") && !txtDesignation.Text.Equals(""))
             {
-                double cip = double.Parse(txtCIP.Text);
+
                 string designation = txtDesignation.Text;
 
-                double nombreBoitesParCommande = _nombreBoitesParCommandeFromMenuPrincipal;
-                double nombreBoitesVendues = _nombreBoitesParVenduesFromMenuPrincipal;
-                double hauteurCanalDesire = _hauteurCanalDesireFromMenuPrincipal;
-                double nombreCanauxNecessaires = _nombreCanauxNecessairesFromMenuPrincipal;
-                string zone = _zoneFromMenuPrincipal;
+                // Tenter de convertir le texte récupéré en nombres (double pour les nombres décimaux, int pour les entiers).
+                // 'out double hauteurProduit' signifie que si la conversion réussit, la valeur sera stockée dans la variable 'hauteurProduit'.
+                if (double.TryParse(txtCIP.Text, out double cip))
+                    {
+                    double nombreBoitesParCommande = _nombreBoitesParCommandeFromMenuPrincipal;
+                    double nombreBoitesVendues = _nombreBoitesParVenduesFromMenuPrincipal;
+                    double hauteurCanalDesire = _hauteurCanalDesireFromMenuPrincipal;
+                    double nombreCanauxNecessaires = _nombreCanauxNecessairesFromMenuPrincipal;
+                    string zone = _zoneFromMenuPrincipal;
 
 
-                mutation mutation = new mutation(cip, designation, zone, nombreBoitesParCommande, nombreBoitesVendues, hauteurCanalDesire, nombreCanauxNecessaires);
-                controller.addMutation(mutation);
+                    mutation mutation = new mutation(cip, designation, zone, nombreBoitesParCommande, nombreBoitesVendues, hauteurCanalDesire, nombreCanauxNecessaires);
+                    controller.addMutation(mutation);
 
-                RemplirListeMutation();
-                MessageBox.Show("Mutation enregistrée avec succès !", "Information");
-                txtCIP.Clear(); // Nettoyage des champs de saisie
-                txtDesignation.Clear(); // Nettoyage des champs de saisie
+                    RemplirListeMutation();
+                    MessageBox.Show("Mutation enregistrée avec succès !", "Information");
+                    txtCIP.Clear(); // Nettoyage des champs de saisie
+                    txtDesignation.Clear(); // Nettoyage des champs de saisie
+                }
+                else
+                {
+                    MessageBox.Show("Veuillez entrer un CIP valide.", "Information");
+                }
+                
             }
             else
             {
