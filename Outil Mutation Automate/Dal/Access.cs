@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Outil_Mutation_Automate.Bdd_Manager;
 using MySql.Data.MySqlClient;
+using System.Media;
 
 namespace Outil_Mutation_Automate.Dal
 {
@@ -38,7 +39,9 @@ namespace Outil_Mutation_Automate.Dal
             }
             catch (Exception)
             {
-                Environment.Exit(0);
+                SystemSounds.Hand.Play();
+                MessageBox.Show("Erreur : Connexion impossible à la base de donnée.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
