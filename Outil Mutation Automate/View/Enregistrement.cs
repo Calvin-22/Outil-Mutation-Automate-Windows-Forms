@@ -31,6 +31,14 @@ namespace Outil_Mutation_Automate.View
         private double _nombreCanauxNecessairesFromMenuPrincipal;
         private string _zoneFromMenuPrincipal;
 
+        /// <summary>
+        /// Constructeur de la classe Enregistrement.
+        /// </summary>
+        /// <param name="nbcValue"></param>
+        /// <param name="nbvValue"></param>
+        /// <param name="hauteurCanalDesireValue"></param>
+        /// <param name="nombreCanauxNecessairesValue"></param>
+        /// <param name="zoneValue"></param>
         public Enregistrement(double nbcValue, double nbvValue, double hauteurCanalDesireValue, double nombreCanauxNecessairesValue, string zoneValue)
         {
             InitializeComponent();
@@ -45,7 +53,7 @@ namespace Outil_Mutation_Automate.View
 
         /// <summary>
         /// Initialisations :
-        /// Création du controleur et remplissage des listes
+        /// Création du contrôleur et remplissage des listes
         /// </summary>
         private void Init()
         {
@@ -56,7 +64,7 @@ namespace Outil_Mutation_Automate.View
 
         /////////////
         /// <summary>
-        /// Afficher les Personnels
+        /// Afficher les Mutations dans le DataGridView.
         /// </summary>
         private void RemplirListeMutation()
         {
@@ -71,6 +79,11 @@ namespace Outil_Mutation_Automate.View
 
         }
 
+        /// <summary>
+        /// Bouton de confirmation d'ajout afin de sauvegarder les données produits..
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConfirmer_Click(object sender, EventArgs e)
         {
             if (!txtCIP.Text.Equals("") && !txtDesignation.Text.Equals(""))
@@ -93,7 +106,7 @@ namespace Outil_Mutation_Automate.View
                     controller.addMutation(mutation);
 
                     RemplirListeMutation();
-                    MessageBox.Show("Mutation enregistrée avec succès !", "Information");
+                    MessageBox.Show("Données produits enregistrées avec succès !", "Information");
                     txtCIP.Clear(); // Nettoyage des champs de saisie
                     txtDesignation.Clear(); // Nettoyage des champs de saisie
                 }
@@ -109,6 +122,11 @@ namespace Outil_Mutation_Automate.View
             }
         }
 
+        /// <summary>
+        /// Bouton d'annulation pour fermer la fenêtre sans enregistrer les données.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAnnuler_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Voulez-vous vraiment annuler ?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -118,6 +136,11 @@ namespace Outil_Mutation_Automate.View
             }
         }
 
+        /// <summary>
+        /// Bouton de suppression d'une mutation sélectionnée dans le DataGridView.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
             if (dgvMutation.SelectedRows.Count > 0)

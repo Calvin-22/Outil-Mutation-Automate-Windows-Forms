@@ -5,20 +5,31 @@ using Outil_Mutation_Automate.View;
 
 namespace Outil_Mutation_Automate
 {
+    /// <summary>
+    /// Classe MenuPrincipal qui représente la fenêtre principale de l'application.
+    /// </summary>
     public partial class MenuPrincipal : Form
     {
-        private double _NBV; 
+        private double _NBV; // Nombre de boîtes vendues (par jour)
         private double _NBC; // Nombre de boîtes par commande
         private double _hauteurCanalDesire; // Hauteur du canal désirée
         private double _NbGoulotte; // Nombre de canaux nécessaires
         private string _zone; // Zone du produit
 
+        /// <summary>
+        /// Constructeur de la classe MenuPrincipal.
+        /// </summary>
         public MenuPrincipal()
         {
             InitializeComponent();
 
         }
 
+        /// <summary>
+        /// Événement déclenché lors du clic sur le bouton "Calculer".
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnCalculer_Click(object sender, EventArgs e)
         {
             if (!hauteur.Text.Equals("") && !frequence.Text.Equals("") && !moyenne.Text.Equals("") && !hauteurG.Text.Equals(""))
@@ -137,7 +148,11 @@ namespace Outil_Mutation_Automate
             frm.Show(); // Affiche la fenêtre 
         }
 
-        // Fenêtre d'enregistrement du logiciel
+        /// <summary>
+        /// Bouton d'enregistrement des résultats calculés dans une nouvelle fenêtre.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void enregistrement_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(ligne1.Text) || string.IsNullOrEmpty(ligne2.Text) || string.IsNullOrEmpty(ligne3.Text) ||
@@ -150,6 +165,7 @@ namespace Outil_Mutation_Automate
             }
             else
             {
+                // Si les lignes de résultats ne sont pas vides, on peut procéder à l'enregistrement.
                 double nbcValue = Math.Round(_NBC,1);
                 double nbvValue = Math.Round(_NBV,1); // Récupération des valeurs de nbc et nbv
                 double hauteurCanalDesireValue = Math.Round(_hauteurCanalDesire,1);

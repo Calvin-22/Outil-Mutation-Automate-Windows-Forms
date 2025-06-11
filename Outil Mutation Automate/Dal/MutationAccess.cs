@@ -63,6 +63,10 @@ namespace Outil_Mutation_Automate.Dal
             return lesMutations;
         }
 
+        /// <summary>
+        /// Ajoute une mutation à la base de données.
+        /// </summary>
+        /// <param name="mutation"></param>
         public void addMutation(mutation mutation)
         {
             // Vérifie si le gestionnaire de base de données est initialisé.

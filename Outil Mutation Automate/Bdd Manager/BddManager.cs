@@ -68,7 +68,7 @@ namespace Outil_Mutation_Automate.Bdd_Manager
         /// Execution d'une requête de type "select"
         /// </summary>
         /// <param name="stringQuery">requête select</param>
-        /// <param name="parameters">dictoinnaire contenant les parametres</param>
+        /// <param name="parameters">dictionnaire contenant les paramètres</param>
         /// <returns>liste de tableaux d'objets contenant les valeurs des colonnes</returns>
         public List<Object[]> ReqSelect(string stringQuery, Dictionary<string, object> parameters = null)
         {
