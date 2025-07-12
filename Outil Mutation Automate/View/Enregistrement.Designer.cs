@@ -203,6 +203,7 @@
             // 
             // Enregistrement
             // 
+            AcceptButton = btnConfirmer;
             AutoScaleDimensions = new SizeF(10F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;

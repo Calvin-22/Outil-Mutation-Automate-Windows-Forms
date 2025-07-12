@@ -42,6 +42,7 @@ namespace Outil_Mutation_Automate.View
         public Enregistrement(double nbcValue, double nbvValue, double hauteurCanalDesireValue, double nombreCanauxNecessairesValue, string zoneValue)
         {
             InitializeComponent();
+            this.MaximizeBox = false;
             _nombreBoitesParCommandeFromMenuPrincipal = nbcValue;
             _nombreBoitesParVenduesFromMenuPrincipal = nbvValue;
             _hauteurCanalDesireFromMenuPrincipal = hauteurCanalDesireValue;
@@ -72,11 +73,6 @@ namespace Outil_Mutation_Automate.View
             bdgmutation.DataSource = LesMutations;
             dgvMutation.DataSource = bdgmutation;
             dgvMutation.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
 
         /// <summary>
@@ -114,7 +110,6 @@ namespace Outil_Mutation_Automate.View
                 {
                     MessageBox.Show("Veuillez entrer un CIP valide.", "Information");
                 }
-                
             }
             else
             {
@@ -129,7 +124,7 @@ namespace Outil_Mutation_Automate.View
         /// <param name="e"></param>
         private void btnAnnuler_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Voulez-vous vraiment annuler ?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Voulez-vous vraiment annuler ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Hide();
                 this.Close();
@@ -146,7 +141,7 @@ namespace Outil_Mutation_Automate.View
             if (dgvMutation.SelectedRows.Count > 0)
             {
                 mutation mutation = (mutation)bdgmutation.List[bdgmutation.Position];
-                if (MessageBox.Show("Voulez-vous vraiment supprimer " + mutation.Désignation + " " + "?", "Confirmation de suppression", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Voulez-vous vraiment supprimer " + mutation.Désignation + " " + "?", "Confirmation de suppression", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     controller.delMutation(mutation);
                     RemplirListeMutation();

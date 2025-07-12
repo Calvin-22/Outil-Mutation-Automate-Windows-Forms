@@ -22,6 +22,7 @@ namespace Outil_Mutation_Automate
         public MenuPrincipal()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
 
         }
 
@@ -58,7 +59,7 @@ namespace Outil_Mutation_Automate
 
                         // Afficher le résultat sous forme de texte
                         ligne1.Text = "• Nombre de boîtes vendues (par jour) :  " + _NBV.ToString();
-                        ligne2.Text = "• Hauteur totale nécessaire (par jour) : " + Math.Round(HT,1) + "mm";
+                        ligne2.Text = "• Hauteur totale nécessaire (par jour) : " + Math.Round(HT, 1) + "mm";
                         ligne3.Text = "• Nombre de canaux de " + _hauteurCanalDesire + "mm" + " nécessaire par jour : " + Math.Round(_NbGoulotte, 1);
                         ligne4.Text = "• Nombre de boîtes par commande (en moyenne) : " + Math.Round(_NBC, 1);
 
@@ -166,9 +167,9 @@ namespace Outil_Mutation_Automate
             else
             {
                 // Si les lignes de résultats ne sont pas vides, on peut procéder à l'enregistrement.
-                double nbcValue = Math.Round(_NBC,1);
-                double nbvValue = Math.Round(_NBV,1); // Récupération des valeurs de nbc et nbv
-                double hauteurCanalDesireValue = Math.Round(_hauteurCanalDesire,1);
+                double nbcValue = Math.Round(_NBC, 1);
+                double nbvValue = Math.Round(_NBV, 1); // Récupération des valeurs de nbc et nbv
+                double hauteurCanalDesireValue = Math.Round(_hauteurCanalDesire, 1);
                 double nombreCanauxNecessairesValue = Math.Round(_NbGoulotte, 1);
                 string zoneValue = _zone; // Récupération de la zone
 
@@ -176,7 +177,58 @@ namespace Outil_Mutation_Automate
                 frm.Show(); // Affiche la fenêtre 
 
             }
-                
+
+        }
+        /// <summary>
+        /// Vider intégralement les saisies et calculs réalisés par l'algorithme 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnVider_Click(object sender, EventArgs e)
+        {
+            // Vérification que les saisies sont réalisées avant de tenter inutilement de supprimer
+            if (!string.IsNullOrEmpty(hauteur.Text) || !string.IsNullOrEmpty(frequence.Text) || !string.IsNullOrEmpty(moyenne.Text) ||
+                !string.IsNullOrEmpty(hauteurG.Text))
+            {
+                // Confirmation de suppression ou non
+                DialogResult result = MessageBox.Show(
+                    "Voulez-vous vraiment supprimer les saisies et résultats précédemment effectués ?", // Affichage du message
+                    "Confirmation de suppression", // Titre
+                    MessageBoxButtons.YesNo, // Afficher oui ou non (instauration du choix)
+                    MessageBoxIcon.Warning // Logo avertissement
+                    );
+
+                if (result == DialogResult.Yes)
+                {
+                    // Utilisateur a cliqué sur oui 
+                    // Suppression des éléments de saisies
+                    hauteur.Text = string.Empty;
+                    frequence.Text = string.Empty;
+                    moyenne.Text = string.Empty;
+                    hauteurG.Text = string.Empty;
+
+                    // Suppression des éléments de résultats et de conclusions
+                    ligne1.Text = string.Empty;
+                    ligne2.Text = string.Empty;
+                    ligne3.Text = string.Empty;
+                    ligne4.Text = string.Empty;
+                    ligne5.Text = string.Empty;
+                    ligne6.Text = string.Empty;
+                    ligne7.Text = string.Empty;
+                    ligne8.Text = string.Empty;
+                }
+                else
+                {
+                    // Ne rien faire
+                }
+            }
+            else
+            {
+                SystemSounds.Hand.Play();
+                MessageBox.Show("Erreur : Veuillez d'abord effectuer une saisie.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
         }
     }
 }

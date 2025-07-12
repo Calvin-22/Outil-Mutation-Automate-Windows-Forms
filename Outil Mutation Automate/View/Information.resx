@@ -857,7 +857,7 @@
     <value>2</value>
   </data>
   <data name="ligne2.Text" xml:space="preserve">
-    <value>Version : 2.0</value>
+    <value>Version : 2.2</value>
   </data>
   <data name="&gt;&gt;ligne2.Name" xml:space="preserve">
     <value>ligne2</value>
@@ -878,13 +878,13 @@
     <value>58, 125</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 24</value>
+    <value>138, 24</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Build : 20250609</value>
+    <value>Build : 20250712</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>

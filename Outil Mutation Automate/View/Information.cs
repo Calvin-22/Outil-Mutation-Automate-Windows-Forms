@@ -20,6 +20,7 @@ namespace Outil_Mutation_Automate.View
         public Information()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
         }
     }
 }

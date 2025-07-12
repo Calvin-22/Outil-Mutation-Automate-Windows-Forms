@@ -59,6 +59,7 @@ namespace Outil_Mutation_Automate
             process1 = new System.Diagnostics.Process();
             infobutton = new Button();
             btnEnregistrer = new Button();
+            BtnVider = new Button();
             ((System.ComponentModel.ISupportInitialize)cerp).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -174,7 +175,7 @@ namespace Outil_Mutation_Automate
             label4.Name = "label4";
             label4.Size = new Size(47, 24);
             label4.TabIndex = 11;
-            label4.Text = "v.2.0";
+            label4.Text = "v.2.2";
             // 
             // cerp
             // 
@@ -355,6 +356,18 @@ namespace Outil_Mutation_Automate
             btnEnregistrer.UseVisualStyleBackColor = true;
             btnEnregistrer.Click += enregistrement_Click;
             // 
+            // BtnVider
+            // 
+            BtnVider.BackgroundImage = (Image)resources.GetObject("BtnVider.BackgroundImage");
+            BtnVider.BackgroundImageLayout = ImageLayout.Stretch;
+            BtnVider.FlatAppearance.BorderColor = SystemColors.Control;
+            BtnVider.Location = new Point(537, 648);
+            BtnVider.Name = "BtnVider";
+            BtnVider.Size = new Size(42, 41);
+            BtnVider.TabIndex = 20;
+            BtnVider.UseVisualStyleBackColor = true;
+            BtnVider.Click += BtnVider_Click;
+            // 
             // MenuPrincipal
             // 
             AcceptButton = BtnCalculer;
@@ -362,6 +375,7 @@ namespace Outil_Mutation_Automate
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(880, 911);
+            Controls.Add(BtnVider);
             Controls.Add(btnEnregistrer);
             Controls.Add(infobutton);
             Controls.Add(Conclusionlabel);
@@ -427,5 +441,6 @@ namespace Outil_Mutation_Automate
         private System.Diagnostics.Process process1;
         private Button infobutton;
         private Button btnEnregistrer;
+        private Button BtnVider;
     }
 }
