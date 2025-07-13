@@ -33,7 +33,6 @@ namespace Outil_Mutation_Automate
             HauteurProduitLabel = new Label();
             hauteur = new TextBox();
             label1 = new Label();
-            BtnCalculer = new Button();
             moyenne = new TextBox();
             FreqLabel = new Label();
             frequence = new TextBox();
@@ -58,8 +57,11 @@ namespace Outil_Mutation_Automate
             ligne5 = new Label();
             process1 = new System.Diagnostics.Process();
             infobutton = new Button();
-            btnEnregistrer = new Button();
             BtnVider = new Button();
+            mySiticoneLicenseSettings1 = new SiticoneNetCoreUI.MySiticoneLicenseSettings();
+            SbtnEnregistrer = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
+            SbtnCalculer = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
+            ProgressBar = new SiticoneNetCoreUI.SiticoneHProgressBar();
             ((System.ComponentModel.ISupportInitialize)cerp).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -92,17 +94,6 @@ namespace Outil_Mutation_Automate
             label1.Size = new Size(254, 24);
             label1.TabIndex = 2;
             label1.Text = "Moyenne des ventes (par mois)";
-            // 
-            // BtnCalculer
-            // 
-            BtnCalculer.FlatAppearance.BorderColor = SystemColors.Control;
-            BtnCalculer.Location = new Point(722, 648);
-            BtnCalculer.Name = "BtnCalculer";
-            BtnCalculer.Size = new Size(112, 41);
-            BtnCalculer.TabIndex = 3;
-            BtnCalculer.Text = "Calculer";
-            BtnCalculer.UseVisualStyleBackColor = true;
-            BtnCalculer.Click += BtnCalculer_Click;
             // 
             // moyenne
             // 
@@ -149,10 +140,13 @@ namespace Outil_Mutation_Automate
             // bienvenue
             // 
             bienvenue.AutoSize = true;
-            bienvenue.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            bienvenue.BackColor = Color.Transparent;
+            bienvenue.FlatStyle = FlatStyle.Popup;
+            bienvenue.Font = new Font("Segoe UI Variable Display", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bienvenue.ForeColor = Color.LimeGreen;
             bienvenue.Location = new Point(45, 105);
             bienvenue.Name = "bienvenue";
-            bienvenue.Size = new Size(402, 24);
+            bienvenue.Size = new Size(535, 30);
             bienvenue.TabIndex = 9;
             bienvenue.Text = "Bienvenue sur l'outil d'aide à la mutation automate";
             // 
@@ -160,22 +154,23 @@ namespace Outil_Mutation_Automate
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(45, 130);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(45, 135);
             label3.Name = "label3";
-            label3.Size = new Size(200, 24);
-            label3.TabIndex = 10;
-            label3.Text = "Créé par Calvin N'Diaye ";
+            label3.Size = new Size(199, 24);
+            label3.TabIndex = 9;
+            label3.Text = "Créé par Calvin N'diaye ";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.ButtonShadow;
-            label4.Location = new Point(45, 158);
+            label4.Location = new Point(45, 159);
             label4.Name = "label4";
-            label4.Size = new Size(47, 24);
+            label4.Size = new Size(50, 24);
             label4.TabIndex = 11;
-            label4.Text = "v.2.2";
+            label4.Text = "v.2.8";
             // 
             // cerp
             // 
@@ -255,22 +250,22 @@ namespace Outil_Mutation_Automate
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Variable Small Semibol", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Font = new Font("Segoe UI Variable Small Semibol", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.Green;
             label5.Location = new Point(45, 248);
             label5.Name = "label5";
-            label5.Size = new Size(101, 24);
+            label5.Size = new Size(112, 27);
             label5.TabIndex = 15;
             label5.Text = "Résultats : ";
             // 
             // Conclusionlabel
             // 
             Conclusionlabel.AutoSize = true;
-            Conclusionlabel.Font = new Font("Segoe UI Variable Small Semibol", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Conclusionlabel.Font = new Font("Segoe UI Variable Small Semibol", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Conclusionlabel.ForeColor = Color.MidnightBlue;
             Conclusionlabel.Location = new Point(45, 673);
             Conclusionlabel.Name = "Conclusionlabel";
-            Conclusionlabel.Size = new Size(126, 24);
+            Conclusionlabel.Size = new Size(139, 27);
             Conclusionlabel.TabIndex = 17;
             Conclusionlabel.Text = "Conclusions : ";
             // 
@@ -345,38 +340,204 @@ namespace Outil_Mutation_Automate
             infobutton.UseVisualStyleBackColor = true;
             infobutton.Click += infobutton_Click;
             // 
-            // btnEnregistrer
-            // 
-            btnEnregistrer.FlatAppearance.BorderColor = SystemColors.Control;
-            btnEnregistrer.Location = new Point(588, 648);
-            btnEnregistrer.Name = "btnEnregistrer";
-            btnEnregistrer.Size = new Size(112, 41);
-            btnEnregistrer.TabIndex = 19;
-            btnEnregistrer.Text = "Enregistrer";
-            btnEnregistrer.UseVisualStyleBackColor = true;
-            btnEnregistrer.Click += enregistrement_Click;
-            // 
             // BtnVider
             // 
             BtnVider.BackgroundImage = (Image)resources.GetObject("BtnVider.BackgroundImage");
             BtnVider.BackgroundImageLayout = ImageLayout.Stretch;
             BtnVider.FlatAppearance.BorderColor = SystemColors.Control;
-            BtnVider.Location = new Point(537, 648);
+            BtnVider.Location = new Point(539, 648);
             BtnVider.Name = "BtnVider";
             BtnVider.Size = new Size(42, 41);
             BtnVider.TabIndex = 20;
             BtnVider.UseVisualStyleBackColor = true;
             BtnVider.Click += BtnVider_Click;
             // 
+            // SbtnEnregistrer
+            // 
+            SbtnEnregistrer.BackColor = Color.Transparent;
+            SbtnEnregistrer.BadgeBackColor = Color.Red;
+            SbtnEnregistrer.BadgeForeColor = Color.White;
+            SbtnEnregistrer.BadgeRadius = 10;
+            SbtnEnregistrer.BadgeRightMargin = 10;
+            SbtnEnregistrer.BadgeValue = 0;
+            SbtnEnregistrer.BorderColor = Color.FromArgb(150, 255, 255, 255);
+            SbtnEnregistrer.BorderColorEnd = Color.Gray;
+            SbtnEnregistrer.BorderColorStart = Color.White;
+            SbtnEnregistrer.BorderRadiusBottomLeft = 25;
+            SbtnEnregistrer.BorderRadiusBottomRight = 25;
+            SbtnEnregistrer.BorderRadiusTopLeft = 25;
+            SbtnEnregistrer.BorderRadiusTopRight = 25;
+            SbtnEnregistrer.BorderThickness = 1;
+            SbtnEnregistrer.ButtonColorEnd = Color.Green;
+            SbtnEnregistrer.ButtonColorStart = Color.LimeGreen;
+            SbtnEnregistrer.ButtonImage = null;
+            SbtnEnregistrer.CanBeep = false;
+            SbtnEnregistrer.CanShake = false;
+            SbtnEnregistrer.ClickSoundPath = null;
+            SbtnEnregistrer.DisabledOverlayOpacity = 0.5F;
+            SbtnEnregistrer.EnableBorderGradient = false;
+            SbtnEnregistrer.EnableClickSound = false;
+            SbtnEnregistrer.EnableFocusBorder = false;
+            SbtnEnregistrer.EnableHoverSound = false;
+            SbtnEnregistrer.EnablePressScale = false;
+            SbtnEnregistrer.EnableTextShadow = false;
+            SbtnEnregistrer.FocusBorderColor = Color.FromArgb(100, 150, 255);
+            SbtnEnregistrer.FocusBorderThickness = 2;
+            SbtnEnregistrer.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SbtnEnregistrer.ForeColor = Color.White;
+            SbtnEnregistrer.HoverColor = Color.FromArgb(20, 0, 0, 0);
+            SbtnEnregistrer.HoverSoundPath = null;
+            SbtnEnregistrer.HoverTransitionSpeed = 1F;
+            SbtnEnregistrer.ImageAlign = ContentAlignment.MiddleCenter;
+            SbtnEnregistrer.ImageLeftMargin = 5;
+            SbtnEnregistrer.ImageRightMargin = 8;
+            SbtnEnregistrer.ImageSize = 24;
+            SbtnEnregistrer.IsReadOnly = false;
+            SbtnEnregistrer.Location = new Point(587, 644);
+            SbtnEnregistrer.MakeRadial = false;
+            SbtnEnregistrer.Name = "SbtnEnregistrer";
+            SbtnEnregistrer.PressAnimationSpeed = 0.5F;
+            SbtnEnregistrer.PressDepth = 1;
+            SbtnEnregistrer.RippleColor = Color.FromArgb(60, 255, 255, 255);
+            SbtnEnregistrer.RippleExpandSpeedFactor = 0.05F;
+            SbtnEnregistrer.RippleFadeSpeedFactor = 0.03F;
+            SbtnEnregistrer.ShadowBlurFactor = 0.85F;
+            SbtnEnregistrer.ShadowColor = Color.FromArgb(70, 0, 0, 0);
+            SbtnEnregistrer.ShadowOffsetX = 3;
+            SbtnEnregistrer.ShadowOffsetY = 3;
+            SbtnEnregistrer.Size = new Size(123, 50);
+            SbtnEnregistrer.TabIndex = 21;
+            SbtnEnregistrer.Text = "Enregistrer";
+            SbtnEnregistrer.TextAlign = ContentAlignment.MiddleCenter;
+            SbtnEnregistrer.TextPaddingBottom = 0;
+            SbtnEnregistrer.TextPaddingLeft = 0;
+            SbtnEnregistrer.TextPaddingRight = 0;
+            SbtnEnregistrer.TextPaddingTop = 0;
+            SbtnEnregistrer.TextShadowColor = Color.FromArgb(100, 0, 0, 0);
+            SbtnEnregistrer.TextShadowOffsetX = 1;
+            SbtnEnregistrer.TextShadowOffsetY = 1;
+            SbtnEnregistrer.Click += SbtnEnregistrer_Click;
+            // 
+            // SbtnCalculer
+            // 
+            SbtnCalculer.BackColor = Color.Transparent;
+            SbtnCalculer.BadgeBackColor = Color.Red;
+            SbtnCalculer.BadgeForeColor = Color.White;
+            SbtnCalculer.BadgeRadius = 10;
+            SbtnCalculer.BadgeRightMargin = 10;
+            SbtnCalculer.BadgeValue = 0;
+            SbtnCalculer.BorderColor = Color.FromArgb(150, 255, 255, 255);
+            SbtnCalculer.BorderColorEnd = Color.Gray;
+            SbtnCalculer.BorderColorStart = Color.White;
+            SbtnCalculer.BorderRadiusBottomLeft = 25;
+            SbtnCalculer.BorderRadiusBottomRight = 25;
+            SbtnCalculer.BorderRadiusTopLeft = 25;
+            SbtnCalculer.BorderRadiusTopRight = 25;
+            SbtnCalculer.BorderThickness = 1;
+            SbtnCalculer.ButtonColorEnd = Color.MidnightBlue;
+            SbtnCalculer.ButtonColorStart = Color.CornflowerBlue;
+            SbtnCalculer.ButtonImage = null;
+            SbtnCalculer.CanBeep = false;
+            SbtnCalculer.CanShake = true;
+            SbtnCalculer.ClickSoundPath = null;
+            SbtnCalculer.DisabledOverlayOpacity = 0.5F;
+            SbtnCalculer.EnableBorderGradient = false;
+            SbtnCalculer.EnableClickSound = false;
+            SbtnCalculer.EnableFocusBorder = false;
+            SbtnCalculer.EnableHoverSound = false;
+            SbtnCalculer.EnablePressScale = false;
+            SbtnCalculer.EnableTextShadow = false;
+            SbtnCalculer.FocusBorderColor = Color.FromArgb(100, 150, 255);
+            SbtnCalculer.FocusBorderThickness = 2;
+            SbtnCalculer.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SbtnCalculer.ForeColor = Color.White;
+            SbtnCalculer.HoverColor = Color.FromArgb(20, 0, 0, 0);
+            SbtnCalculer.HoverSoundPath = null;
+            SbtnCalculer.HoverTransitionSpeed = 1F;
+            SbtnCalculer.ImageAlign = ContentAlignment.MiddleCenter;
+            SbtnCalculer.ImageLeftMargin = 5;
+            SbtnCalculer.ImageRightMargin = 8;
+            SbtnCalculer.ImageSize = 24;
+            SbtnCalculer.IsReadOnly = false;
+            SbtnCalculer.Location = new Point(716, 644);
+            SbtnCalculer.MakeRadial = false;
+            SbtnCalculer.Name = "SbtnCalculer";
+            SbtnCalculer.PressAnimationSpeed = 0.5F;
+            SbtnCalculer.PressDepth = 1;
+            SbtnCalculer.RippleColor = Color.FromArgb(60, 255, 255, 255);
+            SbtnCalculer.RippleExpandSpeedFactor = 0.05F;
+            SbtnCalculer.RippleFadeSpeedFactor = 0.03F;
+            SbtnCalculer.ShadowBlurFactor = 0.85F;
+            SbtnCalculer.ShadowColor = Color.FromArgb(70, 0, 0, 0);
+            SbtnCalculer.ShadowOffsetX = 3;
+            SbtnCalculer.ShadowOffsetY = 3;
+            SbtnCalculer.Size = new Size(123, 50);
+            SbtnCalculer.TabIndex = 22;
+            SbtnCalculer.Text = "Calculer";
+            SbtnCalculer.TextAlign = ContentAlignment.MiddleCenter;
+            SbtnCalculer.TextPaddingBottom = 0;
+            SbtnCalculer.TextPaddingLeft = 0;
+            SbtnCalculer.TextPaddingRight = 0;
+            SbtnCalculer.TextPaddingTop = 0;
+            SbtnCalculer.TextShadowColor = Color.FromArgb(100, 0, 0, 0);
+            SbtnCalculer.TextShadowOffsetX = 1;
+            SbtnCalculer.TextShadowOffsetY = 1;
+            SbtnCalculer.Click += SbtnCalculer_Click;
+            // 
+            // ProgressBar
+            // 
+            ProgressBar.AccessibleDescription = "This control shows the value of the horizontal progress bar.";
+            ProgressBar.AccessibleName = "Advanced and modern horizontal progress bar control";
+            ProgressBar.AccessibleRole = AccessibleRole.ProgressBar;
+            ProgressBar.AnimationDurationMs = 4000D;
+            ProgressBar.AnimationTimerInterval = 20;
+            ProgressBar.AutoLabelColor = false;
+            ProgressBar.BackgroundBarColor = Color.White;
+            ProgressBar.BorderColor = Color.FromArgb(34, 30, 65);
+            ProgressBar.CanBeep = true;
+            ProgressBar.CanShake = true;
+            ProgressBar.CornerRadiusBottomLeft = 15;
+            ProgressBar.CornerRadiusBottomRight = 15;
+            ProgressBar.CornerRadiusTopLeft = 15;
+            ProgressBar.CornerRadiusTopRight = 15;
+            ProgressBar.CustomLabel = "";
+            ProgressBar.EnableValueDragging = false;
+            ProgressBar.ErrorColor = Color.Red;
+            ProgressBar.GradientEndColor = Color.MidnightBlue;
+            ProgressBar.GradientStartColor = Color.CornflowerBlue;
+            ProgressBar.Indeterminate = false;
+            ProgressBar.IndeterminateBarColor = Color.FromArgb(34, 30, 65);
+            ProgressBar.IsReadonly = false;
+            ProgressBar.LabelColor = Color.White;
+            ProgressBar.LabelFont = new Font("Segoe UI", 10F, FontStyle.Bold);
+            ProgressBar.Location = new Point(614, 246);
+            ProgressBar.Maximum = 100;
+            ProgressBar.Minimum = 0;
+            ProgressBar.MinimumSize = new Size(50, 20);
+            ProgressBar.Name = "ProgressBar";
+            ProgressBar.ReadonlyBorderColor = Color.DimGray;
+            ProgressBar.ReadonlyFillColor1 = Color.Gray;
+            ProgressBar.ReadonlyFillColor2 = Color.DarkGray;
+            ProgressBar.ReadonlyForeColor = Color.White;
+            ProgressBar.ShowFocusCue = false;
+            ProgressBar.ShowPercentage = false;
+            ProgressBar.Size = new Size(220, 21);
+            ProgressBar.SuccessColor = Color.Green;
+            ProgressBar.TabIndex = 23;
+            ProgressBar.Value = 100;
+            ProgressBar.ValueOrientation = SiticoneNetCoreUI.Helpers.ProgressBar.ProgressBarOrientation.Horizontal;
+            ProgressBar.WarningColor = Color.Orange;
+            // 
             // MenuPrincipal
             // 
-            AcceptButton = BtnCalculer;
             AutoScaleDimensions = new SizeF(10F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(880, 911);
+            ClientSize = new Size(880, 894);
+            Controls.Add(ProgressBar);
+            Controls.Add(SbtnCalculer);
+            Controls.Add(SbtnEnregistrer);
             Controls.Add(BtnVider);
-            Controls.Add(btnEnregistrer);
             Controls.Add(infobutton);
             Controls.Add(Conclusionlabel);
             Controls.Add(groupBox3);
@@ -387,13 +548,11 @@ namespace Outil_Mutation_Automate
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(bienvenue);
-            Controls.Add(BtnCalculer);
             Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MenuPrincipal";
             Text = "Outil Mutation Automate";
-            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)cerp).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -415,7 +574,6 @@ namespace Outil_Mutation_Automate
         private Label HauteurProduitLabel;
         private TextBox hauteur;
         private Label label1;
-        private Button BtnCalculer;
         private TextBox moyenne;
         private Label FreqLabel;
         private TextBox frequence;
@@ -440,7 +598,10 @@ namespace Outil_Mutation_Automate
         private Label ligne5;
         private System.Diagnostics.Process process1;
         private Button infobutton;
-        private Button btnEnregistrer;
         private Button BtnVider;
+        private SiticoneNetCoreUI.MySiticoneLicenseSettings mySiticoneLicenseSettings1;
+        private SiticoneNetCoreUI.SiticoneButtonAdvanced SbtnEnregistrer;
+        private SiticoneNetCoreUI.SiticoneButtonAdvanced SbtnCalculer;
+        private SiticoneNetCoreUI.SiticoneHProgressBar ProgressBar;
     }
 }

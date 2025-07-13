@@ -1,7 +1,13 @@
 using System.Drawing.Text;
 using System.Media;
 using System.Security.Cryptography.X509Certificates;
+using SiticoneNetCoreUI; 
 using Outil_Mutation_Automate.View;
+using Outil_Mutation_Automate.Dal;
+using MySql.Data.MySqlClient;
+using Timer = System.Windows.Forms.Timer;
+
+
 
 namespace Outil_Mutation_Automate
 {
@@ -10,11 +16,8 @@ namespace Outil_Mutation_Automate
     /// </summary>
     public partial class MenuPrincipal : Form
     {
-        private double _NBV; // Nombre de boîtes vendues (par jour)
-        private double _NBC; // Nombre de boîtes par commande
-        private double _hauteurCanalDesire; // Hauteur du canal désirée
-        private double _NbGoulotte; // Nombre de canaux nécessaires
-        private string _zone; // Zone du produit
+        public Timer delayTimer;  // Timer pour la mise en attente
+
 
         /// <summary>
         /// Constructeur de la classe MenuPrincipal.
@@ -23,15 +26,69 @@ namespace Outil_Mutation_Automate
         {
             InitializeComponent();
             this.MaximizeBox = false;
+            VérifierConnexion();
 
+            // Spécification du Timer au lancement du formulaire
+            delayTimer = new Timer();
+            delayTimer.Interval = 2580;  // Délai de 2580ms 
+            delayTimer.Tick += delayTimer_Tick;
+
+            if (VérifierConnexion())
+            {
+                delayTimer.Start(); // Démarrage du Timer
+            }
         }
+
+        // A la fin du Timer, modifier la couleur de la barre de chargement
+        public void delayTimer_Tick(object sender, EventArgs e)
+        {
+            ProgressBar.GradientEndColor = Color.Green;
+            ProgressBar.GradientStartColor = Color.LimeGreen;
+            ProgressBar.BorderColor = Color.MediumSeaGreen; 
+            delayTimer.Stop();
+        }
+
+        // Méthode pour vérifier la connexion à la base de données et influer sur la barre de progression
+        public bool VérifierConnexion()
+        {
+            // Remplace cette chaîne par la chaîne de connexion à ta base de données
+            string connectionString = "server=localhost; user id=root; password=calvin22; database=bdd_mutation; SslMode=none";
+
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();  // Tente d'ouvrir la connexion
+                    return true; 
+
+                }
+            }
+            catch (Exception ex)
+            {
+                // Si la connexion échoue, changer la couleur et la progression de la barre
+                Console.WriteLine("Erreur de connexion à la base de données : " + ex.Message);
+
+                // Changer la couleur de la barre en orange et la mettre à 75%
+                ProgressBar.GradientEndColor = Color.Red;
+                ProgressBar.GradientStartColor = Color.Orange;
+                return false;
+            }
+        }
+
+        
+
+        private double _NBV; // Nombre de boîtes vendues (par jour)
+        private double _NBC; // Nombre de boîtes par commande
+        private double _hauteurCanalDesire; // Hauteur du canal désirée
+        private double _NbGoulotte; // Nombre de canaux nécessaires
+        private string _zone; // Zone du produit
 
         /// <summary>
         /// Événement déclenché lors du clic sur le bouton "Calculer".
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void BtnCalculer_Click(object sender, EventArgs e)
+        private void SbtnCalculer_Click(object sender, EventArgs e)
         {
             if (!hauteur.Text.Equals("") && !frequence.Text.Equals("") && !moyenne.Text.Equals("") && !hauteurG.Text.Equals(""))
             {
@@ -154,7 +211,8 @@ namespace Outil_Mutation_Automate
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void enregistrement_Click(object sender, EventArgs e)
+        /// 
+        private void SbtnEnregistrer_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(ligne1.Text) || string.IsNullOrEmpty(ligne2.Text) || string.IsNullOrEmpty(ligne3.Text) ||
                 string.IsNullOrEmpty(ligne4.Text))

@@ -857,7 +857,7 @@
     <value>2</value>
   </data>
   <data name="ligne2.Text" xml:space="preserve">
-    <value>Version : 2.2</value>
+    <value>Version : 2.7</value>
   </data>
   <data name="&gt;&gt;ligne2.Name" xml:space="preserve">
     <value>ligne2</value>
@@ -884,7 +884,7 @@
     <value>3</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Build : 20250712</value>
+    <value>Build : 20250713</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
