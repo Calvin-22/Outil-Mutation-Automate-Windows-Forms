@@ -44,7 +44,8 @@ namespace Outil_Mutation_Automate
         {
             ProgressBar.GradientEndColor = Color.Green;
             ProgressBar.GradientStartColor = Color.LimeGreen;
-            ProgressBar.BorderColor = Color.MediumSeaGreen; 
+            ProgressBar.BorderColor = Color.MediumSeaGreen;
+            ProgressBar.CustomLabel = "Connexion à la base de donnée réussie.";
             delayTimer.Stop();
         }
 
@@ -71,6 +72,8 @@ namespace Outil_Mutation_Automate
                 // Changer la couleur de la barre en orange et la mettre à 75%
                 ProgressBar.GradientEndColor = Color.Red;
                 ProgressBar.GradientStartColor = Color.Orange;
+                ProgressBar.BorderColor = Color.OrangeRed;
+                ProgressBar.CustomLabel = "Erreur de connexion à la base de donnée.";
                 return false;
             }
         }

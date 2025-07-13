@@ -500,7 +500,7 @@ namespace Outil_Mutation_Automate
             ProgressBar.CornerRadiusBottomRight = 15;
             ProgressBar.CornerRadiusTopLeft = 15;
             ProgressBar.CornerRadiusTopRight = 15;
-            ProgressBar.CustomLabel = "";
+            ProgressBar.CustomLabel = "défaut";
             ProgressBar.EnableValueDragging = false;
             ProgressBar.ErrorColor = Color.Red;
             ProgressBar.GradientEndColor = Color.MidnightBlue;
@@ -508,7 +508,7 @@ namespace Outil_Mutation_Automate
             ProgressBar.Indeterminate = false;
             ProgressBar.IndeterminateBarColor = Color.FromArgb(34, 30, 65);
             ProgressBar.IsReadonly = false;
-            ProgressBar.LabelColor = Color.White;
+            ProgressBar.LabelColor = Color.Transparent;
             ProgressBar.LabelFont = new Font("Segoe UI", 10F, FontStyle.Bold);
             ProgressBar.Location = new Point(614, 246);
             ProgressBar.Maximum = 100;
