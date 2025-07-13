@@ -388,6 +388,7 @@
             Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Enregistrement";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Enregistrer";
             ((System.ComponentModel.ISupportInitialize)dgvMutation).EndInit();
             groupBox1.ResumeLayout(false);

@@ -275,6 +275,7 @@ namespace Outil_Mutation_Automate
             // 
             // groupBox3
             // 
+            groupBox3.BackColor = Color.Transparent;
             groupBox3.Controls.Add(ligne8);
             groupBox3.Controls.Add(ligne7);
             groupBox3.Controls.Add(ligne6);
@@ -556,6 +557,7 @@ namespace Outil_Mutation_Automate
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MenuPrincipal";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Outil Mutation Automate";
             ((System.ComponentModel.ISupportInitialize)cerp).EndInit();
             groupBox1.ResumeLayout(false);
