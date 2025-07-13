@@ -500,7 +500,7 @@ namespace Outil_Mutation_Automate
             ProgressBar.CornerRadiusBottomRight = 15;
             ProgressBar.CornerRadiusTopLeft = 15;
             ProgressBar.CornerRadiusTopRight = 15;
-            ProgressBar.CustomLabel = "défaut";
+            ProgressBar.CustomLabel = "Connexion en cours...";
             ProgressBar.EnableValueDragging = false;
             ProgressBar.ErrorColor = Color.Red;
             ProgressBar.GradientEndColor = Color.MidnightBlue;
@@ -533,7 +533,7 @@ namespace Outil_Mutation_Automate
             AutoScaleDimensions = new SizeF(10F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(880, 894);
+            ClientSize = new Size(880, 903);
             Controls.Add(ProgressBar);
             Controls.Add(SbtnCalculer);
             Controls.Add(SbtnEnregistrer);
