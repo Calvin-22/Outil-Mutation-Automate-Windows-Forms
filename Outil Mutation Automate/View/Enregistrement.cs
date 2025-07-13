@@ -80,7 +80,7 @@ namespace Outil_Mutation_Automate.View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnConfirmer_Click(object sender, EventArgs e)
+        private void SbtnAjouter_Click(object sender, EventArgs e)
         {
             if (!txtCIP.Text.Equals("") && !txtDesignation.Text.Equals(""))
             {
@@ -90,7 +90,7 @@ namespace Outil_Mutation_Automate.View
                 // Tenter de convertir le texte récupéré en nombres (double pour les nombres décimaux, int pour les entiers).
                 // 'out double hauteurProduit' signifie que si la conversion réussit, la valeur sera stockée dans la variable 'hauteurProduit'.
                 if (double.TryParse(txtCIP.Text, out double cip))
-                    {
+                {
                     double nombreBoitesParCommande = _nombreBoitesParCommandeFromMenuPrincipal;
                     double nombreBoitesVendues = _nombreBoitesParVenduesFromMenuPrincipal;
                     double hauteurCanalDesire = _hauteurCanalDesireFromMenuPrincipal;
@@ -122,7 +122,7 @@ namespace Outil_Mutation_Automate.View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnAnnuler_Click(object sender, EventArgs e)
+        private void SbtnAnnuler_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Voulez-vous vraiment annuler ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -136,7 +136,7 @@ namespace Outil_Mutation_Automate.View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnSupprimer_Click(object sender, EventArgs e)
+        private void SbtnSupprimer_Click(object sender, EventArgs e)
         {
             if (dgvMutation.SelectedRows.Count > 0)
             {
@@ -152,6 +152,5 @@ namespace Outil_Mutation_Automate.View
                 MessageBox.Show("Une ligne doit être sélectionnée.", "Information");
             }
         }
-
     }
 }

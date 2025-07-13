@@ -60,7 +60,7 @@ namespace Outil_Mutation_Automate
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
                     connection.Open();  // Tente d'ouvrir la connexion
-                    return true; 
+                    return true;
 
                 }
             }
@@ -77,8 +77,6 @@ namespace Outil_Mutation_Automate
                 return false;
             }
         }
-
-        
 
         private double _NBV; // Nombre de boîtes vendues (par jour)
         private double _NBC; // Nombre de boîtes par commande

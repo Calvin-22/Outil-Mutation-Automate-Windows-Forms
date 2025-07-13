@@ -40,7 +40,7 @@ namespace Outil_Mutation_Automate
             hauteurG = new TextBox();
             bienvenue = new Label();
             label3 = new Label();
-            label4 = new Label();
+            lbversion = new Label();
             cerp = new PictureBox();
             groupBox1 = new GroupBox();
             groupBox2 = new GroupBox();
@@ -71,11 +71,11 @@ namespace Outil_Mutation_Automate
             // HauteurProduitLabel
             // 
             HauteurProduitLabel.AutoSize = true;
-            HauteurProduitLabel.Location = new Point(31, 24);
+            HauteurProduitLabel.Location = new Point(27, 24);
             HauteurProduitLabel.Name = "HauteurProduitLabel";
-            HauteurProduitLabel.Size = new Size(182, 24);
+            HauteurProduitLabel.Size = new Size(210, 24);
             HauteurProduitLabel.TabIndex = 0;
-            HauteurProduitLabel.Text = "Hauteur produit (mm)";
+            HauteurProduitLabel.Text = "Hauteur produit (mm) : ";
             // 
             // hauteur
             // 
@@ -89,15 +89,16 @@ namespace Outil_Mutation_Automate
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(31, 112);
+            label1.Location = new Point(27, 112);
             label1.Name = "label1";
-            label1.Size = new Size(254, 24);
+            label1.Size = new Size(286, 24);
             label1.TabIndex = 2;
-            label1.Text = "Moyenne des ventes (par mois)";
+            label1.Text = "Moyenne des ventes (par mois) : ";
             // 
             // moyenne
             // 
             moyenne.Cursor = Cursors.IBeam;
+            moyenne.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             moyenne.Location = new Point(31, 152);
             moyenne.Name = "moyenne";
             moyenne.Size = new Size(274, 31);
@@ -106,15 +107,16 @@ namespace Outil_Mutation_Automate
             // FreqLabel
             // 
             FreqLabel.AutoSize = true;
-            FreqLabel.Location = new Point(484, 24);
+            FreqLabel.Location = new Point(480, 24);
             FreqLabel.Name = "FreqLabel";
-            FreqLabel.Size = new Size(268, 24);
+            FreqLabel.Size = new Size(229, 24);
             FreqLabel.TabIndex = 5;
-            FreqLabel.Text = "Fréquence picking mensuel (M-1)";
+            FreqLabel.Text = "Fréquence picking (M-1) : ";
             // 
             // frequence
             // 
             frequence.Cursor = Cursors.IBeam;
+            frequence.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             frequence.Location = new Point(484, 60);
             frequence.Name = "frequence";
             frequence.Size = new Size(274, 31);
@@ -123,15 +125,16 @@ namespace Outil_Mutation_Automate
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(484, 112);
+            label2.Location = new Point(480, 112);
             label2.Name = "label2";
-            label2.Size = new Size(240, 24);
+            label2.Size = new Size(274, 24);
             label2.TabIndex = 7;
-            label2.Text = "Hauteur du canal désiré (mm)";
+            label2.Text = "Hauteur du canal désiré (mm) : ";
             // 
             // hauteurG
             // 
             hauteurG.Cursor = Cursors.IBeam;
+            hauteurG.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             hauteurG.Location = new Point(484, 152);
             hauteurG.Name = "hauteurG";
             hauteurG.Size = new Size(274, 31);
@@ -153,24 +156,24 @@ namespace Outil_Mutation_Automate
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Black;
+            label3.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.MidnightBlue;
             label3.Location = new Point(45, 135);
             label3.Name = "label3";
-            label3.Size = new Size(199, 24);
+            label3.Size = new Size(213, 24);
             label3.TabIndex = 9;
             label3.Text = "Créé par Calvin N'diaye ";
             // 
-            // label4
+            // lbversion
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = SystemColors.ButtonShadow;
-            label4.Location = new Point(45, 159);
-            label4.Name = "label4";
-            label4.Size = new Size(50, 24);
-            label4.TabIndex = 11;
-            label4.Text = "v.2.8";
+            lbversion.AutoSize = true;
+            lbversion.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbversion.ForeColor = SystemColors.ButtonShadow;
+            lbversion.Location = new Point(45, 159);
+            lbversion.Name = "lbversion";
+            lbversion.Size = new Size(50, 24);
+            lbversion.TabIndex = 11;
+            lbversion.Text = "v.3.0";
             // 
             // cerp
             // 
@@ -192,6 +195,7 @@ namespace Outil_Mutation_Automate
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(hauteur);
             groupBox1.Controls.Add(HauteurProduitLabel);
+            groupBox1.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox1.Location = new Point(45, 435);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(789, 202);
@@ -545,7 +549,7 @@ namespace Outil_Mutation_Automate
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(cerp);
-            Controls.Add(label4);
+            Controls.Add(lbversion);
             Controls.Add(label3);
             Controls.Add(bienvenue);
             Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -581,7 +585,7 @@ namespace Outil_Mutation_Automate
         private TextBox hauteurG;
         private Label bienvenue;
         private Label label3;
-        private Label label4;
+        private Label lbversion;
         private PictureBox cerp;
         private GroupBox groupBox1;
         private GroupBox groupBox2;

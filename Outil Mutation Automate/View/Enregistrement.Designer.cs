@@ -32,18 +32,18 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Enregistrement));
             dgvMutation = new DataGridView();
-            btnSupprimer = new Button();
             Groupbox = new GroupBox();
             groupBox1 = new GroupBox();
+            SbtnAjouter = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             label4 = new Label();
             label3 = new Label();
-            btnConfirmer = new Button();
             txtDesignation = new TextBox();
             txtCIP = new TextBox();
             label2 = new Label();
             label1 = new Label();
-            btnAnnuler = new Button();
+            SbtnAnnuler = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             cerp = new PictureBox();
+            SbtnSupprimer = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             ((System.ComponentModel.ISupportInitialize)dgvMutation).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)cerp).BeginInit();
@@ -84,18 +84,10 @@
             dgvMutation.Size = new Size(793, 239);
             dgvMutation.TabIndex = 0;
             // 
-            // btnSupprimer
-            // 
-            btnSupprimer.Location = new Point(69, 317);
-            btnSupprimer.Name = "btnSupprimer";
-            btnSupprimer.Size = new Size(112, 39);
-            btnSupprimer.TabIndex = 2;
-            btnSupprimer.Text = "Supprimer";
-            btnSupprimer.UseVisualStyleBackColor = true;
-            btnSupprimer.Click += btnSupprimer_Click;
-            // 
             // Groupbox
             // 
+            Groupbox.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Groupbox.ForeColor = Color.Black;
             Groupbox.Location = new Point(48, 26);
             Groupbox.Name = "Groupbox";
             Groupbox.Size = new Size(805, 274);
@@ -105,13 +97,15 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(SbtnAjouter);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(btnConfirmer);
             groupBox1.Controls.Add(txtDesignation);
             groupBox1.Controls.Add(txtCIP);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
+            groupBox1.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox1.ForeColor = Color.Black;
             groupBox1.Location = new Point(48, 362);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(1042, 194);
@@ -119,13 +113,79 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Enregistrer une ligne";
             // 
+            // SbtnAjouter
+            // 
+            SbtnAjouter.BackColor = Color.Transparent;
+            SbtnAjouter.BadgeBackColor = Color.Red;
+            SbtnAjouter.BadgeForeColor = Color.White;
+            SbtnAjouter.BadgeRadius = 10;
+            SbtnAjouter.BadgeRightMargin = 10;
+            SbtnAjouter.BadgeValue = 0;
+            SbtnAjouter.BorderColor = Color.FromArgb(150, 255, 255, 255);
+            SbtnAjouter.BorderColorEnd = Color.Gray;
+            SbtnAjouter.BorderColorStart = Color.White;
+            SbtnAjouter.BorderRadiusBottomLeft = 25;
+            SbtnAjouter.BorderRadiusBottomRight = 25;
+            SbtnAjouter.BorderRadiusTopLeft = 25;
+            SbtnAjouter.BorderRadiusTopRight = 25;
+            SbtnAjouter.BorderThickness = 1;
+            SbtnAjouter.ButtonColorEnd = Color.Green;
+            SbtnAjouter.ButtonColorStart = Color.LimeGreen;
+            SbtnAjouter.ButtonImage = null;
+            SbtnAjouter.CanBeep = false;
+            SbtnAjouter.CanShake = false;
+            SbtnAjouter.ClickSoundPath = null;
+            SbtnAjouter.DisabledOverlayOpacity = 0.5F;
+            SbtnAjouter.EnableBorderGradient = false;
+            SbtnAjouter.EnableClickSound = false;
+            SbtnAjouter.EnableFocusBorder = false;
+            SbtnAjouter.EnableHoverSound = false;
+            SbtnAjouter.EnablePressScale = false;
+            SbtnAjouter.EnableTextShadow = false;
+            SbtnAjouter.FocusBorderColor = Color.FromArgb(100, 150, 255);
+            SbtnAjouter.FocusBorderThickness = 2;
+            SbtnAjouter.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SbtnAjouter.ForeColor = Color.White;
+            SbtnAjouter.HoverColor = Color.FromArgb(20, 0, 0, 0);
+            SbtnAjouter.HoverSoundPath = null;
+            SbtnAjouter.HoverTransitionSpeed = 1F;
+            SbtnAjouter.ImageAlign = ContentAlignment.MiddleCenter;
+            SbtnAjouter.ImageLeftMargin = 5;
+            SbtnAjouter.ImageRightMargin = 8;
+            SbtnAjouter.ImageSize = 24;
+            SbtnAjouter.IsReadOnly = false;
+            SbtnAjouter.Location = new Point(20, 131);
+            SbtnAjouter.MakeRadial = false;
+            SbtnAjouter.Name = "SbtnAjouter";
+            SbtnAjouter.PressAnimationSpeed = 0.5F;
+            SbtnAjouter.PressDepth = 1;
+            SbtnAjouter.RippleColor = Color.FromArgb(60, 255, 255, 255);
+            SbtnAjouter.RippleExpandSpeedFactor = 0.05F;
+            SbtnAjouter.RippleFadeSpeedFactor = 0.03F;
+            SbtnAjouter.ShadowBlurFactor = 0.85F;
+            SbtnAjouter.ShadowColor = Color.FromArgb(70, 0, 0, 0);
+            SbtnAjouter.ShadowOffsetX = 3;
+            SbtnAjouter.ShadowOffsetY = 3;
+            SbtnAjouter.Size = new Size(123, 50);
+            SbtnAjouter.TabIndex = 22;
+            SbtnAjouter.Text = "Ajouter";
+            SbtnAjouter.TextAlign = ContentAlignment.MiddleCenter;
+            SbtnAjouter.TextPaddingBottom = 0;
+            SbtnAjouter.TextPaddingLeft = 0;
+            SbtnAjouter.TextPaddingRight = 0;
+            SbtnAjouter.TextPaddingTop = 0;
+            SbtnAjouter.TextShadowColor = Color.FromArgb(100, 0, 0, 0);
+            SbtnAjouter.TextShadowOffsetX = 1;
+            SbtnAjouter.TextShadowOffsetY = 1;
+            SbtnAjouter.Click += SbtnAjouter_Click;
+            // 
             // label4
             // 
             label4.AutoSize = true;
             label4.ForeColor = SystemColors.ControlDarkDark;
             label4.Location = new Point(637, 93);
             label4.Name = "label4";
-            label4.Size = new Size(339, 24);
+            label4.Size = new Size(360, 24);
             label4.TabIndex = 6;
             label4.Text = "*NBV : Nombre de boîte vendues par jour.";
             // 
@@ -135,19 +195,9 @@
             label3.ForeColor = SystemColors.ControlDarkDark;
             label3.Location = new Point(636, 69);
             label3.Name = "label3";
-            label3.Size = new Size(328, 24);
+            label3.Size = new Size(347, 24);
             label3.TabIndex = 5;
             label3.Text = "*NBC : Nombre de boîte par commande.";
-            // 
-            // btnConfirmer
-            // 
-            btnConfirmer.Location = new Point(21, 138);
-            btnConfirmer.Name = "btnConfirmer";
-            btnConfirmer.Size = new Size(112, 39);
-            btnConfirmer.TabIndex = 4;
-            btnConfirmer.Text = "Ajouter";
-            btnConfirmer.UseVisualStyleBackColor = true;
-            btnConfirmer.Click += btnConfirmer_Click;
             // 
             // txtDesignation
             // 
@@ -168,7 +218,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(21, 89);
             label2.Name = "label2";
-            label2.Size = new Size(116, 24);
+            label2.Size = new Size(125, 24);
             label2.TabIndex = 1;
             label2.Text = "Désignation : ";
             // 
@@ -177,19 +227,75 @@
             label1.AutoSize = true;
             label1.Location = new Point(21, 48);
             label1.Name = "label1";
-            label1.Size = new Size(50, 24);
+            label1.Size = new Size(53, 24);
             label1.TabIndex = 0;
             label1.Text = "CIP : ";
             // 
-            // btnAnnuler
+            // SbtnAnnuler
             // 
-            btnAnnuler.Location = new Point(902, 317);
-            btnAnnuler.Name = "btnAnnuler";
-            btnAnnuler.Size = new Size(159, 39);
-            btnAnnuler.TabIndex = 5;
-            btnAnnuler.Text = "Menu Principal";
-            btnAnnuler.UseVisualStyleBackColor = true;
-            btnAnnuler.Click += btnAnnuler_Click;
+            SbtnAnnuler.BackColor = Color.Transparent;
+            SbtnAnnuler.BadgeBackColor = Color.Red;
+            SbtnAnnuler.BadgeForeColor = Color.White;
+            SbtnAnnuler.BadgeRadius = 10;
+            SbtnAnnuler.BadgeRightMargin = 10;
+            SbtnAnnuler.BadgeValue = 0;
+            SbtnAnnuler.BorderColor = Color.FromArgb(150, 255, 255, 255);
+            SbtnAnnuler.BorderColorEnd = Color.Gray;
+            SbtnAnnuler.BorderColorStart = Color.White;
+            SbtnAnnuler.BorderRadiusBottomLeft = 25;
+            SbtnAnnuler.BorderRadiusBottomRight = 25;
+            SbtnAnnuler.BorderRadiusTopLeft = 25;
+            SbtnAnnuler.BorderRadiusTopRight = 25;
+            SbtnAnnuler.BorderThickness = 1;
+            SbtnAnnuler.ButtonColorEnd = Color.MidnightBlue;
+            SbtnAnnuler.ButtonColorStart = Color.CornflowerBlue;
+            SbtnAnnuler.ButtonImage = null;
+            SbtnAnnuler.CanBeep = false;
+            SbtnAnnuler.CanShake = true;
+            SbtnAnnuler.ClickSoundPath = null;
+            SbtnAnnuler.DisabledOverlayOpacity = 0.5F;
+            SbtnAnnuler.EnableBorderGradient = false;
+            SbtnAnnuler.EnableClickSound = false;
+            SbtnAnnuler.EnableFocusBorder = false;
+            SbtnAnnuler.EnableHoverSound = false;
+            SbtnAnnuler.EnablePressScale = false;
+            SbtnAnnuler.EnableTextShadow = false;
+            SbtnAnnuler.FocusBorderColor = Color.FromArgb(100, 150, 255);
+            SbtnAnnuler.FocusBorderThickness = 2;
+            SbtnAnnuler.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SbtnAnnuler.ForeColor = Color.White;
+            SbtnAnnuler.HoverColor = Color.FromArgb(20, 0, 0, 0);
+            SbtnAnnuler.HoverSoundPath = null;
+            SbtnAnnuler.HoverTransitionSpeed = 1F;
+            SbtnAnnuler.ImageAlign = ContentAlignment.MiddleCenter;
+            SbtnAnnuler.ImageLeftMargin = 5;
+            SbtnAnnuler.ImageRightMargin = 8;
+            SbtnAnnuler.ImageSize = 24;
+            SbtnAnnuler.IsReadOnly = false;
+            SbtnAnnuler.Location = new Point(899, 309);
+            SbtnAnnuler.MakeRadial = false;
+            SbtnAnnuler.Name = "SbtnAnnuler";
+            SbtnAnnuler.PressAnimationSpeed = 0.5F;
+            SbtnAnnuler.PressDepth = 1;
+            SbtnAnnuler.RippleColor = Color.FromArgb(60, 255, 255, 255);
+            SbtnAnnuler.RippleExpandSpeedFactor = 0.05F;
+            SbtnAnnuler.RippleFadeSpeedFactor = 0.03F;
+            SbtnAnnuler.ShadowBlurFactor = 0.85F;
+            SbtnAnnuler.ShadowColor = Color.FromArgb(70, 0, 0, 0);
+            SbtnAnnuler.ShadowOffsetX = 3;
+            SbtnAnnuler.ShadowOffsetY = 3;
+            SbtnAnnuler.Size = new Size(166, 50);
+            SbtnAnnuler.TabIndex = 23;
+            SbtnAnnuler.Text = "Menu Principal";
+            SbtnAnnuler.TextAlign = ContentAlignment.MiddleCenter;
+            SbtnAnnuler.TextPaddingBottom = 0;
+            SbtnAnnuler.TextPaddingLeft = 0;
+            SbtnAnnuler.TextPaddingRight = 0;
+            SbtnAnnuler.TextPaddingTop = 0;
+            SbtnAnnuler.TextShadowColor = Color.FromArgb(100, 0, 0, 0);
+            SbtnAnnuler.TextShadowOffsetX = 1;
+            SbtnAnnuler.TextShadowOffsetY = 1;
+            SbtnAnnuler.Click += SbtnAnnuler_Click;
             // 
             // cerp
             // 
@@ -201,17 +307,82 @@
             cerp.TabIndex = 13;
             cerp.TabStop = false;
             // 
+            // SbtnSupprimer
+            // 
+            SbtnSupprimer.BackColor = Color.Transparent;
+            SbtnSupprimer.BadgeBackColor = Color.Red;
+            SbtnSupprimer.BadgeForeColor = Color.White;
+            SbtnSupprimer.BadgeRadius = 10;
+            SbtnSupprimer.BadgeRightMargin = 10;
+            SbtnSupprimer.BadgeValue = 0;
+            SbtnSupprimer.BorderColor = Color.FromArgb(150, 255, 255, 255);
+            SbtnSupprimer.BorderColorEnd = Color.Gray;
+            SbtnSupprimer.BorderColorStart = Color.White;
+            SbtnSupprimer.BorderRadiusBottomLeft = 25;
+            SbtnSupprimer.BorderRadiusBottomRight = 25;
+            SbtnSupprimer.BorderRadiusTopLeft = 25;
+            SbtnSupprimer.BorderRadiusTopRight = 25;
+            SbtnSupprimer.BorderThickness = 1;
+            SbtnSupprimer.ButtonColorEnd = Color.Red;
+            SbtnSupprimer.ButtonColorStart = Color.Orange;
+            SbtnSupprimer.ButtonImage = null;
+            SbtnSupprimer.CanBeep = false;
+            SbtnSupprimer.CanShake = false;
+            SbtnSupprimer.ClickSoundPath = null;
+            SbtnSupprimer.DisabledOverlayOpacity = 0.5F;
+            SbtnSupprimer.EnableBorderGradient = false;
+            SbtnSupprimer.EnableClickSound = false;
+            SbtnSupprimer.EnableFocusBorder = false;
+            SbtnSupprimer.EnableHoverSound = false;
+            SbtnSupprimer.EnablePressScale = false;
+            SbtnSupprimer.EnableTextShadow = false;
+            SbtnSupprimer.FocusBorderColor = Color.FromArgb(100, 150, 255);
+            SbtnSupprimer.FocusBorderThickness = 2;
+            SbtnSupprimer.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SbtnSupprimer.ForeColor = Color.White;
+            SbtnSupprimer.HoverColor = Color.FromArgb(20, 0, 0, 0);
+            SbtnSupprimer.HoverSoundPath = null;
+            SbtnSupprimer.HoverTransitionSpeed = 1F;
+            SbtnSupprimer.ImageAlign = ContentAlignment.MiddleCenter;
+            SbtnSupprimer.ImageLeftMargin = 5;
+            SbtnSupprimer.ImageRightMargin = 8;
+            SbtnSupprimer.ImageSize = 24;
+            SbtnSupprimer.IsReadOnly = false;
+            SbtnSupprimer.Location = new Point(69, 309);
+            SbtnSupprimer.MakeRadial = false;
+            SbtnSupprimer.Name = "SbtnSupprimer";
+            SbtnSupprimer.PressAnimationSpeed = 0.5F;
+            SbtnSupprimer.PressDepth = 1;
+            SbtnSupprimer.RippleColor = Color.FromArgb(60, 255, 255, 255);
+            SbtnSupprimer.RippleExpandSpeedFactor = 0.05F;
+            SbtnSupprimer.RippleFadeSpeedFactor = 0.03F;
+            SbtnSupprimer.ShadowBlurFactor = 0.85F;
+            SbtnSupprimer.ShadowColor = Color.FromArgb(70, 0, 0, 0);
+            SbtnSupprimer.ShadowOffsetX = 3;
+            SbtnSupprimer.ShadowOffsetY = 3;
+            SbtnSupprimer.Size = new Size(123, 50);
+            SbtnSupprimer.TabIndex = 23;
+            SbtnSupprimer.Text = "Supprimer";
+            SbtnSupprimer.TextAlign = ContentAlignment.MiddleCenter;
+            SbtnSupprimer.TextPaddingBottom = 0;
+            SbtnSupprimer.TextPaddingLeft = 0;
+            SbtnSupprimer.TextPaddingRight = 0;
+            SbtnSupprimer.TextPaddingTop = 0;
+            SbtnSupprimer.TextShadowColor = Color.FromArgb(100, 0, 0, 0);
+            SbtnSupprimer.TextShadowOffsetX = 1;
+            SbtnSupprimer.TextShadowOffsetY = 1;
+            SbtnSupprimer.Click += SbtnSupprimer_Click;
+            // 
             // Enregistrement
             // 
-            AcceptButton = btnConfirmer;
             AutoScaleDimensions = new SizeF(10F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1140, 588);
-            Controls.Add(btnAnnuler);
+            Controls.Add(SbtnSupprimer);
+            Controls.Add(SbtnAnnuler);
             Controls.Add(cerp);
             Controls.Add(groupBox1);
-            Controls.Add(btnSupprimer);
             Controls.Add(dgvMutation);
             Controls.Add(Groupbox);
             Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -228,11 +399,8 @@
         #endregion
 
         private DataGridView dgvMutation;
-        private Button btnSupprimer;
         private GroupBox Groupbox;
         private GroupBox groupBox1;
-        private Button btnAnnuler;
-        private Button btnConfirmer;
         private TextBox txtDesignation;
         private TextBox txtCIP;
         private Label label2;
@@ -241,5 +409,8 @@
         private Button btnMenuPrincipal;
         private Label label4;
         private Label label3;
+        private SiticoneNetCoreUI.SiticoneButtonAdvanced SbtnAjouter;
+        private SiticoneNetCoreUI.SiticoneButtonAdvanced SbtnAnnuler;
+        private SiticoneNetCoreUI.SiticoneButtonAdvanced SbtnSupprimer;
     }
 }
