@@ -584,6 +584,8 @@ namespace Outil_Mutation_Automate
             // 
             btnFakeAccept.BackColor = Color.Transparent;
             btnFakeAccept.FlatAppearance.BorderSize = 0;
+            btnFakeAccept.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnFakeAccept.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnFakeAccept.FlatStyle = FlatStyle.Flat;
             btnFakeAccept.ForeColor = Color.Transparent;
             btnFakeAccept.Location = new Point(847, 864);
