@@ -3,7 +3,7 @@
 "VSVersion" = "3:800"
 "ProjectType" = "8:{978C614F-708E-4E1A-B201-565925725DBA}"
 "IsWebType" = "8:FALSE"
-"ProjectName" = "8:Setup Outil Mutation Automate v3.0"
+"ProjectName" = "8:Setup Outil Mutation Automate v3.5"
 "LanguageId" = "3:1036"
 "CodePage" = "3:1252"
 "UILanguageId" = "3:1036"
@@ -295,7 +295,7 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:Setup Outil Mutation Automate v3.0"
+        "ProductName" = "8:Setup Outil Mutation Automate v3.5"
         "ProductCode" = "8:{734CD3BA-80EB-4A7D-A60B-536DC5547F03}"
         "PackageCode" = "8:{C5A2F95E-EA58-4107-A1E6-DEEDAD35297D}"
         "UpgradeCode" = "8:{2164DFE4-176E-40CF-B34A-BED38E046939}"
