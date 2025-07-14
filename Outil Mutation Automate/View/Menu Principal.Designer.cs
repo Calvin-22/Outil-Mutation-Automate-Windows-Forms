@@ -29,6 +29,7 @@ namespace Outil_Mutation_Automate
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             HauteurProduitLabel = new Label();
             hauteur = new TextBox();
@@ -62,6 +63,9 @@ namespace Outil_Mutation_Automate
             SbtnEnregistrer = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             SbtnCalculer = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             ProgressBar = new SiticoneNetCoreUI.SiticoneHProgressBar();
+            siticoneShimmerLabel1 = new SiticoneNetCoreUI.SiticoneShimmerLabel();
+            SmoothCircular = new SiticoneNetCoreUI.SiticoneSmoothCircularSpinner();
+            SmoothTimer = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)cerp).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -533,12 +537,56 @@ namespace Outil_Mutation_Automate
             ProgressBar.ValueOrientation = SiticoneNetCoreUI.Helpers.ProgressBar.ProgressBarOrientation.Horizontal;
             ProgressBar.WarningColor = Color.Orange;
             // 
+            // siticoneShimmerLabel1
+            // 
+            siticoneShimmerLabel1.AutoReverse = false;
+            siticoneShimmerLabel1.BaseColor = Color.LimeGreen;
+            siticoneShimmerLabel1.Direction = SiticoneNetCoreUI.ShimmerDirection.LeftToRight;
+            siticoneShimmerLabel1.Font = new Font("Segoe UI Variable Display", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            siticoneShimmerLabel1.IsAnimating = true;
+            siticoneShimmerLabel1.IsPaused = false;
+            siticoneShimmerLabel1.Location = new Point(40, 104);
+            siticoneShimmerLabel1.Name = "siticoneShimmerLabel1";
+            siticoneShimmerLabel1.PauseDuration = 0;
+            siticoneShimmerLabel1.ShimmerColor = Color.Lime;
+            siticoneShimmerLabel1.ShimmerOpacity = 1F;
+            siticoneShimmerLabel1.ShimmerSpeed = 50;
+            siticoneShimmerLabel1.ShimmerWidth = 0.2F;
+            siticoneShimmerLabel1.Size = new Size(557, 34);
+            siticoneShimmerLabel1.TabIndex = 24;
+            siticoneShimmerLabel1.Text = "Bienvenue sur l'outil d'aide à la mutation automate";
+            siticoneShimmerLabel1.ToolTipText = "";
+            // 
+            // SmoothCircular
+            // 
+            SmoothCircular.ArcMaxLength = 270F;
+            SmoothCircular.ArcMinLength = 150F;
+            SmoothCircular.BackColor = Color.Transparent;
+            SmoothCircular.IsAnimating = true;
+            SmoothCircular.Location = new Point(479, 644);
+            SmoothCircular.MinimumSize = new Size(50, 50);
+            SmoothCircular.Name = "SmoothCircular";
+            SmoothCircular.OscillationSpeed = 0.5F;
+            SmoothCircular.ReverseDirection = false;
+            SmoothCircular.RotationSpeed = 480F;
+            SmoothCircular.Size = new Size(50, 50);
+            SmoothCircular.StrokeColor = Color.Green;
+            SmoothCircular.StrokeThickness = 7;
+            SmoothCircular.TabIndex = 25;
+            // 
+            // SmoothTimer
+            // 
+            SmoothTimer.Interval = 1000;
+            SmoothTimer.Tick += SmoothTimer_Tick;
+            // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(10F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(880, 903);
+            Controls.Add(SmoothCircular);
+            Controls.Add(siticoneShimmerLabel1);
             Controls.Add(ProgressBar);
             Controls.Add(SbtnCalculer);
             Controls.Add(SbtnEnregistrer);
@@ -609,5 +657,8 @@ namespace Outil_Mutation_Automate
         private SiticoneNetCoreUI.SiticoneButtonAdvanced SbtnEnregistrer;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced SbtnCalculer;
         private SiticoneNetCoreUI.SiticoneHProgressBar ProgressBar;
+        private SiticoneNetCoreUI.SiticoneShimmerLabel siticoneShimmerLabel1;
+        private SiticoneNetCoreUI.SiticoneSmoothCircularSpinner SmoothCircular;
+        private System.Windows.Forms.Timer SmoothTimer;
     }
 }

@@ -17,7 +17,7 @@ namespace Outil_Mutation_Automate
     public partial class MenuPrincipal : Form
     {
         public Timer delayTimer;  // Timer pour la mise en attente
-
+        public int opacityStep = 0; // Variable utilisée pour gérer l'opacité
 
         /// <summary>
         /// Constructeur de la classe MenuPrincipal.
@@ -28,18 +28,26 @@ namespace Outil_Mutation_Automate
             this.MaximizeBox = false;
             VérifierConnexion();
 
-            // Spécification du Timer au lancement du formulaire
+            // Spécification du Timer au lancement du formulaire pour modification couleur barre de progression
             delayTimer = new Timer();
             delayTimer.Interval = 2580;  // Délai de 2580ms 
             delayTimer.Tick += delayTimer_Tick;
 
+            // Par défaut, ne pas afficher le SmoothCircular
+            SmoothCircular.Visible = false;
+
+            // Démarrage d'un timer si la connexion est vérifié (fonction booléenne) 
             if (VérifierConnexion())
             {
                 delayTimer.Start(); // Démarrage du Timer
             }
         }
 
-        // A la fin du Timer, modifier la couleur de la barre de chargement
+        /// <summary>
+        /// A la fin du Timer, modifier la couleur de la barre de chargement
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void delayTimer_Tick(object sender, EventArgs e)
         {
             ProgressBar.GradientEndColor = Color.Green;
@@ -49,12 +57,25 @@ namespace Outil_Mutation_Automate
             delayTimer.Stop();
         }
 
-        // Méthode pour vérifier la connexion à la base de données et influer sur la barre de progression
+        /// <summary>
+        /// Timer responsable de l'affichage ou non du SmoothCircular
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void SmoothTimer_Tick(object sender, EventArgs e)
+        {
+            SmoothCircular.Visible = false; 
+            delayTimer.Stop();
+        }
+
+        /// <summary>
+        /// Méthode pour vérifier la connexion à la base de données et influer sur la barre de progression
+        /// </summary>
+        /// <returns></returns>
         public bool VérifierConnexion()
         {
             // Remplace cette chaîne par la chaîne de connexion à ta base de données
             string connectionString = "server=localhost; user id=root; password=calvin22; database=bdd_mutation; SslMode=none";
-
             try
             {
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -78,6 +99,9 @@ namespace Outil_Mutation_Automate
             }
         }
 
+        /// <summary>
+        /// Initialisations des variables nécessaires aux calculs
+        /// </summary>
         private double _NBV; // Nombre de boîtes vendues (par jour)
         private double _NBC; // Nombre de boîtes par commande
         private double _hauteurCanalDesire; // Hauteur du canal désirée
@@ -89,7 +113,7 @@ namespace Outil_Mutation_Automate
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void SbtnCalculer_Click(object sender, EventArgs e)
+        private async void SbtnCalculer_Click(object sender, EventArgs e)
         {
             if (!hauteur.Text.Equals("") && !frequence.Text.Equals("") && !moyenne.Text.Equals("") && !hauteurG.Text.Equals(""))
             {
@@ -99,6 +123,10 @@ namespace Outil_Mutation_Automate
                 string frequencePickingTexte = frequence.Text;
                 string moyenneVentesTexte = moyenne.Text;
                 string hauteurCanalDesireTexte = hauteurG.Text;
+
+                // Instauration d'une animation de chargement des données 
+                SmoothCircular.Visible = true; 
+                SmoothTimer.Start();
 
                 // Tenter de convertir le texte récupéré en nombres (double pour les nombres décimaux, int pour les entiers).
                 // 'out double hauteurProduit' signifie que si la conversion réussit, la valeur sera stockée dans la variable 'hauteurProduit'.
@@ -114,6 +142,12 @@ namespace Outil_Mutation_Automate
                         double HT = hauteurProduit * _NBV;
                         _NbGoulotte = HT / _hauteurCanalDesire;
                         _NBC = moyenneVentes / frequencePicking;
+
+                        // Désactiver le bouton afin d'éviter de boucler un délai de chargement
+                        SbtnCalculer.Enabled = false;
+
+                        // Attente de 2000 ms sans bloquer l'UI
+                        await Task.Delay(1000);
 
                         // Afficher le résultat sous forme de texte
                         ligne1.Text = "• Nombre de boîtes vendues (par jour) :  " + _NBV.ToString();
@@ -185,6 +219,9 @@ namespace Outil_Mutation_Automate
                 MessageBox.Show("Erreur : Veuillez remplir tous les champs.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            // Activer le bouton afin d'éviter de boucler un délai de chargement
+            SbtnCalculer.Enabled = true;
         }
         // Fonction de détermination de la zone du produit correspondant
         public bool Zone(double frequence, int NBC, double NbGoulotte)
