@@ -66,6 +66,7 @@ namespace Outil_Mutation_Automate
             siticoneShimmerLabel1 = new SiticoneNetCoreUI.SiticoneShimmerLabel();
             SmoothCircular = new SiticoneNetCoreUI.SiticoneSmoothCircularSpinner();
             SmoothTimer = new System.Windows.Forms.Timer(components);
+            btnFakeAccept = new Button();
             ((System.ComponentModel.ISupportInitialize)cerp).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -151,7 +152,7 @@ namespace Outil_Mutation_Automate
             bienvenue.FlatStyle = FlatStyle.Popup;
             bienvenue.Font = new Font("Segoe UI Variable Display", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bienvenue.ForeColor = Color.LimeGreen;
-            bienvenue.Location = new Point(45, 105);
+            bienvenue.Location = new Point(43, 105);
             bienvenue.Name = "bienvenue";
             bienvenue.Size = new Size(535, 30);
             bienvenue.TabIndex = 9;
@@ -162,7 +163,7 @@ namespace Outil_Mutation_Automate
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.MidnightBlue;
-            label3.Location = new Point(45, 135);
+            label3.Location = new Point(43, 135);
             label3.Name = "label3";
             label3.Size = new Size(213, 24);
             label3.TabIndex = 9;
@@ -173,7 +174,7 @@ namespace Outil_Mutation_Automate
             lbversion.AutoSize = true;
             lbversion.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbversion.ForeColor = SystemColors.ButtonShadow;
-            lbversion.Location = new Point(45, 159);
+            lbversion.Location = new Point(43, 159);
             lbversion.Name = "lbversion";
             lbversion.Size = new Size(50, 24);
             lbversion.TabIndex = 11;
@@ -545,14 +546,14 @@ namespace Outil_Mutation_Automate
             siticoneShimmerLabel1.Font = new Font("Segoe UI Variable Display", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             siticoneShimmerLabel1.IsAnimating = true;
             siticoneShimmerLabel1.IsPaused = false;
-            siticoneShimmerLabel1.Location = new Point(40, 104);
+            siticoneShimmerLabel1.Location = new Point(43, 104);
             siticoneShimmerLabel1.Name = "siticoneShimmerLabel1";
             siticoneShimmerLabel1.PauseDuration = 0;
             siticoneShimmerLabel1.ShimmerColor = Color.Lime;
             siticoneShimmerLabel1.ShimmerOpacity = 1F;
             siticoneShimmerLabel1.ShimmerSpeed = 50;
             siticoneShimmerLabel1.ShimmerWidth = 0.2F;
-            siticoneShimmerLabel1.Size = new Size(557, 34);
+            siticoneShimmerLabel1.Size = new Size(545, 34);
             siticoneShimmerLabel1.TabIndex = 24;
             siticoneShimmerLabel1.Text = "Bienvenue sur l'outil d'aide à la mutation automate";
             siticoneShimmerLabel1.ToolTipText = "";
@@ -579,12 +580,27 @@ namespace Outil_Mutation_Automate
             SmoothTimer.Interval = 1000;
             SmoothTimer.Tick += SmoothTimer_Tick;
             // 
+            // btnFakeAccept
+            // 
+            btnFakeAccept.BackColor = Color.Transparent;
+            btnFakeAccept.FlatAppearance.BorderSize = 0;
+            btnFakeAccept.FlatStyle = FlatStyle.Flat;
+            btnFakeAccept.ForeColor = Color.Transparent;
+            btnFakeAccept.Location = new Point(847, 864);
+            btnFakeAccept.Name = "btnFakeAccept";
+            btnFakeAccept.Size = new Size(21, 27);
+            btnFakeAccept.TabIndex = 26;
+            btnFakeAccept.TabStop = false;
+            btnFakeAccept.UseVisualStyleBackColor = false;
+            btnFakeAccept.Click += btnFakeAccept_Click;
+            // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(10F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(880, 903);
+            Controls.Add(btnFakeAccept);
             Controls.Add(SmoothCircular);
             Controls.Add(siticoneShimmerLabel1);
             Controls.Add(ProgressBar);
@@ -604,6 +620,7 @@ namespace Outil_Mutation_Automate
             Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            KeyPreview = true;
             Name = "MenuPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Outil Mutation Automate";
@@ -660,5 +677,6 @@ namespace Outil_Mutation_Automate
         private SiticoneNetCoreUI.SiticoneShimmerLabel siticoneShimmerLabel1;
         private SiticoneNetCoreUI.SiticoneSmoothCircularSpinner SmoothCircular;
         private System.Windows.Forms.Timer SmoothTimer;
+        private Button btnFakeAccept;
     }
 }

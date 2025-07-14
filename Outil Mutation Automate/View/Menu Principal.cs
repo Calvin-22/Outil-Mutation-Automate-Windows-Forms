@@ -17,7 +17,6 @@ namespace Outil_Mutation_Automate
     public partial class MenuPrincipal : Form
     {
         public Timer delayTimer;  // Timer pour la mise en attente
-        public int opacityStep = 0; // Variable utilisée pour gérer l'opacité
 
         /// <summary>
         /// Constructeur de la classe MenuPrincipal.
@@ -27,6 +26,7 @@ namespace Outil_Mutation_Automate
             InitializeComponent();
             this.MaximizeBox = false;
             VérifierConnexion();
+            this.AcceptButton = btnFakeAccept;
 
             // Spécification du Timer au lancement du formulaire pour modification couleur barre de progression
             delayTimer = new Timer();
@@ -41,6 +41,16 @@ namespace Outil_Mutation_Automate
             {
                 delayTimer.Start(); // Démarrage du Timer
             }
+        }
+
+        /// <summary>
+        /// Limite de siticone : passer par un Winforms faux button pour simuler entrée
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnFakeAccept_Click(object sender, EventArgs e)
+        {
+            SbtnCalculer_Click(SbtnCalculer, EventArgs.Empty); 
         }
 
         /// <summary>
@@ -98,7 +108,6 @@ namespace Outil_Mutation_Automate
                 return false;
             }
         }
-
         /// <summary>
         /// Initialisations des variables nécessaires aux calculs
         /// </summary>
@@ -180,7 +189,6 @@ namespace Outil_Mutation_Automate
                                 ligne8.Text = ""; // On efface le contenu de ligne8
                             }
                         }
-
                         // Définition de la zone
                         if (Zone(frequencePicking, (int)_NBC, _NbGoulotte))
                         {
@@ -223,6 +231,7 @@ namespace Outil_Mutation_Automate
             // Activer le bouton afin d'éviter de boucler un délai de chargement
             SbtnCalculer.Enabled = true;
         }
+
         // Fonction de détermination de la zone du produit correspondant
         public bool Zone(double frequence, int NBC, double NbGoulotte)
         {
@@ -273,7 +282,6 @@ namespace Outil_Mutation_Automate
                 frm.Show(); // Affiche la fenêtre 
 
             }
-
         }
         /// <summary>
         /// Vider intégralement les saisies et calculs réalisés par l'algorithme 
@@ -323,7 +331,6 @@ namespace Outil_Mutation_Automate
                 SystemSounds.Hand.Play();
                 MessageBox.Show("Erreur : Veuillez d'abord effectuer une saisie.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-
             }
         }
     }
