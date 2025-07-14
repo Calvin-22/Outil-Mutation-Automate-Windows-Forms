@@ -190,7 +190,7 @@ namespace Outil_Mutation_Automate
         public bool Zone(double frequence, int NBC, double NbGoulotte)
         {
             // Condition fréquence minimum 60, condition picking inférieur à 5, Nombre de canaux inférieur à 3 
-            if (frequence > 60 && NBC < 5 && NbGoulotte < 3.2)
+            if (frequence > 60 && NBC < 5 && NbGoulotte < 3.1)
             {
                 return true;
             }
