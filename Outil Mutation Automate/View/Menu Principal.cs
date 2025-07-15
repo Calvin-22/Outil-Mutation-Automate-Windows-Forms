@@ -159,7 +159,7 @@ namespace Outil_Mutation_Automate
                         await Task.Delay(1000);
 
                         // Afficher le résultat sous forme de texte
-                        ligne1.Text = "• Nombre de boîtes vendues (par jour) :  " + _NBV.ToString();
+                        ligne1.Text = "• Nombre de boîtes vendues (par jour) :  " + Math.Round(_NBV, 1);
                         ligne2.Text = "• Hauteur totale nécessaire (par jour) : " + Math.Round(HT, 1) + "mm";
                         ligne3.Text = "• Nombre de canaux de " + _hauteurCanalDesire + "mm" + " nécessaire par jour : " + Math.Round(_NbGoulotte, 1);
                         ligne4.Text = "• Nombre de boîtes par commande (en moyenne) : " + Math.Round(_NBC, 1);

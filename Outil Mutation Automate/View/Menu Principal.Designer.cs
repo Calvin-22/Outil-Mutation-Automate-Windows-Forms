@@ -541,7 +541,7 @@ namespace Outil_Mutation_Automate
             // siticoneShimmerLabel1
             // 
             siticoneShimmerLabel1.AutoReverse = false;
-            siticoneShimmerLabel1.BaseColor = Color.LimeGreen;
+            siticoneShimmerLabel1.BaseColor = Color.FromArgb(0, 192, 0);
             siticoneShimmerLabel1.Direction = SiticoneNetCoreUI.ShimmerDirection.LeftToRight;
             siticoneShimmerLabel1.Font = new Font("Segoe UI Variable Display", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             siticoneShimmerLabel1.IsAnimating = true;
