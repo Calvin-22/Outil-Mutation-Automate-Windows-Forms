@@ -17,7 +17,7 @@ namespace Outil_Mutation_Automate.Model
         public double NBC { get; set; }
         public double NBV { get; set; }
         public double Hauteur_Canal { get; set; }
-        public double Nombre_Canaux_Nécessaires { get; set; }
+        public double Nombre_Canaux { get; set; }
 
         /// <summary>
         /// Valorise les propriétés
@@ -36,7 +36,7 @@ namespace Outil_Mutation_Automate.Model
             NBC = nombreBoitesParCommande;
             NBV = nombreBoitesVendues;
             Hauteur_Canal = hauteurCanalDesire;
-            Nombre_Canaux_Nécessaires = nombreCanauxNecessaires;
+            Nombre_Canaux = nombreCanauxNecessaires;
         }
     }
 }
