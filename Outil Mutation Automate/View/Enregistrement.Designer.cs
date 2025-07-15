@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Enregistrement));
             dgvMutation = new DataGridView();
             Groupbox = new GroupBox();
             groupBox1 = new GroupBox();
+            btnPrint = new Button();
+            label5 = new Label();
             SbtnAjouter = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             label4 = new Label();
             label3 = new Label();
@@ -51,28 +53,28 @@
             // 
             // dgvMutation
             // 
-            dgvMutation.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvMutation.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvMutation.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvMutation.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.Green;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle3.Padding = new Padding(1);
-            dataGridViewCellStyle3.SelectionBackColor = Color.Green;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvMutation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.Green;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.Padding = new Padding(1);
+            dataGridViewCellStyle1.SelectionBackColor = Color.Green;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvMutation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvMutation.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.Padding = new Padding(1);
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvMutation.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new Padding(1);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvMutation.DefaultCellStyle = dataGridViewCellStyle2;
             dgvMutation.EnableHeadersVisualStyles = false;
             dgvMutation.Location = new Point(54, 55);
             dgvMutation.MultiSelect = false;
@@ -81,7 +83,7 @@
             dgvMutation.RowHeadersVisible = false;
             dgvMutation.RowHeadersWidth = 62;
             dgvMutation.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvMutation.Size = new Size(793, 239);
+            dgvMutation.Size = new Size(971, 324);
             dgvMutation.TabIndex = 0;
             // 
             // Groupbox
@@ -90,13 +92,15 @@
             Groupbox.ForeColor = Color.Black;
             Groupbox.Location = new Point(48, 26);
             Groupbox.Name = "Groupbox";
-            Groupbox.Size = new Size(805, 274);
+            Groupbox.Size = new Size(983, 359);
             Groupbox.TabIndex = 3;
             Groupbox.TabStop = false;
             Groupbox.Text = "Lignes Enregistrées";
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(btnPrint);
+            groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(SbtnAjouter);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
@@ -106,12 +110,34 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox1.ForeColor = Color.Black;
-            groupBox1.Location = new Point(48, 362);
+            groupBox1.Location = new Point(48, 459);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1042, 194);
+            groupBox1.Size = new Size(1233, 194);
             groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
             groupBox1.Text = "Enregistrer une ligne";
+            // 
+            // btnPrint
+            // 
+            btnPrint.BackgroundImage = (Image)resources.GetObject("btnPrint.BackgroundImage");
+            btnPrint.BackgroundImageLayout = ImageLayout.Stretch;
+            btnPrint.Location = new Point(1087, 69);
+            btnPrint.Name = "btnPrint";
+            btnPrint.Size = new Size(63, 61);
+            btnPrint.TabIndex = 24;
+            btnPrint.Tag = "";
+            btnPrint.UseVisualStyleBackColor = true;
+            btnPrint.Click += btnPrint_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.ForeColor = SystemColors.ControlDarkDark;
+            label5.Location = new Point(576, 116);
+            label5.Name = "label5";
+            label5.Size = new Size(362, 24);
+            label5.TabIndex = 23;
+            label5.Text = "*Canaux : Nombre de canaux nécessaires.";
             // 
             // SbtnAjouter
             // 
@@ -183,7 +209,7 @@
             // 
             label4.AutoSize = true;
             label4.ForeColor = SystemColors.ControlDarkDark;
-            label4.Location = new Point(637, 93);
+            label4.Location = new Point(576, 93);
             label4.Name = "label4";
             label4.Size = new Size(360, 24);
             label4.TabIndex = 6;
@@ -193,7 +219,7 @@
             // 
             label3.AutoSize = true;
             label3.ForeColor = SystemColors.ControlDarkDark;
-            label3.Location = new Point(636, 69);
+            label3.Location = new Point(575, 69);
             label3.Name = "label3";
             label3.Size = new Size(347, 24);
             label3.TabIndex = 5;
@@ -274,7 +300,7 @@
             SbtnAnnuler.ImageRightMargin = 8;
             SbtnAnnuler.ImageSize = 24;
             SbtnAnnuler.IsReadOnly = false;
-            SbtnAnnuler.Location = new Point(899, 309);
+            SbtnAnnuler.Location = new Point(1085, 400);
             SbtnAnnuler.MakeRadial = false;
             SbtnAnnuler.Name = "SbtnAnnuler";
             SbtnAnnuler.PressAnimationSpeed = 0.5F;
@@ -302,7 +328,7 @@
             // cerp
             // 
             cerp.Image = (Image)resources.GetObject("cerp.Image");
-            cerp.Location = new Point(870, 64);
+            cerp.Location = new Point(1061, 105);
             cerp.Name = "cerp";
             cerp.Size = new Size(220, 200);
             cerp.SizeMode = PictureBoxSizeMode.Zoom;
@@ -350,7 +376,7 @@
             SbtnSupprimer.ImageRightMargin = 8;
             SbtnSupprimer.ImageSize = 24;
             SbtnSupprimer.IsReadOnly = false;
-            SbtnSupprimer.Location = new Point(69, 309);
+            SbtnSupprimer.Location = new Point(69, 400);
             SbtnSupprimer.MakeRadial = false;
             SbtnSupprimer.Name = "SbtnSupprimer";
             SbtnSupprimer.PressAnimationSpeed = 0.5F;
@@ -380,7 +406,7 @@
             AutoScaleDimensions = new SizeF(10F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1140, 588);
+            ClientSize = new Size(1322, 689);
             Controls.Add(SbtnSupprimer);
             Controls.Add(SbtnAnnuler);
             Controls.Add(cerp);
@@ -415,5 +441,7 @@
         private SiticoneNetCoreUI.SiticoneButtonAdvanced SbtnAjouter;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced SbtnAnnuler;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced SbtnSupprimer;
+        private Label label5;
+        private Button btnPrint;
     }
 }

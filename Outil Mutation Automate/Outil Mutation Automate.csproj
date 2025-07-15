@@ -25,6 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="iTextSharp" Version="5.5.13.4" />
     <PackageReference Include="MySql.Data" Version="9.3.0" />
     <PackageReference Include="Siticone.NetCore.UI" Version="2025.7.6" />
   </ItemGroup>

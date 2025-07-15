@@ -85,7 +85,7 @@ namespace Outil_Mutation_Automate.Dal
                 parameters.Add("@NBC", mutation.NBC);
                 parameters.Add("@NBV", mutation.NBV);
                 parameters.Add("@HauteurCanal", mutation.Hauteur_Canal);
-                parameters.Add("@NombreCanauxNecessaires", mutation.Nombre_Canaux);
+                parameters.Add("@NombreCanauxNecessaires", mutation.Canaux);
 
                 try
                 {
