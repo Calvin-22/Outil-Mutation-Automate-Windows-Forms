@@ -3,7 +3,7 @@
 "VSVersion" = "3:800"
 "ProjectType" = "8:{978C614F-708E-4E1A-B201-565925725DBA}"
 "IsWebType" = "8:FALSE"
-"ProjectName" = "8:Setup Outil Mutation Automate v3.5"
+"ProjectName" = "8:Setup Outil Mutation Automate v4.0"
 "LanguageId" = "3:1036"
 "CodePage" = "3:1252"
 "UILanguageId" = "3:1036"
@@ -16,6 +16,12 @@
         "Entry"
         {
         "MsmKey" = "8:_2956F531BFFC4401BC1DCE7660384302"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4C3E9C07ACE24CE393B144AD18B17A55"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -73,6 +79,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -89,6 +103,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -124,6 +154,26 @@
             {
             "SourcePath" = "8:..\\..\\..\\..\\OneDrive\\Documents\\Image-logo-CERP\\CERP-logo.png"
             "TargetName" = "8:CERP-logo.png"
+            "Tag" = "8:"
+            "Folder" = "8:_F57369FF1183484B9A199B023029CD39"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4C3E9C07ACE24CE393B144AD18B17A55"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\OneDrive\\Documents\\Image-logo-CERP\\Icone-Impression.jpg"
+            "TargetName" = "8:Icone-Impression.jpg"
             "Tag" = "8:"
             "Folder" = "8:_F57369FF1183484B9A199B023029CD39"
             "Condition" = "8:"
@@ -297,7 +347,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Setup Outil Mutation Automate v3.5"
         "ProductCode" = "8:{734CD3BA-80EB-4A7D-A60B-536DC5547F03}"
-        "PackageCode" = "8:{C5A2F95E-EA58-4107-A1E6-DEEDAD35297D}"
+        "PackageCode" = "8:{D010F69E-7B88-45CD-9BBC-9BE418FAB0E3}"
         "UpgradeCode" = "8:{2164DFE4-176E-40CF-B34A-BED38E046939}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
