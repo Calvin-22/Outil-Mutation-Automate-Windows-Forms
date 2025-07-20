@@ -50,7 +50,7 @@ namespace Outil_Mutation_Automate
         /// <param name="e"></param>
         private void btnFakeAccept_Click(object sender, EventArgs e)
         {
-            SbtnCalculer_Click(SbtnCalculer, EventArgs.Empty); 
+            SbtnCalculer_Click(SbtnCalculer, EventArgs.Empty);
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Outil_Mutation_Automate
         /// <param name="e"></param>
         public void SmoothTimer_Tick(object sender, EventArgs e)
         {
-            SmoothCircular.Visible = false; 
+            SmoothCircular.Visible = false;
             delayTimer.Stop();
         }
 
@@ -116,6 +116,7 @@ namespace Outil_Mutation_Automate
         private double _hauteurCanalDesire; // Hauteur du canal désirée
         private double _NbGoulotte; // Nombre de canaux nécessaires
         private string _zone; // Zone du produit
+        private bool lectureSeule = false; // Variable pour la lecture seule, par défaut à false
 
         /// <summary>
         /// Événement déclenché lors du clic sur le bouton "Calculer".
@@ -134,7 +135,7 @@ namespace Outil_Mutation_Automate
                 string hauteurCanalDesireTexte = hauteurG.Text;
 
                 // Instauration d'une animation de chargement des données 
-                SmoothCircular.Visible = true; 
+                SmoothCircular.Visible = true;
                 SmoothTimer.Start();
 
                 // Tenter de convertir le texte récupéré en nombres (double pour les nombres décimaux, int pour les entiers).
@@ -271,6 +272,16 @@ namespace Outil_Mutation_Automate
             }
             else
             {
+                // Vérifie si un formulaire nommé "Form2" est ouvert
+                foreach (Form form in Application.OpenForms)
+                {
+                    if (form is Enregistrement)
+                    {
+                        form.Close();  // Ferme le formulaire
+                        break;         // Stoppe la boucle une fois trouvé
+                    }
+                }
+
                 // Si les lignes de résultats ne sont pas vides, on peut procéder à l'enregistrement.
                 double nbcValue = Math.Round(_NBC, 1);
                 double nbvValue = Math.Round(_NBV, 1); // Récupération des valeurs de nbc et nbv
@@ -278,7 +289,7 @@ namespace Outil_Mutation_Automate
                 double nombreCanauxNecessairesValue = Math.Round(_NbGoulotte, 1);
                 string zoneValue = _zone; // Récupération de la zone
 
-                Enregistrement frm = new Enregistrement(nbcValue, nbvValue, hauteurCanalDesireValue, nombreCanauxNecessairesValue, zoneValue); // génère la fenêtre
+                Enregistrement frm = new Enregistrement(nbcValue, nbvValue, hauteurCanalDesireValue, nombreCanauxNecessairesValue, zoneValue, lectureSeule); // génère la fenêtre
                 frm.Show(); // Affiche la fenêtre 
 
             }
@@ -332,6 +343,31 @@ namespace Outil_Mutation_Automate
                 MessageBox.Show("Erreur : Veuillez d'abord effectuer une saisie.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+        }
+
+        private void SbtnConsultation_Click(object sender, EventArgs e)
+        {
+            // Vérifie si un formulaire nommé "Form2" est ouvert
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is Enregistrement)
+                {
+                    form.Close();  // Ferme le formulaire
+                    break;         // Stoppe la boucle une fois trouvé
+                }
+            }
+            // Si les lignes de résultats ne sont pas vides, on peut procéder à l'enregistrement.
+            double nbcValue = Math.Round(_NBC, 1);
+            double nbvValue = Math.Round(_NBV, 1); // Récupération des valeurs de nbc et nbv
+            double hauteurCanalDesireValue = Math.Round(_hauteurCanalDesire, 1);
+            double nombreCanauxNecessairesValue = Math.Round(_NbGoulotte, 1);
+            string zoneValue = _zone; // Récupération de la zone
+            bool lectureSeule = true; // Variable lecture seule pour la consultation
+
+            Enregistrement frm = new Enregistrement(nbcValue, nbvValue, hauteurCanalDesireValue, nombreCanauxNecessairesValue, zoneValue, lectureSeule); // génère la fenêtre
+            frm.Show(); // Affiche la fenêtre 
+
+
         }
     }
 }

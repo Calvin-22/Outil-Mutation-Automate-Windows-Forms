@@ -25,8 +25,6 @@ namespace Outil_Mutation_Automate.View
 
     public partial class Enregistrement : Form
     {
-        
-
 
         /// <summary>
         /// Objet pour gérer la liste des mutations
@@ -34,6 +32,8 @@ namespace Outil_Mutation_Automate.View
         private BindingSource bdgmutation = new BindingSource();
 
         private FrmMutationController controller;
+
+        private bool modeLectureSeule;
 
         // Variables pour stocker les valeurs passées depuis le menu principal
         private double _nombreBoitesParCommandeFromMenuPrincipal;
@@ -50,7 +50,7 @@ namespace Outil_Mutation_Automate.View
         /// <param name="hauteurCanalDesireValue"></param>
         /// <param name="nombreCanauxNecessairesValue"></param>
         /// <param name="zoneValue"></param>
-        public Enregistrement(double nbcValue, double nbvValue, double hauteurCanalDesireValue, double nombreCanauxNecessairesValue, string zoneValue)
+        public Enregistrement(double nbcValue, double nbvValue, double hauteurCanalDesireValue, double nombreCanauxNecessairesValue, string zoneValue, bool lectureSeule)
         {
             InitializeComponent();
             this.MaximizeBox = false;
@@ -59,6 +59,22 @@ namespace Outil_Mutation_Automate.View
             _hauteurCanalDesireFromMenuPrincipal = hauteurCanalDesireValue;
             _nombreCanauxNecessairesFromMenuPrincipal = nombreCanauxNecessairesValue;
             _zoneFromMenuPrincipal = zoneValue;
+
+            // Variable lecture seule
+            modeLectureSeule = lectureSeule;
+
+            // Mode lecture seule 
+            if (modeLectureSeule)
+            {
+                // Grise les champs ou les rend non modifiables
+                txtCIP.ReadOnly = true;
+                txtDesignation.ReadOnly = true;
+                txtCIP.Enabled = false;
+                txtDesignation.Enabled = false;
+
+                // Désactive le bouton Ajouter
+                SbtnAjouter.Enabled = false;
+            }
             // Appel de la méthode d'initialisation
             Init();
         }

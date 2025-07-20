@@ -67,6 +67,7 @@ namespace Outil_Mutation_Automate
             SmoothCircular = new SiticoneNetCoreUI.SiticoneSmoothCircularSpinner();
             SmoothTimer = new System.Windows.Forms.Timer(components);
             btnFakeAccept = new Button();
+            SbtnConsultation = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             ((System.ComponentModel.ISupportInitialize)cerp).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -355,7 +356,7 @@ namespace Outil_Mutation_Automate
             BtnVider.BackgroundImage = (Image)resources.GetObject("BtnVider.BackgroundImage");
             BtnVider.BackgroundImageLayout = ImageLayout.Stretch;
             BtnVider.FlatAppearance.BorderColor = SystemColors.Control;
-            BtnVider.Location = new Point(539, 648);
+            BtnVider.Location = new Point(390, 648);
             BtnVider.Name = "BtnVider";
             BtnVider.Size = new Size(42, 41);
             BtnVider.TabIndex = 20;
@@ -564,7 +565,7 @@ namespace Outil_Mutation_Automate
             SmoothCircular.ArcMinLength = 150F;
             SmoothCircular.BackColor = Color.Transparent;
             SmoothCircular.IsAnimating = true;
-            SmoothCircular.Location = new Point(479, 644);
+            SmoothCircular.Location = new Point(332, 644);
             SmoothCircular.MinimumSize = new Size(50, 50);
             SmoothCircular.Name = "SmoothCircular";
             SmoothCircular.OscillationSpeed = 0.5F;
@@ -596,12 +597,79 @@ namespace Outil_Mutation_Automate
             btnFakeAccept.UseVisualStyleBackColor = false;
             btnFakeAccept.Click += btnFakeAccept_Click;
             // 
+            // SbtnConsultation
+            // 
+            SbtnConsultation.BackColor = Color.Transparent;
+            SbtnConsultation.BadgeBackColor = Color.Red;
+            SbtnConsultation.BadgeForeColor = Color.White;
+            SbtnConsultation.BadgeRadius = 10;
+            SbtnConsultation.BadgeRightMargin = 10;
+            SbtnConsultation.BadgeValue = 0;
+            SbtnConsultation.BorderColor = Color.FromArgb(150, 255, 255, 255);
+            SbtnConsultation.BorderColorEnd = Color.Gray;
+            SbtnConsultation.BorderColorStart = Color.White;
+            SbtnConsultation.BorderRadiusBottomLeft = 25;
+            SbtnConsultation.BorderRadiusBottomRight = 25;
+            SbtnConsultation.BorderRadiusTopLeft = 25;
+            SbtnConsultation.BorderRadiusTopRight = 25;
+            SbtnConsultation.BorderThickness = 1;
+            SbtnConsultation.ButtonColorEnd = Color.Red;
+            SbtnConsultation.ButtonColorStart = Color.Orange;
+            SbtnConsultation.ButtonImage = null;
+            SbtnConsultation.CanBeep = false;
+            SbtnConsultation.CanShake = false;
+            SbtnConsultation.ClickSoundPath = null;
+            SbtnConsultation.DisabledOverlayOpacity = 0.5F;
+            SbtnConsultation.EnableBorderGradient = false;
+            SbtnConsultation.EnableClickSound = false;
+            SbtnConsultation.EnableFocusBorder = false;
+            SbtnConsultation.EnableHoverSound = false;
+            SbtnConsultation.EnablePressScale = false;
+            SbtnConsultation.EnableTextShadow = false;
+            SbtnConsultation.FocusBorderColor = Color.FromArgb(100, 150, 255);
+            SbtnConsultation.FocusBorderThickness = 2;
+            SbtnConsultation.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SbtnConsultation.ForeColor = Color.White;
+            SbtnConsultation.HoverColor = Color.FromArgb(20, 0, 0, 0);
+            SbtnConsultation.HoverSoundPath = null;
+            SbtnConsultation.HoverTransitionSpeed = 1F;
+            SbtnConsultation.ImageAlign = ContentAlignment.MiddleCenter;
+            SbtnConsultation.ImageLeftMargin = 5;
+            SbtnConsultation.ImageRightMargin = 8;
+            SbtnConsultation.ImageSize = 24;
+            SbtnConsultation.IsReadOnly = false;
+            SbtnConsultation.Location = new Point(441, 644);
+            SbtnConsultation.MakeRadial = false;
+            SbtnConsultation.Name = "SbtnConsultation";
+            SbtnConsultation.PressAnimationSpeed = 0.5F;
+            SbtnConsultation.PressDepth = 1;
+            SbtnConsultation.RippleColor = Color.FromArgb(60, 255, 255, 255);
+            SbtnConsultation.RippleExpandSpeedFactor = 0.05F;
+            SbtnConsultation.RippleFadeSpeedFactor = 0.03F;
+            SbtnConsultation.ShadowBlurFactor = 0.85F;
+            SbtnConsultation.ShadowColor = Color.FromArgb(70, 0, 0, 0);
+            SbtnConsultation.ShadowOffsetX = 3;
+            SbtnConsultation.ShadowOffsetY = 3;
+            SbtnConsultation.Size = new Size(140, 50);
+            SbtnConsultation.TabIndex = 27;
+            SbtnConsultation.Text = "Consultation";
+            SbtnConsultation.TextAlign = ContentAlignment.MiddleCenter;
+            SbtnConsultation.TextPaddingBottom = 0;
+            SbtnConsultation.TextPaddingLeft = 0;
+            SbtnConsultation.TextPaddingRight = 0;
+            SbtnConsultation.TextPaddingTop = 0;
+            SbtnConsultation.TextShadowColor = Color.FromArgb(100, 0, 0, 0);
+            SbtnConsultation.TextShadowOffsetX = 1;
+            SbtnConsultation.TextShadowOffsetY = 1;
+            SbtnConsultation.Click += SbtnConsultation_Click;
+            // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(10F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(880, 903);
+            Controls.Add(SbtnConsultation);
             Controls.Add(btnFakeAccept);
             Controls.Add(SmoothCircular);
             Controls.Add(siticoneShimmerLabel1);
@@ -680,5 +748,6 @@ namespace Outil_Mutation_Automate
         private SiticoneNetCoreUI.SiticoneSmoothCircularSpinner SmoothCircular;
         private System.Windows.Forms.Timer SmoothTimer;
         private Button btnFakeAccept;
+        private SiticoneNetCoreUI.SiticoneButtonAdvanced SbtnConsultation;
     }
 }
