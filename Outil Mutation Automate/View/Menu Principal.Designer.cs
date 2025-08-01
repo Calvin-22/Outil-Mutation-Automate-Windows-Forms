@@ -39,7 +39,6 @@ namespace Outil_Mutation_Automate
             frequence = new TextBox();
             label2 = new Label();
             hauteurG = new TextBox();
-            bienvenue = new Label();
             label3 = new Label();
             lbversion = new Label();
             cerp = new PictureBox();
@@ -146,19 +145,6 @@ namespace Outil_Mutation_Automate
             hauteurG.Size = new Size(274, 31);
             hauteurG.TabIndex = 8;
             // 
-            // bienvenue
-            // 
-            bienvenue.AutoSize = true;
-            bienvenue.BackColor = Color.Transparent;
-            bienvenue.FlatStyle = FlatStyle.Popup;
-            bienvenue.Font = new Font("Segoe UI Variable Display", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bienvenue.ForeColor = Color.LimeGreen;
-            bienvenue.Location = new Point(43, 105);
-            bienvenue.Name = "bienvenue";
-            bienvenue.Size = new Size(535, 30);
-            bienvenue.TabIndex = 9;
-            bienvenue.Text = "Bienvenue sur l'outil d'aide à la mutation automate";
-            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -179,7 +165,7 @@ namespace Outil_Mutation_Automate
             lbversion.Name = "lbversion";
             lbversion.Size = new Size(50, 24);
             lbversion.TabIndex = 11;
-            lbversion.Text = "v.4.0";
+            lbversion.Text = "v.4.5";
             // 
             // cerp
             // 
@@ -356,7 +342,7 @@ namespace Outil_Mutation_Automate
             BtnVider.BackgroundImage = (Image)resources.GetObject("BtnVider.BackgroundImage");
             BtnVider.BackgroundImageLayout = ImageLayout.Stretch;
             BtnVider.FlatAppearance.BorderColor = SystemColors.Control;
-            BtnVider.Location = new Point(390, 648);
+            BtnVider.Location = new Point(389, 648);
             BtnVider.Name = "BtnVider";
             BtnVider.Size = new Size(42, 41);
             BtnVider.TabIndex = 20;
@@ -547,14 +533,14 @@ namespace Outil_Mutation_Automate
             siticoneShimmerLabel1.Font = new Font("Segoe UI Variable Display", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             siticoneShimmerLabel1.IsAnimating = true;
             siticoneShimmerLabel1.IsPaused = false;
-            siticoneShimmerLabel1.Location = new Point(43, 104);
+            siticoneShimmerLabel1.Location = new Point(21, 103);
             siticoneShimmerLabel1.Name = "siticoneShimmerLabel1";
             siticoneShimmerLabel1.PauseDuration = 0;
             siticoneShimmerLabel1.ShimmerColor = Color.Lime;
             siticoneShimmerLabel1.ShimmerOpacity = 1F;
             siticoneShimmerLabel1.ShimmerSpeed = 50;
             siticoneShimmerLabel1.ShimmerWidth = 0.2F;
-            siticoneShimmerLabel1.Size = new Size(545, 34);
+            siticoneShimmerLabel1.Size = new Size(589, 34);
             siticoneShimmerLabel1.TabIndex = 24;
             siticoneShimmerLabel1.Text = "Bienvenue sur l'outil d'aide à la mutation automate";
             siticoneShimmerLabel1.ToolTipText = "";
@@ -565,7 +551,7 @@ namespace Outil_Mutation_Automate
             SmoothCircular.ArcMinLength = 150F;
             SmoothCircular.BackColor = Color.Transparent;
             SmoothCircular.IsAnimating = true;
-            SmoothCircular.Location = new Point(332, 644);
+            SmoothCircular.Location = new Point(331, 644);
             SmoothCircular.MinimumSize = new Size(50, 50);
             SmoothCircular.Name = "SmoothCircular";
             SmoothCircular.OscillationSpeed = 0.5F;
@@ -638,7 +624,7 @@ namespace Outil_Mutation_Automate
             SbtnConsultation.ImageRightMargin = 8;
             SbtnConsultation.ImageSize = 24;
             SbtnConsultation.IsReadOnly = false;
-            SbtnConsultation.Location = new Point(441, 644);
+            SbtnConsultation.Location = new Point(440, 644);
             SbtnConsultation.MakeRadial = false;
             SbtnConsultation.Name = "SbtnConsultation";
             SbtnConsultation.PressAnimationSpeed = 0.5F;
@@ -686,7 +672,6 @@ namespace Outil_Mutation_Automate
             Controls.Add(cerp);
             Controls.Add(lbversion);
             Controls.Add(label3);
-            Controls.Add(bienvenue);
             Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -720,7 +705,6 @@ namespace Outil_Mutation_Automate
         private TextBox frequence;
         private Label label2;
         private TextBox hauteurG;
-        private Label bienvenue;
         private Label label3;
         private Label lbversion;
         private PictureBox cerp;

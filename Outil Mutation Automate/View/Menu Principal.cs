@@ -171,7 +171,7 @@ namespace Outil_Mutation_Automate
                         ligne8.Text = ""; // On efface le contenu de ligne8
 
                         // Partie interprétation des résultats (conclusions)
-                        if (_NBC < 5 && _NbGoulotte < 3.1 && Zone(frequencePicking, (int)_NBC, _NbGoulotte))
+                        if (_NBC < 4 && _NbGoulotte < 2.1 && Zone(frequencePicking, (int)_NBC, _NbGoulotte))
                         {
                             // Réponse et détermination du type de canaux (taille)
                             if (_NbGoulotte > 1)
@@ -237,7 +237,7 @@ namespace Outil_Mutation_Automate
         public bool Zone(double frequence, int NBC, double NbGoulotte)
         {
             // Condition fréquence minimum 60, condition picking inférieur à 5, Nombre de canaux inférieur à 3 
-            if (frequence > 60 && NBC < 5 && NbGoulotte < 3.1)
+            if (frequence > 60 && NBC < 4 && NbGoulotte < 2.1)
             {
                 return true;
             }

@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Outil Mutation Automate", "
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup Outil Mutation Automate", "Setup Outil Mutation Automate\Setup Outil Mutation Automate.vdproj", "{D509F15A-1713-32F8-2AEA-D0B708C289BF}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "(S)Setup Outil Mutation Automate", "(S)Setup Outil Mutation Automate\(S)Setup Outil Mutation Automate.vdproj", "{FF6DDF56-1DD0-D61B-09EC-FFFD30478607}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup Outil Mutation Automate v4.5", "(S)Setup Outil Mutation Automate\(S)Setup Outil Mutation Automate.vdproj", "{FF6DDF56-1DD0-D61B-09EC-FFFD30478607}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +23,7 @@ Global
 		{D509F15A-1713-32F8-2AEA-D0B708C289BF}.Release|Any CPU.ActiveCfg = Release
 		{FF6DDF56-1DD0-D61B-09EC-FFFD30478607}.Debug|Any CPU.ActiveCfg = Debug
 		{FF6DDF56-1DD0-D61B-09EC-FFFD30478607}.Release|Any CPU.ActiveCfg = Release
+		{FF6DDF56-1DD0-D61B-09EC-FFFD30478607}.Release|Any CPU.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
