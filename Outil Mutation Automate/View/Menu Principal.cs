@@ -176,9 +176,10 @@ namespace Outil_Mutation_Automate
                             // Réponse et détermination du type de canaux (taille)
                             if (_NbGoulotte > 1)
                             {
+                                double pourcentage = _NbGoulotte * 100;
                                 ligne5.Text = "Dans cette configuration, il serait souhaitable d'opter pour une hauteur de canal plus grande.";
                                 ligne6.Text = $"Sinon, il faudrait mettre en place {Math.Round(_NbGoulotte, 1)} canaux de {hauteurG.Text} mm.";
-                                ligne7.Text = ""; // On efface le contenu de ligne7
+                                ligne7.Text = $"Ce produit nécessitera précisément {Math.Round(pourcentage, 1)} % d'un canal de {hauteurG.Text} mm.";
                                 ligne8.Text = ""; // On efface le contenu de ligne8
                             }
                             else
@@ -202,6 +203,31 @@ namespace Outil_Mutation_Automate
                             ligne8.Text = "Ce produit doit aller au magasin. Il n'est pas compatible avec les exigences de l'automate.";
                             _zone = "Magasin"; // Zone définie comme "Magasin"
                         }
+
+                        // En démo : Détermination de la hauteur idéale (tranche en dessous de 0.8 soit 80%
+                        if (PetitCanal(HT) > 0.8)
+                        {
+                            if (MoyenCanal(HT) > 0.8)
+                            {
+                                if (GrandCanal(HT) > 0.8)
+                                {
+                                    // Fréquence beaucoup trop élevée, pas de canal possible ; incompatible avec l'automate.
+                                }
+                                else
+                                {
+                                    // Hauteur ok
+                                }
+
+                            }
+                            else
+                                {
+                                    // Hauteur ok
+                                }
+                        }
+                        else
+                            {
+                                // Hauteur ok
+                            }
                     }
                     else
                     {
@@ -247,6 +273,45 @@ namespace Outil_Mutation_Automate
             }
 
         }
+
+        // En démo : trois fonctions qui retournent le pourcentage de produit vendu par rapport à la hauteur du canal.
+
+        /// <summary>
+        /// Fonction de calcul du pourcentage produit vendu par jour pour un canal de 800mm.
+        /// </summary>
+        /// <param name="HT"></param>
+        /// <returns></returns>
+        public double PetitCanal(double HT)
+        {
+            double petit;
+            petit = HT / 800;
+            return petit;
+        }
+
+        /// <summary>
+        /// Fonction de calcul du pourcentage produit vendu par jour pour un canal de 1200mm.
+        /// </summary>
+        /// <param name="HT"></param>
+        /// <returns></returns>
+        public double MoyenCanal(double HT)
+        {
+            double moyen;
+            moyen = HT / 1200;
+            return moyen;
+        }
+
+        /// <summary>
+        /// Fonction de calcul du pourcentage produit vendu par jour pour un canal de 2500mm.
+        /// </summary>
+        /// <param name="HT"></param>
+        /// <returns></returns>
+        public double GrandCanal(double HT)
+        {
+            double grand;
+            grand = HT / 2500;
+            return grand;
+        }
+
         // Fenêtre d'information du logiciel
         private void infobutton_Click(object sender, EventArgs e)
         {
