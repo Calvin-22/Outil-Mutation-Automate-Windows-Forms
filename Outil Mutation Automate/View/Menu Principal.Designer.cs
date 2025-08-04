@@ -37,12 +37,12 @@ namespace Outil_Mutation_Automate
             moyenne = new TextBox();
             FreqLabel = new Label();
             frequence = new TextBox();
-            label2 = new Label();
             hauteurG = new TextBox();
             label3 = new Label();
             lbversion = new Label();
             cerp = new PictureBox();
             groupBox1 = new GroupBox();
+            lblHauteur = new Label();
             groupBox2 = new GroupBox();
             ligne4 = new Label();
             ligne3 = new Label();
@@ -127,23 +127,15 @@ namespace Outil_Mutation_Automate
             frequence.Size = new Size(274, 31);
             frequence.TabIndex = 6;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(480, 112);
-            label2.Name = "label2";
-            label2.Size = new Size(274, 24);
-            label2.TabIndex = 7;
-            label2.Text = "Hauteur du canal désiré (mm) : ";
-            // 
             // hauteurG
             // 
             hauteurG.Cursor = Cursors.IBeam;
             hauteurG.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            hauteurG.Location = new Point(484, 152);
+            hauteurG.Location = new Point(560, 869);
             hauteurG.Name = "hauteurG";
             hauteurG.Size = new Size(274, 31);
             hauteurG.TabIndex = 8;
+            hauteurG.Visible = false;
             // 
             // label3
             // 
@@ -179,8 +171,7 @@ namespace Outil_Mutation_Automate
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(hauteurG);
-            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(lblHauteur);
             groupBox1.Controls.Add(frequence);
             groupBox1.Controls.Add(FreqLabel);
             groupBox1.Controls.Add(moyenne);
@@ -193,6 +184,15 @@ namespace Outil_Mutation_Automate
             groupBox1.Size = new Size(789, 202);
             groupBox1.TabIndex = 13;
             groupBox1.TabStop = false;
+            // 
+            // lblHauteur
+            // 
+            lblHauteur.AutoSize = true;
+            lblHauteur.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblHauteur.Location = new Point(374, 134);
+            lblHauteur.Name = "lblHauteur";
+            lblHauteur.Size = new Size(0, 24);
+            lblHauteur.TabIndex = 8;
             // 
             // groupBox2
             // 
@@ -655,6 +655,7 @@ namespace Outil_Mutation_Automate
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(880, 903);
+            Controls.Add(hauteurG);
             Controls.Add(SbtnConsultation);
             Controls.Add(btnFakeAccept);
             Controls.Add(SmoothCircular);
@@ -703,7 +704,6 @@ namespace Outil_Mutation_Automate
         private TextBox moyenne;
         private Label FreqLabel;
         private TextBox frequence;
-        private Label label2;
         private TextBox hauteurG;
         private Label label3;
         private Label lbversion;
@@ -733,5 +733,6 @@ namespace Outil_Mutation_Automate
         private System.Windows.Forms.Timer SmoothTimer;
         private Button btnFakeAccept;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced SbtnConsultation;
+        private Label lblHauteur;
     }
 }

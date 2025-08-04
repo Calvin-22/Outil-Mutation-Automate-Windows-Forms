@@ -138,6 +138,7 @@ namespace Outil_Mutation_Automate
                 string hauteurProduitTexte = hauteur.Text;
                 string frequencePickingTexte = frequence.Text;
                 string moyenneVentesTexte = moyenne.Text;
+                bool vérif = true;
                 // string hauteurCanalDesireTexte = hauteurG.Text; : désactivation temporaire
 
                 // Instauration d'une animation de chargement des données 
@@ -165,6 +166,8 @@ namespace Outil_Mutation_Automate
                         // Attente de 2000 ms sans bloquer l'UI
                         await Task.Delay(1000);
 
+
+
                         // En démo : Détermination de la hauteur idéale (tranche en dessous de 0.8 soit 80%) 
                         if (PetitCanal(HT) > 0.8)
                         {
@@ -174,6 +177,8 @@ namespace Outil_Mutation_Automate
                                 {
                                     // Fréquence beaucoup trop élevée, pas de canal possible ; incompatible avec l'automate.
                                     _hauteurCanalDesire = 2500;
+                                    vérif = false;
+
                                 }
                                 else
                                 {
@@ -193,10 +198,13 @@ namespace Outil_Mutation_Automate
                         // Calcul du nombre de canaux nécessaires après attribution de la hauteur du canal
                         _NbGoulotte = HT / _hauteurCanalDesire;
 
+                        // Affichage pour info de la hauteur du canal (800, 1200, 2500)
+                        lblHauteur.Text = "La hauteur canal est obligatoirement " + _hauteurCanalDesire + " mm.";
+
                         // Afficher le résultat sous forme de texte
                         ligne1.Text = "• Nombre de boîtes vendues (par jour) :  " + Math.Round(_NBV, 1);
-                        ligne2.Text = "• Hauteur totale nécessaire (par jour) : " + Math.Round(HT, 1) + "mm";
-                        ligne3.Text = "• Nombre de canaux de " + _hauteurCanalDesire + "mm" + " nécessaire par jour : " + Math.Round(_NbGoulotte, 2);
+                        ligne2.Text = "• Hauteur totale nécessaire (par jour) : " + Math.Round(HT, 1) + " mm";
+                        ligne3.Text = "• Nombre de canaux de " + _hauteurCanalDesire + " mm" + " nécessaire par jour : " + Math.Round(_NbGoulotte, 2);
                         ligne4.Text = "• Nombre de boîtes par commande (en moyenne) : " + Math.Round(_NBC, 1);
 
                         ligne5.Text = ""; // On efface le contenu de ligne5
@@ -205,7 +213,7 @@ namespace Outil_Mutation_Automate
                         ligne8.Text = ""; // On efface le contenu de ligne8
 
                         // Partie interprétation des résultats (conclusions)
-                        if (_NBC < 4 && _NbGoulotte < 2.1 && Zone(frequencePicking, (int)_NBC, _NbGoulotte))
+                        if (_NBC < 4 && _NbGoulotte < 2.1 && Zone(frequencePicking, (int)_NBC, _NbGoulotte, vérif))
                         {
                             // Réponse et détermination du type de canaux (taille)
                             if (_NbGoulotte > 1)
@@ -219,14 +227,14 @@ namespace Outil_Mutation_Automate
                             else
                             {
                                 double pourcentage = _NbGoulotte * 100;
-                                ligne5.Text = "Parfait pour cette configuration en terme de hauteur de canal.";
-                                ligne6.Text = $"Ce produit nécessitera précisément {Math.Round(pourcentage, 1)} % d'un canal de {_hauteurCanalDesire} mm.";
+                                ligne5.Text = "Parfait, ce produit nécessitera qu'un seul canal.";
+                                ligne6.Text = $"Il nécessitera précisément {Math.Round(pourcentage, 1)} % d'un canal de {_hauteurCanalDesire} mm.";
                                 ligne7.Text = ""; // On efface le contenu de ligne7
                                 ligne8.Text = ""; // On efface le contenu de ligne8
                             }
                         }
                         // Définition de la zone
-                        if (Zone(frequencePicking, (int)_NBC, _NbGoulotte))
+                        if (Zone(frequencePicking, (int)_NBC, _NbGoulotte, vérif))
                         {
                             ligne8.Text = "Ce produit peut aller à l'automate.";
                             _zone = "Automate"; // Zone définie comme "Automate"
@@ -234,6 +242,7 @@ namespace Outil_Mutation_Automate
                         }
                         else
                         {
+                            // lblHauteur.Text = "Produit incompatible."; : potentielle idée
                             ligne8.Text = "Ce produit doit aller au magasin. Il n'est pas compatible avec les exigences de l'automate.";
                             _zone = "Magasin"; // Zone définie comme "Magasin"
                         }
@@ -269,10 +278,10 @@ namespace Outil_Mutation_Automate
         }
 
         // Fonction de détermination de la zone du produit correspondant
-        public bool Zone(double frequence, int NBC, double NbGoulotte)
+        public bool Zone(double frequence, int NBC, double NbGoulotte, bool vérif)
         {
             // Condition fréquence minimum 60, condition picking inférieur à 5, Nombre de canaux inférieur à 3 
-            if (frequence > 60 && NBC < 4 && NbGoulotte < 2.1)
+            if (frequence > 60 && NBC < 4 && NbGoulotte < 2.1 && vérif)
             {
                 return true;
             }
