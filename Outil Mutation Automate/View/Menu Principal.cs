@@ -6,6 +6,7 @@ using Outil_Mutation_Automate.View;
 using Outil_Mutation_Automate.Dal;
 using MySql.Data.MySqlClient;
 using Timer = System.Windows.Forms.Timer;
+using iTextSharp.text.xml;
 
 
 
@@ -41,6 +42,10 @@ namespace Outil_Mutation_Automate
             {
                 delayTimer.Start(); // Démarrage du Timer
             }
+
+            // Désactivation temporaire du champs de saisie de la hauteur idéale. 
+            hauteurG.Enabled = false;
+            hauteurG.ReadOnly = true;
         }
 
         /// <summary>
@@ -125,14 +130,15 @@ namespace Outil_Mutation_Automate
         /// <param name="e"></param>
         private async void SbtnCalculer_Click(object sender, EventArgs e)
         {
-            if (!hauteur.Text.Equals("") && !frequence.Text.Equals("") && !moyenne.Text.Equals("") && !hauteurG.Text.Equals(""))
+            if (!hauteur.Text.Equals("") && !frequence.Text.Equals("") && !moyenne.Text.Equals("")) //&& !hauteurG.Text.Equals("")) : désactivation temporaire pour test. 
+                
             {
                 // Récupérer le texte entré par l'utilisateur dans les TextBox.
                 // 'Hauteur', 'Frequence', 'Moyenne' et 'HauteurG'
                 string hauteurProduitTexte = hauteur.Text;
                 string frequencePickingTexte = frequence.Text;
                 string moyenneVentesTexte = moyenne.Text;
-                string hauteurCanalDesireTexte = hauteurG.Text;
+                // string hauteurCanalDesireTexte = hauteurG.Text; : désactivation temporaire
 
                 // Instauration d'une animation de chargement des données 
                 SmoothCircular.Visible = true;
@@ -142,15 +148,15 @@ namespace Outil_Mutation_Automate
                 // 'out double hauteurProduit' signifie que si la conversion réussit, la valeur sera stockée dans la variable 'hauteurProduit'.
                 if (double.TryParse(hauteurProduitTexte, out double hauteurProduit) &&
                     int.TryParse(frequencePickingTexte, out int frequencePicking) &&
-                    double.TryParse(moyenneVentesTexte, out double moyenneVentes) &&
-                    double.TryParse(hauteurCanalDesireTexte, out _hauteurCanalDesire))
+                    double.TryParse(moyenneVentesTexte, out double moyenneVentes)) //&&
+                    //double.TryParse(hauteurCanalDesireTexte, out _hauteurCanalDesire)) :désactivation temporaire à des fins de tests. 
                 {
                     if (frequencePicking <= moyenneVentes)
                     {
                         // Logique de calcul
                         _NBV = moyenneVentes / 25;
                         double HT = hauteurProduit * _NBV;
-                        _NbGoulotte = HT / _hauteurCanalDesire;
+                        //_NbGoulotte = HT / _hauteurCanalDesire; : désactivation temporaire à des fins de calculs. 
                         _NBC = moyenneVentes / frequencePicking;
 
                         // Désactiver le bouton afin d'éviter de boucler un délai de chargement
@@ -159,10 +165,38 @@ namespace Outil_Mutation_Automate
                         // Attente de 2000 ms sans bloquer l'UI
                         await Task.Delay(1000);
 
+                        // En démo : Détermination de la hauteur idéale (tranche en dessous de 0.8 soit 80%) 
+                        if (PetitCanal(HT) > 0.8)
+                        {
+                            if (MoyenCanal(HT) > 0.8)
+                            {
+                                if (GrandCanal(HT) > 0.8)
+                                {
+                                    // Fréquence beaucoup trop élevée, pas de canal possible ; incompatible avec l'automate.
+                                    _hauteurCanalDesire = 2500;
+                                }
+                                else
+                                {
+                                    _hauteurCanalDesire = 2500;
+                                }
+                            }
+                            else
+                            {
+                                _hauteurCanalDesire = 1200;
+                            }
+                        }
+                        else
+                        {
+                            _hauteurCanalDesire = 800;
+                        }
+                        
+                        // Calcul du nombre de canaux nécessaires après attribution de la hauteur du canal
+                        _NbGoulotte = HT / _hauteurCanalDesire;
+
                         // Afficher le résultat sous forme de texte
                         ligne1.Text = "• Nombre de boîtes vendues (par jour) :  " + Math.Round(_NBV, 1);
                         ligne2.Text = "• Hauteur totale nécessaire (par jour) : " + Math.Round(HT, 1) + "mm";
-                        ligne3.Text = "• Nombre de canaux de " + _hauteurCanalDesire + "mm" + " nécessaire par jour : " + Math.Round(_NbGoulotte, 1);
+                        ligne3.Text = "• Nombre de canaux de " + _hauteurCanalDesire + "mm" + " nécessaire par jour : " + Math.Round(_NbGoulotte, 2);
                         ligne4.Text = "• Nombre de boîtes par commande (en moyenne) : " + Math.Round(_NBC, 1);
 
                         ligne5.Text = ""; // On efface le contenu de ligne5
@@ -177,16 +211,16 @@ namespace Outil_Mutation_Automate
                             if (_NbGoulotte > 1)
                             {
                                 double pourcentage = _NbGoulotte * 100;
-                                ligne5.Text = "Dans cette configuration, il serait souhaitable d'opter pour une hauteur de canal plus grande.";
-                                ligne6.Text = $"Sinon, il faudrait mettre en place {Math.Round(_NbGoulotte, 1)} canaux de {hauteurG.Text} mm.";
-                                ligne7.Text = $"Ce produit nécessitera précisément {Math.Round(pourcentage, 1)} % d'un canal de {hauteurG.Text} mm.";
+                                ligne5.Text = "Ce produit nécessite plusieurs canaux.";
+                                ligne6.Text = $"Il faudrait mettre en place {Math.Round(_NbGoulotte, 1)} canaux de {_hauteurCanalDesire} mm.";
+                                ligne7.Text = $"Car il nécessitera précisément {Math.Round(pourcentage, 1)} % d'un canal de {_hauteurCanalDesire} mm.";
                                 ligne8.Text = ""; // On efface le contenu de ligne8
                             }
                             else
                             {
                                 double pourcentage = _NbGoulotte * 100;
                                 ligne5.Text = "Parfait pour cette configuration en terme de hauteur de canal.";
-                                ligne6.Text = $"Ce produit nécessitera précisément {Math.Round(pourcentage, 1)} % d'un canal de {hauteurG.Text} mm.";
+                                ligne6.Text = $"Ce produit nécessitera précisément {Math.Round(pourcentage, 1)} % d'un canal de {_hauteurCanalDesire} mm.";
                                 ligne7.Text = ""; // On efface le contenu de ligne7
                                 ligne8.Text = ""; // On efface le contenu de ligne8
                             }
@@ -203,31 +237,6 @@ namespace Outil_Mutation_Automate
                             ligne8.Text = "Ce produit doit aller au magasin. Il n'est pas compatible avec les exigences de l'automate.";
                             _zone = "Magasin"; // Zone définie comme "Magasin"
                         }
-
-                        // En démo : Détermination de la hauteur idéale (tranche en dessous de 0.8 soit 80%
-                        if (PetitCanal(HT) > 0.8)
-                        {
-                            if (MoyenCanal(HT) > 0.8)
-                            {
-                                if (GrandCanal(HT) > 0.8)
-                                {
-                                    // Fréquence beaucoup trop élevée, pas de canal possible ; incompatible avec l'automate.
-                                }
-                                else
-                                {
-                                    // Hauteur ok
-                                }
-
-                            }
-                            else
-                                {
-                                    // Hauteur ok
-                                }
-                        }
-                        else
-                            {
-                                // Hauteur ok
-                            }
                     }
                     else
                     {
