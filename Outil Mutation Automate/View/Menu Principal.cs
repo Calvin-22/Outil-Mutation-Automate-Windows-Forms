@@ -173,16 +173,16 @@ namespace Outil_Mutation_Automate
                         {
                             if (MoyenCanal(HT) > 0.81)
                             {
-                                if (GrandCanal(HT) > 0.81)
+                                if (GrandCanal(HT) > 0.91)
                                 {
                                     // Fréquence beaucoup trop élevée, pas de canal possible ; incompatible avec l'automate.
-                                    _hauteurCanalDesire = 2500;
-                                    // vérif = false; // Produit supérieur à 80% d'un canal de 2500 mm = ignorer le produit et le mettre en magasin. 
+                                    _hauteurCanalDesire = 2200;
+                                    vérif = false; // Produit supérieur ou égale à 91% d'un canal de 2500 mm = ignorer le produit et le mettre en magasin. 
 
                                 }
                                 else
                                 {
-                                    _hauteurCanalDesire = 2500; // Inférieur à 80% d'un canal de 2500mm 
+                                    _hauteurCanalDesire = 2200; // Inférieur à 80% d'un canal de 2500mm 
                                 }
                             }
                             else
@@ -324,7 +324,7 @@ namespace Outil_Mutation_Automate
         public double GrandCanal(double HT)
         {
             double grand;
-            grand = HT / 2500;
+            grand = HT / 2200;
             return grand;
         }
 
