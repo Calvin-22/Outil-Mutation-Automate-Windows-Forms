@@ -46,6 +46,7 @@
             SbtnAnnuler = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             cerp = new PictureBox();
             SbtnSupprimer = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
+            SBtnImporter = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             ((System.ComponentModel.ISupportInitialize)dgvMutation).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)cerp).BeginInit();
@@ -401,12 +402,79 @@
             SbtnSupprimer.TextShadowOffsetY = 1;
             SbtnSupprimer.Click += SbtnSupprimer_Click;
             // 
+            // SBtnImporter
+            // 
+            SBtnImporter.BackColor = Color.Transparent;
+            SBtnImporter.BadgeBackColor = Color.Red;
+            SBtnImporter.BadgeForeColor = Color.White;
+            SBtnImporter.BadgeRadius = 10;
+            SBtnImporter.BadgeRightMargin = 10;
+            SBtnImporter.BadgeValue = 0;
+            SBtnImporter.BorderColor = Color.FromArgb(150, 255, 255, 255);
+            SBtnImporter.BorderColorEnd = Color.Gray;
+            SBtnImporter.BorderColorStart = Color.White;
+            SBtnImporter.BorderRadiusBottomLeft = 25;
+            SBtnImporter.BorderRadiusBottomRight = 25;
+            SBtnImporter.BorderRadiusTopLeft = 25;
+            SBtnImporter.BorderRadiusTopRight = 25;
+            SBtnImporter.BorderThickness = 1;
+            SBtnImporter.ButtonColorEnd = Color.DarkViolet;
+            SBtnImporter.ButtonColorStart = Color.Magenta;
+            SBtnImporter.ButtonImage = null;
+            SBtnImporter.CanBeep = false;
+            SBtnImporter.CanShake = false;
+            SBtnImporter.ClickSoundPath = null;
+            SBtnImporter.DisabledOverlayOpacity = 0.5F;
+            SBtnImporter.EnableBorderGradient = false;
+            SBtnImporter.EnableClickSound = false;
+            SBtnImporter.EnableFocusBorder = false;
+            SBtnImporter.EnableHoverSound = false;
+            SBtnImporter.EnablePressScale = false;
+            SBtnImporter.EnableTextShadow = false;
+            SBtnImporter.FocusBorderColor = Color.FromArgb(100, 150, 255);
+            SBtnImporter.FocusBorderThickness = 2;
+            SBtnImporter.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SBtnImporter.ForeColor = Color.White;
+            SBtnImporter.HoverColor = Color.FromArgb(20, 0, 0, 0);
+            SBtnImporter.HoverSoundPath = null;
+            SBtnImporter.HoverTransitionSpeed = 1F;
+            SBtnImporter.ImageAlign = ContentAlignment.MiddleCenter;
+            SBtnImporter.ImageLeftMargin = 5;
+            SBtnImporter.ImageRightMargin = 8;
+            SBtnImporter.ImageSize = 24;
+            SBtnImporter.IsReadOnly = false;
+            SBtnImporter.Location = new Point(963, 400);
+            SBtnImporter.MakeRadial = false;
+            SBtnImporter.Name = "SBtnImporter";
+            SBtnImporter.PressAnimationSpeed = 0.5F;
+            SBtnImporter.PressDepth = 1;
+            SBtnImporter.RippleColor = Color.FromArgb(60, 255, 255, 255);
+            SBtnImporter.RippleExpandSpeedFactor = 0.05F;
+            SBtnImporter.RippleFadeSpeedFactor = 0.03F;
+            SBtnImporter.ShadowBlurFactor = 0.85F;
+            SBtnImporter.ShadowColor = Color.FromArgb(70, 0, 0, 0);
+            SBtnImporter.ShadowOffsetX = 3;
+            SBtnImporter.ShadowOffsetY = 3;
+            SBtnImporter.Size = new Size(116, 50);
+            SBtnImporter.TabIndex = 29;
+            SBtnImporter.Text = "Importer";
+            SBtnImporter.TextAlign = ContentAlignment.MiddleCenter;
+            SBtnImporter.TextPaddingBottom = 0;
+            SBtnImporter.TextPaddingLeft = 0;
+            SBtnImporter.TextPaddingRight = 0;
+            SBtnImporter.TextPaddingTop = 0;
+            SBtnImporter.TextShadowColor = Color.FromArgb(100, 0, 0, 0);
+            SBtnImporter.TextShadowOffsetX = 1;
+            SBtnImporter.TextShadowOffsetY = 1;
+            SBtnImporter.Click += SBtnImporter_Click;
+            // 
             // Enregistrement
             // 
             AutoScaleDimensions = new SizeF(10F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1322, 689);
+            Controls.Add(SBtnImporter);
             Controls.Add(SbtnSupprimer);
             Controls.Add(SbtnAnnuler);
             Controls.Add(cerp);
@@ -443,5 +511,6 @@
         private SiticoneNetCoreUI.SiticoneButtonAdvanced SbtnSupprimer;
         private Label label5;
         private Button btnPrint;
+        private SiticoneNetCoreUI.SiticoneButtonAdvanced SBtnImporter;
     }
 }

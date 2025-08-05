@@ -7,6 +7,7 @@ using Outil_Mutation_Automate.Dal;
 using MySql.Data.MySqlClient;
 using Timer = System.Windows.Forms.Timer;
 using iTextSharp.text.xml;
+using System.Windows.Forms;
 
 
 namespace Outil_Mutation_Automate
@@ -133,7 +134,7 @@ namespace Outil_Mutation_Automate
         private async void SbtnCalculer_Click(object sender, EventArgs e)
         {
             if (!hauteur.Text.Equals("") && !frequence.Text.Equals("") && !moyenne.Text.Equals("")) //&& !hauteurG.Text.Equals("")) : désactivation temporaire pour test. 
-                
+
             {
                 // Récupérer le texte entré par l'utilisateur dans les TextBox.
                 // 'Hauteur', 'Frequence', 'Moyenne' et 'HauteurG'
@@ -152,7 +153,7 @@ namespace Outil_Mutation_Automate
                 if (double.TryParse(hauteurProduitTexte, out double hauteurProduit) &&
                     int.TryParse(frequencePickingTexte, out int frequencePicking) &&
                     double.TryParse(moyenneVentesTexte, out double moyenneVentes)) //&&
-                    //double.TryParse(hauteurCanalDesireTexte, out _hauteurCanalDesire)) :désactivation temporaire à des fins de tests. 
+                                                                                   //double.TryParse(hauteurCanalDesireTexte, out _hauteurCanalDesire)) :désactivation temporaire à des fins de tests. 
                 {
                     if (frequencePicking <= moyenneVentes)
                     {
@@ -194,7 +195,7 @@ namespace Outil_Mutation_Automate
                         {
                             _hauteurCanalDesire = 800; // Inférieur à 80% d'un canal de 800mm 
                         }
-                        
+
                         // Calcul du nombre de canaux nécessaires après attribution de la hauteur du canal
                         _NbGoulotte = HT / _hauteurCanalDesire;
 
@@ -216,7 +217,7 @@ namespace Outil_Mutation_Automate
                         if (_NBC < 4 && _NbGoulotte < 2.1 && Zone(frequencePicking, (int)_NBC, _NbGoulotte, vérif))
                         {
                             // Réponse et détermination du type de canaux (taille)
-                            if (_NbGoulotte > 1)
+                            if (_NbGoulotte > 1) // Condition jamais validée car max 80%/90% 
                             {
                                 double pourcentage = _NbGoulotte * 100;
                                 ligne5.Text = "Ce produit nécessite plusieurs canaux.";
@@ -227,7 +228,7 @@ namespace Outil_Mutation_Automate
                             else
                             {
                                 double pourcentage = _NbGoulotte * 100;
-                                ligne5.Text = "Parfait, ce produit nécessitera qu'un seul canal.";
+                                ligne5.Text = "Ce produit nécessitera qu'un seul canal.";
                                 ligne6.Text = $"Il nécessitera précisément {Math.Round(pourcentage, 1)} % d'un canal de {_hauteurCanalDesire} mm.";
                                 ligne7.Text = ""; // On efface le contenu de ligne7
                                 ligne8.Text = ""; // On efface le contenu de ligne8
@@ -450,6 +451,7 @@ namespace Outil_Mutation_Automate
 
 
         }
+     
     }
 }
 

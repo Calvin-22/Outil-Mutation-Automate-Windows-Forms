@@ -17,6 +17,9 @@ using Outil_Mutation_Automate.View;
 using System.IO;
 using System.Windows.Forms;
 using System.Linq;
+using static iTextSharp.text.pdf.PdfDocument;
+using Google.Protobuf.WellKnownTypes;
+using iTextSharp.text.pdf.parser;
 
 
 namespace Outil_Mutation_Automate.View
@@ -244,7 +247,158 @@ namespace Outil_Mutation_Automate.View
             MessageBox.Show("PDF exporté avec succès !");
         }
 
+        /// <summary>
+        /// Bouton pour importer des données depuis un fichier CSV.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SBtnImporter_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Fichiers CSV (*.csv)|*.csv";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                var cheminFichier = ofd.FileName;
+                ImporterCsv(cheminFichier);
+            }
+        }
+
+        /// <summary>
+        /// Initialisations des variables nécessaires aux calculs
+        /// </summary>
+        private double _NBV; // Nombre de boîtes vendues (par jour)
+        private double _NBC; // Nombre de boîtes par commande
+        private double _hauteurCanalDesire; // Hauteur du canal désirée
+        private double _NbGoulotte; // Nombre de canaux nécessaires
+        private string _zone; // Zone du produit
+
+        /// <summary>
+        /// Méthode pour importer des données depuis un fichier CSV.
+        /// </summary>
+        /// <param name="chemin"></param>
+        private void ImporterCsv(string cheminCsv)
+        {
+            var lignes = File.ReadAllLines(cheminCsv, Encoding.UTF8);
+
+            for (int i = 0; i < lignes.Length; i++) // on saute l'en-tête
+            {
+                var champs = lignes[i].Split(';');
+
+                if (champs.Length < 5) continue;
+
+                double.TryParse(champs[0], out double cip); 
+                string designation = champs[1].Trim();
+                double.TryParse(champs[2], out double moyenneVentes);
+                int.TryParse(champs[3], out int frequencePicking);
+                int.TryParse(champs[4], out int hauteurProduit);
+                
+                bool vérif = true;
+                string zone = string.Empty;
+
+                _NBV = moyenneVentes / 25;
+                double HT = hauteurProduit * _NBV;
+                //_NbGoulotte = HT / _hauteurCanalDesire; : désactivation temporaire à des fins de calculs. 
+                _NBC = moyenneVentes / frequencePicking;
+                // Calcul du nombre de canaux nécessaires après attribution de la hauteur du canal
+                _NbGoulotte = HT / _hauteurCanalDesire;
+                _NbGoulotte = Math.Round(_NbGoulotte, 2); // Arrondi à 2 décimales pour éviter les erreurs de calcul
+
+                // En démo : Détermination de la hauteur idéale (tranche en dessous de 0.81 soit 80%) 
+                if (PetitCanal(HT) > 0.81)
+                {
+                    if (MoyenCanal(HT) > 0.81)
+                    {
+                        if (GrandCanal(HT) > 0.91)
+                        {
+                            // Fréquence beaucoup trop élevée, pas de canal possible ; incompatible avec l'automate.
+                            _hauteurCanalDesire = 2200;
+                            vérif = false; // Produit supérieur ou égale à 91% d'un canal de 2500 mm = ignorer le produit et le mettre en magasin. 
+
+                        }
+                        else
+                        {
+                            _hauteurCanalDesire = 2200; // Inférieur à 80% d'un canal de 2500mm 
+                        }
+                    }
+                    else
+                    {
+                        _hauteurCanalDesire = 1200; // Inférieur à 80% d'un canal de 1200mm 
+                    }
+                }
+                else
+                {
+                    _hauteurCanalDesire = 800; // Inférieur à 80% d'un canal de 800mm 
+                }
+                // Définition de la zone
+                if (Zone(frequencePicking, (int)_NBC, _NbGoulotte, vérif))
+                {
+                    _zone = "Automate"; // Zone définie comme "Automate"
+
+                }
+                else
+                {
+                    _zone = "Magasin"; // Zone définie comme "Magasin"
+                }
+
+                mutation mutation = new mutation(cip, designation, _zone, _NBC, _NBV, _hauteurCanalDesire, _NbGoulotte);
+                controller.addMutation(mutation);
+
+            }
+            MessageBox.Show("Import terminé !");
+            RemplirListeMutation(); // Rafraîchir la liste des mutations après l'importation
+        }
+
+        // Fonction de détermination de la zone du produit correspondant
+        public bool Zone(double frequence, int NBC, double NbGoulotte, bool vérif)
+        {
+            // Condition fréquence minimum 60, condition picking inférieur à 4, Nombre de canaux inférieur à 2.1
+            if (frequence > 60 && NBC < 4 && NbGoulotte < 2.1 && vérif)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
 
 
+
+        /// <summary>
+        /// Fonction de calcul du pourcentage produit vendu par jour pour un canal de 800mm.
+        /// </summary>
+        /// <param name="HT"></param>
+        /// <returns></returns>
+        public double PetitCanal(double HT)
+        {
+            double petit;
+            petit = HT / 800;
+            return petit;
+        }
+
+        /// <summary>
+        /// Fonction de calcul du pourcentage produit vendu par jour pour un canal de 1200mm.
+        /// </summary>
+        /// <param name="HT"></param>
+        /// <returns></returns>
+        public double MoyenCanal(double HT)
+        {
+            double moyen;
+            moyen = HT / 1200;
+            return moyen;
+        }
+
+        /// <summary>
+        /// Fonction de calcul du pourcentage produit vendu par jour pour un canal de 2500mm.
+        /// </summary>
+        /// <param name="HT"></param>
+        /// <returns></returns>
+        public double GrandCanal(double HT)
+        {
+            double grand;
+            grand = HT / 2200;
+            return grand;
+        }
     }
 }
