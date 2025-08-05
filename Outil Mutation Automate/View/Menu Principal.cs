@@ -9,7 +9,6 @@ using Timer = System.Windows.Forms.Timer;
 using iTextSharp.text.xml;
 
 
-
 namespace Outil_Mutation_Automate
 {
     /// <summary>
@@ -46,6 +45,9 @@ namespace Outil_Mutation_Automate
             // Désactivation temporaire du champs de saisie de la hauteur idéale. 
             hauteurG.Enabled = false;
             hauteurG.ReadOnly = true;
+
+            // Vider le label qui contient du texte pour faciliter son déplacement
+            lblHauteur.Text = "";
         }
 
         /// <summary>
@@ -166,33 +168,31 @@ namespace Outil_Mutation_Automate
                         // Attente de 2000 ms sans bloquer l'UI
                         await Task.Delay(1000);
 
-
-
-                        // En démo : Détermination de la hauteur idéale (tranche en dessous de 0.8 soit 80%) 
-                        if (PetitCanal(HT) > 0.8)
+                        // En démo : Détermination de la hauteur idéale (tranche en dessous de 0.81 soit 80%) 
+                        if (PetitCanal(HT) > 0.81)
                         {
-                            if (MoyenCanal(HT) > 0.8)
+                            if (MoyenCanal(HT) > 0.81)
                             {
-                                if (GrandCanal(HT) > 0.8)
+                                if (GrandCanal(HT) > 0.81)
                                 {
                                     // Fréquence beaucoup trop élevée, pas de canal possible ; incompatible avec l'automate.
                                     _hauteurCanalDesire = 2500;
-                                    vérif = false;
+                                    // vérif = false; // Produit supérieur à 80% d'un canal de 2500 mm = ignorer le produit et le mettre en magasin. 
 
                                 }
                                 else
                                 {
-                                    _hauteurCanalDesire = 2500;
+                                    _hauteurCanalDesire = 2500; // Inférieur à 80% d'un canal de 2500mm 
                                 }
                             }
                             else
                             {
-                                _hauteurCanalDesire = 1200;
+                                _hauteurCanalDesire = 1200; // Inférieur à 80% d'un canal de 1200mm 
                             }
                         }
                         else
                         {
-                            _hauteurCanalDesire = 800;
+                            _hauteurCanalDesire = 800; // Inférieur à 80% d'un canal de 800mm 
                         }
                         
                         // Calcul du nombre de canaux nécessaires après attribution de la hauteur du canal
@@ -255,7 +255,6 @@ namespace Outil_Mutation_Automate
 
                         return;
                     }
-
                 }
                 else
                 // Si une ou plusieurs conversions ont échoué (l'utilisateur n'a pas entré de nombres valides),
@@ -276,7 +275,6 @@ namespace Outil_Mutation_Automate
             // Activer le bouton afin d'éviter de boucler un délai de chargement
             SbtnCalculer.Enabled = true;
         }
-
         // Fonction de détermination de la zone du produit correspondant
         public bool Zone(double frequence, int NBC, double NbGoulotte, bool vérif)
         {

@@ -189,10 +189,11 @@ namespace Outil_Mutation_Automate
             // 
             lblHauteur.AutoSize = true;
             lblHauteur.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblHauteur.Location = new Point(374, 134);
+            lblHauteur.Location = new Point(357, 137);
             lblHauteur.Name = "lblHauteur";
-            lblHauteur.Size = new Size(0, 24);
+            lblHauteur.Size = new Size(405, 24);
             lblHauteur.TabIndex = 8;
+            lblHauteur.Text = "La hauteur canal est obligatoirement 2500 mm.";
             // 
             // groupBox2
             // 
