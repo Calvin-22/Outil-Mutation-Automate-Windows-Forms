@@ -284,22 +284,26 @@ namespace Outil_Mutation_Automate.View
             {
                 var champs = lignes[i].Split(';');
 
+                // Vérifie que l'ensemble des champs nécessaires sont présent
                 if (champs.Length < 5) continue;
 
+                // Récupération des champs dans des variables 
                 double.TryParse(champs[0], out double cip); 
                 string designation = champs[1].Trim();
                 double.TryParse(champs[2], out double moyenneVentes);
                 int.TryParse(champs[3], out int frequencePicking);
                 int.TryParse(champs[4], out int hauteurProduit);
-                
+
+                // Initialisation des variables de vérification et de zone au départ
                 bool vérif = true;
                 string zone = string.Empty;
 
+                // Calcul des valeurs nécessaires pour la mutation
                 _NBV = moyenneVentes / 25;
                 double HT = hauteurProduit * _NBV;
+
                 //_NbGoulotte = HT / _hauteurCanalDesire; : désactivation temporaire à des fins de calculs. 
                 _NBC = moyenneVentes / frequencePicking;
-                // Calcul du nombre de canaux nécessaires après attribution de la hauteur du canal
                 
                 // En démo : Détermination de la hauteur idéale (tranche en dessous de 0.81 soit 80%) 
                 if (PetitCanal(HT) > 0.81)
@@ -310,12 +314,12 @@ namespace Outil_Mutation_Automate.View
                         {
                             // Fréquence beaucoup trop élevée, pas de canal possible ; incompatible avec l'automate.
                             _hauteurCanalDesire = 2200;
-                            vérif = false; // Produit supérieur ou égale à 91% d'un canal de 2500 mm = ignorer le produit et le mettre en magasin. 
+                            vérif = false; // Produit supérieur ou égale à 91% d'un canal de 2200 mm = ignorer le produit et le mettre en magasin. 
 
                         }
                         else
                         {
-                            _hauteurCanalDesire = 2200; // Inférieur à 80% d'un canal de 2500mm 
+                            _hauteurCanalDesire = 2200; // Inférieur à 80% d'un canal de 2200mm 
                         }
                     }
                     else
@@ -328,6 +332,7 @@ namespace Outil_Mutation_Automate.View
                     _hauteurCanalDesire = 800; // Inférieur à 80% d'un canal de 800mm 
                 }
 
+                // Calcul du nombre de canaux nécessaires après attribution de la hauteur du canal
                 _NbGoulotte = HT / _hauteurCanalDesire;
                 _NbGoulotte = Math.Round(_NbGoulotte, 2); // Arrondi à 2 décimales pour éviter les erreurs de calcul
 
@@ -365,8 +370,6 @@ namespace Outil_Mutation_Automate.View
 
         }
 
-
-
         /// <summary>
         /// Fonction de calcul du pourcentage produit vendu par jour pour un canal de 800mm.
         /// </summary>
@@ -392,7 +395,7 @@ namespace Outil_Mutation_Automate.View
         }
 
         /// <summary>
-        /// Fonction de calcul du pourcentage produit vendu par jour pour un canal de 2500mm.
+        /// Fonction de calcul du pourcentage produit vendu par jour pour un canal de 2200mm.
         /// </summary>
         /// <param name="HT"></param>
         /// <returns></returns>

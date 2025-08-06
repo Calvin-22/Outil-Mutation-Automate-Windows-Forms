@@ -448,8 +448,6 @@ namespace Outil_Mutation_Automate
 
             Enregistrement frm = new Enregistrement(nbcValue, nbvValue, hauteurCanalDesireValue, nombreCanauxNecessairesValue, zoneValue, lectureSeule); // génère la fenêtre
             frm.Show(); // Affiche la fenêtre 
-
-
         }
     }
 }
