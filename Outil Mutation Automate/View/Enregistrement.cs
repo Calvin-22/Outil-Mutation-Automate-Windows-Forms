@@ -278,7 +278,7 @@ namespace Outil_Mutation_Automate.View
         /// <param name="chemin"></param>
         private void ImporterCsv(string cheminCsv)
         {
-            var lignes = File.ReadAllLines(cheminCsv, Encoding.UTF8);
+            var lignes = File.ReadAllLines(cheminCsv, Encoding.GetEncoding("Windows-1252"));
 
             for (int i = 0; i < lignes.Length; i++) // on saute l'en-tête
             {
