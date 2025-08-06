@@ -300,9 +300,7 @@ namespace Outil_Mutation_Automate.View
                 //_NbGoulotte = HT / _hauteurCanalDesire; : désactivation temporaire à des fins de calculs. 
                 _NBC = moyenneVentes / frequencePicking;
                 // Calcul du nombre de canaux nécessaires après attribution de la hauteur du canal
-                _NbGoulotte = HT / _hauteurCanalDesire;
-                _NbGoulotte = Math.Round(_NbGoulotte, 2); // Arrondi à 2 décimales pour éviter les erreurs de calcul
-
+                
                 // En démo : Détermination de la hauteur idéale (tranche en dessous de 0.81 soit 80%) 
                 if (PetitCanal(HT) > 0.81)
                 {
@@ -329,6 +327,10 @@ namespace Outil_Mutation_Automate.View
                 {
                     _hauteurCanalDesire = 800; // Inférieur à 80% d'un canal de 800mm 
                 }
+
+                _NbGoulotte = HT / _hauteurCanalDesire;
+                _NbGoulotte = Math.Round(_NbGoulotte, 2); // Arrondi à 2 décimales pour éviter les erreurs de calcul
+
                 // Définition de la zone
                 if (Zone(frequencePicking, (int)_NBC, _NbGoulotte, vérif))
                 {
