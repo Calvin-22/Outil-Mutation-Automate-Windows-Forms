@@ -370,8 +370,9 @@ namespace Outil_Mutation_Automate
                 double hauteurCanalDesireValue = Math.Round(_hauteurCanalDesire, 1);
                 double nombreCanauxNecessairesValue = Math.Round(_NbGoulotte, 1);
                 string zoneValue = _zone; // Récupération de la zone
+                string codegéoValue = "Hello";
 
-                Enregistrement frm = new Enregistrement(nbcValue, nbvValue, hauteurCanalDesireValue, nombreCanauxNecessairesValue, zoneValue, lectureSeule); // génère la fenêtre
+                Enregistrement frm = new Enregistrement(codegéoValue, nbcValue, nbvValue, hauteurCanalDesireValue, nombreCanauxNecessairesValue, zoneValue, lectureSeule); // génère la fenêtre
                 frm.Show(); // Affiche la fenêtre 
 
             }
@@ -445,8 +446,9 @@ namespace Outil_Mutation_Automate
             double nombreCanauxNecessairesValue = Math.Round(_NbGoulotte, 1);
             string zoneValue = _zone; // Récupération de la zone
             bool lectureSeule = true; // Variable lecture seule pour la consultation
+            string codegéoValue = "hello";
 
-            Enregistrement frm = new Enregistrement(nbcValue, nbvValue, hauteurCanalDesireValue, nombreCanauxNecessairesValue, zoneValue, lectureSeule); // génère la fenêtre
+            Enregistrement frm = new Enregistrement(codegéoValue, nbcValue, nbvValue, hauteurCanalDesireValue, nombreCanauxNecessairesValue, zoneValue, lectureSeule); // génère la fenêtre
             frm.Show(); // Affiche la fenêtre 
         }
     }

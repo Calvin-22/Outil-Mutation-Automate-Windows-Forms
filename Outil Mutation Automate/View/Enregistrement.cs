@@ -44,6 +44,7 @@ namespace Outil_Mutation_Automate.View
         private double _hauteurCanalDesireFromMenuPrincipal;
         private double _nombreCanauxNecessairesFromMenuPrincipal;
         private string _zoneFromMenuPrincipal;
+        private string _codeGéoFromMenuPrincipal;
 
         /// <summary>
         /// Constructeur de la classe Enregistrement.
@@ -53,7 +54,7 @@ namespace Outil_Mutation_Automate.View
         /// <param name="hauteurCanalDesireValue"></param>
         /// <param name="nombreCanauxNecessairesValue"></param>
         /// <param name="zoneValue"></param>
-        public Enregistrement(double nbcValue, double nbvValue, double hauteurCanalDesireValue, double nombreCanauxNecessairesValue, string zoneValue, bool lectureSeule)
+        public Enregistrement(string codegéoValue, double nbcValue, double nbvValue, double hauteurCanalDesireValue, double nombreCanauxNecessairesValue, string zoneValue, bool lectureSeule)
         {
             InitializeComponent();
             this.MaximizeBox = false;
@@ -62,6 +63,7 @@ namespace Outil_Mutation_Automate.View
             _hauteurCanalDesireFromMenuPrincipal = hauteurCanalDesireValue;
             _nombreCanauxNecessairesFromMenuPrincipal = nombreCanauxNecessairesValue;
             _zoneFromMenuPrincipal = zoneValue;
+            _codeGéoFromMenuPrincipal = codegéoValue;
 
             // Variable lecture seule
             modeLectureSeule = lectureSeule;
@@ -127,9 +129,10 @@ namespace Outil_Mutation_Automate.View
                     double hauteurCanalDesire = _hauteurCanalDesireFromMenuPrincipal;
                     double nombreCanauxNecessaires = _nombreCanauxNecessairesFromMenuPrincipal;
                     string zone = _zoneFromMenuPrincipal;
+                    string code_géo = _codeGéoFromMenuPrincipal;
 
 
-                    mutation mutation = new mutation(cip, designation, zone, nombreBoitesParCommande, nombreBoitesVendues, hauteurCanalDesire, nombreCanauxNecessaires);
+                    mutation mutation = new mutation(cip, code_géo, designation, zone, nombreBoitesParCommande, nombreBoitesVendues, hauteurCanalDesire, nombreCanauxNecessaires);
                     controller.addMutation(mutation);
 
                     RemplirListeMutation();
@@ -288,11 +291,12 @@ namespace Outil_Mutation_Automate.View
                 if (champs.Length < 5) continue;
 
                 // Récupération des champs dans des variables 
-                double.TryParse(champs[0], out double cip); 
-                string designation = champs[1].Trim();
-                double.TryParse(champs[2], out double moyenneVentes);
-                double.TryParse(champs[3], out double frequencePicking);
-                int.TryParse(champs[4], out int hauteurProduit);
+                double.TryParse(champs[0], out double cip);
+                string codegéo = champs[1].Trim(); ;
+                string designation = champs[2].Trim();
+                double.TryParse(champs[3], out double moyenneVentes);
+                double.TryParse(champs[4], out double frequencePicking);
+                int.TryParse(champs[5], out int hauteurProduit);
 
                 // Initialisation des variables de vérification et de zone au départ
                 bool vérif = true;
@@ -304,7 +308,7 @@ namespace Outil_Mutation_Automate.View
 
                 //_NbGoulotte = HT / _hauteurCanalDesire; : désactivation temporaire à des fins de calculs. 
                 _NBC = moyenneVentes / frequencePicking;
-                
+
                 // En démo : Détermination de la hauteur idéale (tranche en dessous de 0.81 soit 80%) 
                 if (PetitCanal(HT) > 0.81)
                 {
@@ -335,6 +339,7 @@ namespace Outil_Mutation_Automate.View
                 _NbGoulotte = HT / _hauteurCanalDesire;
                 _NbGoulotte = Math.Round(_NbGoulotte, 2); // Arrondi à 2 décimales pour éviter les erreurs de calcul
                 _NBC = Math.Round(_NBC, 2);
+                _NBV = Math.Round(_NBV, 2);
 
                 // Définition de la zone
                 if (Zone(frequencePicking, (int)_NBC, _NbGoulotte, vérif))
@@ -347,7 +352,7 @@ namespace Outil_Mutation_Automate.View
                     _zone = "Magasin"; // Zone définie comme "Magasin"
                 }
 
-                mutation mutation = new mutation(cip, designation, _zone, _NBC, _NBV, _hauteurCanalDesire, _NbGoulotte);
+                mutation mutation = new mutation(cip, codegéo, designation, _zone, _NBC, _NBV, _hauteurCanalDesire, _NbGoulotte);
                 controller.addMutation(mutation);
 
             }
@@ -404,6 +409,61 @@ namespace Outil_Mutation_Automate.View
             double grand;
             grand = HT / 2200;
             return grand;
+        }
+
+        private void FiltrerMagasin_Click(object sender, EventArgs e)
+        {
+            var mutationsFiltrées = ((List<mutation>)bdgmutation.DataSource)
+        .Where(m => m.Zone != null && m.Zone.ToLower().Contains("magasin"))
+        .ToList();
+
+            dgvMutation.DataSource = mutationsFiltrées;
+        }
+
+        private void FiltrerAutomate_Click(object sender, EventArgs e)
+        {
+            var mutationsFiltrées = ((List<mutation>)bdgmutation.DataSource)
+        .Where(m => m.Zone != null && m.Zone.ToLower().Contains("automate"))
+        .ToList();
+
+            dgvMutation.DataSource = mutationsFiltrées;
+        }
+
+        /// <summary>
+        /// Bouton pour vider entièrement la bdd. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SViderBDD_Click(object sender, EventArgs e)
+        {
+            // Boîte de dialogue de confirmation
+            DialogResult result = MessageBox.Show(
+                "Voulez-vous vraiment vider la base de données ?",
+                "Confirmation",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    // Création de l'accès à la base de données
+                    mutationAccess access = new mutationAccess();
+
+                    // Appel de la méthode pour vider la base
+                    access.ViderMutation();
+
+                    // Rafraîchir la liste après suppression
+                    RemplirListeMutation();
+
+                    MessageBox.Show("La base de données a été vidée avec succès.", "Information");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erreur lors du vidage de la base : " + ex.Message, "Erreur");
+                }
+            }
         }
     }
 }

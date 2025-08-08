@@ -12,6 +12,9 @@ namespace Outil_Mutation_Automate.Model
     public class mutation
     {
         public double CIP { get; set; }
+
+        public string CodeGéo { get; set; }
+
         public string Désignation { get; set; }
         public string Zone { get; set; } 
         public double NBC { get; set; }
@@ -28,9 +31,10 @@ namespace Outil_Mutation_Automate.Model
         /// <param name="nombreBoitesVendues"></param>
         /// <param name="hauteurCanalDesire"></param>
         /// <param name="nombreCanauxNecessaires"></param>
-        public mutation(double cip, string designation, string zone, double nombreBoitesParCommande, double nombreBoitesVendues, double hauteurCanalDesire, double nombreCanauxNecessaires)
+        public mutation(double cip, string code_géo, string designation, string zone, double nombreBoitesParCommande, double nombreBoitesVendues, double hauteurCanalDesire, double nombreCanauxNecessaires)
         {
             CIP = cip;
+            CodeGéo = code_géo;
             Désignation = designation;
             Zone = zone;
             NBC = nombreBoitesParCommande;

@@ -33,7 +33,7 @@ namespace Outil_Mutation_Automate.Dal
             List<mutation> lesMutations = new List<mutation>();
             if (access.Manager != null)
             {
-                string req = "SELECT CIP, Désignation, Zone, NBC, NBV, `Hauteur Canal`, `Nombre de Canal` FROM mutation";
+                string req = "SELECT CIP, `Code Géo`, Désignation, Zone, NBC, NBV, `Hauteur Canal`, `Nombre de Canal` FROM mutation";
                 try
                 {
                     List<Object[]> records = access.Manager.ReqSelect(req);
@@ -42,13 +42,14 @@ namespace Outil_Mutation_Automate.Dal
                         foreach (Object[] record in records)
                         {
                             double cip = (double)record[0];
-                            string designation = (string)record[1];
-                            string zone = (string)record[2];
-                            double nombreBoitesParCommande = (double)record[3];
-                            double nombreBoitesVendues = (double)record[4];
-                            double hauteurCanalDesire = (double)record[5];
-                            double nombreCanauxNecessaires = (double)record[6];
-                            mutation mutation = new mutation(cip, designation, zone, nombreBoitesParCommande, nombreBoitesVendues, hauteurCanalDesire, nombreCanauxNecessaires);
+                            string code_géo = (string)record[1];
+                            string designation = (string)record[2];
+                            string zone = (string)record[3];
+                            double nombreBoitesParCommande = (double)record[4];
+                            double nombreBoitesVendues = (double)record[5];
+                            double hauteurCanalDesire = (double)record[6];
+                            double nombreCanauxNecessaires = (double)record[7];
+                            mutation mutation = new mutation(cip, code_géo, designation, zone, nombreBoitesParCommande, nombreBoitesVendues, hauteurCanalDesire, nombreCanauxNecessaires);
 
                             lesMutations.Add(mutation);
                         }
@@ -74,12 +75,13 @@ namespace Outil_Mutation_Automate.Dal
             {
                 // Construit la requête SQL d'insertion.
                 // Les noms des colonnes dans la table 'mutation' sont supposés être les mêmes que les noms de propriétés.
-                string req = "INSERT INTO mutation (CIP, Désignation, Zone, NBC, NBV, `Hauteur Canal`, `Nombre de Canal`) ";
-                req += "VALUES (@CIP, @Désignation, @Zone, @NBC, @NBV, @HauteurCanal, @NombreCanauxNecessaires);";
+                string req = "INSERT INTO mutation (CIP, `Code Géo`, Désignation, Zone, NBC, NBV, `Hauteur Canal`, `Nombre de Canal`) ";
+                req += "VALUES (@CIP, @CodeGeo, @Désignation, @Zone, @NBC, @NBV, @HauteurCanal, @NombreCanauxNecessaires);";
 
                 // Crée un dictionnaire de paramètres pour la requête SQL.
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
                 parameters.Add("@CIP", mutation.CIP);
+                parameters.Add("@CodeGeo", mutation.CodeGéo);
                 parameters.Add("@Désignation", mutation.Désignation);
                 parameters.Add("@Zone", mutation.Zone);
                 parameters.Add("@NBC", mutation.NBC);
@@ -130,6 +132,26 @@ namespace Outil_Mutation_Automate.Dal
                 }
             }
         }
+        /// <summary>
+        /// Vider tout ce que contient la table mutation
+        /// </summary>
+        public void ViderMutation()
+        {
+            if (access.Manager != null)
+            {
+                string req = "DELETE FROM mutation;";
+                try
+                {
+                    access.Manager.ReqUpdate(req, null); // Pas de paramètres
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Erreur lors du vidage : " + e.Message);
+                    throw; // Propage l'exception à l'appelant
+                }
+            }
+        }
+
 
 
     }
