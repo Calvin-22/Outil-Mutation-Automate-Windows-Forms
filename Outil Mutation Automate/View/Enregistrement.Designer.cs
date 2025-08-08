@@ -33,6 +33,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Enregistrement));
             dgvMutation = new DataGridView();
             Groupbox = new GroupBox();
+            txtRechercheCodeGeo = new TextBox();
             groupBox1 = new GroupBox();
             btnPrint = new Button();
             label5 = new Label();
@@ -50,6 +51,8 @@
             FiltrerAutomate = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             FiltrerMagasin = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             SViderBDD = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
+            btnAnnulerFiltre = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
+            btnRechercherCodeGeo = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             ((System.ComponentModel.ISupportInitialize)dgvMutation).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)cerp).BeginInit();
@@ -101,6 +104,14 @@
             Groupbox.TabStop = false;
             Groupbox.Text = "Lignes Enregistrées";
             // 
+            // txtRechercheCodeGeo
+            // 
+            txtRechercheCodeGeo.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtRechercheCodeGeo.Location = new Point(1070, 275);
+            txtRechercheCodeGeo.Name = "txtRechercheCodeGeo";
+            txtRechercheCodeGeo.Size = new Size(114, 31);
+            txtRechercheCodeGeo.TabIndex = 25;
+            // 
             // groupBox1
             // 
             groupBox1.Controls.Add(btnPrint);
@@ -116,7 +127,7 @@
             groupBox1.ForeColor = Color.Black;
             groupBox1.Location = new Point(48, 459);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1233, 194);
+            groupBox1.Size = new Size(1242, 194);
             groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
             groupBox1.Text = "Enregistrer une ligne";
@@ -304,7 +315,7 @@
             SbtnAnnuler.ImageRightMargin = 8;
             SbtnAnnuler.ImageSize = 24;
             SbtnAnnuler.IsReadOnly = false;
-            SbtnAnnuler.Location = new Point(1085, 400);
+            SbtnAnnuler.Location = new Point(1123, 400);
             SbtnAnnuler.MakeRadial = false;
             SbtnAnnuler.Name = "SbtnAnnuler";
             SbtnAnnuler.PressAnimationSpeed = 0.5F;
@@ -332,9 +343,9 @@
             // cerp
             // 
             cerp.Image = (Image)resources.GetObject("cerp.Image");
-            cerp.Location = new Point(1061, 105);
+            cerp.Location = new Point(1063, 39);
             cerp.Name = "cerp";
-            cerp.Size = new Size(220, 200);
+            cerp.Size = new Size(230, 208);
             cerp.SizeMode = PictureBoxSizeMode.Zoom;
             cerp.TabIndex = 13;
             cerp.TabStop = false;
@@ -446,7 +457,7 @@
             SBtnImporter.ImageRightMargin = 8;
             SBtnImporter.ImageSize = 24;
             SBtnImporter.IsReadOnly = false;
-            SBtnImporter.Location = new Point(963, 400);
+            SBtnImporter.Location = new Point(1001, 400);
             SBtnImporter.MakeRadial = false;
             SBtnImporter.Name = "SBtnImporter";
             SBtnImporter.PressAnimationSpeed = 0.5F;
@@ -512,7 +523,7 @@
             FiltrerAutomate.ImageRightMargin = 8;
             FiltrerAutomate.ImageSize = 24;
             FiltrerAutomate.IsReadOnly = false;
-            FiltrerAutomate.Location = new Point(383, 403);
+            FiltrerAutomate.Location = new Point(273, 400);
             FiltrerAutomate.MakeRadial = false;
             FiltrerAutomate.Name = "FiltrerAutomate";
             FiltrerAutomate.PressAnimationSpeed = 0.5F;
@@ -578,7 +589,7 @@
             FiltrerMagasin.ImageRightMargin = 8;
             FiltrerMagasin.ImageSize = 24;
             FiltrerMagasin.IsReadOnly = false;
-            FiltrerMagasin.Location = new Point(582, 403);
+            FiltrerMagasin.Location = new Point(472, 400);
             FiltrerMagasin.MakeRadial = false;
             FiltrerMagasin.Name = "FiltrerMagasin";
             FiltrerMagasin.PressAnimationSpeed = 0.5F;
@@ -644,7 +655,7 @@
             SViderBDD.ImageRightMargin = 8;
             SViderBDD.ImageSize = 24;
             SViderBDD.IsReadOnly = false;
-            SViderBDD.Location = new Point(1056, 331);
+            SViderBDD.Location = new Point(1056, 317);
             SViderBDD.MakeRadial = false;
             SViderBDD.Name = "SViderBDD";
             SViderBDD.PressAnimationSpeed = 0.5F;
@@ -669,19 +680,154 @@
             SViderBDD.TextShadowOffsetY = 1;
             SViderBDD.Click += SViderBDD_Click;
             // 
+            // btnAnnulerFiltre
+            // 
+            btnAnnulerFiltre.BackColor = Color.Transparent;
+            btnAnnulerFiltre.BadgeBackColor = Color.Red;
+            btnAnnulerFiltre.BadgeForeColor = Color.White;
+            btnAnnulerFiltre.BadgeRadius = 10;
+            btnAnnulerFiltre.BadgeRightMargin = 10;
+            btnAnnulerFiltre.BadgeValue = 0;
+            btnAnnulerFiltre.BorderColor = Color.FromArgb(150, 255, 255, 255);
+            btnAnnulerFiltre.BorderColorEnd = Color.Gray;
+            btnAnnulerFiltre.BorderColorStart = Color.White;
+            btnAnnulerFiltre.BorderRadiusBottomLeft = 25;
+            btnAnnulerFiltre.BorderRadiusBottomRight = 25;
+            btnAnnulerFiltre.BorderRadiusTopLeft = 25;
+            btnAnnulerFiltre.BorderRadiusTopRight = 25;
+            btnAnnulerFiltre.BorderThickness = 1;
+            btnAnnulerFiltre.ButtonColorEnd = Color.Gray;
+            btnAnnulerFiltre.ButtonColorStart = Color.LightGray;
+            btnAnnulerFiltre.ButtonImage = null;
+            btnAnnulerFiltre.CanBeep = false;
+            btnAnnulerFiltre.CanShake = false;
+            btnAnnulerFiltre.ClickSoundPath = null;
+            btnAnnulerFiltre.DisabledOverlayOpacity = 0.5F;
+            btnAnnulerFiltre.EnableBorderGradient = false;
+            btnAnnulerFiltre.EnableClickSound = false;
+            btnAnnulerFiltre.EnableFocusBorder = false;
+            btnAnnulerFiltre.EnableHoverSound = false;
+            btnAnnulerFiltre.EnablePressScale = false;
+            btnAnnulerFiltre.EnableTextShadow = false;
+            btnAnnulerFiltre.FocusBorderColor = Color.FromArgb(100, 150, 255);
+            btnAnnulerFiltre.FocusBorderThickness = 2;
+            btnAnnulerFiltre.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAnnulerFiltre.ForeColor = Color.White;
+            btnAnnulerFiltre.HoverColor = Color.FromArgb(20, 0, 0, 0);
+            btnAnnulerFiltre.HoverSoundPath = null;
+            btnAnnulerFiltre.HoverTransitionSpeed = 1F;
+            btnAnnulerFiltre.ImageAlign = ContentAlignment.MiddleCenter;
+            btnAnnulerFiltre.ImageLeftMargin = 5;
+            btnAnnulerFiltre.ImageRightMargin = 8;
+            btnAnnulerFiltre.ImageSize = 24;
+            btnAnnulerFiltre.IsReadOnly = false;
+            btnAnnulerFiltre.Location = new Point(671, 400);
+            btnAnnulerFiltre.MakeRadial = false;
+            btnAnnulerFiltre.Name = "btnAnnulerFiltre";
+            btnAnnulerFiltre.PressAnimationSpeed = 0.5F;
+            btnAnnulerFiltre.PressDepth = 1;
+            btnAnnulerFiltre.RippleColor = Color.FromArgb(60, 255, 255, 255);
+            btnAnnulerFiltre.RippleExpandSpeedFactor = 0.05F;
+            btnAnnulerFiltre.RippleFadeSpeedFactor = 0.03F;
+            btnAnnulerFiltre.ShadowBlurFactor = 0.85F;
+            btnAnnulerFiltre.ShadowColor = Color.FromArgb(70, 0, 0, 0);
+            btnAnnulerFiltre.ShadowOffsetX = 3;
+            btnAnnulerFiltre.ShadowOffsetY = 3;
+            btnAnnulerFiltre.Size = new Size(193, 50);
+            btnAnnulerFiltre.TabIndex = 33;
+            btnAnnulerFiltre.Text = "Annuler filtre";
+            btnAnnulerFiltre.TextAlign = ContentAlignment.MiddleCenter;
+            btnAnnulerFiltre.TextPaddingBottom = 0;
+            btnAnnulerFiltre.TextPaddingLeft = 0;
+            btnAnnulerFiltre.TextPaddingRight = 0;
+            btnAnnulerFiltre.TextPaddingTop = 0;
+            btnAnnulerFiltre.TextShadowColor = Color.FromArgb(100, 0, 0, 0);
+            btnAnnulerFiltre.TextShadowOffsetX = 1;
+            btnAnnulerFiltre.TextShadowOffsetY = 1;
+            btnAnnulerFiltre.Click += btnAnnulerFiltre_Click;
+            // 
+            // btnRechercherCodeGeo
+            // 
+            btnRechercherCodeGeo.BackColor = Color.Transparent;
+            btnRechercherCodeGeo.BadgeBackColor = Color.Red;
+            btnRechercherCodeGeo.BadgeForeColor = Color.White;
+            btnRechercherCodeGeo.BadgeRadius = 10;
+            btnRechercherCodeGeo.BadgeRightMargin = 10;
+            btnRechercherCodeGeo.BadgeValue = 0;
+            btnRechercherCodeGeo.BorderColor = Color.FromArgb(150, 255, 255, 255);
+            btnRechercherCodeGeo.BorderColorEnd = Color.Gray;
+            btnRechercherCodeGeo.BorderColorStart = Color.White;
+            btnRechercherCodeGeo.BorderRadiusBottomLeft = 25;
+            btnRechercherCodeGeo.BorderRadiusBottomRight = 25;
+            btnRechercherCodeGeo.BorderRadiusTopLeft = 25;
+            btnRechercherCodeGeo.BorderRadiusTopRight = 25;
+            btnRechercherCodeGeo.BorderThickness = 1;
+            btnRechercherCodeGeo.ButtonColorEnd = Color.Gray;
+            btnRechercherCodeGeo.ButtonColorStart = Color.LightGray;
+            btnRechercherCodeGeo.ButtonImage = null;
+            btnRechercherCodeGeo.CanBeep = false;
+            btnRechercherCodeGeo.CanShake = false;
+            btnRechercherCodeGeo.ClickSoundPath = null;
+            btnRechercherCodeGeo.DisabledOverlayOpacity = 0.5F;
+            btnRechercherCodeGeo.EnableBorderGradient = false;
+            btnRechercherCodeGeo.EnableClickSound = false;
+            btnRechercherCodeGeo.EnableFocusBorder = false;
+            btnRechercherCodeGeo.EnableHoverSound = false;
+            btnRechercherCodeGeo.EnablePressScale = false;
+            btnRechercherCodeGeo.EnableTextShadow = false;
+            btnRechercherCodeGeo.FocusBorderColor = Color.FromArgb(100, 150, 255);
+            btnRechercherCodeGeo.FocusBorderThickness = 2;
+            btnRechercherCodeGeo.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnRechercherCodeGeo.ForeColor = Color.White;
+            btnRechercherCodeGeo.HoverColor = Color.FromArgb(20, 0, 0, 0);
+            btnRechercherCodeGeo.HoverSoundPath = null;
+            btnRechercherCodeGeo.HoverTransitionSpeed = 1F;
+            btnRechercherCodeGeo.ImageAlign = ContentAlignment.MiddleCenter;
+            btnRechercherCodeGeo.ImageLeftMargin = 5;
+            btnRechercherCodeGeo.ImageRightMargin = 8;
+            btnRechercherCodeGeo.ImageSize = 24;
+            btnRechercherCodeGeo.IsReadOnly = false;
+            btnRechercherCodeGeo.Location = new Point(1190, 266);
+            btnRechercherCodeGeo.MakeRadial = false;
+            btnRechercherCodeGeo.Name = "btnRechercherCodeGeo";
+            btnRechercherCodeGeo.PressAnimationSpeed = 0.5F;
+            btnRechercherCodeGeo.PressDepth = 1;
+            btnRechercherCodeGeo.RippleColor = Color.FromArgb(60, 255, 255, 255);
+            btnRechercherCodeGeo.RippleExpandSpeedFactor = 0.05F;
+            btnRechercherCodeGeo.RippleFadeSpeedFactor = 0.03F;
+            btnRechercherCodeGeo.ShadowBlurFactor = 0.85F;
+            btnRechercherCodeGeo.ShadowColor = Color.FromArgb(70, 0, 0, 0);
+            btnRechercherCodeGeo.ShadowOffsetX = 3;
+            btnRechercherCodeGeo.ShadowOffsetY = 3;
+            btnRechercherCodeGeo.Size = new Size(100, 50);
+            btnRechercherCodeGeo.TabIndex = 34;
+            btnRechercherCodeGeo.Text = "Chercher";
+            btnRechercherCodeGeo.TextAlign = ContentAlignment.MiddleCenter;
+            btnRechercherCodeGeo.TextPaddingBottom = 0;
+            btnRechercherCodeGeo.TextPaddingLeft = 0;
+            btnRechercherCodeGeo.TextPaddingRight = 0;
+            btnRechercherCodeGeo.TextPaddingTop = 0;
+            btnRechercherCodeGeo.TextShadowColor = Color.FromArgb(100, 0, 0, 0);
+            btnRechercherCodeGeo.TextShadowOffsetX = 1;
+            btnRechercherCodeGeo.TextShadowOffsetY = 1;
+            btnRechercherCodeGeo.Click += btnRechercherCodeGeo_Click;
+            // 
             // Enregistrement
             // 
             AutoScaleDimensions = new SizeF(10F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1322, 689);
+            Controls.Add(cerp);
+            Controls.Add(btnRechercherCodeGeo);
+            Controls.Add(txtRechercheCodeGeo);
+            Controls.Add(btnAnnulerFiltre);
             Controls.Add(SViderBDD);
             Controls.Add(FiltrerMagasin);
             Controls.Add(FiltrerAutomate);
             Controls.Add(SBtnImporter);
             Controls.Add(SbtnSupprimer);
             Controls.Add(SbtnAnnuler);
-            Controls.Add(cerp);
             Controls.Add(groupBox1);
             Controls.Add(dgvMutation);
             Controls.Add(Groupbox);
@@ -695,6 +841,7 @@
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)cerp).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -719,5 +866,8 @@
         private SiticoneNetCoreUI.SiticoneButtonAdvanced FiltrerAutomate;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced FiltrerMagasin;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced SViderBDD;
+        private SiticoneNetCoreUI.SiticoneButtonAdvanced btnAnnulerFiltre;
+        private TextBox txtRechercheCodeGeo;
+        private SiticoneNetCoreUI.SiticoneButtonAdvanced btnRechercherCodeGeo;
     }
 }

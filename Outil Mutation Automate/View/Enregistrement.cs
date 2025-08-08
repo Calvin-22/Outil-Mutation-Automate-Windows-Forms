@@ -465,5 +465,46 @@ namespace Outil_Mutation_Automate.View
                 }
             }
         }
+
+        private void btnAnnulerFiltre_Click(object sender, EventArgs e)
+        {
+            RemplirListeMutation(); // Recharge toutes les mutations dans le DataGridView
+        }
+
+        private void btnRechercherCodeGeo_Click(object sender, EventArgs e)
+        {
+            string codeRecherche = txtRechercheCodeGeo.Text.Trim().ToLower();
+
+            if (string.IsNullOrWhiteSpace(codeRecherche))
+            {
+                MessageBox.Show("Veuillez entrer un code géographique.", "Recherche", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            bool trouvé = false;
+
+            foreach (DataGridViewRow row in dgvMutation.Rows)
+            {
+                if (row.Cells["CodeGéo"].Value != null &&
+                    row.Cells["CodeGéo"].Value.ToString().ToLower() == codeRecherche)
+                {
+                    // Sélectionne la ligne
+                    row.Selected = true;
+
+                    // Fait défiler vers la ligne
+                    dgvMutation.FirstDisplayedScrollingRowIndex = row.Index;
+
+                    trouvé = true;
+                    txtRechercheCodeGeo.Text = "";
+                    break;
+
+                }
+            }
+
+            if (!trouvé)
+            {
+                MessageBox.Show("Aucun produit trouvé avec ce code géographique.", "Résultat", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }
