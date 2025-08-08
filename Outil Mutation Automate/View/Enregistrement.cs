@@ -291,7 +291,7 @@ namespace Outil_Mutation_Automate.View
                 double.TryParse(champs[0], out double cip); 
                 string designation = champs[1].Trim();
                 double.TryParse(champs[2], out double moyenneVentes);
-                int.TryParse(champs[3], out int frequencePicking);
+                double.TryParse(champs[3], out double frequencePicking);
                 int.TryParse(champs[4], out int hauteurProduit);
 
                 // Initialisation des variables de vérification et de zone au départ
@@ -315,7 +315,6 @@ namespace Outil_Mutation_Automate.View
                             // Fréquence beaucoup trop élevée, pas de canal possible ; incompatible avec l'automate.
                             _hauteurCanalDesire = 2200;
                             vérif = false; // Produit supérieur ou égale à 91% d'un canal de 2200 mm = ignorer le produit et le mettre en magasin. 
-
                         }
                         else
                         {
@@ -335,6 +334,7 @@ namespace Outil_Mutation_Automate.View
                 // Calcul du nombre de canaux nécessaires après attribution de la hauteur du canal
                 _NbGoulotte = HT / _hauteurCanalDesire;
                 _NbGoulotte = Math.Round(_NbGoulotte, 2); // Arrondi à 2 décimales pour éviter les erreurs de calcul
+                _NBC = Math.Round(_NBC, 2);
 
                 // Définition de la zone
                 if (Zone(frequencePicking, (int)_NBC, _NbGoulotte, vérif))
