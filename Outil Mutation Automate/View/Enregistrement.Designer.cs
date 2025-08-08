@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Enregistrement));
             dgvMutation = new DataGridView();
             Groupbox = new GroupBox();
@@ -53,6 +53,7 @@
             SViderBDD = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             btnAnnulerFiltre = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             btnRechercherCodeGeo = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
+            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvMutation).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)cerp).BeginInit();
@@ -63,25 +64,25 @@
             dgvMutation.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvMutation.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvMutation.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.Green;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Padding = new Padding(1);
-            dataGridViewCellStyle1.SelectionBackColor = Color.Green;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvMutation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.Green;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle7.ForeColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle7.Padding = new Padding(1);
+            dataGridViewCellStyle7.SelectionBackColor = Color.Green;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dgvMutation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dgvMutation.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new Padding(1);
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvMutation.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = SystemColors.Window;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle8.Padding = new Padding(1);
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dgvMutation.DefaultCellStyle = dataGridViewCellStyle8;
             dgvMutation.EnableHeadersVisualStyles = false;
             dgvMutation.Location = new Point(54, 55);
             dgvMutation.MultiSelect = false;
@@ -107,7 +108,7 @@
             // txtRechercheCodeGeo
             // 
             txtRechercheCodeGeo.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtRechercheCodeGeo.Location = new Point(1070, 275);
+            txtRechercheCodeGeo.Location = new Point(1070, 291);
             txtRechercheCodeGeo.Name = "txtRechercheCodeGeo";
             txtRechercheCodeGeo.Size = new Size(114, 31);
             txtRechercheCodeGeo.TabIndex = 25;
@@ -655,7 +656,7 @@
             SViderBDD.ImageRightMargin = 8;
             SViderBDD.ImageSize = 24;
             SViderBDD.IsReadOnly = false;
-            SViderBDD.Location = new Point(1056, 317);
+            SViderBDD.Location = new Point(1056, 329);
             SViderBDD.MakeRadial = false;
             SViderBDD.Name = "SViderBDD";
             SViderBDD.PressAnimationSpeed = 0.5F;
@@ -669,7 +670,7 @@
             SViderBDD.ShadowOffsetY = 3;
             SViderBDD.Size = new Size(233, 50);
             SViderBDD.TabIndex = 32;
-            SViderBDD.Text = "Vider la base de donnée";
+            SViderBDD.Text = "Vider la base de données";
             SViderBDD.TextAlign = ContentAlignment.MiddleCenter;
             SViderBDD.TextPaddingBottom = 0;
             SViderBDD.TextPaddingLeft = 0;
@@ -787,7 +788,7 @@
             btnRechercherCodeGeo.ImageRightMargin = 8;
             btnRechercherCodeGeo.ImageSize = 24;
             btnRechercherCodeGeo.IsReadOnly = false;
-            btnRechercherCodeGeo.Location = new Point(1190, 266);
+            btnRechercherCodeGeo.Location = new Point(1190, 278);
             btnRechercherCodeGeo.MakeRadial = false;
             btnRechercherCodeGeo.Name = "btnRechercherCodeGeo";
             btnRechercherCodeGeo.PressAnimationSpeed = 0.5F;
@@ -812,12 +813,23 @@
             btnRechercherCodeGeo.TextShadowOffsetY = 1;
             btnRechercherCodeGeo.Click += btnRechercherCodeGeo_Click;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(1066, 262);
+            label6.Name = "label6";
+            label6.Size = new Size(100, 24);
+            label6.TabIndex = 35;
+            label6.Text = "Code géo :";
+            // 
             // Enregistrement
             // 
             AutoScaleDimensions = new SizeF(10F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1322, 689);
+            Controls.Add(label6);
             Controls.Add(cerp);
             Controls.Add(btnRechercherCodeGeo);
             Controls.Add(txtRechercheCodeGeo);
@@ -869,5 +881,6 @@
         private SiticoneNetCoreUI.SiticoneButtonAdvanced btnAnnulerFiltre;
         private TextBox txtRechercheCodeGeo;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced btnRechercherCodeGeo;
+        private Label label6;
     }
 }
