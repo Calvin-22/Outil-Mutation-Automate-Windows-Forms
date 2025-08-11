@@ -364,7 +364,7 @@ namespace Outil_Mutation_Automate.View
         public bool Zone(double frequence, int NBC, double NbGoulotte, bool vérif)
         {
             // Condition fréquence minimum 60, condition picking inférieur à 4, Nombre de canaux inférieur à 2.1
-            if (frequence > 60 && NBC < 4 && NbGoulotte < 2.1 && vérif)
+            if (frequence > 50 && NBC < 4 && NbGoulotte < 2.1 && vérif)
             {
                 return true;
             }

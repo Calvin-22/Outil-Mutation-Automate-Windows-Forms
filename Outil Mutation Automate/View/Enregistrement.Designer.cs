@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Enregistrement));
             dgvMutation = new DataGridView();
             Groupbox = new GroupBox();
@@ -64,25 +64,25 @@
             dgvMutation.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvMutation.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvMutation.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.Green;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle7.ForeColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle7.Padding = new Padding(1);
-            dataGridViewCellStyle7.SelectionBackColor = Color.Green;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dgvMutation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = Color.Green;
+            dataGridViewCellStyle9.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle9.ForeColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle9.Padding = new Padding(1);
+            dataGridViewCellStyle9.SelectionBackColor = Color.Green;
+            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            dgvMutation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             dgvMutation.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = SystemColors.Window;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle8.Padding = new Padding(1);
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            dgvMutation.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = SystemColors.Window;
+            dataGridViewCellStyle10.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle10.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle10.Padding = new Padding(1);
+            dataGridViewCellStyle10.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.False;
+            dgvMutation.DefaultCellStyle = dataGridViewCellStyle10;
             dgvMutation.EnableHeadersVisualStyles = false;
             dgvMutation.Location = new Point(54, 55);
             dgvMutation.MultiSelect = false;
@@ -817,7 +817,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(1066, 262);
+            label6.Location = new Point(1066, 264);
             label6.Name = "label6";
             label6.Size = new Size(100, 24);
             label6.TabIndex = 35;
