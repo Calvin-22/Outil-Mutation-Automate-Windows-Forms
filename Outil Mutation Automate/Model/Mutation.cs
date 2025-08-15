@@ -17,10 +17,16 @@ namespace Outil_Mutation_Automate.Model
 
         public string Désignation { get; set; }
         public string Zone { get; set; } 
+
+        public double MoyenneDesVentes { get; set; }
+
+        public double FrequencePicking { get; set; }
+
         public double NBC { get; set; }
         public double NBV { get; set; }
         public double Hauteur_Canal { get; set; }
         public double Canaux { get; set; }
+
 
         /// <summary>
         /// Valorise les propriétés
@@ -31,12 +37,14 @@ namespace Outil_Mutation_Automate.Model
         /// <param name="nombreBoitesVendues"></param>
         /// <param name="hauteurCanalDesire"></param>
         /// <param name="nombreCanauxNecessaires"></param>
-        public mutation(double cip, string code_géo, string designation, string zone, double nombreBoitesParCommande, double nombreBoitesVendues, double hauteurCanalDesire, double nombreCanauxNecessaires)
+        public mutation(double cip, string code_géo, string designation, double moyenneDesVentes, double frequencePicking, string zone, double nombreBoitesParCommande, double nombreBoitesVendues, double hauteurCanalDesire, double nombreCanauxNecessaires)
         {
             CIP = cip;
             CodeGéo = code_géo;
             Désignation = designation;
             Zone = zone;
+            MoyenneDesVentes = moyenneDesVentes;
+            FrequencePicking = frequencePicking; 
             NBC = nombreBoitesParCommande;
             NBV = nombreBoitesVendues;
             Hauteur_Canal = hauteurCanalDesire;

@@ -31,6 +31,7 @@ namespace Outil_Mutation_Automate
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
+            mySiticoneLicenseSettings1 = new SiticoneNetCoreUI.MySiticoneLicenseSettings();
             HauteurProduitLabel = new Label();
             hauteur = new TextBox();
             label1 = new Label();
@@ -58,7 +59,6 @@ namespace Outil_Mutation_Automate
             process1 = new System.Diagnostics.Process();
             infobutton = new Button();
             BtnVider = new Button();
-            mySiticoneLicenseSettings1 = new SiticoneNetCoreUI.MySiticoneLicenseSettings();
             SbtnEnregistrer = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             SbtnCalculer = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             ProgressBar = new SiticoneNetCoreUI.SiticoneHProgressBar();
@@ -725,7 +725,6 @@ namespace Outil_Mutation_Automate
         private System.Diagnostics.Process process1;
         private Button infobutton;
         private Button BtnVider;
-        private SiticoneNetCoreUI.MySiticoneLicenseSettings mySiticoneLicenseSettings1;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced SbtnEnregistrer;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced SbtnCalculer;
         private SiticoneNetCoreUI.SiticoneHProgressBar ProgressBar;
@@ -735,5 +734,6 @@ namespace Outil_Mutation_Automate
         private Button btnFakeAccept;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced SbtnConsultation;
         private Label lblHauteur;
+        private SiticoneNetCoreUI.MySiticoneLicenseSettings mySiticoneLicenseSettings1;
     }
 }

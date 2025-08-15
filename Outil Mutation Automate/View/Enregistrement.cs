@@ -45,6 +45,8 @@ namespace Outil_Mutation_Automate.View
         private double _nombreCanauxNecessairesFromMenuPrincipal;
         private string _zoneFromMenuPrincipal;
         private string _codeGéoFromMenuPrincipal;
+        private double _moyenneDesVentesFromMenuPrincipal;
+        private double _frequencePickingFromMenuPrincipal;
 
         /// <summary>
         /// Constructeur de la classe Enregistrement.
@@ -54,7 +56,7 @@ namespace Outil_Mutation_Automate.View
         /// <param name="hauteurCanalDesireValue"></param>
         /// <param name="nombreCanauxNecessairesValue"></param>
         /// <param name="zoneValue"></param>
-        public Enregistrement(string codegéoValue, double nbcValue, double nbvValue, double hauteurCanalDesireValue, double nombreCanauxNecessairesValue, string zoneValue, bool lectureSeule)
+        public Enregistrement(string codegéoValue, double nbcValue, double moyenneValue, double FrequenceValue, double nbvValue, double hauteurCanalDesireValue, double nombreCanauxNecessairesValue, string zoneValue, bool lectureSeule)
         {
             InitializeComponent();
             this.MaximizeBox = false;
@@ -64,6 +66,9 @@ namespace Outil_Mutation_Automate.View
             _nombreCanauxNecessairesFromMenuPrincipal = nombreCanauxNecessairesValue;
             _zoneFromMenuPrincipal = zoneValue;
             _codeGéoFromMenuPrincipal = codegéoValue;
+
+            _moyenneDesVentesFromMenuPrincipal = moyenneValue;
+            _frequencePickingFromMenuPrincipal = FrequenceValue; 
 
             // Variable lecture seule
             modeLectureSeule = lectureSeule;
@@ -130,9 +135,11 @@ namespace Outil_Mutation_Automate.View
                     double nombreCanauxNecessaires = _nombreCanauxNecessairesFromMenuPrincipal;
                     string zone = _zoneFromMenuPrincipal;
                     string code_géo = _codeGéoFromMenuPrincipal;
+                    double moyenneDesVentes = _moyenneDesVentesFromMenuPrincipal;
+                    double frequencePicking = _frequencePickingFromMenuPrincipal;
 
 
-                    mutation mutation = new mutation(cip, code_géo, designation, zone, nombreBoitesParCommande, nombreBoitesVendues, hauteurCanalDesire, nombreCanauxNecessaires);
+                    mutation mutation = new mutation(cip, code_géo, designation, moyenneDesVentes, frequencePicking, zone, nombreBoitesParCommande, nombreBoitesVendues, hauteurCanalDesire, nombreCanauxNecessaires);
                     controller.addMutation(mutation);
 
                     RemplirListeMutation();
@@ -308,6 +315,15 @@ namespace Outil_Mutation_Automate.View
 
                 //_NbGoulotte = HT / _hauteurCanalDesire; : désactivation temporaire à des fins de calculs. 
                 _NBC = moyenneVentes / frequencePicking;
+               
+                // Conservation de la moyenne 
+                double MoyenneDesVentes = moyenneVentes;
+
+                // Conservation de la fréquence picking
+                double FrequencePicking = frequencePicking;
+
+                // Conservation de la désignation
+                string DésignationVérif = designation;
 
                 // En démo : Détermination de la hauteur idéale (tranche en dessous de 0.81 soit 80%) 
                 if (PetitCanal(HT) > 0.81)
@@ -342,7 +358,7 @@ namespace Outil_Mutation_Automate.View
                 _NBV = Math.Round(_NBV, 2);
 
                 // Définition de la zone
-                if (Zone(frequencePicking, (int)_NBC, _NbGoulotte, vérif))
+                if (Zone(frequencePicking, (int)_NBC, _NbGoulotte, vérif, DésignationVérif))
                 {
                     _zone = "Automate"; // Zone définie comme "Automate"
 
@@ -352,7 +368,7 @@ namespace Outil_Mutation_Automate.View
                     _zone = "Magasin"; // Zone définie comme "Magasin"
                 }
 
-                mutation mutation = new mutation(cip, codegéo, designation, _zone, _NBC, _NBV, _hauteurCanalDesire, _NbGoulotte);
+                mutation mutation = new mutation(cip, codegéo, designation, MoyenneDesVentes, FrequencePicking,  _zone, _NBC, _NBV, _hauteurCanalDesire, _NbGoulotte);
                 controller.addMutation(mutation);
 
             }
@@ -361,8 +377,16 @@ namespace Outil_Mutation_Automate.View
         }
 
         // Fonction de détermination de la zone du produit correspondant
-        public bool Zone(double frequence, int NBC, double NbGoulotte, bool vérif)
+        public bool Zone(double frequence, int NBC, double NbGoulotte, bool vérif, string Désignation)
         {
+            // Si le produit est Frésubin ou Clinutren, il est automatiquement en magasin
+            if (Désignation.IndexOf("Frésubin", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                Désignation.IndexOf("CLINUTREN", StringComparison.OrdinalIgnoreCase) >= 0 || 
+                Désignation.IndexOf("FRESUBIN", StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                return false;
+            }
+
             // Condition fréquence minimum 60, condition picking inférieur à 4, Nombre de canaux inférieur à 2.1
             if (frequence > 50 && NBC < 4 && NbGoulotte < 2.1 && vérif)
             {

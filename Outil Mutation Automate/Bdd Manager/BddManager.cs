@@ -20,6 +20,8 @@ namespace Outil_Mutation_Automate.Bdd_Manager
         /// objet de connexion à la BDD à partir d'une chaîne de connexion
         /// </summary>
         private readonly MySqlConnection connection;
+        public MySqlConnection Connection => connection;
+
 
         /// <summary>
         /// Constructeur pour créer la connexion à la BDD et l'ouvrir

@@ -125,6 +125,8 @@ namespace Outil_Mutation_Automate
         private double _NbGoulotte; // Nombre de canaux nécessaires
         private string _zone; // Zone du produit
         private bool lectureSeule = false; // Variable pour la lecture seule, par défaut à false
+        private double _moyenneVentes;
+        private int _frequencePicking;
 
         /// <summary>
         /// Événement déclenché lors du clic sur le bouton "Calculer".
@@ -162,6 +164,9 @@ namespace Outil_Mutation_Automate
                         double HT = hauteurProduit * _NBV;
                         //_NbGoulotte = HT / _hauteurCanalDesire; : désactivation temporaire à des fins de calculs. 
                         _NBC = moyenneVentes / frequencePicking;
+
+                        _moyenneVentes = moyenneVentes;
+                        _frequencePicking = frequencePicking;
 
                         // Désactiver le bouton afin d'éviter de boucler un délai de chargement
                         SbtnCalculer.Enabled = false;
@@ -280,7 +285,7 @@ namespace Outil_Mutation_Automate
         public bool Zone(double frequence, int NBC, double NbGoulotte, bool vérif)
         {
             // Condition fréquence minimum 60, condition picking inférieur à 5, Nombre de canaux inférieur à 3 
-            if (frequence > 60 && NBC < 4 && NbGoulotte < 2.1 && vérif)
+            if (frequence > 50 && NBC < 4 && NbGoulotte < 2.1 && vérif)
             {
                 return true;
             }
@@ -371,8 +376,11 @@ namespace Outil_Mutation_Automate
                 double nombreCanauxNecessairesValue = Math.Round(_NbGoulotte, 1);
                 string zoneValue = _zone; // Récupération de la zone
                 string codegéoValue = "Hello";
+                double moyenneValue = _moyenneVentes;
+                double FrequenceValue = _frequencePicking; 
 
-                Enregistrement frm = new Enregistrement(codegéoValue, nbcValue, nbvValue, hauteurCanalDesireValue, nombreCanauxNecessairesValue, zoneValue, lectureSeule); // génère la fenêtre
+
+                Enregistrement frm = new Enregistrement(codegéoValue, nbcValue, moyenneValue, FrequenceValue, nbvValue, hauteurCanalDesireValue, nombreCanauxNecessairesValue, zoneValue, lectureSeule); // génère la fenêtre
                 frm.Show(); // Affiche la fenêtre 
 
             }
@@ -447,8 +455,11 @@ namespace Outil_Mutation_Automate
             string zoneValue = _zone; // Récupération de la zone
             bool lectureSeule = true; // Variable lecture seule pour la consultation
             string codegéoValue = "hello";
+            double moyenneValue = _moyenneVentes;
+            double FrequenceValue = _frequencePicking;
 
-            Enregistrement frm = new Enregistrement(codegéoValue, nbcValue, nbvValue, hauteurCanalDesireValue, nombreCanauxNecessairesValue, zoneValue, lectureSeule); // génère la fenêtre
+
+            Enregistrement frm = new Enregistrement(codegéoValue, nbcValue, moyenneValue, FrequenceValue, nbvValue, hauteurCanalDesireValue, nombreCanauxNecessairesValue, zoneValue, lectureSeule); // génère la fenêtre
             frm.Show(); // Affiche la fenêtre 
         }
     }

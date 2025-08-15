@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Outil_Mutation_Automate.Model;
 using Outil_Mutation_Automate.View;
 using Outil_Mutation_Automate.Bdd_Manager;
+using MySql.Data.MySqlClient;
 
 namespace Outil_Mutation_Automate.Dal
 {
@@ -33,7 +34,9 @@ namespace Outil_Mutation_Automate.Dal
             List<mutation> lesMutations = new List<mutation>();
             if (access.Manager != null)
             {
-                string req = "SELECT CIP, `Code Géo`, Désignation, Zone, NBC, NBV, `Hauteur Canal`, `Nombre de Canal` FROM mutation";
+                string req = "SELECT CIP, `Code Géo`, Désignation, MoyenneDesVentes, FrequencePicking, Zone, NBC, NBV, `Hauteur Canal`, `Nombre de Canal`" +
+                             "FROM mutation " +
+                             "ORDER BY FrequencePicking DESC";  
                 try
                 {
                     List<Object[]> records = access.Manager.ReqSelect(req);
@@ -44,12 +47,14 @@ namespace Outil_Mutation_Automate.Dal
                             double cip = (double)record[0];
                             string code_géo = (string)record[1];
                             string designation = (string)record[2];
-                            string zone = (string)record[3];
-                            double nombreBoitesParCommande = (double)record[4];
-                            double nombreBoitesVendues = (double)record[5];
-                            double hauteurCanalDesire = (double)record[6];
-                            double nombreCanauxNecessaires = (double)record[7];
-                            mutation mutation = new mutation(cip, code_géo, designation, zone, nombreBoitesParCommande, nombreBoitesVendues, hauteurCanalDesire, nombreCanauxNecessaires);
+                            double moyennedesventes = (double)record[3];
+                            double frequencepicking = (double)record[4];
+                            string zone = (string)record[5];
+                            double nombreBoitesParCommande = (double)record[6];
+                            double nombreBoitesVendues = (double)record[7];
+                            double hauteurCanalDesire = (double)record[8];
+                            double nombreCanauxNecessaires = (double)record[9];
+                            mutation mutation = new mutation(cip, code_géo, designation, moyennedesventes, frequencepicking, zone, nombreBoitesParCommande, nombreBoitesVendues, hauteurCanalDesire, nombreCanauxNecessaires);
 
                             lesMutations.Add(mutation);
                         }
@@ -75,14 +80,16 @@ namespace Outil_Mutation_Automate.Dal
             {
                 // Construit la requête SQL d'insertion.
                 // Les noms des colonnes dans la table 'mutation' sont supposés être les mêmes que les noms de propriétés.
-                string req = "INSERT INTO mutation (CIP, `Code Géo`, Désignation, Zone, NBC, NBV, `Hauteur Canal`, `Nombre de Canal`) ";
-                req += "VALUES (@CIP, @CodeGeo, @Désignation, @Zone, @NBC, @NBV, @HauteurCanal, @NombreCanauxNecessaires);";
+                string req = "INSERT INTO mutation (CIP, `Code Géo`, Désignation, MoyenneDesVentes, FrequencePicking, Zone, NBC, NBV, `Hauteur Canal`, `Nombre de Canal`) ";
+                req += "VALUES (@CIP, @CodeGeo, @Désignation, @MoyenneDesVentes, @FrequencePicking, @Zone, @NBC, @NBV, @HauteurCanal, @NombreCanauxNecessaires);";
 
                 // Crée un dictionnaire de paramètres pour la requête SQL.
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
                 parameters.Add("@CIP", mutation.CIP);
                 parameters.Add("@CodeGeo", mutation.CodeGéo);
                 parameters.Add("@Désignation", mutation.Désignation);
+                parameters.Add("@MoyenneDesVentes", mutation.MoyenneDesVentes);
+                parameters.Add("@FrequencePicking", mutation.FrequencePicking);
                 parameters.Add("@Zone", mutation.Zone);
                 parameters.Add("@NBC", mutation.NBC);
                 parameters.Add("@NBV", mutation.NBV);
