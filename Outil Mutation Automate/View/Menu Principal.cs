@@ -135,7 +135,7 @@ namespace Outil_Mutation_Automate
         /// <param name="e"></param>
         private async void SbtnCalculer_Click(object sender, EventArgs e)
         {
-            if (!hauteur.Text.Equals("") && !frequence.Text.Equals("") && !moyenne.Text.Equals("")) //&& !hauteurG.Text.Equals("")) : désactivation temporaire pour test. 
+            if (!hauteur.Text.Equals("") && !frequence.Text.Equals("") && !moyenne.Text.Equals("") && !CodeGeoTxt.Text.Equals("")) //&& !hauteurG.Text.Equals("")) : désactivation temporaire pour test. 
 
             {
                 // Récupérer le texte entré par l'utilisateur dans les TextBox.
@@ -143,6 +143,7 @@ namespace Outil_Mutation_Automate
                 string hauteurProduitTexte = hauteur.Text;
                 string frequencePickingTexte = frequence.Text;
                 string moyenneVentesTexte = moyenne.Text;
+
                 bool vérif = true;
                 // string hauteurCanalDesireTexte = hauteurG.Text; : désactivation temporaire
 
@@ -375,7 +376,7 @@ namespace Outil_Mutation_Automate
                 double hauteurCanalDesireValue = Math.Round(_hauteurCanalDesire, 1);
                 double nombreCanauxNecessairesValue = Math.Round(_NbGoulotte, 1);
                 string zoneValue = _zone; // Récupération de la zone
-                string codegéoValue = "Hello";
+                string codegéoValue = CodeGeoTxt.Text; // Récupération du code géographique
                 double moyenneValue = _moyenneVentes;
                 double FrequenceValue = _frequencePicking; 
 
@@ -394,7 +395,7 @@ namespace Outil_Mutation_Automate
         {
             // Vérification que les saisies sont réalisées avant de tenter inutilement de supprimer
             if (!string.IsNullOrEmpty(hauteur.Text) || !string.IsNullOrEmpty(frequence.Text) || !string.IsNullOrEmpty(moyenne.Text) ||
-                !string.IsNullOrEmpty(hauteurG.Text))
+                !string.IsNullOrEmpty(hauteurG.Text) || !string.IsNullOrEmpty(CodeGeoTxt.Text))
             {
                 // Confirmation de suppression ou non
                 DialogResult result = MessageBox.Show(
@@ -447,14 +448,13 @@ namespace Outil_Mutation_Automate
                     break;         // Stoppe la boucle une fois trouvé
                 }
             }
-            // Si les lignes de résultats ne sont pas vides, on peut procéder à l'enregistrement.
             double nbcValue = Math.Round(_NBC, 1);
             double nbvValue = Math.Round(_NBV, 1); // Récupération des valeurs de nbc et nbv
             double hauteurCanalDesireValue = Math.Round(_hauteurCanalDesire, 1);
             double nombreCanauxNecessairesValue = Math.Round(_NbGoulotte, 1);
             string zoneValue = _zone; // Récupération de la zone
             bool lectureSeule = true; // Variable lecture seule pour la consultation
-            string codegéoValue = "hello";
+            string codegéoValue = CodeGeoTxt.Text; ;
             double moyenneValue = _moyenneVentes;
             double FrequenceValue = _frequencePicking;
 

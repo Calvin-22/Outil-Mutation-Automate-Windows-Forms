@@ -31,7 +31,6 @@ namespace Outil_Mutation_Automate
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
-            mySiticoneLicenseSettings1 = new SiticoneNetCoreUI.MySiticoneLicenseSettings();
             HauteurProduitLabel = new Label();
             hauteur = new TextBox();
             label1 = new Label();
@@ -43,6 +42,8 @@ namespace Outil_Mutation_Automate
             lbversion = new Label();
             cerp = new PictureBox();
             groupBox1 = new GroupBox();
+            label2 = new Label();
+            CodeGeoTxt = new TextBox();
             lblHauteur = new Label();
             groupBox2 = new GroupBox();
             ligne4 = new Label();
@@ -171,7 +172,8 @@ namespace Outil_Mutation_Automate
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(lblHauteur);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(CodeGeoTxt);
             groupBox1.Controls.Add(frequence);
             groupBox1.Controls.Add(FreqLabel);
             groupBox1.Controls.Add(moyenne);
@@ -185,11 +187,29 @@ namespace Outil_Mutation_Automate
             groupBox1.TabIndex = 13;
             groupBox1.TabStop = false;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(481, 112);
+            label2.Name = "label2";
+            label2.Size = new Size(106, 24);
+            label2.TabIndex = 8;
+            label2.Text = "Code Géo : ";
+            // 
+            // CodeGeoTxt
+            // 
+            CodeGeoTxt.Cursor = Cursors.IBeam;
+            CodeGeoTxt.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            CodeGeoTxt.Location = new Point(484, 152);
+            CodeGeoTxt.Name = "CodeGeoTxt";
+            CodeGeoTxt.Size = new Size(274, 31);
+            CodeGeoTxt.TabIndex = 7;
+            // 
             // lblHauteur
             // 
             lblHauteur.AutoSize = true;
             lblHauteur.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblHauteur.Location = new Point(357, 137);
+            lblHauteur.Location = new Point(151, 251);
             lblHauteur.Name = "lblHauteur";
             lblHauteur.Size = new Size(405, 24);
             lblHauteur.TabIndex = 8;
@@ -656,6 +676,7 @@ namespace Outil_Mutation_Automate
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(880, 903);
+            Controls.Add(lblHauteur);
             Controls.Add(hauteurG);
             Controls.Add(SbtnConsultation);
             Controls.Add(btnFakeAccept);
@@ -734,6 +755,7 @@ namespace Outil_Mutation_Automate
         private Button btnFakeAccept;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced SbtnConsultation;
         private Label lblHauteur;
-        private SiticoneNetCoreUI.MySiticoneLicenseSettings mySiticoneLicenseSettings1;
+        private Label label2;
+        private TextBox CodeGeoTxt;
     }
 }
