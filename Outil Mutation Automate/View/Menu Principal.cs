@@ -8,10 +8,13 @@ using MySql.Data.MySqlClient;
 using Timer = System.Windows.Forms.Timer;
 using iTextSharp.text.xml;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
+using System;
 
 
 namespace Outil_Mutation_Automate
 {
+
     /// <summary>
     /// Classe MenuPrincipal qui représente la fenêtre principale de l'application.
     /// </summary>
@@ -25,9 +28,10 @@ namespace Outil_Mutation_Automate
         public MenuPrincipal()
         {
             InitializeComponent();
-            this.MaximizeBox = false;
-            VérifierConnexion();
-            this.AcceptButton = btnFakeAccept;
+          
+            this.MaximizeBox = false; // Désactivation du bouton de maximisation
+            VérifierConnexion(); // Vérification de la connexion à la base de données
+            this.AcceptButton = btnFakeAccept; // Permet de simuler l'appui sur le bouton d'acceptation avec la touche Entrée
 
             // Spécification du Timer au lancement du formulaire pour modification couleur barre de progression
             delayTimer = new Timer();

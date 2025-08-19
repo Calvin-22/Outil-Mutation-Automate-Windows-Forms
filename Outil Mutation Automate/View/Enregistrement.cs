@@ -382,7 +382,8 @@ namespace Outil_Mutation_Automate.View
             // Si le produit est Frésubin ou Clinutren, il est automatiquement en magasin
             if (Désignation.IndexOf("Frésubin", StringComparison.OrdinalIgnoreCase) >= 0 ||
                 Désignation.IndexOf("CLINUTREN", StringComparison.OrdinalIgnoreCase) >= 0 || 
-                Désignation.IndexOf("FRESUBIN", StringComparison.OrdinalIgnoreCase) >= 0)
+                Désignation.IndexOf("FRESUBIN", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                Désignation.IndexOf("MEPILEX", StringComparison.OrdinalIgnoreCase) >= 0)
             {
                 return false;
             }

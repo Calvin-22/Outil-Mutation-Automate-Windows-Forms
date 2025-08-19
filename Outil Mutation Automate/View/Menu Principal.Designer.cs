@@ -68,6 +68,7 @@ namespace Outil_Mutation_Automate
             SmoothTimer = new System.Windows.Forms.Timer(components);
             btnFakeAccept = new Button();
             SbtnConsultation = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
+            mySiticoneLicenseSettings1 = new SiticoneNetCoreUI.MySiticoneLicenseSettings();
             ((System.ComponentModel.ISupportInitialize)cerp).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -757,5 +758,6 @@ namespace Outil_Mutation_Automate
         private Label lblHauteur;
         private Label label2;
         private TextBox CodeGeoTxt;
+        private SiticoneNetCoreUI.MySiticoneLicenseSettings mySiticoneLicenseSettings1;
     }
 }
