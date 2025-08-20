@@ -383,7 +383,8 @@ namespace Outil_Mutation_Automate.View
             if (Désignation.IndexOf("Frésubin", StringComparison.OrdinalIgnoreCase) >= 0 ||
                 Désignation.IndexOf("CLINUTREN", StringComparison.OrdinalIgnoreCase) >= 0 || 
                 Désignation.IndexOf("FRESUBIN", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                Désignation.IndexOf("MEPILEX", StringComparison.OrdinalIgnoreCase) >= 0)
+                Désignation.IndexOf("MEPILEX", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                Désignation.IndexOf("SOD BICARB", StringComparison.OrdinalIgnoreCase) >= 0)
             {
                 return false;
             }

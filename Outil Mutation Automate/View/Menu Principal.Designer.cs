@@ -69,6 +69,7 @@ namespace Outil_Mutation_Automate
             btnFakeAccept = new Button();
             SbtnConsultation = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             mySiticoneLicenseSettings1 = new SiticoneNetCoreUI.MySiticoneLicenseSettings();
+            siticoneBorderlessForm1 = new SiticoneNetCoreUI.SiticoneBorderlessForm(components);
             ((System.ComponentModel.ISupportInitialize)cerp).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -133,9 +134,9 @@ namespace Outil_Mutation_Automate
             // 
             hauteurG.Cursor = Cursors.IBeam;
             hauteurG.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            hauteurG.Location = new Point(560, 869);
+            hauteurG.Location = new Point(543, 854);
             hauteurG.Name = "hauteurG";
-            hauteurG.Size = new Size(274, 31);
+            hauteurG.Size = new Size(267, 31);
             hauteurG.TabIndex = 8;
             hauteurG.Visible = false;
             // 
@@ -144,7 +145,7 @@ namespace Outil_Mutation_Automate
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.MidnightBlue;
-            label3.Location = new Point(43, 135);
+            label3.Location = new Point(28, 141);
             label3.Name = "label3";
             label3.Size = new Size(213, 24);
             label3.TabIndex = 9;
@@ -155,7 +156,7 @@ namespace Outil_Mutation_Automate
             lbversion.AutoSize = true;
             lbversion.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbversion.ForeColor = SystemColors.ButtonShadow;
-            lbversion.Location = new Point(43, 159);
+            lbversion.Location = new Point(28, 165);
             lbversion.Name = "lbversion";
             lbversion.Size = new Size(50, 24);
             lbversion.TabIndex = 11;
@@ -164,9 +165,9 @@ namespace Outil_Mutation_Automate
             // cerp
             // 
             cerp.Image = (Image)resources.GetObject("cerp.Image");
-            cerp.Location = new Point(614, 40);
+            cerp.Location = new Point(597, 25);
             cerp.Name = "cerp";
-            cerp.Size = new Size(220, 200);
+            cerp.Size = new Size(213, 200);
             cerp.SizeMode = PictureBoxSizeMode.Zoom;
             cerp.TabIndex = 12;
             cerp.TabStop = false;
@@ -182,9 +183,9 @@ namespace Outil_Mutation_Automate
             groupBox1.Controls.Add(hauteur);
             groupBox1.Controls.Add(HauteurProduitLabel);
             groupBox1.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(45, 435);
+            groupBox1.Location = new Point(28, 420);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(789, 202);
+            groupBox1.Size = new Size(782, 202);
             groupBox1.TabIndex = 13;
             groupBox1.TabStop = false;
             // 
@@ -210,7 +211,7 @@ namespace Outil_Mutation_Automate
             // 
             lblHauteur.AutoSize = true;
             lblHauteur.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblHauteur.Location = new Point(151, 251);
+            lblHauteur.Location = new Point(134, 236);
             lblHauteur.Name = "lblHauteur";
             lblHauteur.Size = new Size(405, 24);
             lblHauteur.TabIndex = 8;
@@ -223,9 +224,9 @@ namespace Outil_Mutation_Automate
             groupBox2.Controls.Add(ligne3);
             groupBox2.Controls.Add(ligne2);
             groupBox2.Controls.Add(ligne1);
-            groupBox2.Location = new Point(45, 264);
+            groupBox2.Location = new Point(28, 249);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(789, 174);
+            groupBox2.Size = new Size(782, 174);
             groupBox2.TabIndex = 14;
             groupBox2.TabStop = false;
             // 
@@ -270,7 +271,7 @@ namespace Outil_Mutation_Automate
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Variable Small Semibol", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.Green;
-            label5.Location = new Point(45, 248);
+            label5.Location = new Point(28, 233);
             label5.Name = "label5";
             label5.Size = new Size(112, 27);
             label5.TabIndex = 15;
@@ -281,7 +282,7 @@ namespace Outil_Mutation_Automate
             Conclusionlabel.AutoSize = true;
             Conclusionlabel.Font = new Font("Segoe UI Variable Small Semibol", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Conclusionlabel.ForeColor = Color.MidnightBlue;
-            Conclusionlabel.Location = new Point(45, 673);
+            Conclusionlabel.Location = new Point(28, 658);
             Conclusionlabel.Name = "Conclusionlabel";
             Conclusionlabel.Size = new Size(139, 27);
             Conclusionlabel.TabIndex = 17;
@@ -294,9 +295,10 @@ namespace Outil_Mutation_Automate
             groupBox3.Controls.Add(ligne7);
             groupBox3.Controls.Add(ligne6);
             groupBox3.Controls.Add(ligne5);
-            groupBox3.Location = new Point(45, 689);
+            groupBox3.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            groupBox3.Location = new Point(28, 674);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(789, 174);
+            groupBox3.Size = new Size(782, 174);
             groupBox3.TabIndex = 16;
             groupBox3.TabStop = false;
             // 
@@ -352,11 +354,17 @@ namespace Outil_Mutation_Automate
             // 
             infobutton.BackgroundImage = (Image)resources.GetObject("infobutton.BackgroundImage");
             infobutton.BackgroundImageLayout = ImageLayout.Stretch;
-            infobutton.Location = new Point(3, 3);
+            infobutton.FlatAppearance.BorderColor = Color.White;
+            infobutton.FlatAppearance.BorderSize = 0;
+            infobutton.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            infobutton.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            infobutton.FlatStyle = FlatStyle.Flat;
+            infobutton.Location = new Point(22, 25);
             infobutton.Name = "infobutton";
-            infobutton.Size = new Size(45, 44);
+            infobutton.Size = new Size(55, 51);
             infobutton.TabIndex = 18;
-            infobutton.UseVisualStyleBackColor = true;
+            infobutton.TabStop = false;
+            infobutton.UseVisualStyleBackColor = false;
             infobutton.Click += infobutton_Click;
             // 
             // BtnVider
@@ -364,9 +372,9 @@ namespace Outil_Mutation_Automate
             BtnVider.BackgroundImage = (Image)resources.GetObject("BtnVider.BackgroundImage");
             BtnVider.BackgroundImageLayout = ImageLayout.Stretch;
             BtnVider.FlatAppearance.BorderColor = SystemColors.Control;
-            BtnVider.Location = new Point(390, 648);
+            BtnVider.Location = new Point(373, 633);
             BtnVider.Name = "BtnVider";
-            BtnVider.Size = new Size(42, 41);
+            BtnVider.Size = new Size(35, 41);
             BtnVider.TabIndex = 20;
             BtnVider.UseVisualStyleBackColor = true;
             BtnVider.Click += BtnVider_Click;
@@ -412,7 +420,7 @@ namespace Outil_Mutation_Automate
             SbtnEnregistrer.ImageRightMargin = 8;
             SbtnEnregistrer.ImageSize = 24;
             SbtnEnregistrer.IsReadOnly = false;
-            SbtnEnregistrer.Location = new Point(587, 644);
+            SbtnEnregistrer.Location = new Point(570, 629);
             SbtnEnregistrer.MakeRadial = false;
             SbtnEnregistrer.Name = "SbtnEnregistrer";
             SbtnEnregistrer.PressAnimationSpeed = 0.5F;
@@ -424,7 +432,7 @@ namespace Outil_Mutation_Automate
             SbtnEnregistrer.ShadowColor = Color.FromArgb(70, 0, 0, 0);
             SbtnEnregistrer.ShadowOffsetX = 3;
             SbtnEnregistrer.ShadowOffsetY = 3;
-            SbtnEnregistrer.Size = new Size(123, 50);
+            SbtnEnregistrer.Size = new Size(116, 50);
             SbtnEnregistrer.TabIndex = 21;
             SbtnEnregistrer.Text = "Enregistrer";
             SbtnEnregistrer.TextAlign = ContentAlignment.MiddleCenter;
@@ -478,7 +486,7 @@ namespace Outil_Mutation_Automate
             SbtnCalculer.ImageRightMargin = 8;
             SbtnCalculer.ImageSize = 24;
             SbtnCalculer.IsReadOnly = false;
-            SbtnCalculer.Location = new Point(716, 644);
+            SbtnCalculer.Location = new Point(699, 629);
             SbtnCalculer.MakeRadial = false;
             SbtnCalculer.Name = "SbtnCalculer";
             SbtnCalculer.PressAnimationSpeed = 0.5F;
@@ -490,7 +498,7 @@ namespace Outil_Mutation_Automate
             SbtnCalculer.ShadowColor = Color.FromArgb(70, 0, 0, 0);
             SbtnCalculer.ShadowOffsetX = 3;
             SbtnCalculer.ShadowOffsetY = 3;
-            SbtnCalculer.Size = new Size(123, 50);
+            SbtnCalculer.Size = new Size(116, 50);
             SbtnCalculer.TabIndex = 22;
             SbtnCalculer.Text = "Calculer";
             SbtnCalculer.TextAlign = ContentAlignment.MiddleCenter;
@@ -529,7 +537,7 @@ namespace Outil_Mutation_Automate
             ProgressBar.IsReadonly = false;
             ProgressBar.LabelColor = Color.Transparent;
             ProgressBar.LabelFont = new Font("Segoe UI", 10F, FontStyle.Bold);
-            ProgressBar.Location = new Point(614, 246);
+            ProgressBar.Location = new Point(597, 231);
             ProgressBar.Maximum = 100;
             ProgressBar.Minimum = 0;
             ProgressBar.MinimumSize = new Size(50, 20);
@@ -540,7 +548,7 @@ namespace Outil_Mutation_Automate
             ProgressBar.ReadonlyForeColor = Color.White;
             ProgressBar.ShowFocusCue = false;
             ProgressBar.ShowPercentage = false;
-            ProgressBar.Size = new Size(220, 21);
+            ProgressBar.Size = new Size(213, 21);
             ProgressBar.SuccessColor = Color.Green;
             ProgressBar.TabIndex = 23;
             ProgressBar.Value = 100;
@@ -555,14 +563,14 @@ namespace Outil_Mutation_Automate
             siticoneShimmerLabel1.Font = new Font("Segoe UI Variable Display", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             siticoneShimmerLabel1.IsAnimating = true;
             siticoneShimmerLabel1.IsPaused = false;
-            siticoneShimmerLabel1.Location = new Point(21, 103);
+            siticoneShimmerLabel1.Location = new Point(9, 106);
             siticoneShimmerLabel1.Name = "siticoneShimmerLabel1";
             siticoneShimmerLabel1.PauseDuration = 0;
             siticoneShimmerLabel1.ShimmerColor = Color.Lime;
             siticoneShimmerLabel1.ShimmerOpacity = 1F;
             siticoneShimmerLabel1.ShimmerSpeed = 50;
             siticoneShimmerLabel1.ShimmerWidth = 0.2F;
-            siticoneShimmerLabel1.Size = new Size(589, 34);
+            siticoneShimmerLabel1.Size = new Size(582, 34);
             siticoneShimmerLabel1.TabIndex = 24;
             siticoneShimmerLabel1.Text = "Bienvenue sur l'outil d'aide à la mutation automate";
             siticoneShimmerLabel1.ToolTipText = "";
@@ -573,7 +581,7 @@ namespace Outil_Mutation_Automate
             SmoothCircular.ArcMinLength = 150F;
             SmoothCircular.BackColor = Color.Transparent;
             SmoothCircular.IsAnimating = true;
-            SmoothCircular.Location = new Point(332, 644);
+            SmoothCircular.Location = new Point(315, 629);
             SmoothCircular.MinimumSize = new Size(50, 50);
             SmoothCircular.Name = "SmoothCircular";
             SmoothCircular.OscillationSpeed = 0.5F;
@@ -646,7 +654,7 @@ namespace Outil_Mutation_Automate
             SbtnConsultation.ImageRightMargin = 8;
             SbtnConsultation.ImageSize = 24;
             SbtnConsultation.IsReadOnly = false;
-            SbtnConsultation.Location = new Point(440, 644);
+            SbtnConsultation.Location = new Point(423, 629);
             SbtnConsultation.MakeRadial = false;
             SbtnConsultation.Name = "SbtnConsultation";
             SbtnConsultation.PressAnimationSpeed = 0.5F;
@@ -658,7 +666,7 @@ namespace Outil_Mutation_Automate
             SbtnConsultation.ShadowColor = Color.FromArgb(70, 0, 0, 0);
             SbtnConsultation.ShadowOffsetX = 3;
             SbtnConsultation.ShadowOffsetY = 3;
-            SbtnConsultation.Size = new Size(140, 50);
+            SbtnConsultation.Size = new Size(133, 50);
             SbtnConsultation.TabIndex = 27;
             SbtnConsultation.Text = "Consultation";
             SbtnConsultation.TextAlign = ContentAlignment.MiddleCenter;
@@ -671,12 +679,19 @@ namespace Outil_Mutation_Automate
             SbtnConsultation.TextShadowOffsetY = 1;
             SbtnConsultation.Click += SbtnConsultation_Click;
             // 
+            // siticoneBorderlessForm1
+            // 
+            siticoneBorderlessForm1.CornerRadius = 15;
+            siticoneBorderlessForm1.NavBarColor = Color.White;
+            siticoneBorderlessForm1.ShowNavBar = false;
+            siticoneBorderlessForm1.TargetForm = this;
+            // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(10F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(880, 903);
+            ClientSize = new Size(841, 903);
             Controls.Add(lblHauteur);
             Controls.Add(hauteurG);
             Controls.Add(SbtnConsultation);
@@ -697,7 +712,7 @@ namespace Outil_Mutation_Automate
             Controls.Add(lbversion);
             Controls.Add(label3);
             Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             KeyPreview = true;
             Name = "MenuPrincipal";
@@ -759,5 +774,6 @@ namespace Outil_Mutation_Automate
         private Label label2;
         private TextBox CodeGeoTxt;
         private SiticoneNetCoreUI.MySiticoneLicenseSettings mySiticoneLicenseSettings1;
+        private SiticoneNetCoreUI.SiticoneBorderlessForm siticoneBorderlessForm1;
     }
 }
