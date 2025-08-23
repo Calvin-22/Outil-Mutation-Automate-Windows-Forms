@@ -31,121 +31,57 @@ namespace Outil_Mutation_Automate
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
+            label3 = new Label();
+            lbversion = new Label();
+            cerp = new PictureBox();
+            lblHauteur = new Label();
+            label5 = new Label();
+            Conclusionlabel = new Label();
+            ligne8 = new Label();
+            ligne7 = new Label();
+            ligne6 = new Label();
+            ligne5 = new Label();
+            process1 = new System.Diagnostics.Process();
+            BtnVider = new Button();
+            SbtnEnregistrer = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
+            SbtnCalculer = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
+            ProgressBar = new SiticoneNetCoreUI.SiticoneHProgressBar();
+            SmoothCircular = new SiticoneNetCoreUI.SiticoneSmoothCircularSpinner();
+            SmoothTimer = new System.Windows.Forms.Timer(components);
+            btnFakeAccept = new Button();
+            SbtnConsultation = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
+            mySiticoneLicenseSettings1 = new SiticoneNetCoreUI.MySiticoneLicenseSettings();
+            siticoneGroupBox1 = new SiticoneNetCoreUI.SiticoneGroupBox();
+            ligne4 = new Label();
+            ligne3 = new Label();
+            ligne1 = new Label();
+            ligne2 = new Label();
+            infobutton = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             HauteurProduitLabel = new Label();
             hauteur = new TextBox();
             label1 = new Label();
             moyenne = new TextBox();
             FreqLabel = new Label();
             frequence = new TextBox();
-            hauteurG = new TextBox();
-            label3 = new Label();
-            lbversion = new Label();
-            cerp = new PictureBox();
-            groupBox1 = new GroupBox();
-            label2 = new Label();
             CodeGeoTxt = new TextBox();
-            lblHauteur = new Label();
-            groupBox2 = new GroupBox();
-            ligne4 = new Label();
-            ligne3 = new Label();
-            ligne2 = new Label();
-            ligne1 = new Label();
-            label5 = new Label();
-            Conclusionlabel = new Label();
-            groupBox3 = new GroupBox();
-            ligne8 = new Label();
-            ligne7 = new Label();
-            ligne6 = new Label();
-            ligne5 = new Label();
-            process1 = new System.Diagnostics.Process();
-            infobutton = new Button();
-            BtnVider = new Button();
-            SbtnEnregistrer = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
-            SbtnCalculer = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
-            ProgressBar = new SiticoneNetCoreUI.SiticoneHProgressBar();
-            siticoneShimmerLabel1 = new SiticoneNetCoreUI.SiticoneShimmerLabel();
-            SmoothCircular = new SiticoneNetCoreUI.SiticoneSmoothCircularSpinner();
-            SmoothTimer = new System.Windows.Forms.Timer(components);
-            btnFakeAccept = new Button();
-            SbtnConsultation = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
-            mySiticoneLicenseSettings1 = new SiticoneNetCoreUI.MySiticoneLicenseSettings();
-            siticoneBorderlessForm1 = new SiticoneNetCoreUI.SiticoneBorderlessForm(components);
+            label2 = new Label();
+            label4 = new Label();
+            siticoneGroupBox2 = new SiticoneNetCoreUI.SiticoneGroupBox();
+            label6 = new Label();
+            label7 = new Label();
+            label8 = new Label();
+            label9 = new Label();
             ((System.ComponentModel.ISupportInitialize)cerp).BeginInit();
-            groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
-            groupBox3.SuspendLayout();
+            siticoneGroupBox1.SuspendLayout();
+            siticoneGroupBox2.SuspendLayout();
             SuspendLayout();
-            // 
-            // HauteurProduitLabel
-            // 
-            HauteurProduitLabel.AutoSize = true;
-            HauteurProduitLabel.Location = new Point(27, 24);
-            HauteurProduitLabel.Name = "HauteurProduitLabel";
-            HauteurProduitLabel.Size = new Size(210, 24);
-            HauteurProduitLabel.TabIndex = 0;
-            HauteurProduitLabel.Text = "Hauteur produit (mm) : ";
-            // 
-            // hauteur
-            // 
-            hauteur.Cursor = Cursors.IBeam;
-            hauteur.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            hauteur.Location = new Point(31, 60);
-            hauteur.Name = "hauteur";
-            hauteur.Size = new Size(274, 31);
-            hauteur.TabIndex = 1;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(27, 112);
-            label1.Name = "label1";
-            label1.Size = new Size(286, 24);
-            label1.TabIndex = 2;
-            label1.Text = "Moyenne des ventes (par mois) : ";
-            // 
-            // moyenne
-            // 
-            moyenne.Cursor = Cursors.IBeam;
-            moyenne.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            moyenne.Location = new Point(31, 152);
-            moyenne.Name = "moyenne";
-            moyenne.Size = new Size(274, 31);
-            moyenne.TabIndex = 4;
-            // 
-            // FreqLabel
-            // 
-            FreqLabel.AutoSize = true;
-            FreqLabel.Location = new Point(480, 24);
-            FreqLabel.Name = "FreqLabel";
-            FreqLabel.Size = new Size(229, 24);
-            FreqLabel.TabIndex = 5;
-            FreqLabel.Text = "Fréquence picking (M-1) : ";
-            // 
-            // frequence
-            // 
-            frequence.Cursor = Cursors.IBeam;
-            frequence.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            frequence.Location = new Point(484, 60);
-            frequence.Name = "frequence";
-            frequence.Size = new Size(274, 31);
-            frequence.TabIndex = 6;
-            // 
-            // hauteurG
-            // 
-            hauteurG.Cursor = Cursors.IBeam;
-            hauteurG.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            hauteurG.Location = new Point(543, 854);
-            hauteurG.Name = "hauteurG";
-            hauteurG.Size = new Size(267, 31);
-            hauteurG.TabIndex = 8;
-            hauteurG.Visible = false;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Segoe UI Variable Small Semibol", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.MidnightBlue;
-            label3.Location = new Point(28, 141);
+            label3.Location = new Point(25, 142);
             label3.Name = "label3";
             label3.Size = new Size(213, 24);
             label3.TabIndex = 9;
@@ -156,186 +92,92 @@ namespace Outil_Mutation_Automate
             lbversion.AutoSize = true;
             lbversion.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbversion.ForeColor = SystemColors.ButtonShadow;
-            lbversion.Location = new Point(28, 165);
+            lbversion.Location = new Point(26, 166);
             lbversion.Name = "lbversion";
-            lbversion.Size = new Size(50, 24);
+            lbversion.Size = new Size(45, 24);
             lbversion.TabIndex = 11;
-            lbversion.Text = "v.5.0";
+            lbversion.Text = "v6.0";
             // 
             // cerp
             // 
             cerp.Image = (Image)resources.GetObject("cerp.Image");
-            cerp.Location = new Point(597, 25);
+            cerp.Location = new Point(557, 24);
             cerp.Name = "cerp";
             cerp.Size = new Size(213, 200);
             cerp.SizeMode = PictureBoxSizeMode.Zoom;
             cerp.TabIndex = 12;
             cerp.TabStop = false;
             // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(CodeGeoTxt);
-            groupBox1.Controls.Add(frequence);
-            groupBox1.Controls.Add(FreqLabel);
-            groupBox1.Controls.Add(moyenne);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(hauteur);
-            groupBox1.Controls.Add(HauteurProduitLabel);
-            groupBox1.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(28, 420);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(782, 202);
-            groupBox1.TabIndex = 13;
-            groupBox1.TabStop = false;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(481, 112);
-            label2.Name = "label2";
-            label2.Size = new Size(106, 24);
-            label2.TabIndex = 8;
-            label2.Text = "Code Géo : ";
-            // 
-            // CodeGeoTxt
-            // 
-            CodeGeoTxt.Cursor = Cursors.IBeam;
-            CodeGeoTxt.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            CodeGeoTxt.Location = new Point(484, 152);
-            CodeGeoTxt.Name = "CodeGeoTxt";
-            CodeGeoTxt.Size = new Size(274, 31);
-            CodeGeoTxt.TabIndex = 7;
-            // 
             // lblHauteur
             // 
             lblHauteur.AutoSize = true;
             lblHauteur.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblHauteur.Location = new Point(134, 236);
+            lblHauteur.Location = new Point(138, 442);
             lblHauteur.Name = "lblHauteur";
             lblHauteur.Size = new Size(405, 24);
             lblHauteur.TabIndex = 8;
             lblHauteur.Text = "La hauteur canal est obligatoirement 2500 mm.";
             // 
-            // groupBox2
-            // 
-            groupBox2.BackColor = Color.Transparent;
-            groupBox2.Controls.Add(ligne4);
-            groupBox2.Controls.Add(ligne3);
-            groupBox2.Controls.Add(ligne2);
-            groupBox2.Controls.Add(ligne1);
-            groupBox2.Location = new Point(28, 249);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(782, 174);
-            groupBox2.TabIndex = 14;
-            groupBox2.TabStop = false;
-            // 
-            // ligne4
-            // 
-            ligne4.AutoSize = true;
-            ligne4.ForeColor = Color.Black;
-            ligne4.Location = new Point(19, 127);
-            ligne4.Name = "ligne4";
-            ligne4.Size = new Size(0, 24);
-            ligne4.TabIndex = 3;
-            // 
-            // ligne3
-            // 
-            ligne3.AutoSize = true;
-            ligne3.ForeColor = Color.Black;
-            ligne3.Location = new Point(19, 94);
-            ligne3.Name = "ligne3";
-            ligne3.Size = new Size(0, 24);
-            ligne3.TabIndex = 2;
-            // 
-            // ligne2
-            // 
-            ligne2.AutoSize = true;
-            ligne2.ForeColor = Color.Black;
-            ligne2.Location = new Point(19, 62);
-            ligne2.Name = "ligne2";
-            ligne2.Size = new Size(0, 24);
-            ligne2.TabIndex = 1;
-            // 
-            // ligne1
-            // 
-            ligne1.AutoSize = true;
-            ligne1.ForeColor = Color.Black;
-            ligne1.Location = new Point(19, 30);
-            ligne1.Name = "ligne1";
-            ligne1.Size = new Size(0, 24);
-            ligne1.TabIndex = 0;
-            // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Variable Small Semibol", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold);
             label5.ForeColor = Color.Green;
-            label5.Location = new Point(28, 233);
+            label5.Location = new Point(25, 230);
             label5.Name = "label5";
-            label5.Size = new Size(112, 27);
+            label5.Size = new Size(115, 27);
             label5.TabIndex = 15;
             label5.Text = "Résultats : ";
             // 
             // Conclusionlabel
             // 
             Conclusionlabel.AutoSize = true;
-            Conclusionlabel.Font = new Font("Segoe UI Variable Small Semibol", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Conclusionlabel.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold);
             Conclusionlabel.ForeColor = Color.MidnightBlue;
-            Conclusionlabel.Location = new Point(28, 658);
+            Conclusionlabel.Location = new Point(25, 658);
             Conclusionlabel.Name = "Conclusionlabel";
-            Conclusionlabel.Size = new Size(139, 27);
+            Conclusionlabel.Size = new Size(141, 27);
             Conclusionlabel.TabIndex = 17;
             Conclusionlabel.Text = "Conclusions : ";
-            // 
-            // groupBox3
-            // 
-            groupBox3.BackColor = Color.Transparent;
-            groupBox3.Controls.Add(ligne8);
-            groupBox3.Controls.Add(ligne7);
-            groupBox3.Controls.Add(ligne6);
-            groupBox3.Controls.Add(ligne5);
-            groupBox3.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox3.Location = new Point(28, 674);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(782, 174);
-            groupBox3.TabIndex = 16;
-            groupBox3.TabStop = false;
             // 
             // ligne8
             // 
             ligne8.AutoSize = true;
+            ligne8.Font = new Font("Segoe UI", 9F);
             ligne8.ForeColor = Color.Black;
-            ligne8.Location = new Point(14, 129);
+            ligne8.Location = new Point(17, 168);
             ligne8.Name = "ligne8";
-            ligne8.Size = new Size(0, 24);
+            ligne8.Size = new Size(0, 25);
             ligne8.TabIndex = 3;
             // 
             // ligne7
             // 
             ligne7.AutoSize = true;
+            ligne7.Font = new Font("Segoe UI", 9F);
             ligne7.ForeColor = Color.Black;
-            ligne7.Location = new Point(14, 96);
+            ligne7.Location = new Point(17, 135);
             ligne7.Name = "ligne7";
-            ligne7.Size = new Size(0, 24);
+            ligne7.Size = new Size(0, 25);
             ligne7.TabIndex = 2;
             // 
             // ligne6
             // 
             ligne6.AutoSize = true;
+            ligne6.Font = new Font("Segoe UI", 9F);
             ligne6.ForeColor = Color.Black;
-            ligne6.Location = new Point(14, 64);
+            ligne6.Location = new Point(17, 103);
             ligne6.Name = "ligne6";
-            ligne6.Size = new Size(0, 24);
+            ligne6.Size = new Size(0, 25);
             ligne6.TabIndex = 1;
             // 
             // ligne5
             // 
             ligne5.AutoSize = true;
+            ligne5.Font = new Font("Segoe UI", 9F);
             ligne5.ForeColor = Color.Black;
-            ligne5.Location = new Point(14, 32);
+            ligne5.Location = new Point(17, 71);
             ligne5.Name = "ligne5";
-            ligne5.Size = new Size(0, 24);
+            ligne5.Size = new Size(0, 25);
             ligne5.TabIndex = 0;
             // 
             // process1
@@ -350,31 +192,14 @@ namespace Outil_Mutation_Automate
             process1.StartInfo.UserName = "";
             process1.SynchronizingObject = this;
             // 
-            // infobutton
-            // 
-            infobutton.BackgroundImage = (Image)resources.GetObject("infobutton.BackgroundImage");
-            infobutton.BackgroundImageLayout = ImageLayout.Stretch;
-            infobutton.FlatAppearance.BorderColor = Color.White;
-            infobutton.FlatAppearance.BorderSize = 0;
-            infobutton.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            infobutton.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            infobutton.FlatStyle = FlatStyle.Flat;
-            infobutton.Location = new Point(22, 25);
-            infobutton.Name = "infobutton";
-            infobutton.Size = new Size(55, 51);
-            infobutton.TabIndex = 18;
-            infobutton.TabStop = false;
-            infobutton.UseVisualStyleBackColor = false;
-            infobutton.Click += infobutton_Click;
-            // 
             // BtnVider
             // 
             BtnVider.BackgroundImage = (Image)resources.GetObject("BtnVider.BackgroundImage");
             BtnVider.BackgroundImageLayout = ImageLayout.Stretch;
             BtnVider.FlatAppearance.BorderColor = SystemColors.Control;
-            BtnVider.Location = new Point(373, 633);
+            BtnVider.Location = new Point(364, 634);
             BtnVider.Name = "BtnVider";
-            BtnVider.Size = new Size(35, 41);
+            BtnVider.Size = new Size(40, 41);
             BtnVider.TabIndex = 20;
             BtnVider.UseVisualStyleBackColor = true;
             BtnVider.Click += BtnVider_Click;
@@ -420,7 +245,7 @@ namespace Outil_Mutation_Automate
             SbtnEnregistrer.ImageRightMargin = 8;
             SbtnEnregistrer.ImageSize = 24;
             SbtnEnregistrer.IsReadOnly = false;
-            SbtnEnregistrer.Location = new Point(570, 629);
+            SbtnEnregistrer.Location = new Point(541, 625);
             SbtnEnregistrer.MakeRadial = false;
             SbtnEnregistrer.Name = "SbtnEnregistrer";
             SbtnEnregistrer.PressAnimationSpeed = 0.5F;
@@ -486,7 +311,7 @@ namespace Outil_Mutation_Automate
             SbtnCalculer.ImageRightMargin = 8;
             SbtnCalculer.ImageSize = 24;
             SbtnCalculer.IsReadOnly = false;
-            SbtnCalculer.Location = new Point(699, 629);
+            SbtnCalculer.Location = new Point(656, 625);
             SbtnCalculer.MakeRadial = false;
             SbtnCalculer.Name = "SbtnCalculer";
             SbtnCalculer.PressAnimationSpeed = 0.5F;
@@ -537,7 +362,7 @@ namespace Outil_Mutation_Automate
             ProgressBar.IsReadonly = false;
             ProgressBar.LabelColor = Color.Transparent;
             ProgressBar.LabelFont = new Font("Segoe UI", 10F, FontStyle.Bold);
-            ProgressBar.Location = new Point(597, 231);
+            ProgressBar.Location = new Point(557, 230);
             ProgressBar.Maximum = 100;
             ProgressBar.Minimum = 0;
             ProgressBar.MinimumSize = new Size(50, 20);
@@ -555,33 +380,13 @@ namespace Outil_Mutation_Automate
             ProgressBar.ValueOrientation = SiticoneNetCoreUI.Helpers.ProgressBar.ProgressBarOrientation.Horizontal;
             ProgressBar.WarningColor = Color.Orange;
             // 
-            // siticoneShimmerLabel1
-            // 
-            siticoneShimmerLabel1.AutoReverse = false;
-            siticoneShimmerLabel1.BaseColor = Color.FromArgb(0, 192, 0);
-            siticoneShimmerLabel1.Direction = SiticoneNetCoreUI.ShimmerDirection.LeftToRight;
-            siticoneShimmerLabel1.Font = new Font("Segoe UI Variable Display", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            siticoneShimmerLabel1.IsAnimating = true;
-            siticoneShimmerLabel1.IsPaused = false;
-            siticoneShimmerLabel1.Location = new Point(9, 106);
-            siticoneShimmerLabel1.Name = "siticoneShimmerLabel1";
-            siticoneShimmerLabel1.PauseDuration = 0;
-            siticoneShimmerLabel1.ShimmerColor = Color.Lime;
-            siticoneShimmerLabel1.ShimmerOpacity = 1F;
-            siticoneShimmerLabel1.ShimmerSpeed = 50;
-            siticoneShimmerLabel1.ShimmerWidth = 0.2F;
-            siticoneShimmerLabel1.Size = new Size(582, 34);
-            siticoneShimmerLabel1.TabIndex = 24;
-            siticoneShimmerLabel1.Text = "Bienvenue sur l'outil d'aide à la mutation automate";
-            siticoneShimmerLabel1.ToolTipText = "";
-            // 
             // SmoothCircular
             // 
             SmoothCircular.ArcMaxLength = 270F;
             SmoothCircular.ArcMinLength = 150F;
             SmoothCircular.BackColor = Color.Transparent;
             SmoothCircular.IsAnimating = true;
-            SmoothCircular.Location = new Point(315, 629);
+            SmoothCircular.Location = new Point(306, 627);
             SmoothCircular.MinimumSize = new Size(50, 50);
             SmoothCircular.Name = "SmoothCircular";
             SmoothCircular.OscillationSpeed = 0.5F;
@@ -605,7 +410,7 @@ namespace Outil_Mutation_Automate
             btnFakeAccept.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnFakeAccept.FlatStyle = FlatStyle.Flat;
             btnFakeAccept.ForeColor = Color.Transparent;
-            btnFakeAccept.Location = new Point(847, 864);
+            btnFakeAccept.Location = new Point(844, 864);
             btnFakeAccept.Name = "btnFakeAccept";
             btnFakeAccept.Size = new Size(21, 27);
             btnFakeAccept.TabIndex = 26;
@@ -654,7 +459,7 @@ namespace Outil_Mutation_Automate
             SbtnConsultation.ImageRightMargin = 8;
             SbtnConsultation.ImageSize = 24;
             SbtnConsultation.IsReadOnly = false;
-            SbtnConsultation.Location = new Point(423, 629);
+            SbtnConsultation.Location = new Point(410, 625);
             SbtnConsultation.MakeRadial = false;
             SbtnConsultation.Name = "SbtnConsultation";
             SbtnConsultation.PressAnimationSpeed = 0.5F;
@@ -679,52 +484,398 @@ namespace Outil_Mutation_Automate
             SbtnConsultation.TextShadowOffsetY = 1;
             SbtnConsultation.Click += SbtnConsultation_Click;
             // 
-            // siticoneBorderlessForm1
+            // siticoneGroupBox1
             // 
-            siticoneBorderlessForm1.CornerRadius = 15;
-            siticoneBorderlessForm1.NavBarColor = Color.White;
-            siticoneBorderlessForm1.ShowNavBar = false;
-            siticoneBorderlessForm1.TargetForm = this;
+            siticoneGroupBox1.BackColor = Color.Transparent;
+            siticoneGroupBox1.BadgeColor = Color.Red;
+            siticoneGroupBox1.BadgeFont = new Font("Segoe UI", 8F, FontStyle.Bold);
+            siticoneGroupBox1.BadgeLeftPadding = 12;
+            siticoneGroupBox1.BadgeValue = 0;
+            siticoneGroupBox1.BadgeVisible = false;
+            siticoneGroupBox1.BlinkInterval = 500;
+            siticoneGroupBox1.BlinkMinOpacity = 0.3F;
+            siticoneGroupBox1.BlinkOpacityStep = 0.05F;
+            siticoneGroupBox1.BorderColor = Color.LightGray;
+            siticoneGroupBox1.BorderWidth = 3F;
+            siticoneGroupBox1.CanHover = true;
+            siticoneGroupBox1.ChevronColor = Color.Black;
+            siticoneGroupBox1.ChevronLeftSpacing = 4F;
+            siticoneGroupBox1.ChevronSize = 10F;
+            siticoneGroupBox1.ChevronThickness = 2F;
+            siticoneGroupBox1.ContentPadding = 5;
+            siticoneGroupBox1.Controls.Add(ligne4);
+            siticoneGroupBox1.Controls.Add(ligne3);
+            siticoneGroupBox1.Controls.Add(ligne1);
+            siticoneGroupBox1.Controls.Add(ligne2);
+            siticoneGroupBox1.CornerRadius = 15;
+            siticoneGroupBox1.EnableBlinking = false;
+            siticoneGroupBox1.EnableHoverAnimation = true;
+            siticoneGroupBox1.Font = new Font("Segoe UI", 10F);
+            siticoneGroupBox1.ForeColor = Color.Black;
+            siticoneGroupBox1.GradientEndColor = Color.LightGray;
+            siticoneGroupBox1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            siticoneGroupBox1.GradientStartColor = Color.White;
+            siticoneGroupBox1.GroupTitle = "GroupBox";
+            siticoneGroupBox1.HoveredBorderColor = Color.Green;
+            siticoneGroupBox1.HoveredTitleColor = Color.FromArgb(40, 90, 160);
+            siticoneGroupBox1.IsCollapsed = false;
+            siticoneGroupBox1.IsCollapsible = false;
+            siticoneGroupBox1.Location = new Point(25, 218);
+            siticoneGroupBox1.MaxBlinkCount = 3;
+            siticoneGroupBox1.Name = "siticoneGroupBox1";
+            siticoneGroupBox1.PressedBorderColor = Color.FromArgb(40, 90, 160);
+            siticoneGroupBox1.ShadowColor = Color.FromArgb(192, 192, 0);
+            siticoneGroupBox1.ShadowDepth = 3;
+            siticoneGroupBox1.ShowShadow = true;
+            siticoneGroupBox1.Size = new Size(757, 207);
+            siticoneGroupBox1.SolidFillColor = Color.White;
+            siticoneGroupBox1.StatusIcon = null;
+            siticoneGroupBox1.StatusText = "";
+            siticoneGroupBox1.TabIndex = 28;
+            siticoneGroupBox1.TitleBackColor = Color.Transparent;
+            siticoneGroupBox1.TitleColor = Color.White;
+            siticoneGroupBox1.TitlePadding = new Padding(0, 8, 0, 12);
+            siticoneGroupBox1.TitlePos = SiticoneNetCoreUI.TitlePosition.TopLeft;
+            siticoneGroupBox1.UseGradient = false;
+            // 
+            // ligne4
+            // 
+            ligne4.AutoSize = true;
+            ligne4.Font = new Font("Segoe UI", 9F);
+            ligne4.ForeColor = Color.Black;
+            ligne4.Location = new Point(28, 158);
+            ligne4.Name = "ligne4";
+            ligne4.Size = new Size(0, 25);
+            ligne4.TabIndex = 3;
+            // 
+            // ligne3
+            // 
+            ligne3.AutoSize = true;
+            ligne3.Font = new Font("Segoe UI", 9F);
+            ligne3.ForeColor = Color.Black;
+            ligne3.Location = new Point(28, 125);
+            ligne3.Name = "ligne3";
+            ligne3.Size = new Size(0, 25);
+            ligne3.TabIndex = 2;
+            // 
+            // ligne1
+            // 
+            ligne1.AutoSize = true;
+            ligne1.Font = new Font("Segoe UI", 9F);
+            ligne1.ForeColor = Color.Black;
+            ligne1.Location = new Point(28, 61);
+            ligne1.Name = "ligne1";
+            ligne1.Size = new Size(0, 25);
+            ligne1.TabIndex = 0;
+            // 
+            // ligne2
+            // 
+            ligne2.AutoSize = true;
+            ligne2.Font = new Font("Segoe UI", 9F);
+            ligne2.ForeColor = Color.Black;
+            ligne2.Location = new Point(28, 93);
+            ligne2.Name = "ligne2";
+            ligne2.Size = new Size(0, 25);
+            ligne2.TabIndex = 1;
+            // 
+            // infobutton
+            // 
+            infobutton.BackColor = Color.Transparent;
+            infobutton.BackgroundImage = (Image)resources.GetObject("infobutton.BackgroundImage");
+            infobutton.BackgroundImageLayout = ImageLayout.Stretch;
+            infobutton.BadgeBackColor = Color.White;
+            infobutton.BadgeForeColor = Color.White;
+            infobutton.BadgeRadius = 10;
+            infobutton.BadgeRightMargin = 10;
+            infobutton.BadgeValue = 0;
+            infobutton.BorderColor = Color.White;
+            infobutton.BorderColorEnd = Color.Transparent;
+            infobutton.BorderColorStart = Color.White;
+            infobutton.BorderRadiusBottomLeft = 25;
+            infobutton.BorderRadiusBottomRight = 25;
+            infobutton.BorderRadiusTopLeft = 25;
+            infobutton.BorderRadiusTopRight = 25;
+            infobutton.BorderThickness = 1;
+            infobutton.ButtonColorEnd = Color.Transparent;
+            infobutton.ButtonColorStart = Color.Transparent;
+            infobutton.ButtonImage = null;
+            infobutton.CanBeep = false;
+            infobutton.CanShake = false;
+            infobutton.ClickSoundPath = null;
+            infobutton.DisabledOverlayOpacity = 0.5F;
+            infobutton.EnableBorderGradient = false;
+            infobutton.EnableClickSound = false;
+            infobutton.EnableFocusBorder = false;
+            infobutton.EnableHoverSound = false;
+            infobutton.EnablePressScale = false;
+            infobutton.EnableTextShadow = false;
+            infobutton.FocusBorderColor = Color.White;
+            infobutton.FocusBorderThickness = 2;
+            infobutton.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            infobutton.ForeColor = Color.White;
+            infobutton.HoverColor = Color.FromArgb(20, 0, 0, 0);
+            infobutton.HoverSoundPath = null;
+            infobutton.HoverTransitionSpeed = 1F;
+            infobutton.ImageAlign = ContentAlignment.MiddleCenter;
+            infobutton.ImageLeftMargin = 5;
+            infobutton.ImageRightMargin = 8;
+            infobutton.ImageSize = 24;
+            infobutton.IsReadOnly = false;
+            infobutton.Location = new Point(18, 24);
+            infobutton.MakeRadial = false;
+            infobutton.Name = "infobutton";
+            infobutton.PressAnimationSpeed = 0.5F;
+            infobutton.PressDepth = 1;
+            infobutton.RippleColor = Color.Transparent;
+            infobutton.RippleExpandSpeedFactor = 0.05F;
+            infobutton.RippleFadeSpeedFactor = 0.03F;
+            infobutton.ShadowBlurFactor = 0.01F;
+            infobutton.ShadowColor = Color.Transparent;
+            infobutton.ShadowOffsetX = 3;
+            infobutton.ShadowOffsetY = 3;
+            infobutton.Size = new Size(55, 54);
+            infobutton.TabIndex = 29;
+            infobutton.TextAlign = ContentAlignment.MiddleCenter;
+            infobutton.TextPaddingBottom = 0;
+            infobutton.TextPaddingLeft = 0;
+            infobutton.TextPaddingRight = 0;
+            infobutton.TextPaddingTop = 0;
+            infobutton.TextShadowColor = Color.White;
+            infobutton.TextShadowOffsetX = 1;
+            infobutton.TextShadowOffsetY = 1;
+            infobutton.Click += infobutton_Click;
+            // 
+            // HauteurProduitLabel
+            // 
+            HauteurProduitLabel.AutoSize = true;
+            HauteurProduitLabel.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            HauteurProduitLabel.ForeColor = Color.Black;
+            HauteurProduitLabel.Location = new Point(28, 433);
+            HauteurProduitLabel.Name = "HauteurProduitLabel";
+            HauteurProduitLabel.Size = new Size(238, 27);
+            HauteurProduitLabel.TabIndex = 0;
+            HauteurProduitLabel.Text = "Hauteur produit (mm) : ";
+            // 
+            // hauteur
+            // 
+            hauteur.Cursor = Cursors.IBeam;
+            hauteur.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            hauteur.Location = new Point(32, 469);
+            hauteur.Name = "hauteur";
+            hauteur.Size = new Size(274, 31);
+            hauteur.TabIndex = 1;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(28, 521);
+            label1.Name = "label1";
+            label1.Size = new Size(325, 27);
+            label1.TabIndex = 2;
+            label1.Text = "Moyenne des ventes (par mois) : ";
+            // 
+            // moyenne
+            // 
+            moyenne.Cursor = Cursors.IBeam;
+            moyenne.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            moyenne.Location = new Point(32, 561);
+            moyenne.Name = "moyenne";
+            moyenne.Size = new Size(274, 31);
+            moyenne.TabIndex = 4;
+            // 
+            // FreqLabel
+            // 
+            FreqLabel.AutoSize = true;
+            FreqLabel.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold);
+            FreqLabel.ForeColor = Color.Black;
+            FreqLabel.Location = new Point(491, 433);
+            FreqLabel.Name = "FreqLabel";
+            FreqLabel.Size = new Size(257, 27);
+            FreqLabel.TabIndex = 5;
+            FreqLabel.Text = "Fréquence picking (M-1) : ";
+            // 
+            // frequence
+            // 
+            frequence.Cursor = Cursors.IBeam;
+            frequence.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            frequence.Location = new Point(495, 469);
+            frequence.Name = "frequence";
+            frequence.Size = new Size(274, 31);
+            frequence.TabIndex = 6;
+            // 
+            // CodeGeoTxt
+            // 
+            CodeGeoTxt.Cursor = Cursors.IBeam;
+            CodeGeoTxt.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            CodeGeoTxt.Location = new Point(495, 561);
+            CodeGeoTxt.Name = "CodeGeoTxt";
+            CodeGeoTxt.Size = new Size(274, 31);
+            CodeGeoTxt.TabIndex = 7;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(492, 521);
+            label2.Name = "label2";
+            label2.Size = new Size(119, 27);
+            label2.TabIndex = 8;
+            label2.Text = "Code Géo : ";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.LimeGreen;
+            label4.Location = new Point(25, 111);
+            label4.Name = "label4";
+            label4.Size = new Size(452, 27);
+            label4.TabIndex = 30;
+            label4.Text = "Bienvenue sur OMA (Outil Mutation Automate)";
+            // 
+            // siticoneGroupBox2
+            // 
+            siticoneGroupBox2.BackColor = Color.Transparent;
+            siticoneGroupBox2.BadgeColor = Color.Red;
+            siticoneGroupBox2.BadgeFont = new Font("Segoe UI", 8F, FontStyle.Bold);
+            siticoneGroupBox2.BadgeLeftPadding = 12;
+            siticoneGroupBox2.BadgeValue = 0;
+            siticoneGroupBox2.BadgeVisible = false;
+            siticoneGroupBox2.BlinkInterval = 500;
+            siticoneGroupBox2.BlinkMinOpacity = 0.3F;
+            siticoneGroupBox2.BlinkOpacityStep = 0.05F;
+            siticoneGroupBox2.BorderColor = Color.LightGray;
+            siticoneGroupBox2.BorderWidth = 3F;
+            siticoneGroupBox2.CanHover = true;
+            siticoneGroupBox2.ChevronColor = Color.Black;
+            siticoneGroupBox2.ChevronLeftSpacing = 4F;
+            siticoneGroupBox2.ChevronSize = 10F;
+            siticoneGroupBox2.ChevronThickness = 2F;
+            siticoneGroupBox2.ContentPadding = 5;
+            siticoneGroupBox2.Controls.Add(ligne8);
+            siticoneGroupBox2.Controls.Add(ligne7);
+            siticoneGroupBox2.Controls.Add(label6);
+            siticoneGroupBox2.Controls.Add(label7);
+            siticoneGroupBox2.Controls.Add(ligne6);
+            siticoneGroupBox2.Controls.Add(label8);
+            siticoneGroupBox2.Controls.Add(label9);
+            siticoneGroupBox2.Controls.Add(ligne5);
+            siticoneGroupBox2.CornerRadius = 15;
+            siticoneGroupBox2.EnableBlinking = false;
+            siticoneGroupBox2.EnableHoverAnimation = true;
+            siticoneGroupBox2.Font = new Font("Segoe UI", 10F);
+            siticoneGroupBox2.ForeColor = Color.Black;
+            siticoneGroupBox2.GradientEndColor = Color.LightGray;
+            siticoneGroupBox2.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            siticoneGroupBox2.GradientStartColor = Color.White;
+            siticoneGroupBox2.GroupTitle = "GroupBox";
+            siticoneGroupBox2.HoveredBorderColor = Color.MidnightBlue;
+            siticoneGroupBox2.HoveredTitleColor = Color.FromArgb(40, 90, 160);
+            siticoneGroupBox2.IsCollapsed = false;
+            siticoneGroupBox2.IsCollapsible = false;
+            siticoneGroupBox2.Location = new Point(25, 648);
+            siticoneGroupBox2.MaxBlinkCount = 3;
+            siticoneGroupBox2.Name = "siticoneGroupBox2";
+            siticoneGroupBox2.PressedBorderColor = Color.FromArgb(40, 90, 160);
+            siticoneGroupBox2.ShadowColor = Color.FromArgb(192, 192, 0);
+            siticoneGroupBox2.ShadowDepth = 3;
+            siticoneGroupBox2.ShowShadow = true;
+            siticoneGroupBox2.Size = new Size(757, 217);
+            siticoneGroupBox2.SolidFillColor = Color.White;
+            siticoneGroupBox2.StatusIcon = null;
+            siticoneGroupBox2.StatusText = "";
+            siticoneGroupBox2.TabIndex = 29;
+            siticoneGroupBox2.TitleBackColor = Color.Transparent;
+            siticoneGroupBox2.TitleColor = Color.White;
+            siticoneGroupBox2.TitlePadding = new Padding(0, 8, 0, 12);
+            siticoneGroupBox2.TitlePos = SiticoneNetCoreUI.TitlePosition.TopLeft;
+            siticoneGroupBox2.UseGradient = false;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 9F);
+            label6.ForeColor = Color.Black;
+            label6.Location = new Point(16, 161);
+            label6.Name = "label6";
+            label6.Size = new Size(0, 25);
+            label6.TabIndex = 3;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 9F);
+            label7.ForeColor = Color.Black;
+            label7.Location = new Point(16, 128);
+            label7.Name = "label7";
+            label7.Size = new Size(0, 25);
+            label7.TabIndex = 2;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 9F);
+            label8.ForeColor = Color.Black;
+            label8.Location = new Point(16, 64);
+            label8.Name = "label8";
+            label8.Size = new Size(0, 25);
+            label8.TabIndex = 0;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 9F);
+            label9.ForeColor = Color.Black;
+            label9.Location = new Point(16, 96);
+            label9.Name = "label9";
+            label9.Size = new Size(0, 25);
+            label9.TabIndex = 1;
             // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(10F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(841, 903);
+            ClientSize = new Size(806, 885);
+            Controls.Add(label4);
+            Controls.Add(label2);
+            Controls.Add(infobutton);
             Controls.Add(lblHauteur);
-            Controls.Add(hauteurG);
+            Controls.Add(CodeGeoTxt);
             Controls.Add(SbtnConsultation);
+            Controls.Add(frequence);
             Controls.Add(btnFakeAccept);
             Controls.Add(SmoothCircular);
-            Controls.Add(siticoneShimmerLabel1);
+            Controls.Add(FreqLabel);
+            Controls.Add(moyenne);
             Controls.Add(ProgressBar);
+            Controls.Add(HauteurProduitLabel);
             Controls.Add(SbtnCalculer);
+            Controls.Add(label1);
             Controls.Add(SbtnEnregistrer);
+            Controls.Add(hauteur);
             Controls.Add(BtnVider);
-            Controls.Add(infobutton);
             Controls.Add(Conclusionlabel);
-            Controls.Add(groupBox3);
             Controls.Add(label5);
-            Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
             Controls.Add(cerp);
             Controls.Add(lbversion);
             Controls.Add(label3);
+            Controls.Add(siticoneGroupBox1);
+            Controls.Add(siticoneGroupBox2);
             Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             KeyPreview = true;
             Name = "MenuPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Outil Mutation Automate";
             ((System.ComponentModel.ISupportInitialize)cerp).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
+            siticoneGroupBox1.ResumeLayout(false);
+            siticoneGroupBox1.PerformLayout();
+            siticoneGroupBox2.ResumeLayout(false);
+            siticoneGroupBox2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -735,45 +886,45 @@ namespace Outil_Mutation_Automate
         }
 
         #endregion
-
-        private Label HauteurProduitLabel;
-        private TextBox hauteur;
-        private Label label1;
-        private TextBox moyenne;
-        private Label FreqLabel;
-        private TextBox frequence;
-        private TextBox hauteurG;
         private Label label3;
         private Label lbversion;
         private PictureBox cerp;
-        private GroupBox groupBox1;
-        private GroupBox groupBox2;
         private Label label5;
-        private Label ligne1;
-        private Label ligne2;
-        private Label ligne3;
-        private Label ligne4;
         private Label Conclusionlabel;
-        private GroupBox groupBox3;
         private Label ligne8;
         private Label ligne7;
         private Label ligne6;
         private Label ligne5;
         private System.Diagnostics.Process process1;
-        private Button infobutton;
         private Button BtnVider;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced SbtnEnregistrer;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced SbtnCalculer;
         private SiticoneNetCoreUI.SiticoneHProgressBar ProgressBar;
-        private SiticoneNetCoreUI.SiticoneShimmerLabel siticoneShimmerLabel1;
         private SiticoneNetCoreUI.SiticoneSmoothCircularSpinner SmoothCircular;
         private System.Windows.Forms.Timer SmoothTimer;
         private Button btnFakeAccept;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced SbtnConsultation;
         private Label lblHauteur;
+        private SiticoneNetCoreUI.MySiticoneLicenseSettings mySiticoneLicenseSettings1;
+        private SiticoneNetCoreUI.SiticoneGroupBox siticoneGroupBox1;
+        private Label ligne4;
+        private Label ligne3;
+        private Label ligne1;
+        private Label ligne2;
+        private SiticoneNetCoreUI.SiticoneButtonAdvanced infobutton;
         private Label label2;
         private TextBox CodeGeoTxt;
-        private SiticoneNetCoreUI.MySiticoneLicenseSettings mySiticoneLicenseSettings1;
-        private SiticoneNetCoreUI.SiticoneBorderlessForm siticoneBorderlessForm1;
+        private TextBox frequence;
+        private Label FreqLabel;
+        private TextBox moyenne;
+        private Label HauteurProduitLabel;
+        private Label label1;
+        private TextBox hauteur;
+        private Label label4;
+        private SiticoneNetCoreUI.SiticoneGroupBox siticoneGroupBox2;
+        private Label label6;
+        private Label label7;
+        private Label label8;
+        private Label label9;
     }
 }

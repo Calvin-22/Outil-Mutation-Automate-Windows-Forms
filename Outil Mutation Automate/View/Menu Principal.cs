@@ -28,7 +28,7 @@ namespace Outil_Mutation_Automate
         public MenuPrincipal()
         {
             InitializeComponent();
-          
+
             this.MaximizeBox = false; // Désactivation du bouton de maximisation
             VérifierConnexion(); // Vérification de la connexion à la base de données
             this.AcceptButton = btnFakeAccept; // Permet de simuler l'appui sur le bouton d'acceptation avec la touche Entrée
@@ -46,10 +46,6 @@ namespace Outil_Mutation_Automate
             {
                 delayTimer.Start(); // Démarrage du Timer
             }
-
-            // Désactivation temporaire du champs de saisie de la hauteur idéale. 
-            hauteurG.Enabled = false;
-            hauteurG.ReadOnly = true;
 
             // Vider le label qui contient du texte pour faciliter son déplacement
             lblHauteur.Text = "";
@@ -382,7 +378,7 @@ namespace Outil_Mutation_Automate
                 string zoneValue = _zone; // Récupération de la zone
                 string codegéoValue = CodeGeoTxt.Text; // Récupération du code géographique
                 double moyenneValue = _moyenneVentes;
-                double FrequenceValue = _frequencePicking; 
+                double FrequenceValue = _frequencePicking;
 
 
                 Enregistrement frm = new Enregistrement(codegéoValue, nbcValue, moyenneValue, FrequenceValue, nbvValue, hauteurCanalDesireValue, nombreCanauxNecessairesValue, zoneValue, lectureSeule); // génère la fenêtre
@@ -399,7 +395,7 @@ namespace Outil_Mutation_Automate
         {
             // Vérification que les saisies sont réalisées avant de tenter inutilement de supprimer
             if (!string.IsNullOrEmpty(hauteur.Text) || !string.IsNullOrEmpty(frequence.Text) || !string.IsNullOrEmpty(moyenne.Text) ||
-                !string.IsNullOrEmpty(hauteurG.Text) || !string.IsNullOrEmpty(CodeGeoTxt.Text))
+                !string.IsNullOrEmpty(CodeGeoTxt.Text))
             {
                 // Confirmation de suppression ou non
                 DialogResult result = MessageBox.Show(
@@ -416,7 +412,6 @@ namespace Outil_Mutation_Automate
                     hauteur.Text = string.Empty;
                     frequence.Text = string.Empty;
                     moyenne.Text = string.Empty;
-                    hauteurG.Text = string.Empty;
 
                     // Suppression des éléments de résultats et de conclusions
                     ligne1.Text = string.Empty;
