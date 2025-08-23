@@ -34,7 +34,6 @@ namespace Outil_Mutation_Automate
             label3 = new Label();
             lbversion = new Label();
             cerp = new PictureBox();
-            lblHauteur = new Label();
             label5 = new Label();
             Conclusionlabel = new Label();
             ligne8 = new Label();
@@ -107,16 +106,6 @@ namespace Outil_Mutation_Automate
             cerp.SizeMode = PictureBoxSizeMode.Zoom;
             cerp.TabIndex = 12;
             cerp.TabStop = false;
-            // 
-            // lblHauteur
-            // 
-            lblHauteur.AutoSize = true;
-            lblHauteur.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblHauteur.Location = new Point(138, 442);
-            lblHauteur.Name = "lblHauteur";
-            lblHauteur.Size = new Size(405, 24);
-            lblHauteur.TabIndex = 8;
-            lblHauteur.Text = "La hauteur canal est obligatoirement 2500 mm.";
             // 
             // label5
             // 
@@ -843,7 +832,6 @@ namespace Outil_Mutation_Automate
             Controls.Add(label4);
             Controls.Add(label2);
             Controls.Add(infobutton);
-            Controls.Add(lblHauteur);
             Controls.Add(CodeGeoTxt);
             Controls.Add(SbtnConsultation);
             Controls.Add(frequence);
@@ -904,7 +892,6 @@ namespace Outil_Mutation_Automate
         private System.Windows.Forms.Timer SmoothTimer;
         private Button btnFakeAccept;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced SbtnConsultation;
-        private Label lblHauteur;
         private SiticoneNetCoreUI.MySiticoneLicenseSettings mySiticoneLicenseSettings1;
         private SiticoneNetCoreUI.SiticoneGroupBox siticoneGroupBox1;
         private Label ligne4;
