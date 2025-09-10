@@ -563,6 +563,22 @@ namespace Outil_Mutation_Automate.View
                     e.CellStyle.ForeColor = Color.White;
                 }
             }
+
+            // Identification des 92 en 2200
+            if (!string.IsNullOrEmpty(codeGeo) && codeGeo.Length >= 3)
+            {
+                string codePrefix = codeGeo.Substring(0, 3);
+
+                if ((codePrefix == "92N" || codePrefix == "92P" || codePrefix == "92Q"
+                    || codePrefix == "92R" || codePrefix == "92S" || codePrefix == "92T" 
+                    || codePrefix == "92V" || codePrefix == "92W" || codePrefix == "92X"
+                    || codePrefix == "92Y") && hauteurStr != "2200")
+                {
+                    e.CellStyle.BackColor = Color.DarkRed;
+                    e.CellStyle.ForeColor = Color.White;
+                }
+
+            }
         }
     }
 }
