@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Enregistrement));
             dgvMutation = new DataGridView();
             Groupbox = new GroupBox();
@@ -54,6 +54,7 @@
             btnAnnulerFiltre = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             btnRechercherCodeGeo = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             label6 = new Label();
+            filtrebutton = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             ((System.ComponentModel.ISupportInitialize)dgvMutation).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)cerp).BeginInit();
@@ -64,25 +65,25 @@
             dgvMutation.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvMutation.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvMutation.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.Green;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Padding = new Padding(1);
-            dataGridViewCellStyle1.SelectionBackColor = Color.Green;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvMutation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.Green;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle3.Padding = new Padding(1);
+            dataGridViewCellStyle3.SelectionBackColor = Color.Green;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvMutation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvMutation.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new Padding(1);
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvMutation.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.Padding = new Padding(1);
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvMutation.DefaultCellStyle = dataGridViewCellStyle4;
             dgvMutation.EnableHeadersVisualStyles = false;
             dgvMutation.Location = new Point(54, 55);
             dgvMutation.MultiSelect = false;
@@ -823,12 +824,80 @@
             label6.TabIndex = 35;
             label6.Text = "Code géo :";
             // 
+            // filtrebutton
+            // 
+            filtrebutton.BackColor = Color.Transparent;
+            filtrebutton.BackgroundImage = (Image)resources.GetObject("filtrebutton.BackgroundImage");
+            filtrebutton.BackgroundImageLayout = ImageLayout.Stretch;
+            filtrebutton.BadgeBackColor = Color.White;
+            filtrebutton.BadgeForeColor = Color.White;
+            filtrebutton.BadgeRadius = 10;
+            filtrebutton.BadgeRightMargin = 10;
+            filtrebutton.BadgeValue = 0;
+            filtrebutton.BorderColor = Color.White;
+            filtrebutton.BorderColorEnd = Color.Transparent;
+            filtrebutton.BorderColorStart = Color.White;
+            filtrebutton.BorderRadiusBottomLeft = 25;
+            filtrebutton.BorderRadiusBottomRight = 25;
+            filtrebutton.BorderRadiusTopLeft = 25;
+            filtrebutton.BorderRadiusTopRight = 25;
+            filtrebutton.BorderThickness = 1;
+            filtrebutton.ButtonColorEnd = Color.Transparent;
+            filtrebutton.ButtonColorStart = Color.Transparent;
+            filtrebutton.ButtonImage = null;
+            filtrebutton.CanBeep = false;
+            filtrebutton.CanShake = false;
+            filtrebutton.ClickSoundPath = null;
+            filtrebutton.DisabledOverlayOpacity = 0.5F;
+            filtrebutton.EnableBorderGradient = false;
+            filtrebutton.EnableClickSound = false;
+            filtrebutton.EnableFocusBorder = false;
+            filtrebutton.EnableHoverSound = false;
+            filtrebutton.EnablePressScale = false;
+            filtrebutton.EnableTextShadow = false;
+            filtrebutton.FocusBorderColor = Color.White;
+            filtrebutton.FocusBorderThickness = 2;
+            filtrebutton.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            filtrebutton.ForeColor = Color.White;
+            filtrebutton.HoverColor = Color.FromArgb(20, 0, 0, 0);
+            filtrebutton.HoverSoundPath = null;
+            filtrebutton.HoverTransitionSpeed = 1F;
+            filtrebutton.ImageAlign = ContentAlignment.MiddleCenter;
+            filtrebutton.ImageLeftMargin = 5;
+            filtrebutton.ImageRightMargin = 8;
+            filtrebutton.ImageSize = 24;
+            filtrebutton.IsReadOnly = false;
+            filtrebutton.Location = new Point(861, 399);
+            filtrebutton.MakeRadial = false;
+            filtrebutton.Name = "filtrebutton";
+            filtrebutton.PressAnimationSpeed = 0.5F;
+            filtrebutton.PressDepth = 1;
+            filtrebutton.RippleColor = Color.Transparent;
+            filtrebutton.RippleExpandSpeedFactor = 0.05F;
+            filtrebutton.RippleFadeSpeedFactor = 0.03F;
+            filtrebutton.ShadowBlurFactor = 0.01F;
+            filtrebutton.ShadowColor = Color.Transparent;
+            filtrebutton.ShadowOffsetX = 3;
+            filtrebutton.ShadowOffsetY = 3;
+            filtrebutton.Size = new Size(55, 54);
+            filtrebutton.TabIndex = 36;
+            filtrebutton.TextAlign = ContentAlignment.MiddleCenter;
+            filtrebutton.TextPaddingBottom = 0;
+            filtrebutton.TextPaddingLeft = 0;
+            filtrebutton.TextPaddingRight = 0;
+            filtrebutton.TextPaddingTop = 0;
+            filtrebutton.TextShadowColor = Color.White;
+            filtrebutton.TextShadowOffsetX = 1;
+            filtrebutton.TextShadowOffsetY = 1;
+            filtrebutton.Click += filtrebutton_Click;
+            // 
             // Enregistrement
             // 
             AutoScaleDimensions = new SizeF(10F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1322, 689);
+            Controls.Add(filtrebutton);
             Controls.Add(label6);
             Controls.Add(cerp);
             Controls.Add(btnRechercherCodeGeo);
@@ -882,5 +951,6 @@
         private TextBox txtRechercheCodeGeo;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced btnRechercherCodeGeo;
         private Label label6;
+        private SiticoneNetCoreUI.SiticoneButtonAdvanced filtrebutton;
     }
 }

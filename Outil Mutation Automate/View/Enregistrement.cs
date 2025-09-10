@@ -74,7 +74,7 @@ namespace Outil_Mutation_Automate.View
             _codeGéoFromMenuPrincipal = codegéoValue;
 
             _moyenneDesVentesFromMenuPrincipal = moyenneValue;
-            _frequencePickingFromMenuPrincipal = FrequenceValue; 
+            _frequencePickingFromMenuPrincipal = FrequenceValue;
 
             // Variable lecture seule
             modeLectureSeule = lectureSeule;
@@ -115,7 +115,7 @@ namespace Outil_Mutation_Automate.View
             List<mutation> LesMutations = controller.GetLesMutations();
             bdgmutation.DataSource = LesMutations;
             dgvMutation.DataSource = bdgmutation;
-            
+
             dgvMutation.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
         }
@@ -297,7 +297,7 @@ namespace Outil_Mutation_Automate.View
         {
             var lignes = File.ReadAllLines(cheminCsv, Encoding.GetEncoding("Windows-1252"));
 
-            for (int i = 0; i < lignes.Length; i++) 
+            for (int i = 0; i < lignes.Length; i++)
             {
                 var champs = lignes[i].Split(';');
 
@@ -323,7 +323,7 @@ namespace Outil_Mutation_Automate.View
 
                 //_NbGoulotte = HT / _hauteurCanalDesire; : désactivation temporaire à des fins de calculs. 
                 _NBC = moyenneVentes / frequencePicking;
-               
+
                 // Conservation de la moyenne 
                 double MoyenneDesVentes = moyenneVentes;
 
@@ -376,7 +376,7 @@ namespace Outil_Mutation_Automate.View
                     _zone = "Magasin"; // Zone définie comme "Magasin"
                 }
 
-                mutation mutation = new mutation(cip, codegéo, designation, MoyenneDesVentes, FrequencePicking,  _zone, _NBC, _NBV, _hauteurCanalDesire, _NbGoulotte);
+                mutation mutation = new mutation(cip, codegéo, designation, MoyenneDesVentes, FrequencePicking, _zone, _NBC, _NBV, _hauteurCanalDesire, _NbGoulotte);
                 controller.addMutation(mutation);
 
             }
@@ -389,7 +389,7 @@ namespace Outil_Mutation_Automate.View
         {
             // Si le produit est Frésubin ou Clinutren, il est automatiquement en magasin
             if (Désignation.IndexOf("Frésubin", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                Désignation.IndexOf("CLINUTREN", StringComparison.OrdinalIgnoreCase) >= 0 || 
+                Désignation.IndexOf("CLINUTREN", StringComparison.OrdinalIgnoreCase) >= 0 ||
                 Désignation.IndexOf("FRESUBIN", StringComparison.OrdinalIgnoreCase) >= 0 ||
                 Désignation.IndexOf("MEPILEX", StringComparison.OrdinalIgnoreCase) >= 0 ||
                 Désignation.IndexOf("SOD BICARB", StringComparison.OrdinalIgnoreCase) >= 0)
@@ -543,6 +543,66 @@ namespace Outil_Mutation_Automate.View
         }
 
         /// <summary>
+        /// Vérifie si une ligne est non conforme selon les règles de code géographique et hauteur de canal.
+        /// </summary>
+        /// <param name="codeGeo"></param>
+        /// <param name="hauteurStr"></param>
+        /// <returns></returns>
+        private bool LigneEstNonConforme(string codeGeo, string hauteurStr)
+        {
+            if (string.IsNullOrEmpty(codeGeo)) return false;
+
+            codeGeo = codeGeo.Trim();
+            hauteurStr = hauteurStr?.Trim();
+
+            // 90/91 => 800
+            if (codeGeo.Length >= 2)
+            {
+                string codePrefix = codeGeo.Substring(0, 2);
+                if ((codePrefix == "90" || codePrefix == "91") && hauteurStr != "800")
+                    return true;
+            }
+
+            if (codeGeo.Length >= 3)
+            {
+                string codePrefix3 = codeGeo.Substring(0, 3);
+
+                // 92N à 92Y => 2200
+                if (new[] { "92N", "92P", "92Q", "92R", "92S", "92T", "92V", "92W", "92X", "92Y" }.Contains(codePrefix3)
+                    && hauteurStr != "2200")
+                    return true;
+
+                // 92M, 92K, 92H, 92F => 1200
+                if (new[] { "92M", "92K", "92H", "92F" }.Contains(codePrefix3)
+                    && hauteurStr != "1200")
+                    return true;
+
+                // 92E, 92G, 92J, 92L => 800
+                if (new[] { "92E", "92G", "92J", "92L" }.Contains(codePrefix3)
+                    && hauteurStr != "800")
+                    return true;
+            }
+
+            if (codeGeo.Length >= 4)
+            {
+                string codePrefix4 = codeGeo.Substring(0, 4);
+
+                // 92C1 à 92C4 / 92D1 à 92D4 => 1200
+                if (new[] { "92C1", "92C2", "92C3", "92C4", "92D1", "92D2", "92D3", "92D4" }.Contains(codePrefix4)
+                    && hauteurStr != "1200")
+                    return true;
+
+                // 92C5 à 92C8 / 92D5 à 92D8 => 800
+                if (new[] { "92C5", "92C6", "92C7", "92C8", "92D5", "92D6", "92D7", "92D8" }.Contains(codePrefix4)
+                    && hauteurStr != "800")
+                    return true;
+            }
+
+            return false;
+        }
+
+
+        /// <summary>
         /// Événement de formatage des cellules pour changer la couleur de fond
         /// </summary>
         /// <param name="sender"></param>
@@ -550,61 +610,31 @@ namespace Outil_Mutation_Automate.View
         private void dgvMutation_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             var row = dgvMutation.Rows[e.RowIndex];
-            string codeGeo = row.Cells["CodeGéo"].Value?.ToString()?.Trim();
-            string hauteurStr = row.Cells["Hauteur_Canal"].Value?.ToString()?.Trim();
 
-            // Identification des 90/91 en 800
-            if (!string.IsNullOrEmpty(codeGeo) && codeGeo.Length >= 2)
+            string codeGeo = row.Cells["CodeGéo"].Value?.ToString();
+            string hauteurStr = row.Cells["Hauteur_Canal"].Value?.ToString();
+
+            if (LigneEstNonConforme(codeGeo, hauteurStr))
             {
-                string codePrefix = codeGeo.Substring(0, 2);
-                if ((codePrefix == "90" || codePrefix == "91") && hauteurStr != "800")
-                {
-                    e.CellStyle.BackColor = Color.DarkRed;
-                    e.CellStyle.ForeColor = Color.White;
-                }
+                e.CellStyle.BackColor = Color.DarkRed;
+                e.CellStyle.ForeColor = Color.White;
             }
+        }
 
-            // Identification des 92 en 2200
-            if (!string.IsNullOrEmpty(codeGeo) && codeGeo.Length >= 3)
-            {
-                string codePrefix = codeGeo.Substring(0, 3);
+        /// <summary>
+        /// Bouton pour filtrer les lignes non conformes selon les règles de code géographique et hauteur de canal.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void filtrebutton_Click(object sender, EventArgs e)
+        {
+            var mutations = (List<mutation>)bdgmutation.DataSource;
 
-                if ((codePrefix == "92N" || codePrefix == "92P" || codePrefix == "92Q"
-                    || codePrefix == "92R" || codePrefix == "92S" || codePrefix == "92T" 
-                    || codePrefix == "92V" || codePrefix == "92W" || codePrefix == "92X"
-                    || codePrefix == "92Y") && hauteurStr != "2200")
-                {
-                    e.CellStyle.BackColor = Color.DarkRed;
-                    e.CellStyle.ForeColor = Color.White;
-                }
+            var mutationsFiltrees = mutations
+                .Where(m => LigneEstNonConforme(m.CodeGéo, m.Hauteur_Canal.ToString()))
+                .ToList();
 
-            }
-
-            // Identification des 92 en 1200
-            if (!string.IsNullOrEmpty(codeGeo) && codeGeo.Length >= 3)
-            {
-                string codePrefix = codeGeo.Substring(0, 3);
-
-                if ((codePrefix == "92M" || codePrefix == "92K" || codePrefix == "92H"
-                    || codePrefix == "92F") && hauteurStr != "1200")
-                {
-                    e.CellStyle.BackColor = Color.DarkRed;
-                    e.CellStyle.ForeColor = Color.White;
-                }
-            }
-
-            // Identification des 92 en 800
-            if (!string.IsNullOrEmpty(codeGeo) && codeGeo.Length >= 3)
-            {
-                string codePrefix = codeGeo.Substring(0, 3);
-
-                if ((codePrefix == "92E" || codePrefix == "92G" || codePrefix == "92J"
-                    || codePrefix == "92L") && hauteurStr != "800")
-                {
-                    e.CellStyle.BackColor = Color.DarkRed;
-                    e.CellStyle.ForeColor = Color.White;
-                }
-            }
+            dgvMutation.DataSource = mutationsFiltrees;
         }
     }
 }
