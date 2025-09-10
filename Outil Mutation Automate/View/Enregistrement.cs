@@ -579,6 +579,32 @@ namespace Outil_Mutation_Automate.View
                 }
 
             }
+
+            // Identification des 92 en 1200
+            if (!string.IsNullOrEmpty(codeGeo) && codeGeo.Length >= 3)
+            {
+                string codePrefix = codeGeo.Substring(0, 3);
+
+                if ((codePrefix == "92M" || codePrefix == "92K" || codePrefix == "92H"
+                    || codePrefix == "92F") && hauteurStr != "1200")
+                {
+                    e.CellStyle.BackColor = Color.DarkRed;
+                    e.CellStyle.ForeColor = Color.White;
+                }
+            }
+
+            // Identification des 92 en 800
+            if (!string.IsNullOrEmpty(codeGeo) && codeGeo.Length >= 3)
+            {
+                string codePrefix = codeGeo.Substring(0, 3);
+
+                if ((codePrefix == "92E" || codePrefix == "92G" || codePrefix == "92J"
+                    || codePrefix == "92L") && hauteurStr != "800")
+                {
+                    e.CellStyle.BackColor = Color.DarkRed;
+                    e.CellStyle.ForeColor = Color.White;
+                }
+            }
         }
     }
 }
