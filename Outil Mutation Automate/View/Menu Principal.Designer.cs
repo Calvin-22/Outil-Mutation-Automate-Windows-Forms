@@ -95,7 +95,7 @@ namespace Outil_Mutation_Automate
             lbversion.Name = "lbversion";
             lbversion.Size = new Size(45, 24);
             lbversion.TabIndex = 11;
-            lbversion.Text = "v6.0";
+            lbversion.Text = "v7.0";
             // 
             // cerp
             // 

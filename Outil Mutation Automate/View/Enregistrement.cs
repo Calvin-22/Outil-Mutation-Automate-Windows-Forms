@@ -20,6 +20,7 @@ using System.Linq;
 using static iTextSharp.text.pdf.PdfDocument;
 using Google.Protobuf.WellKnownTypes;
 using iTextSharp.text.pdf.parser;
+using ZstdSharp.Unsafe;
 
 
 namespace Outil_Mutation_Automate.View
@@ -59,6 +60,11 @@ namespace Outil_Mutation_Automate.View
         public Enregistrement(string codegéoValue, double nbcValue, double moyenneValue, double FrequenceValue, double nbvValue, double hauteurCanalDesireValue, double nombreCanauxNecessairesValue, string zoneValue, bool lectureSeule)
         {
             InitializeComponent();
+
+            // Abonnement à l'événement CellFormatting pour personnaliser dynamiquement
+            // l'apparence des cellules (ex : couleur de fond selon la valeur).
+            dgvMutation.CellFormatting += dgvMutation_CellFormatting;
+
             this.MaximizeBox = false;
             _nombreBoitesParCommandeFromMenuPrincipal = nbcValue;
             _nombreBoitesParVenduesFromMenuPrincipal = nbvValue;
@@ -109,6 +115,7 @@ namespace Outil_Mutation_Automate.View
             List<mutation> LesMutations = controller.GetLesMutations();
             bdgmutation.DataSource = LesMutations;
             dgvMutation.DataSource = bdgmutation;
+            
             dgvMutation.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
         }
@@ -290,7 +297,7 @@ namespace Outil_Mutation_Automate.View
         {
             var lignes = File.ReadAllLines(cheminCsv, Encoding.GetEncoding("Windows-1252"));
 
-            for (int i = 0; i < lignes.Length; i++) // on saute l'en-tête
+            for (int i = 0; i < lignes.Length; i++) 
             {
                 var champs = lignes[i].Split(';');
 
@@ -307,6 +314,7 @@ namespace Outil_Mutation_Automate.View
 
                 // Initialisation des variables de vérification et de zone au départ
                 bool vérif = true;
+                bool comparateur = true;
                 string zone = string.Empty;
 
                 // Calcul des valeurs nécessaires pour la mutation
@@ -446,6 +454,7 @@ namespace Outil_Mutation_Automate.View
             dgvMutation.DataSource = mutationsFiltrées;
         }
 
+
         private void FiltrerAutomate_Click(object sender, EventArgs e)
         {
             var mutationsFiltrées = ((List<mutation>)bdgmutation.DataSource)
@@ -499,7 +508,7 @@ namespace Outil_Mutation_Automate.View
 
         private void btnRechercherCodeGeo_Click(object sender, EventArgs e)
         {
-            string codeRecherche = txtRechercheCodeGeo.Text.Trim().ToLower();
+            string codeRecherche = txtRechercheCodeGeo.Text.Trim().ToLower() + "'";
 
             if (string.IsNullOrWhiteSpace(codeRecherche))
             {
@@ -530,6 +539,29 @@ namespace Outil_Mutation_Automate.View
             if (!trouvé)
             {
                 MessageBox.Show("Aucun produit trouvé avec ce code géographique.", "Résultat", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        /// <summary>
+        /// Événement de formatage des cellules pour changer la couleur de fond
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvMutation_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            var row = dgvMutation.Rows[e.RowIndex];
+            string codeGeo = row.Cells["CodeGéo"].Value?.ToString()?.Trim();
+            string hauteurStr = row.Cells["Hauteur_Canal"].Value?.ToString()?.Trim();
+
+            // Identification des 90/91 en 800
+            if (!string.IsNullOrEmpty(codeGeo) && codeGeo.Length >= 2)
+            {
+                string codePrefix = codeGeo.Substring(0, 2);
+                if ((codePrefix == "90" || codePrefix == "91") && hauteurStr != "800")
+                {
+                    e.CellStyle.BackColor = Color.DarkRed;
+                    e.CellStyle.ForeColor = Color.White;
+                }
             }
         }
     }

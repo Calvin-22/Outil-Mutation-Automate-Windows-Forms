@@ -46,9 +46,6 @@ namespace Outil_Mutation_Automate
             {
                 delayTimer.Start(); // Démarrage du Timer
             }
-
-            // Vider le label qui contient du texte pour faciliter son déplacement
-            lblHauteur.Text = "";
         }
 
         /// <summary>
@@ -112,7 +109,7 @@ namespace Outil_Mutation_Automate
                 ProgressBar.GradientEndColor = Color.Red;
                 ProgressBar.GradientStartColor = Color.Orange;
                 ProgressBar.BorderColor = Color.OrangeRed;
-                ProgressBar.CustomLabel = "Erreur de connexion à la base de donnée.";
+                ProgressBar.CustomLabel = "Erreur de connexion à la base de données.";
                 return false;
             }
         }
@@ -205,9 +202,6 @@ namespace Outil_Mutation_Automate
                         // Calcul du nombre de canaux nécessaires après attribution de la hauteur du canal
                         _NbGoulotte = HT / _hauteurCanalDesire;
 
-                        // Affichage pour info de la hauteur du canal (800, 1200, 2500)
-                        lblHauteur.Text = "La hauteur canal est obligatoirement " + _hauteurCanalDesire + " mm.";
-
                         // Afficher le résultat sous forme de texte
                         ligne1.Text = "• Nombre de boîtes vendues (par jour) :  " + Math.Round(_NBV, 1);
                         ligne2.Text = "• Hauteur totale nécessaire (par jour) : " + Math.Round(HT, 1) + " mm";
@@ -297,7 +291,7 @@ namespace Outil_Mutation_Automate
 
         }
 
-        // En démo : trois fonctions qui retournent le pourcentage de produit vendu par rapport à la hauteur du canal.
+        // Trois fonctions qui retournent le pourcentage de produit vendu par rapport à la hauteur du canal.
 
         /// <summary>
         /// Fonction de calcul du pourcentage produit vendu par jour pour un canal de 800mm.
@@ -380,12 +374,12 @@ namespace Outil_Mutation_Automate
                 double moyenneValue = _moyenneVentes;
                 double FrequenceValue = _frequencePicking;
 
-
                 Enregistrement frm = new Enregistrement(codegéoValue, nbcValue, moyenneValue, FrequenceValue, nbvValue, hauteurCanalDesireValue, nombreCanauxNecessairesValue, zoneValue, lectureSeule); // génère la fenêtre
                 frm.Show(); // Affiche la fenêtre 
 
             }
         }
+
         /// <summary>
         /// Vider intégralement les saisies et calculs réalisés par l'algorithme 
         /// </summary>
@@ -456,7 +450,6 @@ namespace Outil_Mutation_Automate
             string codegéoValue = CodeGeoTxt.Text; ;
             double moyenneValue = _moyenneVentes;
             double FrequenceValue = _frequencePicking;
-
 
             Enregistrement frm = new Enregistrement(codegéoValue, nbcValue, moyenneValue, FrequenceValue, nbvValue, hauteurCanalDesireValue, nombreCanauxNecessairesValue, zoneValue, lectureSeule); // génère la fenêtre
             frm.Show(); // Affiche la fenêtre 
