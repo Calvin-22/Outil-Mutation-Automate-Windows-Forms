@@ -36,6 +36,7 @@
             txtMdp = new TextBox();
             SbtnConnexion = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             label4 = new Label();
+            FakeAcceptButton = new Button();
             ((System.ComponentModel.ISupportInitialize)cerp).BeginInit();
             SuspendLayout();
             // 
@@ -167,12 +168,25 @@
             label4.TabIndex = 31;
             label4.Text = "Veuillez vous authentifier :";
             // 
+            // FakeAcceptButton
+            // 
+            FakeAcceptButton.FlatStyle = FlatStyle.Flat;
+            FakeAcceptButton.ForeColor = Color.White;
+            FakeAcceptButton.Location = new Point(2, 2);
+            FakeAcceptButton.Name = "FakeAcceptButton";
+            FakeAcceptButton.Size = new Size(10, 10);
+            FakeAcceptButton.TabIndex = 32;
+            FakeAcceptButton.UseVisualStyleBackColor = true;
+            FakeAcceptButton.Click += FakeAcceptButton_Click;
+            // 
             // FrmAuthentification
             // 
+            AcceptButton = FakeAcceptButton;
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(420, 476);
+            Controls.Add(FakeAcceptButton);
             Controls.Add(label4);
             Controls.Add(SbtnConnexion);
             Controls.Add(txtMdp);
@@ -197,5 +211,6 @@
         private TextBox txtMdp;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced SbtnConnexion;
         private Label label4;
+        private Button FakeAcceptButton;
     }
 }

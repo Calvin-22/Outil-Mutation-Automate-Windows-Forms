@@ -55,5 +55,15 @@ namespace Outil_Mutation_Automate.View
                 }
             }
         }
+
+        /// <summary>
+        /// Faux bouton afin de contourner les limitations du framework Siticone avec Winforms.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FakeAcceptButton_Click(object sender, EventArgs e)
+        {
+            SbtnConnexion_Click(SbtnConnexion, EventArgs.Empty);
+        }
     }
 }
