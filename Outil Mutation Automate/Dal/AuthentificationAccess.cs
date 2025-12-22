@@ -55,15 +55,17 @@ namespace Outil_Mutation_Automate.Dal
             return false;
         }
 
-
         public string ComputeSha256Hash(string rawData)
         {
+            // Ajout d'un grain de sel (salt) afin de renforcer la sécurité du hachage 
+            // On ajoute une série de caractères fixe au mot de passe que l'utilisateur a tapé.
+            string salt = "calvin2026@";
+            string saltedData = rawData + salt;
+
             using (SHA256 sha256Hash = SHA256.Create())
             {
-                // Convertit le mot de passe en tableau d'octets
-                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(saltedData));
 
-                // Convertit le tableau d'octets en chaîne hexadécimale
                 StringBuilder builder = new StringBuilder();
                 for (int i = 0; i < bytes.Length; i++)
                 {
