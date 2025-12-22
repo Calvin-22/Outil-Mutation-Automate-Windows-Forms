@@ -66,6 +66,8 @@ namespace Outil_Mutation_Automate.View
             dgvMutation.CellFormatting += dgvMutation_CellFormatting;
 
             this.MaximizeBox = false;
+
+            // Import des données depuis menu principal, si on l'utilise
             _nombreBoitesParCommandeFromMenuPrincipal = nbcValue;
             _nombreBoitesParVenduesFromMenuPrincipal = nbvValue;
             _hauteurCanalDesireFromMenuPrincipal = hauteurCanalDesireValue;
@@ -94,6 +96,8 @@ namespace Outil_Mutation_Automate.View
             // Appel de la méthode d'initialisation
             Init();
         }
+
+        /// </summary>
 
         /// <summary>
         /// Initialisations :
@@ -288,6 +292,7 @@ namespace Outil_Mutation_Automate.View
         private double _hauteurCanalDesire; // Hauteur du canal désirée
         private double _NbGoulotte; // Nombre de canaux nécessaires
         private string _zone; // Zone du produit
+        public int compteur = 0; // Compteur pour le nombre de lignes importées
 
         /// <summary>
         /// Méthode pour importer des données depuis un fichier CSV.
@@ -635,6 +640,6 @@ namespace Outil_Mutation_Automate.View
                 .ToList();
 
             dgvMutation.DataSource = mutationsFiltrees;
-        }
+        }   
     }
 }
