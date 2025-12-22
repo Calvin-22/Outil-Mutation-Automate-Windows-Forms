@@ -17,7 +17,7 @@ namespace Outil_Mutation_Automate.Dal
         /// <summary>
         /// chaine de connexion à la bdd
         /// </summary>
-        private static readonly string connectionString = "server=localhost; user id=root; password=calvin22; database=bdd_mutation; SslMode=none";
+        private static readonly string connectionString = "server=localhost; user id=root; password=calvin22; database=bdd_mutation; SslMode=Required;";
         /// <summary>
         /// instance unique de la classe
         /// </summary>
