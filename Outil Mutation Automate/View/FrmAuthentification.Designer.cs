@@ -44,7 +44,7 @@
             IDLabel.AutoSize = true;
             IDLabel.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             IDLabel.ForeColor = Color.Black;
-            IDLabel.Location = new Point(35, 313);
+            IDLabel.Location = new Point(24, 313);
             IDLabel.Name = "IDLabel";
             IDLabel.Size = new Size(129, 27);
             IDLabel.TabIndex = 2;
@@ -54,7 +54,7 @@
             // 
             txtIdentifiant.Cursor = Cursors.IBeam;
             txtIdentifiant.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtIdentifiant.Location = new Point(212, 309);
+            txtIdentifiant.Location = new Point(201, 309);
             txtIdentifiant.Name = "txtIdentifiant";
             txtIdentifiant.Size = new Size(191, 31);
             txtIdentifiant.TabIndex = 3;
@@ -64,7 +64,7 @@
             mdplabel.AutoSize = true;
             mdplabel.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             mdplabel.ForeColor = Color.Black;
-            mdplabel.Location = new Point(35, 363);
+            mdplabel.Location = new Point(24, 363);
             mdplabel.Name = "mdplabel";
             mdplabel.Size = new Size(149, 27);
             mdplabel.TabIndex = 4;
@@ -73,7 +73,7 @@
             // cerp
             // 
             cerp.Image = (Image)resources.GetObject("cerp.Image");
-            cerp.Location = new Point(126, 30);
+            cerp.Location = new Point(109, 32);
             cerp.Name = "cerp";
             cerp.Size = new Size(213, 200);
             cerp.SizeMode = PictureBoxSizeMode.Zoom;
@@ -84,10 +84,11 @@
             // 
             txtMdp.Cursor = Cursors.IBeam;
             txtMdp.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtMdp.Location = new Point(212, 363);
+            txtMdp.Location = new Point(201, 363);
             txtMdp.Name = "txtMdp";
             txtMdp.Size = new Size(191, 31);
             txtMdp.TabIndex = 14;
+            txtMdp.UseSystemPasswordChar = true;
             // 
             // SbtnConnexion
             // 
@@ -130,7 +131,7 @@
             SbtnConnexion.ImageRightMargin = 8;
             SbtnConnexion.ImageSize = 24;
             SbtnConnexion.IsReadOnly = false;
-            SbtnConnexion.Location = new Point(252, 411);
+            SbtnConnexion.Location = new Point(241, 411);
             SbtnConnexion.MakeRadial = false;
             SbtnConnexion.Name = "SbtnConnexion";
             SbtnConnexion.PressAnimationSpeed = 0.5F;
@@ -160,18 +161,18 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.LightSlateGray;
-            label4.Location = new Point(35, 260);
+            label4.Location = new Point(24, 267);
             label4.Name = "label4";
             label4.Size = new Size(257, 27);
             label4.TabIndex = 31;
             label4.Text = "Veuillez vous authentifier :";
             // 
-            // Authentification
+            // FrmAuthentification
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(456, 507);
+            ClientSize = new Size(420, 476);
             Controls.Add(label4);
             Controls.Add(SbtnConnexion);
             Controls.Add(txtMdp);
@@ -180,7 +181,7 @@
             Controls.Add(IDLabel);
             Controls.Add(txtIdentifiant);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "Authentification";
+            Name = "FrmAuthentification";
             Text = "Authentification";
             ((System.ComponentModel.ISupportInitialize)cerp).EndInit();
             ResumeLayout(false);
