@@ -51,7 +51,7 @@ namespace Outil_Mutation_Automate.View
                 else
                 {
                     SystemSounds.Hand.Play();
-                    MessageBox.Show("Erreur : Veuillez d'abord effectuer un calcul avant d'enregistrer.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Identifiant ou mot de passe incorrect. Veuillez réessayer.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
