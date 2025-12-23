@@ -165,5 +165,10 @@ namespace Outil_Mutation_Automate.View
 
             dgvErreurs.DataSource = erreursFiltrées;
         }
+
+        private void btnAnnulerFiltre_Click_1(object sender, EventArgs e)
+        {
+            RemplirListeErreurs(); // Recharge toutes les erreurs dans le DataGridView
+        }
     }
 }

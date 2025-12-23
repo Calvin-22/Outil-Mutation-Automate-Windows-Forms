@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmErreurs));
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             filtrebutton = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             label6 = new Label();
             cerp = new PictureBox();
@@ -93,7 +93,7 @@
             filtrebutton.ImageRightMargin = 8;
             filtrebutton.ImageSize = 24;
             filtrebutton.IsReadOnly = false;
-            filtrebutton.Location = new Point(852, 404);
+            filtrebutton.Location = new Point(904, 404);
             filtrebutton.MakeRadial = false;
             filtrebutton.Name = "filtrebutton";
             filtrebutton.PressAnimationSpeed = 0.5F;
@@ -250,7 +250,7 @@
             btnAnnulerFiltre.ImageRightMargin = 8;
             btnAnnulerFiltre.ImageSize = 24;
             btnAnnulerFiltre.IsReadOnly = false;
-            btnAnnulerFiltre.Location = new Point(662, 405);
+            btnAnnulerFiltre.Location = new Point(714, 405);
             btnAnnulerFiltre.MakeRadial = false;
             btnAnnulerFiltre.Name = "btnAnnulerFiltre";
             btnAnnulerFiltre.PressAnimationSpeed = 0.5F;
@@ -273,6 +273,7 @@
             btnAnnulerFiltre.TextShadowColor = Color.FromArgb(100, 0, 0, 0);
             btnAnnulerFiltre.TextShadowOffsetX = 1;
             btnAnnulerFiltre.TextShadowOffsetY = 1;
+            btnAnnulerFiltre.Click += btnAnnulerFiltre_Click_1;
             // 
             // SViderBDD
             // 
@@ -393,7 +394,7 @@
             FiltrerManuelle.ShadowColor = Color.FromArgb(70, 0, 0, 0);
             FiltrerManuelle.ShadowOffsetX = 3;
             FiltrerManuelle.ShadowOffsetY = 3;
-            FiltrerManuelle.Size = new Size(193, 50);
+            FiltrerManuelle.Size = new Size(234, 50);
             FiltrerManuelle.TabIndex = 46;
             FiltrerManuelle.Text = "Filtrer (Sortie manuelle)";
             FiltrerManuelle.TextAlign = ContentAlignment.MiddleCenter;
@@ -673,25 +674,25 @@
             dgvErreurs.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvErreurs.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvErreurs.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.Green;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle3.Padding = new Padding(1);
-            dataGridViewCellStyle3.SelectionBackColor = Color.Green;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvErreurs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.Green;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.Padding = new Padding(1);
+            dataGridViewCellStyle1.SelectionBackColor = Color.Green;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvErreurs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvErreurs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.Padding = new Padding(1);
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvErreurs.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new Padding(1);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvErreurs.DefaultCellStyle = dataGridViewCellStyle2;
             dgvErreurs.EnableHeadersVisualStyles = false;
             dgvErreurs.Location = new Point(45, 60);
             dgvErreurs.MultiSelect = false;
