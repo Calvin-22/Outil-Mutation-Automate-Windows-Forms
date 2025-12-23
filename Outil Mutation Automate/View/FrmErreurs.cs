@@ -258,5 +258,40 @@ namespace Outil_Mutation_Automate.View
                 this.Close();
             }
         }
+
+        private void btnRechercherCodeGeo_Click(object sender, EventArgs e)
+        {
+            string canalRecherche = txtRechercheCanal.Text.Trim().ToLower() + "'";
+
+            if (string.IsNullOrWhiteSpace(canalRecherche))
+            {
+                MessageBox.Show("Veuillez entrer un code géographique.", "Recherche", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            bool trouvé = false;
+
+            foreach (DataGridViewRow row in dgvErreurs.Rows)
+            {
+                if (row.Cells["Canal"].Value != null &&
+                    row.Cells["Canal"].Value.ToString().ToLower() == canalRecherche)
+                {
+                    // Sélectionne la ligne
+                    row.Selected = true;
+
+                    // Fait défiler vers la ligne
+                    dgvErreurs.FirstDisplayedScrollingRowIndex = row.Index;
+
+                    trouvé = true;
+                    txtRechercheCanal.Text = "";
+                    break;
+
+                }
+            }
+            if (!trouvé)
+            {
+                MessageBox.Show("Aucun canal trouvé avec le numéro que vous avez indiqué.", "Résultat", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }

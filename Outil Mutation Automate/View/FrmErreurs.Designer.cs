@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmErreurs));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             label6 = new Label();
             cerp = new PictureBox();
             btnRechercherCodeGeo = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
-            txtRechercheCodeGeo = new TextBox();
+            txtRechercheCanal = new TextBox();
             btnAnnulerFiltre = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             SViderBDD = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             FiltrerManuelle = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
@@ -134,14 +134,15 @@
             btnRechercherCodeGeo.TextShadowColor = Color.FromArgb(100, 0, 0, 0);
             btnRechercherCodeGeo.TextShadowOffsetX = 1;
             btnRechercherCodeGeo.TextShadowOffsetY = 1;
+            btnRechercherCodeGeo.Click += btnRechercherCodeGeo_Click;
             // 
-            // txtRechercheCodeGeo
+            // txtRechercheCanal
             // 
-            txtRechercheCodeGeo.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtRechercheCodeGeo.Location = new Point(1061, 296);
-            txtRechercheCodeGeo.Name = "txtRechercheCodeGeo";
-            txtRechercheCodeGeo.Size = new Size(114, 31);
-            txtRechercheCodeGeo.TabIndex = 43;
+            txtRechercheCanal.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtRechercheCanal.Location = new Point(1061, 296);
+            txtRechercheCanal.Name = "txtRechercheCanal";
+            txtRechercheCanal.Size = new Size(114, 31);
+            txtRechercheCanal.TabIndex = 43;
             // 
             // btnAnnulerFiltre
             // 
@@ -544,25 +545,25 @@
             dgvErreurs.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvErreurs.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvErreurs.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.Firebrick;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Padding = new Padding(1);
-            dataGridViewCellStyle1.SelectionBackColor = Color.Firebrick;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvErreurs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.Firebrick;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle3.Padding = new Padding(1);
+            dataGridViewCellStyle3.SelectionBackColor = Color.Firebrick;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvErreurs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvErreurs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new Padding(1);
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvErreurs.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.Padding = new Padding(1);
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvErreurs.DefaultCellStyle = dataGridViewCellStyle4;
             dgvErreurs.EnableHeadersVisualStyles = false;
             dgvErreurs.Location = new Point(45, 60);
             dgvErreurs.MultiSelect = false;
@@ -621,7 +622,7 @@
             Controls.Add(label6);
             Controls.Add(cerp);
             Controls.Add(btnRechercherCodeGeo);
-            Controls.Add(txtRechercheCodeGeo);
+            Controls.Add(txtRechercheCanal);
             Controls.Add(SViderBDD);
             Controls.Add(SBtnImporter);
             Controls.Add(SbtnAnnuler);
@@ -642,7 +643,7 @@
         private Label label6;
         private PictureBox cerp;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced btnRechercherCodeGeo;
-        private TextBox txtRechercheCodeGeo;
+        private TextBox txtRechercheCanal;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced btnAnnulerFiltre;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced SViderBDD;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced FiltrerManuelle;
