@@ -11,6 +11,8 @@ using Outil_Mutation_Automate.Model;
 using Outil_Mutation_Automate.Controller;
 using Outil_Mutation_Automate.Dal;
 using System.Security.Policy;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
 
 namespace Outil_Mutation_Automate.View
 {
@@ -182,6 +184,64 @@ namespace Outil_Mutation_Automate.View
         private void btnAnnulerFiltre_Click_1(object sender, EventArgs e)
         {
             RemplirListeErreurs(); // Recharge toutes les erreurs dans le DataGridView
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog sfd = new SaveFileDialog())
+            {
+                sfd.Filter = "Fichiers PDF (*.pdf)|*.pdf";
+                sfd.Title = "Exporter en PDF";
+                sfd.FileName = "Export.pdf";
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    ExportDataGridViewToPdf(dgvErreurs, sfd.FileName);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Exporte le DataGridView vers un fichier PDF.
+        /// </summary>
+        /// <param name="dgv"></param>
+        /// <param name="filePath"></param>
+        private void ExportDataGridViewToPdf(DataGridView dgv, string filePath)
+        {
+            Document pdfDoc = new Document(PageSize.A4.Rotate(), 10f, 10f, 10f, 10f);
+
+            using (FileStream fs = new FileStream(filePath, FileMode.Create))
+            {
+                PdfWriter writer = PdfWriter.GetInstance(pdfDoc, fs);
+                pdfDoc.Open();
+
+                PdfPTable table = new PdfPTable(dgv.ColumnCount);
+                table.WidthPercentage = 100;
+
+                // Ajouter en-têtes
+                foreach (DataGridViewColumn col in dgv.Columns)
+                {
+                    PdfPCell cell = new PdfPCell(new Phrase(col.HeaderText));
+                    cell.BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(cell);
+                }
+
+                // Ajouter données
+                foreach (DataGridViewRow row in dgv.Rows)
+                {
+                    if (row.IsNewRow) continue;
+
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        table.AddCell(cell.Value?.ToString() ?? "");
+                    }
+                }
+
+                pdfDoc.Add(table);
+                pdfDoc.Close();
+            }
+
+            MessageBox.Show("PDF exporté avec succès !");
         }
     }
 }
