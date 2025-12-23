@@ -131,11 +131,39 @@ namespace Outil_Mutation_Automate.View
 
                 // Création de l'objet Erreurs via appel du constructeur.
                 Erreurs erreurs = new Erreurs(canal, produit, date, commandé, manque, motif);
-;
+                ;
                 controller.addErreurs(erreurs);
             }
             MessageBox.Show("Import terminé !");
             RemplirListeErreurs(); // Rafraîchir la liste des mutations après l'importation.
+        }
+
+        /// <summary>
+        /// Filtrer les erreurs dont le motif contient "vide"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FiltrerVide_Click(object sender, EventArgs e)
+        {
+            var erreursFiltrées = ((List<Erreurs>)bdgerreurs.DataSource)
+        .Where(m => m.Motif != null && m.Motif.ToLower().Contains("vide"))
+        .ToList();
+
+            dgvErreurs.DataSource = erreursFiltrées;
+        }
+
+        /// <summary>
+        /// Filtrer les erreurs dont le motif contient "Sortie manuelle"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FiltrerManuelle_Click(object sender, EventArgs e)
+        {
+            var erreursFiltrées = ((List<Erreurs>)bdgerreurs.DataSource)
+        .Where(m => m.Motif != null && m.Motif.ToLower().Contains("Sortie manuelle"))
+        .ToList();
+
+            dgvErreurs.DataSource = erreursFiltrées;
         }
     }
 }
