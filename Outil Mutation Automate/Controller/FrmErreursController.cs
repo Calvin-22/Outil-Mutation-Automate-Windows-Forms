@@ -32,5 +32,14 @@ namespace Outil_Mutation_Automate.Controller
             return access.GetLesErreurs();
         }
 
+        /// <summary>
+        /// Ajoute une erreur
+        /// </summary>
+        /// <param name="erreur">La mutation à ajouter</param>
+        public void addErreurs(Erreurs erreurs)
+        {
+            access.addErreurs(erreurs);
+        }
+
     }
 }

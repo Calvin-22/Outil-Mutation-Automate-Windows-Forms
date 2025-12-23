@@ -106,10 +106,6 @@ namespace Outil_Mutation_Automate.Dal
                 {
                     // Affiche le message d'erreur en cas d'exception.
                     Console.WriteLine($"Une erreur est survenue lors de l'ajout de la mutation : {e.Message}");
-                    // Dans une application réelle, vous pourriez vouloir logguer l'erreur
-                    // ou afficher un message plus convivial à l'utilisateur,
-                    // plutôt que de quitter l'environnement.
-                    // Environment.Exit(0); // Commenté car cela peut être trop drastique pour un comportement par défaut.
                 }
             }
             else
@@ -158,9 +154,5 @@ namespace Outil_Mutation_Automate.Dal
                 }
             }
         }
-
-
-
     }
-
 }

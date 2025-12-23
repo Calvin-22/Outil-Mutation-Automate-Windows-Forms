@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Outil_Mutation_Automate.Model;
 using Outil_Mutation_Automate.Controller;
 using Outil_Mutation_Automate.Dal;
+using System.Security.Policy;
 
 namespace Outil_Mutation_Automate.View
 {
@@ -92,6 +93,56 @@ namespace Outil_Mutation_Automate.View
                     MessageBox.Show("Erreur lors du vidage de la base : " + ex.Message, "Erreur");
                 }
             }
+        }
+
+        private void SBtnImporter_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Fichiers CSV (*.csv)|*.csv|Tous les fichiers (*.*)|*.*";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                var cheminFichier = ofd.FileName;
+                ImporterCsv(cheminFichier);
+            }
+        }
+
+        /// <summary>
+        /// Méthode pour importer des données depuis un fichier CSV.
+        /// </summary>
+        /// <param name="chemin"></param>
+        private void ImporterCsv(string cheminCsv)
+        {
+            var lignes = File.ReadAllLines(cheminCsv, Encoding.GetEncoding("Windows-1252"));
+
+            for (int i = 0; i < lignes.Length; i++)
+            {
+                var champs = lignes[i].Split(';');
+
+                // Vérifie que l'ensemble des champs nécessaires sont présent.
+                if (champs.Length < 5) continue;
+
+                // Récupération des champs dans des variables 
+                double.TryParse(champs[0], out double canal);
+                double.TryParse(champs[1], out double codegéo);
+                double.TryParse(champs[2], out double produit);
+                string date = champs[3].Trim();
+                double.TryParse(champs[4], out double commandé);
+                double.TryParse(champs[5], out double manque);
+                string motif = champs[6].Trim();
+                double.TryParse(champs[7], out double champslibre);
+
+                // Création de l'objet Erreurs via appel du constructeur.
+                Erreurs erreurs = new Erreurs(canal, produit, date, commandé, manque, motif)
+                {
+                    // Assignation des propriétés supplémentaires.
+                    CodeGéo = codegéo,
+                    ChampsLibre = champslibre.ToString()
+                };
+                
+                controller.addErreurs(erreurs);
+            }
+            MessageBox.Show("Import terminé !");
+            RemplirListeErreurs(); // Rafraîchir la liste des mutations après l'importation.
         }
     }
 }

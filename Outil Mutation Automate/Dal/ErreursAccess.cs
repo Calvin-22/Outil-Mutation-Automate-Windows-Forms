@@ -85,6 +85,49 @@ namespace Outil_Mutation_Automate.Dal
                 }
             }
         }
+
+        /// <summary>
+        /// Ajoute une erreur à la base de données.
+        /// </summary>
+        /// <param name="erreur"></param>
+        public void addErreurs(Erreurs erreurs)
+        {
+            // Vérifie si le gestionnaire de base de données est initialisé.
+            if (access.Manager != null)
+            {
+                // Construit la requête SQL d'insertion.
+                // Les noms des colonnes dans la table 'erreurs' sont supposés être les mêmes que les noms de propriétés.
+                string req = "INSERT INTO erreurs (Canal, `Code Géo`, Produit, Date, Commandé, Manque, Motif, ChampsLibre) ";
+                req += "VALUES (@Canal, @CodeGeo, @Produit, @Date, @Commandé, @Manque, @Motif, @ChampsLibre);";
+
+                // Crée un dictionnaire de paramètres pour la requête SQL.
+                Dictionary<string, object> parameters = new Dictionary<string, object>();
+                parameters.Add("@Canal", erreurs.Canal);
+                parameters.Add("@CodeGeo", erreurs.CodeGéo);
+                parameters.Add("@Produit", erreurs.Produit);
+                parameters.Add("@Date", erreurs.Date);
+                parameters.Add("@Commandé", erreurs.Commandé);
+                parameters.Add("@Manque", erreurs.Manque);
+                parameters.Add("@Motif", erreurs.Motif);
+                parameters.Add("@ChampsLibre", erreurs.ChampsLibre);
+
+                try
+                {
+                    // Exécute la requête de mise à jour.
+                    access.Manager.ReqUpdate(req, parameters);
+                    Console.WriteLine("Mutation ajoutée avec succès.");
+                }
+                catch (Exception e)
+                {
+                    // Affiche le message d'erreur en cas d'exception.
+                    Console.WriteLine($"Une erreur est survenue lors de l'ajout de la mutation : {e.Message}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Erreur : access.Manager est null. Le gestionnaire de base de données n'est pas initialisé.");
+            }
+        }
     }
 
 }
