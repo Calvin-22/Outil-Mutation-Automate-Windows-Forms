@@ -196,6 +196,7 @@
             Controls.Add(txtIdentifiant);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmAuthentification";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Authentification";
             ((System.ComponentModel.ISupportInitialize)cerp).EndInit();
             ResumeLayout(false);
