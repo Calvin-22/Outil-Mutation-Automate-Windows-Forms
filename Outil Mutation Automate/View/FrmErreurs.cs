@@ -265,7 +265,7 @@ namespace Outil_Mutation_Automate.View
 
             if (string.IsNullOrWhiteSpace(canalRecherche))
             {
-                MessageBox.Show("Veuillez entrer un code géographique.", "Recherche", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Veuillez entrer un numéro de canal.", "Recherche", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
