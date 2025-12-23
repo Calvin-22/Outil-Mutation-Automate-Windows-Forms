@@ -54,7 +54,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(1057, 263);
+            label6.Location = new Point(1054, 263);
             label6.Name = "label6";
             label6.Size = new Size(93, 24);
             label6.TabIndex = 50;
@@ -63,7 +63,7 @@
             // cerp
             // 
             cerp.Image = (Image)resources.GetObject("cerp.Image");
-            cerp.Location = new Point(1054, 38);
+            cerp.Location = new Point(1035, 38);
             cerp.Name = "cerp";
             cerp.Size = new Size(230, 208);
             cerp.SizeMode = PictureBoxSizeMode.Zoom;
@@ -139,7 +139,7 @@
             // txtRechercheCanal
             // 
             txtRechercheCanal.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtRechercheCanal.Location = new Point(1061, 290);
+            txtRechercheCanal.Location = new Point(1058, 290);
             txtRechercheCanal.Name = "txtRechercheCanal";
             txtRechercheCanal.Size = new Size(114, 31);
             txtRechercheCanal.TabIndex = 43;
@@ -560,7 +560,7 @@
             dataGridViewCellStyle2.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle2.Padding = new Padding(1);
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Khaki;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvErreurs.DefaultCellStyle = dataGridViewCellStyle2;
