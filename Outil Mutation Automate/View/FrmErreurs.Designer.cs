@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmErreurs));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             label6 = new Label();
             cerp = new PictureBox();
             btnRechercherCodeGeo = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
@@ -40,13 +40,14 @@
             FiltrerManuelle = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             FiltrerVide = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             SBtnImporter = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
-            SbtnSupprimer = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             SbtnAnnuler = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             dgvErreurs = new DataGridView();
             Groupbox = new GroupBox();
             btnPrint = new Button();
+            groupBox1 = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)cerp).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvErreurs).BeginInit();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // label6
@@ -158,8 +159,8 @@
             btnAnnulerFiltre.BorderRadiusTopLeft = 25;
             btnAnnulerFiltre.BorderRadiusTopRight = 25;
             btnAnnulerFiltre.BorderThickness = 1;
-            btnAnnulerFiltre.ButtonColorEnd = Color.Gray;
-            btnAnnulerFiltre.ButtonColorStart = Color.LightGray;
+            btnAnnulerFiltre.ButtonColorEnd = Color.DarkGreen;
+            btnAnnulerFiltre.ButtonColorStart = Color.LimeGreen;
             btnAnnulerFiltre.ButtonImage = null;
             btnAnnulerFiltre.CanBeep = false;
             btnAnnulerFiltre.CanShake = false;
@@ -183,7 +184,7 @@
             btnAnnulerFiltre.ImageRightMargin = 8;
             btnAnnulerFiltre.ImageSize = 24;
             btnAnnulerFiltre.IsReadOnly = false;
-            btnAnnulerFiltre.Location = new Point(714, 405);
+            btnAnnulerFiltre.Location = new Point(545, 40);
             btnAnnulerFiltre.MakeRadial = false;
             btnAnnulerFiltre.Name = "btnAnnulerFiltre";
             btnAnnulerFiltre.PressAnimationSpeed = 0.5F;
@@ -249,7 +250,7 @@
             SViderBDD.ImageRightMargin = 8;
             SViderBDD.ImageSize = 24;
             SViderBDD.IsReadOnly = false;
-            SViderBDD.Location = new Point(1047, 334);
+            SViderBDD.Location = new Point(1048, 339);
             SViderBDD.MakeRadial = false;
             SViderBDD.Name = "SViderBDD";
             SViderBDD.PressAnimationSpeed = 0.5F;
@@ -290,8 +291,8 @@
             FiltrerManuelle.BorderRadiusTopLeft = 25;
             FiltrerManuelle.BorderRadiusTopRight = 25;
             FiltrerManuelle.BorderThickness = 1;
-            FiltrerManuelle.ButtonColorEnd = Color.Gray;
-            FiltrerManuelle.ButtonColorStart = Color.LightGray;
+            FiltrerManuelle.ButtonColorEnd = Color.DarkCyan;
+            FiltrerManuelle.ButtonColorStart = Color.MediumTurquoise;
             FiltrerManuelle.ButtonImage = null;
             FiltrerManuelle.CanBeep = false;
             FiltrerManuelle.CanShake = false;
@@ -315,7 +316,7 @@
             FiltrerManuelle.ImageRightMargin = 8;
             FiltrerManuelle.ImageSize = 24;
             FiltrerManuelle.IsReadOnly = false;
-            FiltrerManuelle.Location = new Point(463, 405);
+            FiltrerManuelle.Location = new Point(273, 40);
             FiltrerManuelle.MakeRadial = false;
             FiltrerManuelle.Name = "FiltrerManuelle";
             FiltrerManuelle.PressAnimationSpeed = 0.5F;
@@ -356,8 +357,8 @@
             FiltrerVide.BorderRadiusTopLeft = 25;
             FiltrerVide.BorderRadiusTopRight = 25;
             FiltrerVide.BorderThickness = 1;
-            FiltrerVide.ButtonColorEnd = Color.Gray;
-            FiltrerVide.ButtonColorStart = Color.LightGray;
+            FiltrerVide.ButtonColorEnd = Color.Red;
+            FiltrerVide.ButtonColorStart = Color.Orange;
             FiltrerVide.ButtonImage = null;
             FiltrerVide.CanBeep = false;
             FiltrerVide.CanShake = false;
@@ -381,7 +382,7 @@
             FiltrerVide.ImageRightMargin = 8;
             FiltrerVide.ImageSize = 24;
             FiltrerVide.IsReadOnly = false;
-            FiltrerVide.Location = new Point(264, 405);
+            FiltrerVide.Location = new Point(40, 40);
             FiltrerVide.MakeRadial = false;
             FiltrerVide.Name = "FiltrerVide";
             FiltrerVide.PressAnimationSpeed = 0.5F;
@@ -447,7 +448,7 @@
             SBtnImporter.ImageRightMargin = 8;
             SBtnImporter.ImageSize = 24;
             SBtnImporter.IsReadOnly = false;
-            SBtnImporter.Location = new Point(992, 405);
+            SBtnImporter.Location = new Point(996, 434);
             SBtnImporter.MakeRadial = false;
             SBtnImporter.Name = "SBtnImporter";
             SBtnImporter.PressAnimationSpeed = 0.5F;
@@ -471,71 +472,6 @@
             SBtnImporter.TextShadowOffsetX = 1;
             SBtnImporter.TextShadowOffsetY = 1;
             SBtnImporter.Click += SBtnImporter_Click;
-            // 
-            // SbtnSupprimer
-            // 
-            SbtnSupprimer.BackColor = Color.Transparent;
-            SbtnSupprimer.BadgeBackColor = Color.Red;
-            SbtnSupprimer.BadgeForeColor = Color.White;
-            SbtnSupprimer.BadgeRadius = 10;
-            SbtnSupprimer.BadgeRightMargin = 10;
-            SbtnSupprimer.BadgeValue = 0;
-            SbtnSupprimer.BorderColor = Color.FromArgb(150, 255, 255, 255);
-            SbtnSupprimer.BorderColorEnd = Color.Gray;
-            SbtnSupprimer.BorderColorStart = Color.White;
-            SbtnSupprimer.BorderRadiusBottomLeft = 25;
-            SbtnSupprimer.BorderRadiusBottomRight = 25;
-            SbtnSupprimer.BorderRadiusTopLeft = 25;
-            SbtnSupprimer.BorderRadiusTopRight = 25;
-            SbtnSupprimer.BorderThickness = 1;
-            SbtnSupprimer.ButtonColorEnd = Color.Red;
-            SbtnSupprimer.ButtonColorStart = Color.Orange;
-            SbtnSupprimer.ButtonImage = null;
-            SbtnSupprimer.CanBeep = false;
-            SbtnSupprimer.CanShake = false;
-            SbtnSupprimer.ClickSoundPath = null;
-            SbtnSupprimer.DisabledOverlayOpacity = 0.5F;
-            SbtnSupprimer.EnableBorderGradient = false;
-            SbtnSupprimer.EnableClickSound = false;
-            SbtnSupprimer.EnableFocusBorder = false;
-            SbtnSupprimer.EnableHoverSound = false;
-            SbtnSupprimer.EnablePressScale = false;
-            SbtnSupprimer.EnableTextShadow = false;
-            SbtnSupprimer.FocusBorderColor = Color.FromArgb(100, 150, 255);
-            SbtnSupprimer.FocusBorderThickness = 2;
-            SbtnSupprimer.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            SbtnSupprimer.ForeColor = Color.White;
-            SbtnSupprimer.HoverColor = Color.FromArgb(20, 0, 0, 0);
-            SbtnSupprimer.HoverSoundPath = null;
-            SbtnSupprimer.HoverTransitionSpeed = 1F;
-            SbtnSupprimer.ImageAlign = ContentAlignment.MiddleCenter;
-            SbtnSupprimer.ImageLeftMargin = 5;
-            SbtnSupprimer.ImageRightMargin = 8;
-            SbtnSupprimer.ImageSize = 24;
-            SbtnSupprimer.IsReadOnly = false;
-            SbtnSupprimer.Location = new Point(60, 405);
-            SbtnSupprimer.MakeRadial = false;
-            SbtnSupprimer.Name = "SbtnSupprimer";
-            SbtnSupprimer.PressAnimationSpeed = 0.5F;
-            SbtnSupprimer.PressDepth = 1;
-            SbtnSupprimer.RippleColor = Color.FromArgb(60, 255, 255, 255);
-            SbtnSupprimer.RippleExpandSpeedFactor = 0.05F;
-            SbtnSupprimer.RippleFadeSpeedFactor = 0.03F;
-            SbtnSupprimer.ShadowBlurFactor = 0.85F;
-            SbtnSupprimer.ShadowColor = Color.FromArgb(70, 0, 0, 0);
-            SbtnSupprimer.ShadowOffsetX = 3;
-            SbtnSupprimer.ShadowOffsetY = 3;
-            SbtnSupprimer.Size = new Size(123, 50);
-            SbtnSupprimer.TabIndex = 41;
-            SbtnSupprimer.Text = "Supprimer";
-            SbtnSupprimer.TextAlign = ContentAlignment.MiddleCenter;
-            SbtnSupprimer.TextPaddingBottom = 0;
-            SbtnSupprimer.TextPaddingLeft = 0;
-            SbtnSupprimer.TextPaddingRight = 0;
-            SbtnSupprimer.TextPaddingTop = 0;
-            SbtnSupprimer.TextShadowColor = Color.FromArgb(100, 0, 0, 0);
-            SbtnSupprimer.TextShadowOffsetX = 1;
-            SbtnSupprimer.TextShadowOffsetY = 1;
             // 
             // SbtnAnnuler
             // 
@@ -578,7 +514,7 @@
             SbtnAnnuler.ImageRightMargin = 8;
             SbtnAnnuler.ImageSize = 24;
             SbtnAnnuler.IsReadOnly = false;
-            SbtnAnnuler.Location = new Point(1114, 405);
+            SbtnAnnuler.Location = new Point(1115, 434);
             SbtnAnnuler.MakeRadial = false;
             SbtnAnnuler.Name = "SbtnAnnuler";
             SbtnAnnuler.PressAnimationSpeed = 0.5F;
@@ -607,25 +543,25 @@
             dgvErreurs.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvErreurs.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvErreurs.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.Green;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Padding = new Padding(1);
-            dataGridViewCellStyle1.SelectionBackColor = Color.Green;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvErreurs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.Firebrick;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle7.ForeColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle7.Padding = new Padding(1);
+            dataGridViewCellStyle7.SelectionBackColor = Color.Firebrick;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dgvErreurs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dgvErreurs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new Padding(1);
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvErreurs.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = SystemColors.Window;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle8.Padding = new Padding(1);
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dgvErreurs.DefaultCellStyle = dataGridViewCellStyle8;
             dgvErreurs.EnableHeadersVisualStyles = false;
             dgvErreurs.Location = new Point(45, 60);
             dgvErreurs.MultiSelect = false;
@@ -634,7 +570,7 @@
             dgvErreurs.RowHeadersVisible = false;
             dgvErreurs.RowHeadersWidth = 62;
             dgvErreurs.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvErreurs.Size = new Size(971, 324);
+            dgvErreurs.Size = new Size(921, 324);
             dgvErreurs.TabIndex = 37;
             // 
             // Groupbox
@@ -643,39 +579,49 @@
             Groupbox.ForeColor = Color.Black;
             Groupbox.Location = new Point(39, 31);
             Groupbox.Name = "Groupbox";
-            Groupbox.Size = new Size(983, 359);
+            Groupbox.Size = new Size(936, 359);
             Groupbox.TabIndex = 38;
             Groupbox.TabStop = false;
-            Groupbox.Text = "Erreurs Enregistrées";
+            Groupbox.Text = "Erreurs Automates - Enregistrées";
             // 
             // btnPrint
             // 
             btnPrint.BackgroundImage = (Image)resources.GetObject("btnPrint.BackgroundImage");
             btnPrint.BackgroundImageLayout = ImageLayout.Stretch;
-            btnPrint.Location = new Point(1045, 489);
+            btnPrint.Location = new Point(802, 33);
             btnPrint.Name = "btnPrint";
             btnPrint.Size = new Size(63, 61);
             btnPrint.TabIndex = 24;
             btnPrint.Tag = "";
             btnPrint.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(btnAnnulerFiltre);
+            groupBox1.Controls.Add(btnPrint);
+            groupBox1.Controls.Add(FiltrerVide);
+            groupBox1.Controls.Add(FiltrerManuelle);
+            groupBox1.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox1.Location = new Point(39, 390);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(936, 112);
+            groupBox1.TabIndex = 51;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Fonctions de filtrage";
+            // 
             // FrmErreurs
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1322, 689);
-            Controls.Add(btnPrint);
+            ClientSize = new Size(1322, 526);
+            Controls.Add(groupBox1);
             Controls.Add(label6);
             Controls.Add(cerp);
             Controls.Add(btnRechercherCodeGeo);
             Controls.Add(txtRechercheCodeGeo);
-            Controls.Add(btnAnnulerFiltre);
             Controls.Add(SViderBDD);
-            Controls.Add(FiltrerManuelle);
-            Controls.Add(FiltrerVide);
             Controls.Add(SBtnImporter);
-            Controls.Add(SbtnSupprimer);
             Controls.Add(SbtnAnnuler);
             Controls.Add(dgvErreurs);
             Controls.Add(Groupbox);
@@ -685,6 +631,7 @@
             Text = "Erreurs Automate";
             ((System.ComponentModel.ISupportInitialize)cerp).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvErreurs).EndInit();
+            groupBox1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -699,10 +646,10 @@
         private SiticoneNetCoreUI.SiticoneButtonAdvanced FiltrerManuelle;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced FiltrerVide;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced SBtnImporter;
-        private SiticoneNetCoreUI.SiticoneButtonAdvanced SbtnSupprimer;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced SbtnAnnuler;
         private DataGridView dgvErreurs;
         private GroupBox Groupbox;
         private Button btnPrint;
+        private GroupBox groupBox1;
     }
 }

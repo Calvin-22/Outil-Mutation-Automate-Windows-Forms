@@ -152,13 +152,15 @@ namespace Outil_Mutation_Automate.Dal
 
                 DataTable dt = new DataTable();
                 dt.Columns.Add("Canal", typeof(double));
+                dt.Columns.Add("Produit", typeof(double));
                 dt.Columns.Add("Nombre_Occurrences", typeof(int));
 
                 foreach (var record in records)
                 {
                     DataRow row = dt.NewRow();
                     row["Canal"] = record[0];
-                    row["Nombre_Occurrences"] = record[1];
+                    row["Produit"] = record[1];
+                    row["Nombre_Occurrences"] = record[2];
                     dt.Rows.Add(row);
                 }
 
@@ -195,13 +197,15 @@ namespace Outil_Mutation_Automate.Dal
 
                 DataTable dt = new DataTable();
                 dt.Columns.Add("Canal", typeof(double));
+                dt.Columns.Add("Produit", typeof(double));
                 dt.Columns.Add("Nombre_Occurrences", typeof(int));
 
                 foreach (var record in records)
                 {
                     DataRow row = dt.NewRow();
                     row["Canal"] = record[0];
-                    row["Nombre_Occurrences"] = record[1];
+                    row["Produit"] = record[1];
+                    row["Nombre_Occurrences"] = record[2];
                     dt.Rows.Add(row);
                 }
 
