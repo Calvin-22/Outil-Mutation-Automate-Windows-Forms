@@ -145,11 +145,16 @@ namespace Outil_Mutation_Automate.View
         /// <param name="e"></param>
         private void FiltrerVide_Click(object sender, EventArgs e)
         {
-            var erreursFiltrées = ((List<Erreurs>)bdgerreurs.DataSource)
-        .Where(m => m.Motif != null && m.Motif.ToLower().Contains("vide"))
-        .ToList();
+            try
+            {
+                dgvErreurs.DataSource = controller.GetStatsErreursVides();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors du filtrage : " + ex.Message);
+            }
 
-            dgvErreurs.DataSource = erreursFiltrées;
+
         }
 
         /// <summary>
@@ -166,6 +171,11 @@ namespace Outil_Mutation_Automate.View
             dgvErreurs.DataSource = erreursFiltrées;
         }
 
+        /// <summary>
+        /// Annuler le filtre et afficher toutes les erreurs
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAnnulerFiltre_Click_1(object sender, EventArgs e)
         {
             RemplirListeErreurs(); // Recharge toutes les erreurs dans le DataGridView

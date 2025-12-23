@@ -7,6 +7,7 @@ using Outil_Mutation_Automate.Model;
 using Outil_Mutation_Automate.View;
 using Outil_Mutation_Automate.Bdd_Manager;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace Outil_Mutation_Automate.Dal
 {
@@ -126,6 +127,53 @@ namespace Outil_Mutation_Automate.Dal
                 Console.WriteLine("Erreur : access.Manager est null. Le gestionnaire de base de données n'est pas initialisé.");
             }
         }
+
+        /// <summary>
+        /// Récupère les statistiques des erreurs vides groupées par canal.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        public DataTable GetStatsErreursVides()
+        {
+            if (access.Manager == null)
+                throw new Exception("Le gestionnaire de base de données n'est pas initialisé.");
+
+            string query = @"
+        SELECT Canal, COUNT(*) AS Nombre_Occurrences
+        FROM erreurs
+        WHERE Motif = 'vide'
+        GROUP BY Canal
+        ORDER BY Nombre_Occurrences DESC;
+    ";
+
+            try
+            {
+                List<object[]> records = access.Manager.ReqSelect(query);
+
+                DataTable dt = new DataTable();
+                dt.Columns.Add("Canal", typeof(double));
+                dt.Columns.Add("Nombre_Occurrences", typeof(int));
+
+                foreach (var record in records)
+                {
+                    DataRow row = dt.NewRow();
+                    row["Canal"] = record[0];
+                    row["Nombre_Occurrences"] = record[1];
+                    dt.Rows.Add(row);
+                }
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erreur GetStatsErreursVides : " + ex.Message);
+                throw;
+            }
+        }
+
+
+
+
     }
 
 }

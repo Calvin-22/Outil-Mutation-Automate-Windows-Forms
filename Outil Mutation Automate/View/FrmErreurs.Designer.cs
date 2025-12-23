@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmErreurs));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            filtrebutton = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             label6 = new Label();
             cerp = new PictureBox();
             btnRechercherCodeGeo = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
@@ -49,72 +48,6 @@
             ((System.ComponentModel.ISupportInitialize)cerp).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvErreurs).BeginInit();
             SuspendLayout();
-            // 
-            // filtrebutton
-            // 
-            filtrebutton.BackColor = Color.Transparent;
-            filtrebutton.BackgroundImage = (Image)resources.GetObject("filtrebutton.BackgroundImage");
-            filtrebutton.BackgroundImageLayout = ImageLayout.Stretch;
-            filtrebutton.BadgeBackColor = Color.White;
-            filtrebutton.BadgeForeColor = Color.White;
-            filtrebutton.BadgeRadius = 10;
-            filtrebutton.BadgeRightMargin = 10;
-            filtrebutton.BadgeValue = 0;
-            filtrebutton.BorderColor = Color.White;
-            filtrebutton.BorderColorEnd = Color.Transparent;
-            filtrebutton.BorderColorStart = Color.White;
-            filtrebutton.BorderRadiusBottomLeft = 25;
-            filtrebutton.BorderRadiusBottomRight = 25;
-            filtrebutton.BorderRadiusTopLeft = 25;
-            filtrebutton.BorderRadiusTopRight = 25;
-            filtrebutton.BorderThickness = 1;
-            filtrebutton.ButtonColorEnd = Color.Transparent;
-            filtrebutton.ButtonColorStart = Color.Transparent;
-            filtrebutton.ButtonImage = null;
-            filtrebutton.CanBeep = false;
-            filtrebutton.CanShake = false;
-            filtrebutton.ClickSoundPath = null;
-            filtrebutton.DisabledOverlayOpacity = 0.5F;
-            filtrebutton.EnableBorderGradient = false;
-            filtrebutton.EnableClickSound = false;
-            filtrebutton.EnableFocusBorder = false;
-            filtrebutton.EnableHoverSound = false;
-            filtrebutton.EnablePressScale = false;
-            filtrebutton.EnableTextShadow = false;
-            filtrebutton.FocusBorderColor = Color.White;
-            filtrebutton.FocusBorderThickness = 2;
-            filtrebutton.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            filtrebutton.ForeColor = Color.White;
-            filtrebutton.HoverColor = Color.FromArgb(20, 0, 0, 0);
-            filtrebutton.HoverSoundPath = null;
-            filtrebutton.HoverTransitionSpeed = 1F;
-            filtrebutton.ImageAlign = ContentAlignment.MiddleCenter;
-            filtrebutton.ImageLeftMargin = 5;
-            filtrebutton.ImageRightMargin = 8;
-            filtrebutton.ImageSize = 24;
-            filtrebutton.IsReadOnly = false;
-            filtrebutton.Location = new Point(904, 404);
-            filtrebutton.MakeRadial = false;
-            filtrebutton.Name = "filtrebutton";
-            filtrebutton.PressAnimationSpeed = 0.5F;
-            filtrebutton.PressDepth = 1;
-            filtrebutton.RippleColor = Color.Transparent;
-            filtrebutton.RippleExpandSpeedFactor = 0.05F;
-            filtrebutton.RippleFadeSpeedFactor = 0.03F;
-            filtrebutton.ShadowBlurFactor = 0.01F;
-            filtrebutton.ShadowColor = Color.Transparent;
-            filtrebutton.ShadowOffsetX = 3;
-            filtrebutton.ShadowOffsetY = 3;
-            filtrebutton.Size = new Size(55, 54);
-            filtrebutton.TabIndex = 51;
-            filtrebutton.TextAlign = ContentAlignment.MiddleCenter;
-            filtrebutton.TextPaddingBottom = 0;
-            filtrebutton.TextPaddingLeft = 0;
-            filtrebutton.TextPaddingRight = 0;
-            filtrebutton.TextPaddingTop = 0;
-            filtrebutton.TextShadowColor = Color.White;
-            filtrebutton.TextShadowOffsetX = 1;
-            filtrebutton.TextShadowOffsetY = 1;
             // 
             // label6
             // 
@@ -719,7 +652,7 @@
             // 
             btnPrint.BackgroundImage = (Image)resources.GetObject("btnPrint.BackgroundImage");
             btnPrint.BackgroundImageLayout = ImageLayout.Stretch;
-            btnPrint.Location = new Point(1013, 512);
+            btnPrint.Location = new Point(1045, 489);
             btnPrint.Name = "btnPrint";
             btnPrint.Size = new Size(63, 61);
             btnPrint.TabIndex = 24;
@@ -733,7 +666,6 @@
             BackColor = Color.White;
             ClientSize = new Size(1322, 689);
             Controls.Add(btnPrint);
-            Controls.Add(filtrebutton);
             Controls.Add(label6);
             Controls.Add(cerp);
             Controls.Add(btnRechercherCodeGeo);
@@ -758,8 +690,6 @@
         }
 
         #endregion
-
-        private SiticoneNetCoreUI.SiticoneButtonAdvanced filtrebutton;
         private Label label6;
         private PictureBox cerp;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced btnRechercherCodeGeo;

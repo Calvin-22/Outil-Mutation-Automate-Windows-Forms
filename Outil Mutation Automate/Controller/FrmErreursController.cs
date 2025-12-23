@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,6 +41,16 @@ namespace Outil_Mutation_Automate.Controller
         {
             access.addErreurs(erreurs);
         }
+
+        /// <summary>
+        /// Retourne les statistiques des erreurs vides
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetStatsErreursVides()
+        {
+            return access.GetStatsErreursVides();
+        }
+
 
     }
 }
