@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Outil_Mutation_Automate.Model;
 using Outil_Mutation_Automate.Controller;
+using Outil_Mutation_Automate.Dal;
 
 namespace Outil_Mutation_Automate.View
 {
@@ -63,7 +64,34 @@ namespace Outil_Mutation_Automate.View
         /// <param name="e"></param>
         private void SViderBDD_Click(object sender, EventArgs e)
         {
+            // Boîte de dialogue de confirmation
+            DialogResult result = MessageBox.Show(
+                "Voulez-vous vraiment vider la base de données ?",
+                "Confirmation",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
 
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    // Création de l'accès à la base de données
+                    ErreursAccess access = new ErreursAccess();
+
+                    // Appel de la méthode pour vider la base
+                    access.ViderErreurs();
+
+                    // Rafraîchir la liste après suppression
+                    RemplirListeErreurs();
+
+                    MessageBox.Show("La base de données a été vidée avec succès.", "Information");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erreur lors du vidage de la base : " + ex.Message, "Erreur");
+                }
+            }
         }
     }
 }
