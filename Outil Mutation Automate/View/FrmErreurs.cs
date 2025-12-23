@@ -123,22 +123,15 @@ namespace Outil_Mutation_Automate.View
 
                 // Récupération des champs dans des variables 
                 double.TryParse(champs[0], out double canal);
-                double.TryParse(champs[1], out double codegéo);
-                double.TryParse(champs[2], out double produit);
-                string date = champs[3].Trim();
-                double.TryParse(champs[4], out double commandé);
-                double.TryParse(champs[5], out double manque);
-                string motif = champs[6].Trim();
-                double.TryParse(champs[7], out double champslibre);
+                double.TryParse(champs[1], out double produit);
+                string date = champs[2].Trim();
+                double.TryParse(champs[3], out double commandé);
+                double.TryParse(champs[4], out double manque);
+                string motif = champs[5].Trim();
 
                 // Création de l'objet Erreurs via appel du constructeur.
-                Erreurs erreurs = new Erreurs(canal, produit, date, commandé, manque, motif)
-                {
-                    // Assignation des propriétés supplémentaires.
-                    CodeGéo = codegéo,
-                    ChampsLibre = champslibre.ToString()
-                };
-                
+                Erreurs erreurs = new Erreurs(canal, produit, date, commandé, manque, motif);
+;
                 controller.addErreurs(erreurs);
             }
             MessageBox.Show("Import terminé !");

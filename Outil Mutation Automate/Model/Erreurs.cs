@@ -4,8 +4,6 @@
     {
         public double Canal { get; set; }
 
-        public double CodeGéo { get; set; }
-
         public double Produit { get; set; }
         public string Date { get; set; }
 
@@ -14,7 +12,6 @@
         public double Manque { get; set; }
 
         public string Motif { get; set; }
-        public string ChampsLibre { get; set; }
 
         /// <summary>
         /// Valorise les propriétés

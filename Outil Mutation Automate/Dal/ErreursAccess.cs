@@ -97,19 +97,17 @@ namespace Outil_Mutation_Automate.Dal
             {
                 // Construit la requête SQL d'insertion.
                 // Les noms des colonnes dans la table 'erreurs' sont supposés être les mêmes que les noms de propriétés.
-                string req = "INSERT INTO erreurs (Canal, `Code Géo`, Produit, Date, Commandé, Manque, Motif, ChampsLibre) ";
-                req += "VALUES (@Canal, @CodeGeo, @Produit, @Date, @Commandé, @Manque, @Motif, @ChampsLibre);";
+                string req = "INSERT INTO erreurs (Canal, Produit, Date, Commandé, Manque, Motif) ";
+                req += "VALUES (@Canal, @Produit, @Date, @Commandé, @Manque, @Motif);";
 
                 // Crée un dictionnaire de paramètres pour la requête SQL.
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
                 parameters.Add("@Canal", erreurs.Canal);
-                parameters.Add("@CodeGeo", erreurs.CodeGéo);
                 parameters.Add("@Produit", erreurs.Produit);
                 parameters.Add("@Date", erreurs.Date);
                 parameters.Add("@Commandé", erreurs.Commandé);
                 parameters.Add("@Manque", erreurs.Manque);
                 parameters.Add("@Motif", erreurs.Motif);
-                parameters.Add("@ChampsLibre", erreurs.ChampsLibre);
 
                 try
                 {
