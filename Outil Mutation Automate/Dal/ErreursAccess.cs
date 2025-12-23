@@ -36,7 +36,7 @@ namespace Outil_Mutation_Automate.Dal
             {
                 string req = "SELECT Canal, Produit, Date, Commandé, Manque, Motif " +
                              "FROM erreurs " +
-                             "ORDER BY Canal DESC";
+                             "ORDER BY Canal";
                 try
                 {
                     List<Object[]> records = access.Manager.ReqSelect(req);
