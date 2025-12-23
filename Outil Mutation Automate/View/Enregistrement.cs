@@ -97,7 +97,6 @@ namespace Outil_Mutation_Automate.View
             Init();
         }
 
-        /// </summary>
 
         /// <summary>
         /// Initialisations :
@@ -640,6 +639,28 @@ namespace Outil_Mutation_Automate.View
                 .ToList();
 
             dgvMutation.DataSource = mutationsFiltrees;
-        }   
+        }
+
+        /// <summary>
+        /// Ouvrir le formulaire dédié spécifiquement aux erreurs automate.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SBtnErreursAutomate_Click(object sender, EventArgs e)
+        {
+            // Vérifie si un formulaire nommé "Form2" est ouvert
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is FrmErreurs)
+                {
+                    form.Close();  // Ferme le formulaire
+                    break;         // Stoppe la boucle une fois trouvé
+                }
+            }
+
+            FrmErreurs frm = new FrmErreurs();
+            frm.Show(); // Affiche la fenêtre 
+
+        }
     }
 }

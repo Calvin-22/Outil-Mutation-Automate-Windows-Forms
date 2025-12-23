@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Enregistrement));
             dgvMutation = new DataGridView();
             Groupbox = new GroupBox();
             txtRechercheCodeGeo = new TextBox();
             groupBox1 = new GroupBox();
+            SBtnErreursAutomate = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             btnPrint = new Button();
             label5 = new Label();
             SbtnAjouter = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
@@ -65,25 +66,25 @@
             dgvMutation.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvMutation.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvMutation.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.Green;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Padding = new Padding(1);
-            dataGridViewCellStyle1.SelectionBackColor = Color.Green;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvMutation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.Green;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle3.Padding = new Padding(1);
+            dataGridViewCellStyle3.SelectionBackColor = Color.Green;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvMutation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvMutation.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new Padding(1);
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvMutation.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.Padding = new Padding(1);
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvMutation.DefaultCellStyle = dataGridViewCellStyle4;
             dgvMutation.EnableHeadersVisualStyles = false;
             dgvMutation.Location = new Point(54, 55);
             dgvMutation.MultiSelect = false;
@@ -116,6 +117,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(SBtnErreursAutomate);
             groupBox1.Controls.Add(btnPrint);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(SbtnAjouter);
@@ -134,11 +136,77 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Enregistrer une ligne";
             // 
+            // SBtnErreursAutomate
+            // 
+            SBtnErreursAutomate.BackColor = Color.Transparent;
+            SBtnErreursAutomate.BadgeBackColor = Color.Red;
+            SBtnErreursAutomate.BadgeForeColor = Color.White;
+            SBtnErreursAutomate.BadgeRadius = 10;
+            SBtnErreursAutomate.BadgeRightMargin = 10;
+            SBtnErreursAutomate.BadgeValue = 0;
+            SBtnErreursAutomate.BorderColor = Color.FromArgb(150, 255, 255, 255);
+            SBtnErreursAutomate.BorderColorEnd = Color.Gray;
+            SBtnErreursAutomate.BorderColorStart = Color.White;
+            SBtnErreursAutomate.BorderRadiusBottomLeft = 25;
+            SBtnErreursAutomate.BorderRadiusBottomRight = 25;
+            SBtnErreursAutomate.BorderRadiusTopLeft = 25;
+            SBtnErreursAutomate.BorderRadiusTopRight = 25;
+            SBtnErreursAutomate.BorderThickness = 1;
+            SBtnErreursAutomate.ButtonColorEnd = Color.DarkGoldenrod;
+            SBtnErreursAutomate.ButtonColorStart = Color.Gold;
+            SBtnErreursAutomate.ButtonImage = null;
+            SBtnErreursAutomate.CanBeep = false;
+            SBtnErreursAutomate.CanShake = false;
+            SBtnErreursAutomate.ClickSoundPath = null;
+            SBtnErreursAutomate.DisabledOverlayOpacity = 0.5F;
+            SBtnErreursAutomate.EnableBorderGradient = false;
+            SBtnErreursAutomate.EnableClickSound = false;
+            SBtnErreursAutomate.EnableFocusBorder = false;
+            SBtnErreursAutomate.EnableHoverSound = false;
+            SBtnErreursAutomate.EnablePressScale = false;
+            SBtnErreursAutomate.EnableTextShadow = false;
+            SBtnErreursAutomate.FocusBorderColor = Color.FromArgb(100, 150, 255);
+            SBtnErreursAutomate.FocusBorderThickness = 2;
+            SBtnErreursAutomate.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SBtnErreursAutomate.ForeColor = Color.White;
+            SBtnErreursAutomate.HoverColor = Color.FromArgb(20, 0, 0, 0);
+            SBtnErreursAutomate.HoverSoundPath = null;
+            SBtnErreursAutomate.HoverTransitionSpeed = 1F;
+            SBtnErreursAutomate.ImageAlign = ContentAlignment.MiddleCenter;
+            SBtnErreursAutomate.ImageLeftMargin = 5;
+            SBtnErreursAutomate.ImageRightMargin = 8;
+            SBtnErreursAutomate.ImageSize = 24;
+            SBtnErreursAutomate.IsReadOnly = false;
+            SBtnErreursAutomate.Location = new Point(1047, 79);
+            SBtnErreursAutomate.MakeRadial = false;
+            SBtnErreursAutomate.Name = "SBtnErreursAutomate";
+            SBtnErreursAutomate.PressAnimationSpeed = 0.5F;
+            SBtnErreursAutomate.PressDepth = 1;
+            SBtnErreursAutomate.RippleColor = Color.FromArgb(60, 255, 255, 255);
+            SBtnErreursAutomate.RippleExpandSpeedFactor = 0.05F;
+            SBtnErreursAutomate.RippleFadeSpeedFactor = 0.03F;
+            SBtnErreursAutomate.ShadowBlurFactor = 0.85F;
+            SBtnErreursAutomate.ShadowColor = Color.FromArgb(70, 0, 0, 0);
+            SBtnErreursAutomate.ShadowOffsetX = 3;
+            SBtnErreursAutomate.ShadowOffsetY = 3;
+            SBtnErreursAutomate.Size = new Size(174, 50);
+            SBtnErreursAutomate.TabIndex = 37;
+            SBtnErreursAutomate.Text = "Erreurs Automate";
+            SBtnErreursAutomate.TextAlign = ContentAlignment.MiddleCenter;
+            SBtnErreursAutomate.TextPaddingBottom = 0;
+            SBtnErreursAutomate.TextPaddingLeft = 0;
+            SBtnErreursAutomate.TextPaddingRight = 0;
+            SBtnErreursAutomate.TextPaddingTop = 0;
+            SBtnErreursAutomate.TextShadowColor = Color.FromArgb(100, 0, 0, 0);
+            SBtnErreursAutomate.TextShadowOffsetX = 1;
+            SBtnErreursAutomate.TextShadowOffsetY = 1;
+            SBtnErreursAutomate.Click += SBtnErreursAutomate_Click;
+            // 
             // btnPrint
             // 
             btnPrint.BackgroundImage = (Image)resources.GetObject("btnPrint.BackgroundImage");
             btnPrint.BackgroundImageLayout = ImageLayout.Stretch;
-            btnPrint.Location = new Point(1087, 69);
+            btnPrint.Location = new Point(953, 71);
             btnPrint.Name = "btnPrint";
             btnPrint.Size = new Size(63, 61);
             btnPrint.TabIndex = 24;
@@ -150,7 +218,7 @@
             // 
             label5.AutoSize = true;
             label5.ForeColor = SystemColors.ControlDarkDark;
-            label5.Location = new Point(576, 116);
+            label5.Location = new Point(511, 118);
             label5.Name = "label5";
             label5.Size = new Size(362, 24);
             label5.TabIndex = 23;
@@ -226,7 +294,7 @@
             // 
             label4.AutoSize = true;
             label4.ForeColor = SystemColors.ControlDarkDark;
-            label4.Location = new Point(576, 93);
+            label4.Location = new Point(511, 95);
             label4.Name = "label4";
             label4.Size = new Size(360, 24);
             label4.TabIndex = 6;
@@ -236,7 +304,7 @@
             // 
             label3.AutoSize = true;
             label3.ForeColor = SystemColors.ControlDarkDark;
-            label3.Location = new Point(575, 69);
+            label3.Location = new Point(510, 71);
             label3.Name = "label3";
             label3.Size = new Size(347, 24);
             label3.TabIndex = 5;
@@ -952,5 +1020,6 @@
         private SiticoneNetCoreUI.SiticoneButtonAdvanced btnRechercherCodeGeo;
         private Label label6;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced filtrebutton;
+        private SiticoneNetCoreUI.SiticoneButtonAdvanced SBtnErreursAutomate;
     }
 }
