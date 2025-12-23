@@ -243,5 +243,20 @@ namespace Outil_Mutation_Automate.View
 
             MessageBox.Show("PDF exporté avec succès !");
         }
+
+
+        /// <summary>
+        /// Retourner au menu précédent.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SbtnAnnuler_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Voulez-vous vraiment revenir en arrière ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Hide();
+                this.Close();
+            }
+        }
     }
 }
