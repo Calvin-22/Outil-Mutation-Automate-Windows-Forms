@@ -164,11 +164,14 @@ namespace Outil_Mutation_Automate.View
         /// <param name="e"></param>
         private void FiltrerManuelle_Click(object sender, EventArgs e)
         {
-            var erreursFiltrées = ((List<Erreurs>)bdgerreurs.DataSource)
-        .Where(m => m.Motif != null && m.Motif.ToLower().Contains("Sortie manuelle"))
-        .ToList();
-
-            dgvErreurs.DataSource = erreursFiltrées;
+            try
+            {
+                dgvErreurs.DataSource = controller.GetStatsErreursManuelle();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors du filtrage : " + ex.Message);
+            }
         }
 
         /// <summary>

@@ -51,6 +51,15 @@ namespace Outil_Mutation_Automate.Controller
             return access.GetStatsErreursVides();
         }
 
+        /// <summary>
+        /// Retourne les statistiques des erreurs vides
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetStatsErreursManuelle()
+        {
+            return access.GetStatsErreursManuelle();
+        }
+
 
     }
 }

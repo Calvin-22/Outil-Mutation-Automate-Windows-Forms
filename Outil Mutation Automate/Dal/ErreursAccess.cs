@@ -139,7 +139,7 @@ namespace Outil_Mutation_Automate.Dal
                 throw new Exception("Le gestionnaire de base de données n'est pas initialisé.");
 
             string query = @"
-        SELECT Canal, COUNT(*) AS Nombre_Occurrences
+        SELECT Canal, Produit, COUNT(*) AS Nombre_Occurrences
         FROM erreurs
         WHERE Motif = 'vide'
         GROUP BY Canal
@@ -171,9 +171,48 @@ namespace Outil_Mutation_Automate.Dal
             }
         }
 
+        /// <summary>
+        /// Récupère les statistiques des erreurs manuelle groupées par canal.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        public DataTable GetStatsErreursManuelle()
+        {
+            if (access.Manager == null)
+                throw new Exception("Le gestionnaire de base de données n'est pas initialisé.");
 
+            string query = @"
+        SELECT Canal, Produit, COUNT(*) AS Nombre_Occurrences
+        FROM erreurs
+        WHERE Motif = 'Sortie manuelle'
+        GROUP BY Canal
+        ORDER BY Nombre_Occurrences DESC;
+    ";
 
+            try
+            {
+                List<object[]> records = access.Manager.ReqSelect(query);
 
+                DataTable dt = new DataTable();
+                dt.Columns.Add("Canal", typeof(double));
+                dt.Columns.Add("Nombre_Occurrences", typeof(int));
+
+                foreach (var record in records)
+                {
+                    DataRow row = dt.NewRow();
+                    row["Canal"] = record[0];
+                    row["Nombre_Occurrences"] = record[1];
+                    dt.Rows.Add(row);
+                }
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erreur GetStatsErreursManuelle: " + ex.Message);
+                throw;
+            }
+        }
     }
 
 }
