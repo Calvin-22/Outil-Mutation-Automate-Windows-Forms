@@ -34,7 +34,7 @@ namespace Outil_Mutation_Automate.Dal
             List<Erreurs> lesErreurs = new List<Erreurs>();
             if (access.Manager != null)
             {
-                string req = "SELECT Canal, `Code Géo`, Produit, Date, Commandé, Manque, Motif" +
+                string req = "SELECT Canal, Produit, Date, Commandé, Manque, Motif " +
                              "FROM erreurs " +
                              "ORDER BY Canal DESC";
                 try
@@ -45,13 +45,12 @@ namespace Outil_Mutation_Automate.Dal
                         foreach (Object[] record in records)
                         {
                             double canal = (double)record[0];
-                            double codeGéo = (double)record[1];
-                            double produit = (double)record[2];
-                            string date = (string)record[3];
-                            double commandé = (double)record[4];
-                            double manque = (double)record[5];
-                            string motif = (string)record[6];
-                            Erreurs erreurs = new Erreurs(canal, codeGéo, produit, date, commandé, manque, motif);
+                            double produit = (double)record[1];
+                            string date = (string)record[2];
+                            double commandé = (double)record[3];
+                            double manque = (double)record[4];
+                            string motif = (string)record[5];
+                            Erreurs erreurs = new Erreurs(canal, produit, date, commandé, manque, motif);
 
                             lesErreurs.Add(erreurs);
                         }

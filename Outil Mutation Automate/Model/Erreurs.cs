@@ -4,8 +4,6 @@
     {
         public double Canal { get; set; }
 
-        public double CodeGéo { get; set; }
-
         public double Produit { get; set; }
         public string Date { get; set; }
 
@@ -25,10 +23,9 @@
         /// <param name="commandé"></param>
         /// <param name="manque"></param>
         /// <param name="motif"></param>
-        public Erreurs(double canal, double codeGéo, double produit, string date, double commandé, double manque, string motif)
+        public Erreurs(double canal, double produit, string date, double commandé, double manque, string motif)
         {
             Canal = canal;
-            CodeGéo = codeGéo;
             Produit = produit;
             Date = date;
             Commandé = commandé;
