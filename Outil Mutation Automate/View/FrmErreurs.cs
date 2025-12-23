@@ -261,7 +261,7 @@ namespace Outil_Mutation_Automate.View
 
         private void btnRechercherCodeGeo_Click(object sender, EventArgs e)
         {
-            string canalRecherche = txtRechercheCanal.Text.Trim().ToLower() + "'";
+            string canalRecherche = txtRechercheCanal.Text.Trim().ToLower();
 
             if (string.IsNullOrWhiteSpace(canalRecherche))
             {

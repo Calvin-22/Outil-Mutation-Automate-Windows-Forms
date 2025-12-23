@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmErreurs));
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             label6 = new Label();
             cerp = new PictureBox();
             btnRechercherCodeGeo = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
@@ -54,7 +54,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(1057, 269);
+            label6.Location = new Point(1057, 263);
             label6.Name = "label6";
             label6.Size = new Size(93, 24);
             label6.TabIndex = 50;
@@ -63,7 +63,7 @@
             // cerp
             // 
             cerp.Image = (Image)resources.GetObject("cerp.Image");
-            cerp.Location = new Point(1054, 44);
+            cerp.Location = new Point(1054, 38);
             cerp.Name = "cerp";
             cerp.Size = new Size(230, 208);
             cerp.SizeMode = PictureBoxSizeMode.Zoom;
@@ -111,7 +111,7 @@
             btnRechercherCodeGeo.ImageRightMargin = 8;
             btnRechercherCodeGeo.ImageSize = 24;
             btnRechercherCodeGeo.IsReadOnly = false;
-            btnRechercherCodeGeo.Location = new Point(1181, 283);
+            btnRechercherCodeGeo.Location = new Point(1181, 277);
             btnRechercherCodeGeo.MakeRadial = false;
             btnRechercherCodeGeo.Name = "btnRechercherCodeGeo";
             btnRechercherCodeGeo.PressAnimationSpeed = 0.5F;
@@ -139,7 +139,7 @@
             // txtRechercheCanal
             // 
             txtRechercheCanal.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtRechercheCanal.Location = new Point(1061, 296);
+            txtRechercheCanal.Location = new Point(1061, 290);
             txtRechercheCanal.Name = "txtRechercheCanal";
             txtRechercheCanal.Size = new Size(114, 31);
             txtRechercheCanal.TabIndex = 43;
@@ -185,7 +185,7 @@
             btnAnnulerFiltre.ImageRightMargin = 8;
             btnAnnulerFiltre.ImageSize = 24;
             btnAnnulerFiltre.IsReadOnly = false;
-            btnAnnulerFiltre.Location = new Point(545, 40);
+            btnAnnulerFiltre.Location = new Point(545, 34);
             btnAnnulerFiltre.MakeRadial = false;
             btnAnnulerFiltre.Name = "btnAnnulerFiltre";
             btnAnnulerFiltre.PressAnimationSpeed = 0.5F;
@@ -251,7 +251,7 @@
             SViderBDD.ImageRightMargin = 8;
             SViderBDD.ImageSize = 24;
             SViderBDD.IsReadOnly = false;
-            SViderBDD.Location = new Point(1048, 339);
+            SViderBDD.Location = new Point(1048, 333);
             SViderBDD.MakeRadial = false;
             SViderBDD.Name = "SViderBDD";
             SViderBDD.PressAnimationSpeed = 0.5F;
@@ -317,7 +317,7 @@
             FiltrerManuelle.ImageRightMargin = 8;
             FiltrerManuelle.ImageSize = 24;
             FiltrerManuelle.IsReadOnly = false;
-            FiltrerManuelle.Location = new Point(273, 40);
+            FiltrerManuelle.Location = new Point(273, 34);
             FiltrerManuelle.MakeRadial = false;
             FiltrerManuelle.Name = "FiltrerManuelle";
             FiltrerManuelle.PressAnimationSpeed = 0.5F;
@@ -383,7 +383,7 @@
             FiltrerVide.ImageRightMargin = 8;
             FiltrerVide.ImageSize = 24;
             FiltrerVide.IsReadOnly = false;
-            FiltrerVide.Location = new Point(40, 40);
+            FiltrerVide.Location = new Point(40, 34);
             FiltrerVide.MakeRadial = false;
             FiltrerVide.Name = "FiltrerVide";
             FiltrerVide.PressAnimationSpeed = 0.5F;
@@ -449,7 +449,7 @@
             SBtnImporter.ImageRightMargin = 8;
             SBtnImporter.ImageSize = 24;
             SBtnImporter.IsReadOnly = false;
-            SBtnImporter.Location = new Point(996, 434);
+            SBtnImporter.Location = new Point(996, 428);
             SBtnImporter.MakeRadial = false;
             SBtnImporter.Name = "SBtnImporter";
             SBtnImporter.PressAnimationSpeed = 0.5F;
@@ -515,7 +515,7 @@
             SbtnAnnuler.ImageRightMargin = 8;
             SbtnAnnuler.ImageSize = 24;
             SbtnAnnuler.IsReadOnly = false;
-            SbtnAnnuler.Location = new Point(1115, 434);
+            SbtnAnnuler.Location = new Point(1115, 428);
             SbtnAnnuler.MakeRadial = false;
             SbtnAnnuler.Name = "SbtnAnnuler";
             SbtnAnnuler.PressAnimationSpeed = 0.5F;
@@ -545,27 +545,27 @@
             dgvErreurs.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvErreurs.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvErreurs.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.Firebrick;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle3.Padding = new Padding(1);
-            dataGridViewCellStyle3.SelectionBackColor = Color.Firebrick;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvErreurs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.DarkRed;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.Padding = new Padding(1);
+            dataGridViewCellStyle1.SelectionBackColor = Color.DarkRed;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvErreurs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvErreurs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.Padding = new Padding(1);
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvErreurs.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new Padding(1);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvErreurs.DefaultCellStyle = dataGridViewCellStyle2;
             dgvErreurs.EnableHeadersVisualStyles = false;
-            dgvErreurs.Location = new Point(45, 60);
+            dgvErreurs.Location = new Point(45, 54);
             dgvErreurs.MultiSelect = false;
             dgvErreurs.Name = "dgvErreurs";
             dgvErreurs.ReadOnly = true;
@@ -579,7 +579,7 @@
             // 
             Groupbox.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Groupbox.ForeColor = Color.Black;
-            Groupbox.Location = new Point(39, 31);
+            Groupbox.Location = new Point(39, 25);
             Groupbox.Name = "Groupbox";
             Groupbox.Size = new Size(936, 359);
             Groupbox.TabIndex = 38;
@@ -590,7 +590,7 @@
             // 
             btnPrint.BackgroundImage = (Image)resources.GetObject("btnPrint.BackgroundImage");
             btnPrint.BackgroundImageLayout = ImageLayout.Stretch;
-            btnPrint.Location = new Point(802, 33);
+            btnPrint.Location = new Point(802, 27);
             btnPrint.Name = "btnPrint";
             btnPrint.Size = new Size(63, 61);
             btnPrint.TabIndex = 24;
@@ -605,7 +605,7 @@
             groupBox1.Controls.Add(FiltrerVide);
             groupBox1.Controls.Add(FiltrerManuelle);
             groupBox1.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(39, 390);
+            groupBox1.Location = new Point(39, 384);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(936, 112);
             groupBox1.TabIndex = 51;
