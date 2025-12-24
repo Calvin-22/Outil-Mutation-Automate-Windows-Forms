@@ -676,5 +676,10 @@ namespace Outil_Mutation_Automate.View
             FrmErreurs frm = new FrmErreurs();
             frm.Show(); // Affiche la fenêtre 
         }
+
+        private void Groupbox_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
