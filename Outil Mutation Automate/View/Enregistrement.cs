@@ -127,6 +127,9 @@ namespace Outil_Mutation_Automate.View
             // Ajustement automatique de la taille des colonnes
             dgvMutation.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
+            // Mode barre scrolling de haut en bas uniquement
+            dgvMutation.ScrollBars = ScrollBars.Vertical;
+
         }
 
         private void PourcentageCanal_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -636,7 +639,7 @@ namespace Outil_Mutation_Automate.View
 
             if (LigneEstNonConforme(codeGeo, hauteurStr))
             {
-                e.CellStyle.BackColor = Color.DarkRed;
+                e.CellStyle.BackColor = Color.Firebrick;
                 e.CellStyle.ForeColor = Color.White;
             }
         }

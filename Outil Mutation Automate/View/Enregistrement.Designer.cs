@@ -1163,7 +1163,7 @@
             siticoneGroupBox3.GradientEndColor = Color.LightGray;
             siticoneGroupBox3.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             siticoneGroupBox3.GradientStartColor = Color.White;
-            siticoneGroupBox3.GroupTitle = "Générale";
+            siticoneGroupBox3.GroupTitle = "Outils système";
             siticoneGroupBox3.HoveredBorderColor = Color.DarkBlue;
             siticoneGroupBox3.HoveredTitleColor = Color.Black;
             siticoneGroupBox3.IsCollapsed = false;
