@@ -278,7 +278,7 @@
             // txtDesignation
             // 
             txtDesignation.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtDesignation.Location = new Point(171, 138);
+            txtDesignation.Location = new Point(171, 149);
             txtDesignation.Name = "txtDesignation";
             txtDesignation.Size = new Size(200, 31);
             txtDesignation.TabIndex = 3;
@@ -294,7 +294,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(34, 141);
+            label2.Location = new Point(34, 152);
             label2.Name = "label2";
             label2.Size = new Size(139, 27);
             label2.TabIndex = 1;
@@ -391,8 +391,8 @@
             SbtnSupprimer.BorderRadiusTopLeft = 25;
             SbtnSupprimer.BorderRadiusTopRight = 25;
             SbtnSupprimer.BorderThickness = 1;
-            SbtnSupprimer.ButtonColorEnd = Color.Red;
-            SbtnSupprimer.ButtonColorStart = Color.Orange;
+            SbtnSupprimer.ButtonColorEnd = Color.DarkRed;
+            SbtnSupprimer.ButtonColorStart = Color.Red;
             SbtnSupprimer.ButtonImage = null;
             SbtnSupprimer.CanBeep = false;
             SbtnSupprimer.CanShake = false;
@@ -482,7 +482,7 @@
             SBtnImporter.ImageRightMargin = 8;
             SBtnImporter.ImageSize = 24;
             SBtnImporter.IsReadOnly = false;
-            SBtnImporter.Location = new Point(311, 133);
+            SBtnImporter.Location = new Point(311, 135);
             SBtnImporter.MakeRadial = false;
             SBtnImporter.Name = "SBtnImporter";
             SBtnImporter.PressAnimationSpeed = 0.5F;
@@ -523,8 +523,8 @@
             FiltrerAutomate.BorderRadiusTopLeft = 25;
             FiltrerAutomate.BorderRadiusTopRight = 25;
             FiltrerAutomate.BorderThickness = 1;
-            FiltrerAutomate.ButtonColorEnd = Color.Gray;
-            FiltrerAutomate.ButtonColorStart = Color.LightGray;
+            FiltrerAutomate.ButtonColorEnd = Color.Red;
+            FiltrerAutomate.ButtonColorStart = Color.Orange;
             FiltrerAutomate.ButtonImage = null;
             FiltrerAutomate.CanBeep = false;
             FiltrerAutomate.CanShake = false;
@@ -589,8 +589,8 @@
             FiltrerMagasin.BorderRadiusTopLeft = 25;
             FiltrerMagasin.BorderRadiusTopRight = 25;
             FiltrerMagasin.BorderThickness = 1;
-            FiltrerMagasin.ButtonColorEnd = Color.Gray;
-            FiltrerMagasin.ButtonColorStart = Color.LightGray;
+            FiltrerMagasin.ButtonColorEnd = Color.DarkBlue;
+            FiltrerMagasin.ButtonColorStart = Color.RoyalBlue;
             FiltrerMagasin.ButtonImage = null;
             FiltrerMagasin.CanBeep = false;
             FiltrerMagasin.CanShake = false;
@@ -680,7 +680,7 @@
             SViderBDD.ImageRightMargin = 8;
             SViderBDD.ImageSize = 24;
             SViderBDD.IsReadOnly = false;
-            SViderBDD.Location = new Point(433, 133);
+            SViderBDD.Location = new Point(433, 135);
             SViderBDD.MakeRadial = false;
             SViderBDD.Name = "SViderBDD";
             SViderBDD.PressAnimationSpeed = 0.5F;
@@ -722,7 +722,7 @@
             btnAnnulerFiltre.BorderRadiusTopRight = 25;
             btnAnnulerFiltre.BorderThickness = 1;
             btnAnnulerFiltre.ButtonColorEnd = Color.Gray;
-            btnAnnulerFiltre.ButtonColorStart = Color.LightGray;
+            btnAnnulerFiltre.ButtonColorStart = Color.Silver;
             btnAnnulerFiltre.ButtonImage = null;
             btnAnnulerFiltre.CanBeep = false;
             btnAnnulerFiltre.CanShake = false;
@@ -788,7 +788,7 @@
             btnRechercherCodeGeo.BorderRadiusTopRight = 25;
             btnRechercherCodeGeo.BorderThickness = 1;
             btnRechercherCodeGeo.ButtonColorEnd = Color.Gray;
-            btnRechercherCodeGeo.ButtonColorStart = Color.LightGray;
+            btnRechercherCodeGeo.ButtonColorStart = Color.Silver;
             btnRechercherCodeGeo.ButtonImage = null;
             btnRechercherCodeGeo.CanBeep = false;
             btnRechercherCodeGeo.CanShake = false;
@@ -890,7 +890,7 @@
             filtrebutton.ImageRightMargin = 8;
             filtrebutton.ImageSize = 24;
             filtrebutton.IsReadOnly = false;
-            filtrebutton.Location = new Point(329, 138);
+            filtrebutton.Location = new Point(329, 141);
             filtrebutton.MakeRadial = false;
             filtrebutton.Name = "filtrebutton";
             filtrebutton.PressAnimationSpeed = 0.5F;
@@ -958,7 +958,7 @@
             siticoneGroupBox1.Location = new Point(33, 710);
             siticoneGroupBox1.MaxBlinkCount = 3;
             siticoneGroupBox1.Name = "siticoneGroupBox1";
-            siticoneGroupBox1.PressedBorderColor = Color.FromArgb(40, 90, 160);
+            siticoneGroupBox1.PressedBorderColor = Color.Green;
             siticoneGroupBox1.ShadowColor = Color.FromArgb(192, 192, 0);
             siticoneGroupBox1.ShadowDepth = 3;
             siticoneGroupBox1.ShowShadow = true;
@@ -1054,14 +1054,14 @@
             siticoneGroupBox2.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             siticoneGroupBox2.GradientStartColor = Color.White;
             siticoneGroupBox2.GroupTitle = "Interagir avec la base de données";
-            siticoneGroupBox2.HoveredBorderColor = Color.DarkRed;
+            siticoneGroupBox2.HoveredBorderColor = Color.Firebrick;
             siticoneGroupBox2.HoveredTitleColor = Color.Black;
             siticoneGroupBox2.IsCollapsed = false;
             siticoneGroupBox2.IsCollapsible = false;
             siticoneGroupBox2.Location = new Point(466, 710);
             siticoneGroupBox2.MaxBlinkCount = 3;
             siticoneGroupBox2.Name = "siticoneGroupBox2";
-            siticoneGroupBox2.PressedBorderColor = Color.FromArgb(40, 90, 160);
+            siticoneGroupBox2.PressedBorderColor = Color.DarkRed;
             siticoneGroupBox2.ShadowColor = Color.FromArgb(192, 192, 0);
             siticoneGroupBox2.ShadowDepth = 3;
             siticoneGroupBox2.ShowShadow = true;
@@ -1079,7 +1079,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(43, 149);
+            label12.Location = new Point(43, 152);
             label12.Name = "label12";
             label12.Size = new Size(290, 27);
             label12.TabIndex = 23;
@@ -1163,7 +1163,7 @@
             siticoneGroupBox3.GradientEndColor = Color.LightGray;
             siticoneGroupBox3.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             siticoneGroupBox3.GradientStartColor = Color.White;
-            siticoneGroupBox3.GroupTitle = "Générales";
+            siticoneGroupBox3.GroupTitle = "Générale";
             siticoneGroupBox3.HoveredBorderColor = Color.DarkBlue;
             siticoneGroupBox3.HoveredTitleColor = Color.Black;
             siticoneGroupBox3.IsCollapsed = false;
@@ -1171,7 +1171,7 @@
             siticoneGroupBox3.Location = new Point(1164, 710);
             siticoneGroupBox3.MaxBlinkCount = 3;
             siticoneGroupBox3.Name = "siticoneGroupBox3";
-            siticoneGroupBox3.PressedBorderColor = Color.FromArgb(40, 90, 160);
+            siticoneGroupBox3.PressedBorderColor = Color.DarkBlue;
             siticoneGroupBox3.ShadowColor = Color.FromArgb(192, 192, 0);
             siticoneGroupBox3.ShadowDepth = 3;
             siticoneGroupBox3.ShowShadow = true;

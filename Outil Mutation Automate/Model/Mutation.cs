@@ -24,7 +24,7 @@ namespace Outil_Mutation_Automate.Model
         [DisplayName("Zone")]
         public string Zone { get; set; }
 
-        [DisplayName("Moyenne des ventes (par mois)")]
+        [DisplayName("Moyenne des ventes")]
         public double MoyenneDesVentes { get; set; }
 
         [DisplayName("Fréquence de picking")]
