@@ -857,7 +857,7 @@
     <value>2</value>
   </data>
   <data name="ligne2.Text" xml:space="preserve">
-    <value>Version : 4.5</value>
+    <value>Version : 8.0</value>
   </data>
   <data name="&gt;&gt;ligne2.Name" xml:space="preserve">
     <value>ligne2</value>
@@ -878,13 +878,13 @@
     <value>58, 125</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 24</value>
+    <value>138, 24</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Build : 20250720</value>
+    <value>Build : 20251224</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
@@ -905,13 +905,13 @@
     <value>58, 152</value>
   </data>
   <data name="ligne4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>301, 24</value>
+    <value>283, 24</value>
   </data>
   <data name="ligne4.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="ligne4.Text" xml:space="preserve">
-    <value>Créé avec passion par Calvin N'Diaye</value>
+    <value>Solution Métier pour CERP Annecy</value>
   </data>
   <data name="&gt;&gt;ligne4.Name" xml:space="preserve">
     <value>ligne4</value>
