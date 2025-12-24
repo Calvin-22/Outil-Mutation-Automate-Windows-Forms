@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,20 +12,34 @@ namespace Outil_Mutation_Automate.Model
     /// </summary>
     public class mutation
     {
+        [DisplayName("CIP")]
         public double CIP { get; set; }
 
+        [DisplayName("Code Géographique")]
         public string CodeGéo { get; set; }
 
+        [DisplayName("Désignation")]
         public string Désignation { get; set; }
-        public string Zone { get; set; } 
 
+        [DisplayName("Zone")]
+        public string Zone { get; set; }
+
+        [DisplayName("Moyenne des ventes (par mois)")]
         public double MoyenneDesVentes { get; set; }
 
+        [DisplayName("Fréquence de picking")]
         public double FrequencePicking { get; set; }
 
+        [DisplayName("Moyenne de boîtes par commande")]
         public double NBC { get; set; }
+
+        [DisplayName("Nombre de boîtes vendues par jour")]
         public double NBV { get; set; }
+
+        [DisplayName("Hauteur du canal idéal (en mm)")]
         public double Hauteur_Canal { get; set; }
+
+        [DisplayName("Pourcentage d'utilisation du canal")]
         public double Canaux { get; set; }
 
 

@@ -1,27 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿
 using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using Outil_Mutation_Automate.Model;
 using Outil_Mutation_Automate.Controller;
-using System.Security.Policy;
 using Outil_Mutation_Automate.Dal;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
-using Outil_Mutation_Automate.View;
-using System.IO;
-using System.Windows.Forms;
-using System.Linq;
-using static iTextSharp.text.pdf.PdfDocument;
 using Google.Protobuf.WellKnownTypes;
-using iTextSharp.text.pdf.parser;
-using ZstdSharp.Unsafe;
-
+using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace Outil_Mutation_Automate.View
 
@@ -98,7 +85,6 @@ namespace Outil_Mutation_Automate.View
             Init();
         }
 
-
         /// <summary>
         /// Initialisations :
         /// Création du contrôleur et remplissage des listes
@@ -116,10 +102,26 @@ namespace Outil_Mutation_Automate.View
         /// </summary>
         private void RemplirListeMutation()
         {
+            // Récupération des données via le contrôleur
             List<mutation> LesMutations = controller.GetLesMutations();
             bdgmutation.DataSource = LesMutations;
             dgvMutation.DataSource = bdgmutation;
 
+            // Boucle sur les colonnes pour appliquer les DisplayName
+            foreach (DataGridViewColumn col in dgvMutation.Columns)
+            {
+                var prop = TypeDescriptor.GetProperties(typeof(mutation))[col.DataPropertyName];
+                if (prop != null)
+                {
+                    var displayNameAttr = prop.Attributes[typeof(DisplayNameAttribute)] as DisplayNameAttribute;
+                    if (displayNameAttr != null)
+                    {
+                        col.HeaderText = displayNameAttr.DisplayName;
+                    }
+                }
+            }
+
+            // Ajustement automatique de la taille des colonnes
             dgvMutation.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
         }
@@ -319,7 +321,6 @@ namespace Outil_Mutation_Automate.View
 
                 // Initialisation des variables de vérification et de zone au départ
                 bool vérif = true;
-                bool comparateur = true;
                 string zone = string.Empty;
 
                 // Calcul des valeurs nécessaires pour la mutation
@@ -338,7 +339,7 @@ namespace Outil_Mutation_Automate.View
                 // Conservation de la désignation
                 string DésignationVérif = designation;
 
-                // En démo : Détermination de la hauteur idéale (tranche en dessous de 0.81 soit 80%) 
+                // Détermination de la hauteur idéale (tranche en dessous de 0.81 soit 80%) 
                 if (PetitCanal(HT) > 0.81)
                 {
                     if (MoyenCanal(HT) > 0.81)
@@ -602,10 +603,8 @@ namespace Outil_Mutation_Automate.View
                     && hauteurStr != "800")
                     return true;
             }
-
             return false;
         }
-
 
         /// <summary>
         /// Événement de formatage des cellules pour changer la couleur de fond
@@ -658,10 +657,8 @@ namespace Outil_Mutation_Automate.View
                     break;         // Stoppe la boucle une fois trouvé
                 }
             }
-
             FrmErreurs frm = new FrmErreurs();
             frm.Show(); // Affiche la fenêtre 
-
         }
     }
 }

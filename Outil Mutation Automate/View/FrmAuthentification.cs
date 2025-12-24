@@ -52,6 +52,7 @@ namespace Outil_Mutation_Automate.View
                 {
                     SystemSounds.Hand.Play();
                     MessageBox.Show("Identifiant ou mot de passe incorrect. Veuillez réessayer.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtMdp.Clear();
                 }
             }
         }
