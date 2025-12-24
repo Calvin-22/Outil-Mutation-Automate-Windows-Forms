@@ -9,6 +9,7 @@ using iTextSharp.text.pdf;
 using Google.Protobuf.WellKnownTypes;
 using System.ComponentModel;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace Outil_Mutation_Automate.View
 
@@ -51,6 +52,11 @@ namespace Outil_Mutation_Automate.View
             // Abonnement à l'événement CellFormatting pour personnaliser dynamiquement
             // l'apparence des cellules (ex : couleur de fond selon la valeur).
             dgvMutation.CellFormatting += dgvMutation_CellFormatting;
+
+            // Activation du double buffered pour la fluidité du défilement du dgvMutation
+            typeof(DataGridView).InvokeMember("DoubleBuffered",
+            BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty,
+            null, dgvMutation, new object[] { true });
 
             this.MaximizeBox = false;
 
