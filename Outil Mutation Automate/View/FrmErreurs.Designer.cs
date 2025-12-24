@@ -449,7 +449,7 @@
             SBtnImporter.ImageRightMargin = 8;
             SBtnImporter.ImageSize = 24;
             SBtnImporter.IsReadOnly = false;
-            SBtnImporter.Location = new Point(996, 428);
+            SBtnImporter.Location = new Point(993, 418);
             SBtnImporter.MakeRadial = false;
             SBtnImporter.Name = "SBtnImporter";
             SBtnImporter.PressAnimationSpeed = 0.5F;
@@ -515,7 +515,7 @@
             SbtnAnnuler.ImageRightMargin = 8;
             SbtnAnnuler.ImageSize = 24;
             SbtnAnnuler.IsReadOnly = false;
-            SbtnAnnuler.Location = new Point(1115, 428);
+            SbtnAnnuler.Location = new Point(1115, 418);
             SbtnAnnuler.MakeRadial = false;
             SbtnAnnuler.Name = "SbtnAnnuler";
             SbtnAnnuler.PressAnimationSpeed = 0.5F;
@@ -560,7 +560,7 @@
             dataGridViewCellStyle2.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle2.Padding = new Padding(1);
-            dataGridViewCellStyle2.SelectionBackColor = Color.Khaki;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Silver;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvErreurs.DefaultCellStyle = dataGridViewCellStyle2;
