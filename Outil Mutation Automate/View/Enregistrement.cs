@@ -10,6 +10,7 @@ using Google.Protobuf.WellKnownTypes;
 using System.ComponentModel;
 using System.Windows.Forms;
 using System.Reflection;
+using SiticoneNetCoreUI;
 
 namespace Outil_Mutation_Automate.View
 
@@ -131,7 +132,11 @@ namespace Outil_Mutation_Automate.View
             }
 
             // Ajustement automatique de la taille des colonnes
-            dgvMutation.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvMutation.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgvMutation.Columns["Désignation"].FillWeight = 200;
+            dgvMutation.Columns["Zone"].FillWeight = 80;
+            dgvMutation.Columns["Canaux"].FillWeight = 100;
 
             // Mode barre scrolling de haut en bas uniquement
             dgvMutation.ScrollBars = ScrollBars.Vertical;
