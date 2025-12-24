@@ -33,13 +33,13 @@ namespace Outil_Mutation_Automate.Model
         [DisplayName("Nombre de boîtes par commande")]
         public double NBC { get; set; }
 
-        [DisplayName("Nombre de boîtes vendues par jour")]
+        [DisplayName("Nombre de boîtes vendues/j")]
         public double NBV { get; set; }
 
         [DisplayName("Hauteur du canal idéal (en mm)")]
         public double Hauteur_Canal { get; set; }
 
-        [DisplayName("Pourcentage d'utilisation du canal")]
+        [DisplayName("Pourcentage d'utilisation d'un canal/j")]
         public double Canaux { get; set; }
 
 
