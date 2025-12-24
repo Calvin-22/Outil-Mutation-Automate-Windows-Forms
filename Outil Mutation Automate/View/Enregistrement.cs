@@ -89,6 +89,7 @@ namespace Outil_Mutation_Automate.View
                 txtDesignation.ReadOnly = true;
                 txtCIP.Enabled = false;
                 txtDesignation.Enabled = false;
+                this.Text = "Consultation";
 
                 // Désactive le bouton Ajouter
                 SbtnAjouter.Enabled = false;
