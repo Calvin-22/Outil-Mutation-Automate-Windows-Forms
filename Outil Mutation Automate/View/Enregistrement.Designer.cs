@@ -57,6 +57,7 @@
             ligne1 = new Label();
             ligne2 = new Label();
             siticoneGroupBox2 = new SiticoneNetCoreUI.SiticoneGroupBox();
+            SwitchErreurs = new SiticoneNetCoreUI.SiticoneiOSSwitch();
             label12 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -122,7 +123,6 @@
             Groupbox.TabIndex = 3;
             Groupbox.TabStop = false;
             Groupbox.Text = "Lignes Enregistrées";
-            Groupbox.Enter += Groupbox_Enter;
             // 
             // txtRechercheCodeGeo
             // 
@@ -1033,6 +1033,7 @@
             siticoneGroupBox2.ChevronSize = 10F;
             siticoneGroupBox2.ChevronThickness = 2F;
             siticoneGroupBox2.ContentPadding = 5;
+            siticoneGroupBox2.Controls.Add(SwitchErreurs);
             siticoneGroupBox2.Controls.Add(label12);
             siticoneGroupBox2.Controls.Add(label3);
             siticoneGroupBox2.Controls.Add(label4);
@@ -1076,6 +1077,26 @@
             siticoneGroupBox2.TitlePadding = new Padding(0, 0, 0, 12);
             siticoneGroupBox2.TitlePos = SiticoneNetCoreUI.TitlePosition.TopLeft;
             siticoneGroupBox2.UseGradient = false;
+            // 
+            // SwitchErreurs
+            // 
+            SwitchErreurs.DisabledOffBackColor = Color.FromArgb(230, 230, 230);
+            SwitchErreurs.DisabledOnBackColor = Color.FromArgb(180, 180, 180);
+            SwitchErreurs.DisabledThumbColor = Color.FromArgb(200, 200, 200);
+            SwitchErreurs.Location = new Point(555, 61);
+            SwitchErreurs.Name = "SwitchErreurs";
+            SwitchErreurs.OffBackColor = Color.FromArgb(230, 230, 230);
+            SwitchErreurs.OnBackColor = Color.FromArgb(76, 217, 100);
+            SwitchErreurs.ReadOnlyOffBackColor = Color.FromArgb(210, 210, 210);
+            SwitchErreurs.ReadOnlyOnBackColor = Color.FromArgb(150, 200, 160);
+            SwitchErreurs.ReadOnlyThumbColor = Color.FromArgb(220, 220, 220);
+            SwitchErreurs.Size = new Size(78, 48);
+            SwitchErreurs.TabIndex = 23;
+            SwitchErreurs.Text = "siticoneiosSwitch1";
+            SwitchErreurs.ThumbBorderColor = Color.Transparent;
+            SwitchErreurs.ThumbColor = Color.White;
+            SwitchErreurs.ThumbShadowColor = Color.FromArgb(50, 0, 0, 0);
+            SwitchErreurs.StateChanged += SwitchErreurs_StateChanged;
             // 
             // label12
             // 
@@ -1314,5 +1335,6 @@
         private PictureBox cerp;
         private Label label12;
         private Label label13;
+        private SiticoneNetCoreUI.SiticoneiOSSwitch SwitchErreurs;
     }
 }

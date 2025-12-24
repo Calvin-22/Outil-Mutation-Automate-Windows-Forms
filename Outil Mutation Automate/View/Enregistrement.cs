@@ -52,7 +52,7 @@ namespace Outil_Mutation_Automate.View
 
             // Abonnement à l'événement CellFormatting pour personnaliser dynamiquement
             // l'apparence des cellules (ex : couleur de fond selon la valeur).
-            dgvMutation.CellFormatting += dgvMutation_CellFormatting;
+            /*dgvMutation.CellFormatting += dgvMutation_CellFormatting;*/
 
             // Activation du double buffered pour la fluidité du défilement du dgvMutation
             typeof(DataGridView).InvokeMember("DoubleBuffered",
@@ -655,6 +655,7 @@ namespace Outil_Mutation_Automate.View
             }
         }
 
+
         /// <summary>
         /// Bouton pour filtrer les lignes non conformes selon les règles de code géographique et hauteur de canal.
         /// </summary>
@@ -690,10 +691,37 @@ namespace Outil_Mutation_Automate.View
             FrmErreurs frm = new FrmErreurs();
             frm.Show(); // Affiche la fenêtre 
         }
-
-        private void Groupbox_Enter(object sender, EventArgs e)
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SwitchErreurs_StateChanged(object sender, StateChangedEventArgs e)
         {
+            if (SwitchErreurs.Checked)
+            {
+                // Réactive la logique de colorisation
+                dgvMutation.CellFormatting += dgvMutation_CellFormatting;
 
+                // Force un redraw pour appliquer immédiatement
+                dgvMutation.Refresh();
+            }
+            else
+            {
+                // Désactive la logique de colorisation
+                dgvMutation.CellFormatting -= dgvMutation_CellFormatting;
+
+                // Remet tout en blanc
+                foreach (DataGridViewRow row in dgvMutation.Rows)
+                {
+                    row.DefaultCellStyle.BackColor = Color.White;
+                    row.DefaultCellStyle.ForeColor = Color.Black;
+                }
+
+                // Force un redraw pour appliquer immédiatement
+                dgvMutation.Refresh();
+            }
         }
     }
 }
