@@ -107,6 +107,9 @@ namespace Outil_Mutation_Automate.View
             bdgmutation.DataSource = LesMutations;
             dgvMutation.DataSource = bdgmutation;
 
+            // Formatage de la colonne "Canaux" en pourcentage
+            dgvMutation.CellFormatting += PourcentageCanal_CellFormatting;
+
             // Boucle sur les colonnes pour appliquer les DisplayName
             foreach (DataGridViewColumn col in dgvMutation.Columns)
             {
@@ -124,6 +127,19 @@ namespace Outil_Mutation_Automate.View
             // Ajustement automatique de la taille des colonnes
             dgvMutation.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
+        }
+
+        private void PourcentageCanal_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Vérifie que la colonne concernée est celle du pourcentage
+            if (dgvMutation.Columns[e.ColumnIndex].Name == "Canaux")
+            {
+                if (e.Value is double brut)
+                {
+                    e.Value = (brut * 100).ToString("0.##") + " %";
+                    e.FormattingApplied = true;
+                }
+            }
         }
 
         /// <summary>

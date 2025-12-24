@@ -30,7 +30,7 @@ namespace Outil_Mutation_Automate.Model
         [DisplayName("Fréquence de picking")]
         public double FrequencePicking { get; set; }
 
-        [DisplayName("Moyenne de boîtes par commande")]
+        [DisplayName("Nombre de boîtes par commande")]
         public double NBC { get; set; }
 
         [DisplayName("Nombre de boîtes vendues par jour")]
