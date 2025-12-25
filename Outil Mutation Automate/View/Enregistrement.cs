@@ -727,7 +727,7 @@ namespace Outil_Mutation_Automate.View
                 // Bouton filtre redevient inactif
                 filtrebutton.IsReadOnly = true;
 
-                RemplirListeMutation(); // Recharge toutes les mutations dans le DataGridView
+                dgvMutation.DataSource = bdgmutation; // Recharge toutes les mutations dans le DataGridView
 
                 // Force un redraw pour appliquer immédiatement
                 dgvMutation.Refresh();
