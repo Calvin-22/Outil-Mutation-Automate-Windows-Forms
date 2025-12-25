@@ -61,6 +61,9 @@ namespace Outil_Mutation_Automate.View
 
             this.MaximizeBox = false;
 
+            // Mode lecture par défaut du bouton du filtre rouge pour coincider avec l'état du switch
+            filtrebutton.IsReadOnly = true;
+
             // Import des données depuis menu principal, si on l'utilise
             _nombreBoitesParCommandeFromMenuPrincipal = nbcValue;
             _nombreBoitesParVenduesFromMenuPrincipal = nbvValue;
@@ -704,6 +707,8 @@ namespace Outil_Mutation_Automate.View
                 // Réactive la logique de colorisation
                 dgvMutation.CellFormatting += dgvMutation_CellFormatting;
 
+                filtrebutton.IsReadOnly = false;
+
                 // Force un redraw pour appliquer immédiatement
                 dgvMutation.Refresh();
             }
@@ -718,6 +723,11 @@ namespace Outil_Mutation_Automate.View
                     row.DefaultCellStyle.BackColor = Color.White;
                     row.DefaultCellStyle.ForeColor = Color.Black;
                 }
+
+                // Bouton filtre redevient inactif
+                filtrebutton.IsReadOnly = true;
+
+                RemplirListeMutation(); // Recharge toutes les mutations dans le DataGridView
 
                 // Force un redraw pour appliquer immédiatement
                 dgvMutation.Refresh();
