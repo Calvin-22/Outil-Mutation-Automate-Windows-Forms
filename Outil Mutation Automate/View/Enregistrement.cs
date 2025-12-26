@@ -144,6 +144,15 @@ namespace Outil_Mutation_Automate.View
             // Mode barre scrolling de haut en bas uniquement
             dgvMutation.ScrollBars = ScrollBars.Vertical;
 
+            // On vérifie si on est en mode magasin ou non
+            if (Code0B3Existe())
+            {
+                SwitchErreurs.IsReadOnly = true;
+            }
+            else
+            {
+                SwitchErreurs.IsReadOnly = false;
+            }
         }
 
         private void PourcentageCanal_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -421,6 +430,25 @@ namespace Outil_Mutation_Automate.View
             }
             MessageBox.Show("Import terminé !");
             RemplirListeMutation(); // Rafraîchir la liste des mutations après l'importation
+        }
+
+        /// <summary>
+        /// Fonction qui vérifie la présence ou non de 03B
+        /// </summary>
+        /// <returns></returns>
+        public bool Code0B3Existe()
+        {
+            foreach (DataGridViewRow row in dgvMutation.Rows)
+            {
+                if (row.Cells["CodeGéo"].Value != null &&
+                    row.Cells["CodeGéo"].Value.ToString().Trim().ToUpper().StartsWith("03B"))
+                {
+                    {
+                        return true; // trouvé
+                    }
+                }
+            }
+            return false; // pas trouvé
         }
 
         // Fonction de détermination de la zone du produit correspondant
