@@ -93,9 +93,9 @@ namespace Outil_Mutation_Automate
             lbversion.ForeColor = SystemColors.ButtonShadow;
             lbversion.Location = new Point(26, 166);
             lbversion.Name = "lbversion";
-            lbversion.Size = new Size(60, 24);
+            lbversion.Size = new Size(58, 24);
             lbversion.TabIndex = 11;
-            lbversion.Text = "v8.0.0";
+            lbversion.Text = "v8.5.1";
             // 
             // cerp
             // 

@@ -1273,7 +1273,7 @@
             // 
             lblMode.AutoSize = true;
             lblMode.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblMode.Location = new Point(1809, 9);
+            lblMode.Location = new Point(1711, 9);
             lblMode.Name = "lblMode";
             lblMode.Size = new Size(0, 24);
             lblMode.TabIndex = 23;
