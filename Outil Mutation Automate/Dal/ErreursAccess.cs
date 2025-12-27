@@ -153,14 +153,14 @@ namespace Outil_Mutation_Automate.Dal
                 DataTable dt = new DataTable();
                 dt.Columns.Add("Canal", typeof(double));
                 dt.Columns.Add("Produit", typeof(double));
-                dt.Columns.Add("Nombre_Occurrences", typeof(int));
+                dt.Columns.Add("Nombre total de reprises (vide)", typeof(int));
 
                 foreach (var record in records)
                 {
                     DataRow row = dt.NewRow();
                     row["Canal"] = record[0];
                     row["Produit"] = record[1];
-                    row["Nombre_Occurrences"] = record[2];
+                    row["Nombre total de reprises (vide)"] = record[2];
                     dt.Rows.Add(row);
                 }
 
@@ -198,14 +198,14 @@ namespace Outil_Mutation_Automate.Dal
                 DataTable dt = new DataTable();
                 dt.Columns.Add("Canal", typeof(double));
                 dt.Columns.Add("Produit", typeof(double));
-                dt.Columns.Add("Nombre_Occurrences", typeof(int));
+                dt.Columns.Add("Nombre total de sortie manuelle", typeof(int));
 
                 foreach (var record in records)
                 {
                     DataRow row = dt.NewRow();
                     row["Canal"] = record[0];
                     row["Produit"] = record[1];
-                    row["Nombre_Occurrences"] = record[2];
+                    row["Nombre total de sortie manuelle"] = record[2];
                     dt.Rows.Add(row);
                 }
 

@@ -56,7 +56,29 @@ namespace Outil_Mutation_Automate.View
             bdgerreurs.DataSource = LesErreurs;
             dgvErreurs.DataSource = bdgerreurs;
 
-            dgvErreurs.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            // Boucle sur les colonnes pour appliquer les DisplayName
+            foreach (DataGridViewColumn col in dgvErreurs.Columns)
+            {
+                var prop = TypeDescriptor.GetProperties(typeof(mutation))[col.DataPropertyName];
+                if (prop != null)
+                {
+                    var displayNameAttr = prop.Attributes[typeof(DisplayNameAttribute)] as DisplayNameAttribute;
+                    if (displayNameAttr != null)
+                    {
+                        col.HeaderText = displayNameAttr.DisplayName;
+                    }
+                }
+            }
+
+            // Ajustement automatique de la taille des colonnes
+            dgvErreurs.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            /*dgvErreurs.Columns["Désignation"].FillWeight = 200;
+            dgvErreurs.Columns["Zone"].FillWeight = 80;
+            dgvErreurs.Columns["Canaux"].FillWeight = 100;*/
+
+            // Mode barre scrolling de haut en bas uniquement
+            dgvErreurs.ScrollBars = ScrollBars.Vertical;
 
         }
 
