@@ -148,10 +148,12 @@ namespace Outil_Mutation_Automate.View
             if (Code0B3Existe())
             {
                 SwitchErreurs.IsReadOnly = true;
+                lblMode.Text = "Mode : Magasin";
             }
             else
             {
                 SwitchErreurs.IsReadOnly = false;
+                lblMode.Text = "Mode : Automate";
             }
         }
 
@@ -566,6 +568,7 @@ namespace Outil_Mutation_Automate.View
                     MessageBox.Show("Erreur lors du vidage de la base : " + ex.Message, "Erreur");
                 }
             }
+            lblMode.Text = " ";
         }
 
         private void btnAnnulerFiltre_Click(object sender, EventArgs e)

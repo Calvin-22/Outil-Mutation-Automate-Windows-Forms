@@ -70,6 +70,7 @@
             label9 = new Label();
             label10 = new Label();
             label11 = new Label();
+            lblMode = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvMutation).BeginInit();
             siticoneGroupBox1.SuspendLayout();
             siticoneGroupBox2.SuspendLayout();
@@ -1268,12 +1269,22 @@
             label11.Size = new Size(0, 25);
             label11.TabIndex = 1;
             // 
+            // lblMode
+            // 
+            lblMode.AutoSize = true;
+            lblMode.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblMode.Location = new Point(1809, 9);
+            lblMode.Name = "lblMode";
+            lblMode.Size = new Size(0, 24);
+            lblMode.TabIndex = 23;
+            // 
             // Enregistrement
             // 
             AutoScaleDimensions = new SizeF(10F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1898, 1024);
+            Controls.Add(lblMode);
             Controls.Add(siticoneGroupBox3);
             Controls.Add(siticoneGroupBox2);
             Controls.Add(siticoneGroupBox1);
@@ -1293,6 +1304,7 @@
             siticoneGroupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)cerp).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -1337,5 +1349,6 @@
         private Label label12;
         private Label label13;
         private SiticoneNetCoreUI.SiticoneiOSSwitch SwitchErreurs;
+        private Label lblMode;
     }
 }
