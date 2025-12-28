@@ -186,7 +186,10 @@ namespace Outil_Mutation_Automate
             BtnVider.BackgroundImage = (Image)resources.GetObject("BtnVider.BackgroundImage");
             BtnVider.BackgroundImageLayout = ImageLayout.Stretch;
             BtnVider.FlatAppearance.BorderColor = SystemColors.Control;
-            BtnVider.Location = new Point(364, 634);
+            BtnVider.FlatAppearance.BorderSize = 0;
+            BtnVider.FlatStyle = FlatStyle.Flat;
+            BtnVider.ForeColor = Color.Transparent;
+            BtnVider.Location = new Point(369, 632);
             BtnVider.Name = "BtnVider";
             BtnVider.Size = new Size(40, 41);
             BtnVider.TabIndex = 20;

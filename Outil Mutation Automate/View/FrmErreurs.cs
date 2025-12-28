@@ -13,6 +13,7 @@ using Outil_Mutation_Automate.Dal;
 using System.Security.Policy;
 using iTextSharp.text.pdf;
 using iTextSharp.text;
+using System.Reflection;
 
 namespace Outil_Mutation_Automate.View
 {
@@ -32,6 +33,12 @@ namespace Outil_Mutation_Automate.View
         public FrmErreurs()
         {
             InitializeComponent();
+
+            // Activation du double buffered pour la fluidité du défilement du dgvErreurs
+            typeof(DataGridView).InvokeMember("DoubleBuffered",
+            BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty,
+            null, dgvErreurs, new object[] { true });
+
             Init();
         }
 
@@ -72,10 +79,6 @@ namespace Outil_Mutation_Automate.View
 
             // Ajustement automatique de la taille des colonnes
             dgvErreurs.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-            /*dgvErreurs.Columns["Désignation"].FillWeight = 200;
-            dgvErreurs.Columns["Zone"].FillWeight = 80;
-            dgvErreurs.Columns["Canaux"].FillWeight = 100;*/
 
             // Mode barre scrolling de haut en bas uniquement
             dgvErreurs.ScrollBars = ScrollBars.Vertical;
