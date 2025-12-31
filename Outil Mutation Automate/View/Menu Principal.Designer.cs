@@ -94,9 +94,9 @@ namespace Outil_Mutation_Automate
             lbversion.ForeColor = SystemColors.ButtonShadow;
             lbversion.Location = new Point(26, 166);
             lbversion.Name = "lbversion";
-            lbversion.Size = new Size(58, 24);
+            lbversion.Size = new Size(60, 24);
             lbversion.TabIndex = 11;
-            lbversion.Text = "v8.5.1";
+            lbversion.Text = "v9.0.0";
             // 
             // cerp
             // 
@@ -614,7 +614,7 @@ namespace Outil_Mutation_Automate
             infobutton.ImageRightMargin = 8;
             infobutton.ImageSize = 24;
             infobutton.IsReadOnly = false;
-            infobutton.Location = new Point(155, 28);
+            infobutton.Location = new Point(155, 27);
             infobutton.MakeRadial = false;
             infobutton.Name = "infobutton";
             infobutton.PressAnimationSpeed = 0.5F;
