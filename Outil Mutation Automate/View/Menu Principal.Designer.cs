@@ -70,6 +70,7 @@ namespace Outil_Mutation_Automate
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
+            SbtnDéconnexion = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             ((System.ComponentModel.ISupportInitialize)cerp).BeginInit();
             siticoneGroupBox1.SuspendLayout();
             siticoneGroupBox2.SuspendLayout();
@@ -613,7 +614,7 @@ namespace Outil_Mutation_Automate
             infobutton.ImageRightMargin = 8;
             infobutton.ImageSize = 24;
             infobutton.IsReadOnly = false;
-            infobutton.Location = new Point(18, 24);
+            infobutton.Location = new Point(155, 28);
             infobutton.MakeRadial = false;
             infobutton.Name = "infobutton";
             infobutton.PressAnimationSpeed = 0.5F;
@@ -826,12 +827,79 @@ namespace Outil_Mutation_Automate
             label9.Size = new Size(0, 25);
             label9.TabIndex = 1;
             // 
+            // SbtnDéconnexion
+            // 
+            SbtnDéconnexion.BackColor = Color.Transparent;
+            SbtnDéconnexion.BadgeBackColor = Color.Red;
+            SbtnDéconnexion.BadgeForeColor = Color.White;
+            SbtnDéconnexion.BadgeRadius = 10;
+            SbtnDéconnexion.BadgeRightMargin = 10;
+            SbtnDéconnexion.BadgeValue = 0;
+            SbtnDéconnexion.BorderColor = Color.FromArgb(150, 255, 255, 255);
+            SbtnDéconnexion.BorderColorEnd = Color.Gray;
+            SbtnDéconnexion.BorderColorStart = Color.White;
+            SbtnDéconnexion.BorderRadiusBottomLeft = 25;
+            SbtnDéconnexion.BorderRadiusBottomRight = 25;
+            SbtnDéconnexion.BorderRadiusTopLeft = 25;
+            SbtnDéconnexion.BorderRadiusTopRight = 25;
+            SbtnDéconnexion.BorderThickness = 1;
+            SbtnDéconnexion.ButtonColorEnd = Color.DarkRed;
+            SbtnDéconnexion.ButtonColorStart = Color.Red;
+            SbtnDéconnexion.ButtonImage = null;
+            SbtnDéconnexion.CanBeep = false;
+            SbtnDéconnexion.CanShake = false;
+            SbtnDéconnexion.ClickSoundPath = null;
+            SbtnDéconnexion.DisabledOverlayOpacity = 0.5F;
+            SbtnDéconnexion.EnableBorderGradient = false;
+            SbtnDéconnexion.EnableClickSound = false;
+            SbtnDéconnexion.EnableFocusBorder = false;
+            SbtnDéconnexion.EnableHoverSound = false;
+            SbtnDéconnexion.EnablePressScale = false;
+            SbtnDéconnexion.EnableTextShadow = false;
+            SbtnDéconnexion.FocusBorderColor = Color.FromArgb(100, 150, 255);
+            SbtnDéconnexion.FocusBorderThickness = 2;
+            SbtnDéconnexion.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SbtnDéconnexion.ForeColor = Color.White;
+            SbtnDéconnexion.HoverColor = Color.FromArgb(20, 0, 0, 0);
+            SbtnDéconnexion.HoverSoundPath = null;
+            SbtnDéconnexion.HoverTransitionSpeed = 1F;
+            SbtnDéconnexion.ImageAlign = ContentAlignment.MiddleCenter;
+            SbtnDéconnexion.ImageLeftMargin = 5;
+            SbtnDéconnexion.ImageRightMargin = 8;
+            SbtnDéconnexion.ImageSize = 24;
+            SbtnDéconnexion.IsReadOnly = false;
+            SbtnDéconnexion.Location = new Point(26, 28);
+            SbtnDéconnexion.MakeRadial = false;
+            SbtnDéconnexion.Name = "SbtnDéconnexion";
+            SbtnDéconnexion.PressAnimationSpeed = 0.5F;
+            SbtnDéconnexion.PressDepth = 1;
+            SbtnDéconnexion.RippleColor = Color.FromArgb(60, 255, 255, 255);
+            SbtnDéconnexion.RippleExpandSpeedFactor = 0.05F;
+            SbtnDéconnexion.RippleFadeSpeedFactor = 0.03F;
+            SbtnDéconnexion.ShadowBlurFactor = 0.85F;
+            SbtnDéconnexion.ShadowColor = Color.FromArgb(70, 0, 0, 0);
+            SbtnDéconnexion.ShadowOffsetX = 3;
+            SbtnDéconnexion.ShadowOffsetY = 3;
+            SbtnDéconnexion.Size = new Size(132, 50);
+            SbtnDéconnexion.TabIndex = 31;
+            SbtnDéconnexion.Text = "Déconnexion";
+            SbtnDéconnexion.TextAlign = ContentAlignment.MiddleCenter;
+            SbtnDéconnexion.TextPaddingBottom = 0;
+            SbtnDéconnexion.TextPaddingLeft = 0;
+            SbtnDéconnexion.TextPaddingRight = 0;
+            SbtnDéconnexion.TextPaddingTop = 0;
+            SbtnDéconnexion.TextShadowColor = Color.FromArgb(100, 0, 0, 0);
+            SbtnDéconnexion.TextShadowOffsetX = 1;
+            SbtnDéconnexion.TextShadowOffsetY = 1;
+            SbtnDéconnexion.Click += SbtnDéconnexion_Click;
+            // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(10F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(806, 885);
+            Controls.Add(SbtnDéconnexion);
             Controls.Add(label4);
             Controls.Add(label2);
             Controls.Add(infobutton);
@@ -916,5 +984,6 @@ namespace Outil_Mutation_Automate
         private Label label7;
         private Label label8;
         private Label label9;
+        private SiticoneNetCoreUI.SiticoneButtonAdvanced SbtnDéconnexion;
     }
 }

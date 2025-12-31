@@ -454,6 +454,13 @@ namespace Outil_Mutation_Automate
             Enregistrement frm = new Enregistrement(codegéoValue, nbcValue, moyenneValue, FrequenceValue, nbvValue, hauteurCanalDesireValue, nombreCanauxNecessairesValue, zoneValue, lectureSeule); // génère la fenêtre
             frm.Show(); // Affiche la fenêtre 
         }
+
+        // Déconnexion et redémarrage de l'application
+        private void SbtnDéconnexion_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+            Environment.Exit(0);
+        }
     }
 }
 

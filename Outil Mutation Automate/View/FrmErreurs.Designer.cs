@@ -546,11 +546,11 @@
             dgvErreurs.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvErreurs.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.DarkRed;
+            dataGridViewCellStyle1.BackColor = Color.Goldenrod;
             dataGridViewCellStyle1.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle1.ForeColor = SystemColors.ButtonHighlight;
             dataGridViewCellStyle1.Padding = new Padding(1);
-            dataGridViewCellStyle1.SelectionBackColor = Color.DarkRed;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Goldenrod;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvErreurs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
